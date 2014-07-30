@@ -1,6 +1,12 @@
 
 aGov Changelog
 
+7.x-1.1
+=======
+- Drupal has been updated to 7.30
+- TinyMCE packaging is broken on Drupal.org, the make file uses a different source
+  till this is rectified. This should have no practical impact.
+
 7.x-1.0
 =======
 Features
@@ -15,12 +21,9 @@ Features
 - Global Redirect has been added and is enabled on new installs
 - Updates to Password Policy, Chosen, Context, Date, Display Suite, Entity API, File Entity,
   Google Analytics, Honeypot and Libraries
-- Drupal has been updated to 7.30
 
 Fixes
 - The Contact Page was sometimes not visible to anonymous users
-- TinyMCE packaging is broken on Drupal.org, the make file uses a different source
-  till this is rectified. This should have no practical impact.
 
 Other notes
 - aGov is now tested automatically using Travis, PHPCS, Behat and other testing
