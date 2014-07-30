@@ -58,6 +58,7 @@ dependencies[] = entity
 dependencies[] = entitycache
 dependencies[] = features
 dependencies[] = file_entity
+dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = honeypot
 dependencies[] = libraries
@@ -106,6 +107,9 @@ dependencies[] = ccl_blocks
 dependencies[] = ccl_local_actions
 dependencies[] = ccl_views
 dependencies[] = search_config
+
+; aGov components
+dependencies[] = agov_components
 
 ; Custom
 

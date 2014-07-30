@@ -51,6 +51,9 @@ projects[features][subdir] = "contrib"
 projects[file_entity][version] = "2.0-alpha3"
 projects[file_entity][subdir] = "contrib"
 
+projects[globalredirect][version] = "1.5"
+projects[globalredirect][subdir] = "contrib"
+
 projects[google_analytics][version] = "1.3"
 projects[google_analytics][subdir] = "contrib"
 
@@ -189,7 +192,7 @@ projects[wysiwyg_filter][subdir] = "contrib"
 projects[flood_control][version] = "1.0"
 projects[flood_control][subdir] = "contrib"
 
-projects[password_policy][version] = "1.6"
+projects[password_policy][version] = "1.8"
 projects[password_policy][subdir] = "contrib"
 
 projects[login_security][version] = "1.4"
@@ -204,6 +207,9 @@ projects[omega][subdir]= "contrib"
 projects[agls][version] = "1.0-beta1"
 projects[agls][subdir] = "contrib"
 projects[agls][patch][] = "https://drupal.org/files/1998728-agls-node-summary-3.patch"
+
+projects[agov_components][version] = "1.0"
+projects[agov_components][subdir] = "agov"
 
 ; Libraries
 
