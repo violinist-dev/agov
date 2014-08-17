@@ -1,6 +1,18 @@
 
 aGov Changelog
 
+7.x-1.3
+=======
+- Drupal has been updated to 7.31
+- aGov will now check itself for updates
+- All aGov upgrades from RC8 on now get upgrade tested
+- Features (and all aGov features) has been upgraded to 2.2
+
+7.x-1.2
+=======
+- Contains security updates for Password Policy and Date modules, as well as
+  bumping the version of Google Analytics to 2.x, as 1.x is no longer supported.
+
 7.x-1.1
 =======
 - Drupal has been updated to 7.30
