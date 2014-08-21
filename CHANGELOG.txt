@@ -1,6 +1,13 @@
 
 aGov Changelog
 
+7.x-1.4
+=======
+- This release includes a new aGov sub theme for NSW (Waratah).
+- Line heights have been normalised across the aGov theme. This brings better
+  line heights and padding around heading elements, but may affect your
+  sub-theme if you are basing off of agov_base.
+
 7.x-1.3
 =======
 - Drupal has been updated to 7.31
