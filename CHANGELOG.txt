@@ -1,6 +1,12 @@
 
 aGov Changelog
 
+7.x-1.5
+=======
+- Drupal has been updated to 7.32 to correct SA-CORE-2014-005
+- Fixed an issue where new users may not be able to log in after an account had
+  been created for them by an administrator.
+
 7.x-1.4
 =======
 - This release includes a new aGov sub theme for NSW (Waratah).
