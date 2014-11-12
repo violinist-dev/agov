@@ -80,7 +80,7 @@ projects[pathauto_persist][version] = "1.3"
 
 projects[r4032login][version] = "1.5"
 
-projects[scheduler][version] = "1.1"
+projects[scheduler][version] = "1.3"
 
 projects[scheduler_workbench][version] = "1.2"
 
