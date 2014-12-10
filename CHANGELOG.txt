@@ -3,7 +3,8 @@ aGov Changelog
 
 7.x-2.0-dev
 ==============
-
+- Updated Google Analytics to 2.1 for SA-CONTRIB-2014-119 - Google Analytics -
+  Information disclosure
 
 7.x-2.0-alpha5
 ==============
