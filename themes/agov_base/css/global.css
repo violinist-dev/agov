@@ -240,10 +240,9 @@ h1 {
   /* Set 1 unit of vertical rhythm on the top and bottom margins. */
   margin-top: 0.26471em;
   margin-bottom: 0.26471em;
-  margin: 0px;
 }
 h1.page-title {
-  margin-top: 0;
+  margin-bottom: 1.38462em;
 }
 
 h2, #block-views-slideshow-block .views-field-title .field-content {
@@ -251,7 +250,6 @@ h2, #block-views-slideshow-block .views-field-title .field-content {
   line-height: 0.7563em;
   margin-top: 0.37815em;
   margin-bottom: 0.37815em;
-  margin: 0px;
 }
 
 h3 {
@@ -653,14 +651,12 @@ body.large-fonts h1 {
   /* Set 1 unit of vertical rhythm on the top and bottom margins. */
   margin-top: 0.26471em;
   margin-bottom: 0.26471em;
-  margin: 0px;
 }
 body.large-fonts h2, body.large-fonts #block-views-slideshow-block .views-field-title .field-content, #block-views-slideshow-block .views-field-title body.large-fonts .field-content {
   font-size: 1.4875em;
   line-height: 0.7563em;
   margin-top: 0.37815em;
   margin-bottom: 0.37815em;
-  margin: 0px;
 }
 body.large-fonts h3 {
   font-size: 1.275em;

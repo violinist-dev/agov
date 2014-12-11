@@ -233,14 +233,12 @@ h1, h2 {
   /* Set 1 unit of vertical rhythm on the top and bottom margins. */
   @include leader($heading_padding, $h1-font-size);
   @include trailer($heading_padding, $h1-font-size);
-  margin: 0px;
 }
 
 @mixin h2() {
   @include adjust-font-size-to( $h2-font-size, $heading_leading );
   @include leader($heading_padding, $h2-font-size);
   @include trailer($heading_padding, $h2-font-size);
-  margin: 0px;
 }
 
 @mixin h3() {
@@ -279,7 +277,7 @@ h1 {
   @include h1;
 
   &.page-title {
-    margin-top: 0;
+    margin-bottom: rhythm(1);
   }
 }
 
