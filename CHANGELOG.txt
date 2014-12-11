@@ -3,6 +3,7 @@ aGov Changelog
 
 7.x-1.6
 =======
+- SA-CONTRIB-2014-119 - Google Analytics - Information disclosure
 - SA-CORE-2014-006- Drupal Core - Moderately Critical - Multiple Vulnerabilities
 - Scheduler has been updated
 - Fixed a regression where headings lost margins
