@@ -45,6 +45,7 @@ dependencies[] = update
 
 ; Contrib
 
+dependencies[] = accessible_forms
 dependencies[] = agls
 dependencies[] = admin_views
 dependencies[] = bean
