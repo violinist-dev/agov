@@ -132,6 +132,9 @@ projects[wysiwyg][version] = "2.2"
 projects[wysiwyg_filter][version] = "1.6-rc2"
 projects[xmlsitemap][version] = "2.0-rc2"
 
+; aGov
+projects[agov_register][version] = "1.0-alpha1"
+
 ; Themes
 projects[zen][version] = "5.5"
 projects[shiny][version] = "1.6"
