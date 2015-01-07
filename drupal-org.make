@@ -18,7 +18,7 @@ projects[ccl][version] = "1.5"
 projects[chosen][version] = 2.0-alpha2
 projects[chosen][patch][] = http://drupal.org/files/2021639-pin-chosen-26.patch
 
-projects[context][version] = "3.2"
+projects[context][version] = "3.6"
 
 projects[ctools][version] = "1.4"
 
