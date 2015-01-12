@@ -3,6 +3,7 @@ core = 7.x
 package = aGov Dynamic Content
 dependencies[] = agov_arrangements
 dependencies[] = agov_paragraphs
+dependendies[] = agov_styles
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = list
