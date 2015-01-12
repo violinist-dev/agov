@@ -47,13 +47,6 @@ function agov_paragraphs_widget_view_modes() {
 }
 
 /**
- * Implements hook_form_alter().
- */
-function agov_paragraphs_form_alter(&$form, &$form_state, $form_id) {
-  dpm($form_id);
-}
-
-/**
  * Implements hook_entity_view().
  */
 function agov_paragraphs_entity_view($entity, $type, $view_mode, $langcode) {
