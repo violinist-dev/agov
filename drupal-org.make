@@ -25,6 +25,7 @@ projects[defaultcontent][patch][] = "https://drupal.org/files/1611928-fix-alt.pa
 projects[defaultcontent][patch][] = "https://drupal.org/files/1757782-cannot-import-menu-hierarchy-8.patch"
 projects[defaultcontent][patch][] = "https://drupal.org/files/1896232-defaultcontent-nid.patch"
 projects[defaultcontent][version] = "2.x-dev"
+projects[diff][version] = "3.2"
 projects[draggableviews][version] = "2.0"
 projects[ds][version] = "2.6"
 projects[eck][version] = "2.0-rc5"
