@@ -141,7 +141,7 @@ class ClassController {
       $arrangements = entity_load('arrangement', array($entity->field_pbundle_container_layout[$langcode][0]['target_id']));
       $arrangement = reset($arrangements);
 
-      $layout_class = 'paragraphs-layout__' . drupal_html_class($arrangement->field_machine_name[$langcode][0]['value']);
+      $layout_class = 'layout__' . drupal_html_class($arrangement->field_machine_name[$langcode][0]['value']);
 
       // Any other usage should apply to the root element. This may not work
       // in any given case, since the element children may not be the right

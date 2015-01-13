@@ -1,0 +1,38 @@
+@mixin layout-tile {
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+
+  @include bp-nq($medium) {
+
+    padding: rhythm(0.5);
+    margin-left: rhythm(0.5);
+    margin-right: rhythm(0.5);
+    margin-bottom: rhythm(0.5);
+
+    &:first-child {
+      margin-left: 0;
+      padding-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@mixin layout-tile__medium {
+
+  @include bp-nq($medium) {
+    margin-top: rhythm(0.5);
+    margin-bottom: rhythm(0.5);
+    width: 47.8%;
+
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+    &:nth-child(3) {
+      margin-left: 0;
+    }
+  }
+}

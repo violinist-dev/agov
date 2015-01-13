@@ -1,0 +1,61 @@
+
+
+
+// Base paragraph item styles.
+.entity-paragraphs-item {
+
+  float: left;
+  clear: left;
+  width: 100%;
+  padding-bottom: rhythm(0.5);
+
+  h1, h2, h3, h4, h5, h6 {
+    @include paragraph__title-reset();
+  }
+
+  .field {
+    // Paragraphs add extra whitespace by virtue of nesting fields, so we reduce
+    // the total margin burden.
+    margin-top: rhythm(0.1);
+    margin-bottom: rhythm(0.1);
+    float: left;
+    clear: left;
+    width: 100%;
+  }
+}
+
+.field-type-paragraphs {
+  margin: 0;
+}
+
+// Paragraph tile styles.
+.paragraphs-item_view-mode_tile-text,
+.paragraphs-item_view-mode_tile-image {
+  @include layout-tile;
+}
+
+// Paragraph teaser styles.
+.paragraphs-item_view-mode_teaser,
+.paragraphs-item_view-mode_teaser-title,
+.paragraphs-item_view-mode_teaser-image {
+
+  clear: both;
+  @include clearfix();
+
+  @include bp-nq($medium) {
+    .field {
+      float:left;
+      box-sizing: border-box;
+    }
+    .field-name-field-pbundle-title {
+      float: none;
+    }
+    .field-name-field-pbundle-image {
+      @include field-image-left-float;
+    }
+    .field-name-field-pbundle-text {
+      @include field-text-right-float;
+    }
+  }
+}
+

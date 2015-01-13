@@ -1,0 +1,89 @@
+.layout__tiles-2 {
+  > .field > .field-items > .field-item {
+
+    @include layout-tile();
+    @include layout-tile__medium();
+  }
+
+  &.field-type-viewfield {
+    .views-row {
+      @include layout-tile();
+      @include layout-tile__medium();
+    }
+  }
+}
+
+%layout__tiles-3 {
+  @include layout-tile();
+  @include layout-tile__medium();
+
+  @include bp-nq($large) {
+
+    width: 31.3%;
+
+    &:nth-child(2) {
+      margin-right: rhythm(0.5);
+    }
+    &:nth-child(3) {
+      margin-left: rhythm(0.5);
+    }
+
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+    &:nth-child(4) {
+      margin-left: 0;
+    }
+  }
+}
+
+.layout__tiles-3 {
+  > .field > .field-items > .field-item {
+    @extend %layout__tiles-3;
+  }
+
+  &.field-type-viewfield {
+    .views-row {
+      @extend %layout__tiles-3;
+    }
+  }
+}
+
+%layout__tiles-4 {
+  @include layout-tile();
+  @include layout-tile__medium();
+
+  @include bp-nq($large) {
+
+    width: 24%;
+
+    &:nth-child(2) {
+      margin-right: rhythm(0.5);
+    }
+    &:nth-child(3) {
+      margin-left: rhythm(0.5);
+    }
+
+    &:nth-child(4) {
+      margin-right: 0;
+    }
+    &:nth-child(5) {
+      margin-left: 0;
+    }
+  }
+}
+
+.layout__tiles-4 {
+  > .field > .field-items > .field-item {
+    @extend %layout__tiles-4;
+  }
+  &.field-type-viewfield {
+    .view-content {
+      width: 100%;
+      clear: left;
+    }
+    .views-row {
+      @extend %layout__tiles-4;
+    }
+  }
+}
