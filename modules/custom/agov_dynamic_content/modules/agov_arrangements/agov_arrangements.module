@@ -30,7 +30,7 @@ function _agov_arrangements_default_arrangements() {
     'tiles_4' => array(
       'title' => 'Tiled (4 across)',
     ),
-    'tiles5' => array(
+    'tiles_5' => array(
       'title' => 'Tiled (5 across)',
     ),
   );
