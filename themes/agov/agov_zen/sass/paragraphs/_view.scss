@@ -7,20 +7,20 @@
 
 .field-type-viewfield {
 
-  &.layout__tiles-2 {
+  &.paragraphs-layout__tiles-2 {
     .views-row {
-      @include layout-tile();
-      @include layout-tile__medium();
+      @include paragraph__tile();
+      @include paragraph__tile-medium();
     }
   }
 
-  &.layout__tiles-3 {
+  &.paragraphs-layout__tiles-3 {
     .views-row {
       @extend %paragraphs-layout__tiles-3;
     }
   }
 
-  &.layout__tiles-4 {
+  &.paragraphs-layout__tiles-4 {
     .views-row {
       @extend %paragraphs-layout__tiles-4;
     }
