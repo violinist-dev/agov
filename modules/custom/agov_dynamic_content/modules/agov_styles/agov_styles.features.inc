@@ -9,8 +9,8 @@
  */
 function agov_styles_eck_bundle_info() {
   $items = array(
-    'paragraph_style_style' => array(
-      'machine_name' => 'paragraph_style_style',
+    'paragraph_style_paragraph_style' => array(
+      'machine_name' => 'paragraph_style_paragraph_style',
       'entity_type' => 'paragraph_style',
       'name' => 'paragraph_style',
       'label' => 'Style',

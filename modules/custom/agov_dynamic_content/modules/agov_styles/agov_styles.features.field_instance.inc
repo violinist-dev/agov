@@ -10,8 +10,8 @@
 function agov_styles_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'style-style-field_style_classes'
-  $field_instances['style-style-field_style_classes'] = array(
+  // Exported field_instance: 'paragraph_style-paragraph_style-field_style_classes'
+  $field_instances['paragraph_style-paragraph_style-field_style_classes'] = array(
     'bundle' => 'paragraph_style',
     'default_value' => NULL,
     'deleted' => 0,
