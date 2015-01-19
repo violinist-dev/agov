@@ -30,7 +30,7 @@ class HookEntityView {
    *
    * @static
    * @return static
-   *   This.
+   *   Returns an instance of HookEntityView
    */
   static public function init() {
 
@@ -92,8 +92,7 @@ class HookEntityView {
             continue;
           }
 
-          if (isset($entity->content[$content_row_id]['entity']['paragraphs_item'][$paragraphs_index['value']]) && $entity->content[$content_row_id]['entity']['paragraphs_item'][$paragraphs_index['value']]['#bundle'] == 'entity_content'
-          ) {
+          if (isset($entity->content[$content_row_id]['entity']['paragraphs_item'][$paragraphs_index['value']]) && $entity->content[$content_row_id]['entity']['paragraphs_item'][$paragraphs_index['value']]['#bundle'] == 'entity_content') {
             $entity->content[$content_row_id]['entity']['paragraphs_item'][$paragraphs_index['value']]['content'] = $this->contentBuffer;
           }
         }
