@@ -273,10 +273,10 @@ function agov_paragraphs_field_default_field_bases() {
           'type' => 'property',
         ),
         'target_bundles' => array(
-          'style' => 'style',
+          'paragraph_style' => 'paragraph_style',
         ),
       ),
-      'target_type' => 'style',
+      'target_type' => 'paragraph_style',
     ),
     'translatable' => 0,
     'type' => 'entityreference',

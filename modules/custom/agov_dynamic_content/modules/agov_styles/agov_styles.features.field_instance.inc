@@ -12,7 +12,7 @@ function agov_styles_field_default_field_instances() {
 
   // Exported field_instance: 'style-style-field_style_classes'
   $field_instances['style-style-field_style_classes'] = array(
-    'bundle' => 'style',
+    'bundle' => 'paragraph_style',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'A list of classes to add to the item.',
@@ -31,7 +31,7 @@ function agov_styles_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
-    'entity_type' => 'style',
+    'entity_type' => 'paragraph_style',
     'field_name' => 'field_style_classes',
     'label' => 'Classes',
     'required' => 0,
