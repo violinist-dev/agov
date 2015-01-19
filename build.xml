@@ -97,7 +97,7 @@
   </target>
 
   <target name="validate:phpmd" description="Find code complexity issues">
-    <exec command="bin/phpmd ${src.custom.modules} text phpmd.xml --exclude '*views*'" logoutput="true" passthru="true" checkreturn="true" />
+    <exec command="bin/phpmd ${src.custom.modules} text phpmd.xml --exclude '*views*,*features*,*strongarm*,*field_group*'" logoutput="true" passthru="true" checkreturn="true" />
     <exec command="bin/phpmd ${src.custom.themes} text phpmd.xml --exclude '*views*'" logoutput="true" passthru="true" checkreturn="true" />
   </target>
 
