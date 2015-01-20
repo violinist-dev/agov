@@ -4,7 +4,7 @@ I pull my makefile bases into /var/aegir/makefiles as a place to store them. Thi
 
 I run drush5 as an alternative version on my hostmaster, although Aegir D6 prefers to be locked to Drush 4. I found that the drush5 build worked better, drush4 didn't recognize install profiles right. I have both available, drush (5) and drush5
 
-RUNNING AS aegir USER! This in infinitely important.
+RUNNING AS aegir USER! This is infinitely important.
 
 ```
 cd /var/aegir/makefiles
