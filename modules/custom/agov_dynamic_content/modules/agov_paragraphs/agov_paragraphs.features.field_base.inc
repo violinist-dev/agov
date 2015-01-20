@@ -55,14 +55,7 @@ function agov_paragraphs_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_pbundle_container_layout',
-    'foreign keys' => array(
-      'eck_arrangement' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_arrangement',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -244,14 +237,7 @@ function agov_paragraphs_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_pbundle_style',
-    'foreign keys' => array(
-      'eck_style' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_style',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
