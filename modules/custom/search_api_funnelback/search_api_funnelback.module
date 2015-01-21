@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_search_api_service_info().
+ */
+function search_api_funnelback_search_api_service_info() {
+  $services['search_api_funnelback_service'] = array(
+    'name' => t('Funnelback service'),
+    'description' => t('Funnelback search service.'),
+    'class' => 'SearchApiFunnelbackService',
+  );
+  return $services;
+}
