@@ -267,15 +267,32 @@ function agov_mini_site_node_update($node) {
  */
 function agov_mini_site_node_delete($node) {
   if ($node->type === 'mini_site') {
+    // Remove revision symlinks.
     $path = _agov_mini_site_get_path();
     $node_path = $path . '/revisions/' . $node->nid;
     _agov_mini_site_rrmdir($node_path);
+
     // Delete publish link
     $fid = $node->field_minisite_archive_file[LANGUAGE_NONE][0]['fid'];
     $file = file_load($fid);
     $minisite_name = $file->field_minisite_name[LANGUAGE_NONE][0]['value'];
     $publish_path = $path . '/' . $minisite_name;
     @unlink($publish_path);
+
+    // Force delete the associated managed files. The files should not be used
+    // by any other modules but due to what I believe is a bug the usage counts
+    // are incorrect, so this works around that problem.
+    $fids = db_select('field_revision_field_minisite_archive_file', 'f')
+      ->fields('f', array('field_minisite_archive_file_fid'))
+      ->condition('entity_type', 'node')
+      ->condition('bundle', 'mini_site')
+      ->condition('entity_id', $node->nid)
+      ->execute()
+      ->fetchCol();
+    $files = entity_load('file', $fids);
+    foreach ($files as $file) {
+      file_delete($file, TRUE);
+    }
   }
 }
 
