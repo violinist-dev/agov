@@ -216,7 +216,7 @@ function agov_mini_site_node_postsave($node, $vid, $moderation_state) {
       ->fields('h', array('vid'))
       ->condition('nid', $node->nid)
       ->condition('published', FALSE)
-      ->condition('state', 'published')
+      ->condition('state', workbench_moderation_state_published())
       ->execute()
       ->fetchField();
     if ($old_vid) {
