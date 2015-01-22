@@ -194,23 +194,41 @@ function agov_mini_site_node_postsave($node, $vid, $moderation_state) {
   $revision_path = $node_path . '/' . $vid;
   $target = '../../extract/' . $fid;
   if (!file_exists($node_path)) {
-    mkdir($node_path);
+    mkdir($node_path, 0777, TRUE);
   }
   if (file_exists($revision_path)) {
     unlink($revision_path);
   }
   symlink($target, $revision_path);
   if ($moderation_state === workbench_moderation_state_published()) {
+    // Create a shorten symlink for published version.
     $publish_path = _agov_mini_site_get_path() . '/' . $minisite_name;
     @unlink($publish_path);
     $target = 'extract/' . $fid . '/' . $minisite_name;
     symlink($target, $publish_path);
+
+    // Use the short URL version for publish version.
     $node->field_link_to[LANGUAGE_NONE][0]['url'] = $publish_path . '/index.html';
+
+    // Update previous publish revision to use its revision URL instead of
+    // the short URL.
+    $old_vid = db_select('workbench_moderation_node_history', 'h')
+      ->fields('h', array('vid'))
+      ->condition('nid', $node->nid)
+      ->condition('published', FALSE)
+      ->condition('state', 'published')
+      ->execute()
+      ->fetchField();
+    if ($old_vid) {
+      $old_node = node_load($node->nid, $old_vid);
+      $revision_path = $node_path . '/' . $old_node->vid;
+      $old_node->field_link_to[LANGUAGE_NONE][0]['url'] = $revision_path . '/' . $minisite_name . '/index.html';
+      field_attach_update('node', $old_node);
+    }
   }
   else {
-    $node_path =  _agov_mini_site_get_path() . '/revisions/' . $node->nid;
-    $revision_path = $node_path . '/' . $node->vid;
     $node->field_link_to[LANGUAGE_NONE][0]['url'] = $revision_path . '/' . $minisite_name . '/index.html';
+
     // If no published revision, remove symlink.
     if (isset($node->workbench_moderation) && empty($node->workbench_moderation['published'])) {
       $publish_path = _agov_mini_site_get_path() . '/' . $minisite_name;
