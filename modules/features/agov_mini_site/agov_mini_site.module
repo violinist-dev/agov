@@ -1,0 +1,286 @@
+<?php
+/**
+ * @file
+ * Code for the Mini-site feature.
+ */
+
+include_once 'agov_mini_site.features.inc';
+
+/**
+ * Convert a file listing into tree structure.
+ *
+ * @param array $listing
+ *   List of files in the archive.
+ *
+ * @return array
+ *   Nest array of file listing.
+ */
+function _agov_mini_site_directory_tree($listing) {
+  $tree = array();
+  foreach ($listing as $file_path) {
+    $parts = explode('/', $file_path);
+    // Files in archive end in / if a directory.
+    if (substr($file_path, -1) === '/') {
+      $parts = array_slice($parts, 0, -1);
+      drupal_array_set_nested_value($tree, $parts, array('.' => $file_path));
+    }
+    else {
+      drupal_array_set_nested_value($tree, $parts, $file_path);
+    }
+  }
+  return $tree;
+}
+
+/**
+ * Recursively delete a directory.
+ *
+ * @param string $directory
+ *   The directory path.
+ */
+function _agov_mini_site_rrmdir($directory) {
+  if (!is_dir($directory)) {
+    return;
+  }
+  foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory, FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST) as $path) {
+    $path->isDir() && !$path->isLink() ? rmdir($path->getPathname()) : unlink($path->getPathname());
+  }
+  rmdir($directory);
+}
+
+/**
+ * Get the directory path where mini-sites are stored.
+ *
+ * @return string
+ *   The directory path to extract to.
+ */
+function _agov_mini_site_get_path() {
+  $public_path = variable_get('file_public_path', conf_path() . '/files');
+  $file_path = variable_get('agov_mini_site_file_path', $public_path . '/minisites');
+  return $file_path;
+}
+
+/**
+ * Open archive file.
+ *
+ * @param stdClass $file
+ *   The file entity.
+ *
+ * @return ArchiverInterface|FALSE
+ *   The archive. Or FALSE if unable to open the archive.
+ */
+function _agov_mini_site_open_archive($file) {
+  $file_path = drupal_realpath($file->uri);
+  try {
+    if ($file->filemime === 'application/zip') {
+      $archiver = new ArchiverZip($file_path);
+    }
+    else {
+      $archiver = new ArchiverTar($file_path);
+    }
+    // Check archive is valid by listing contents.
+    $archiver->listContents();
+  }
+  catch (\Exception $e) {
+    return FALSE;
+  }
+  return $archiver;
+}
+
+/**
+ * Validate a mini-site file.
+ *
+ * @param stdClass $file
+ *   The mini site archive file.
+ * @param bool $overwrite
+ *   Whether to overwrite an existing mini-site.
+ *
+ * @return array
+ *   An array. If the file is not a valid mini-site, it will contain an error
+ *   message.
+ */
+function agov_mini_sites_file_validate(stdClass $file, $overwrite = FALSE) {
+  $errors = array();
+  $archiver = _agov_mini_site_open_archive($file);
+  if (!$archiver) {
+    $errors[] = t('Unable to open mini-site archive.');
+    return $errors;
+  }
+  $files = $archiver->listContents();
+  $tree = _agov_mini_site_directory_tree($files);
+  // Check mini-site is in folder.
+  $root_files = array_keys($tree);
+  if (count($root_files) !== 1 || !is_array($tree[$root_files[0]])) {
+    $errors[] = t('Mini-site must have a single top level directory.');
+  }
+  // Check mini-site has an index file.
+  $top_folder = $root_files[0];
+  $file->type = 'mini_site_archive';
+  $file->field_minisite_name = array(LANGUAGE_NONE => array(array('value' => $top_folder)));
+  $top_level = $tree[$top_folder];
+  //$index_files = array_intersect(array_keys($top_level), array('index.html', 'index.htm'));
+  //if (empty($index_files)) {
+  if (!array_key_exists('index.html', $top_level)) {
+    $errors[] = t('Mini-site must contain a index.html file.');
+  }
+  // Check only allowed extensions are used.
+  $allowed_extensions = variable_get('agov_mini_sites_allowed_extensions', array('html', 'css', 'js', 'png', 'gif', 'jpg'));
+  $invalid_files = array();
+  foreach ($files as $file_name) {
+    $path_info = pathinfo($file_name);
+    if (isset($path_info['extension']) && !in_array($path_info['extension'], $allowed_extensions)) {
+      $invalid_files[] = $file_name;
+    }
+  }
+  if (!empty($invalid_files)) {
+    $errors[] = t('Mini-site contains files with invalid extensions: %files. Only files with the following extensions are allowed: %allowed-extensions', array(
+      '%allowed-extensions' => implode(' ', $allowed_extensions),
+      '%files' => implode(' ', $invalid_files),
+    ));
+  }
+  // Check mini-site does not already exist.
+  if (!$overwrite) {
+    $existing_names = db_select('field_data_field_minisite_name', 'f')->fields('f', array('field_minisite_name_value'))->execute()->fetchCol();
+    if (in_array($top_folder, $existing_names)) {
+      $errors[] = t('Mini-site named %folder already exists.', array('%folder' => $top_folder));
+    }
+  }
+  return $errors;
+}
+
+/**
+ * Implements hook_file_presave().
+ */
+function agov_mini_site_file_presave($file) {
+  if ($file->status && $file->type === 'mini_site_archive') {
+    // Extract contents of mini-site.
+    $extract_path = _agov_mini_site_get_path() . '/extract/' . $file->fid;
+    $archive = _agov_mini_site_open_archive($file);
+    if ($archive) {
+      _agov_mini_site_rrmdir($extract_path);
+      $archive->extract($extract_path);
+    }
+  }
+}
+
+/**
+ * Implements hook_file_delete().
+ */
+function agov_mini_site_file_delete($file) {
+  if ($file->type === 'mini_site_archive') {
+    $extract_path = _agov_mini_site_get_path() . '/extract/' . $file->fid;
+    _agov_mini_site_rrmdir($extract_path);
+  }
+}
+
+/**
+ * Perform actions for after mini-site node is saved.
+ *
+ * @param stdClass $node
+ *   The mini-site node.
+ * @param $vid
+ *   The version of the node.
+ * @param $moderation_state
+ *   Moderation state of the node.
+ */
+function agov_mini_site_node_postsave($node, $vid, $moderation_state) {
+  $fid = $node->field_minisite_archive_file[LANGUAGE_NONE][0]['fid'];
+  $file = file_load($fid);
+  $minisite_name = $file->field_minisite_name[LANGUAGE_NONE][0]['value'];
+  $node_path =  _agov_mini_site_get_path() . '/revisions/' . $node->nid;
+  $revision_path = $node_path . '/' . $vid;
+  $target = '../../extract/' . $fid;
+  if (!file_exists($node_path)) {
+    mkdir($node_path);
+  }
+  if (file_exists($revision_path)) {
+    unlink($revision_path);
+  }
+  symlink($target, $revision_path);
+  if ($moderation_state === workbench_moderation_state_published()) {
+    $publish_path = _agov_mini_site_get_path() . '/' . $minisite_name;
+    @unlink($publish_path);
+    $target = 'extract/' . $fid . '/' . $minisite_name;
+    symlink($target, $publish_path);
+    $node->field_link_to[LANGUAGE_NONE][0]['url'] = $publish_path . '/index.html';
+  }
+  else {
+    $node_path =  _agov_mini_site_get_path() . '/revisions/' . $node->nid;
+    $revision_path = $node_path . '/' . $node->vid;
+    $node->field_link_to[LANGUAGE_NONE][0]['url'] = $revision_path . '/' . $minisite_name . '/index.html';
+    // If no published revision, remove symlink.
+    if (isset($node->workbench_moderation) && empty($node->workbench_moderation['published'])) {
+      $publish_path = _agov_mini_site_get_path() . '/' . $minisite_name;
+      @unlink($publish_path);
+    }
+  }
+  field_attach_update('node', $node);
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function agov_mini_site_node_insert($node) {
+  if ($node->type === 'mini_site') {
+    agov_mini_site_node_postsave($node, $node->vid, $node->workbench_moderation_state_new);
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function agov_mini_site_node_update($node) {
+  if ($node->type === 'mini_site') {
+    if (isset($node->workbench_moderation_state_new)) {
+      agov_mini_site_node_postsave($node, $node->vid, $node->workbench_moderation_state_new);
+    }
+    else {
+      $moderation = $node->workbench_moderation['my_revision'];
+      agov_mini_site_node_postsave($node, $moderation->vid, $moderation->state);
+    }
+  }
+}
+
+/**
+ * Implements hook_node_delete().
+ */
+function agov_mini_site_node_delete($node) {
+  if ($node->type === 'mini_site') {
+    $path = _agov_mini_site_get_path();
+    $node_path = $path . '/revisions/' . $node->nid;
+    _agov_mini_site_rrmdir($node_path);
+    // Delete publish link
+    $fid = $node->field_minisite_archive_file[LANGUAGE_NONE][0]['fid'];
+    $file = file_load($fid);
+    $minisite_name = $file->field_minisite_name[LANGUAGE_NONE][0]['value'];
+    $publish_path = $path . '/' . $minisite_name;
+    @unlink($publish_path);
+  }
+}
+
+/**
+ * Implements hook_node_revision_delete().
+ */
+function agov_mini_site_node_revision_delete($node) {
+  if ($node->type === 'mini_site') {
+    $extract_path = _agov_mini_site_get_path();
+    $node_path = $extract_path . '/revisions/' . $node->nid;
+    $revision_path = $node_path . '/' . $node->vid;
+    unlink($revision_path);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function agov_mini_site_form_mini_site_node_form_alter(&$form, &$form_state, $form_id) {
+  $node = $form['#node'];
+  $form['field_minisite_archive_file'][LANGUAGE_NONE][0]['#upload_validators']['agov_mini_sites_file_validate'] = array(isset($node->nid));
+  unset($form['field_link_to']);
+  // Clear file upload field for new draft.
+  if (isset($node->workbench_moderation)) {
+    $state = $node->workbench_moderation;
+    if (!empty($state['published']) && $state['published']->vid == $state['current']->vid) {
+      unset($form['field_minisite_archive_file'][LANGUAGE_NONE][0]['#default_value']);
+    }
+  }
+}
