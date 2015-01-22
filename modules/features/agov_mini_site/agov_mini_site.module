@@ -91,14 +91,14 @@ function _agov_mini_site_open_archive($file) {
  *
  * @param stdClass $file
  *   The mini site archive file.
- * @param bool $overwrite
- *   Whether to overwrite an existing mini-site.
+ * @param string $minisite_name
+ *   The existing minisite name if creating revision.
  *
  * @return array
  *   An array. If the file is not a valid mini-site, it will contain an error
  *   message.
  */
-function agov_mini_sites_file_validate(stdClass $file, $overwrite = FALSE) {
+function agov_mini_sites_file_validate(stdClass $file, $minisite_name = NULL) {
   $errors = array();
   $archiver = _agov_mini_site_open_archive($file);
   if (!$archiver) {
@@ -117,8 +117,6 @@ function agov_mini_sites_file_validate(stdClass $file, $overwrite = FALSE) {
   $file->type = 'mini_site_archive';
   $file->field_minisite_name = array(LANGUAGE_NONE => array(array('value' => $top_folder)));
   $top_level = $tree[$top_folder];
-  //$index_files = array_intersect(array_keys($top_level), array('index.html', 'index.htm'));
-  //if (empty($index_files)) {
   if (!array_key_exists('index.html', $top_level)) {
     $errors[] = t('Mini-site must contain a index.html file.');
   }
@@ -137,8 +135,14 @@ function agov_mini_sites_file_validate(stdClass $file, $overwrite = FALSE) {
       '%files' => implode(' ', $invalid_files),
     ));
   }
-  // Check mini-site does not already exist.
-  if (!$overwrite) {
+  if ($minisite_name) {
+    // Check mini-site matches name of earlier revision.
+    if ($top_folder !== $minisite_name) {
+      $errors[] = t('Mini-site revision must have top level folder: %folder', array('%folder' => $minisite_name));
+    }
+  }
+  else {
+    // Check mini-site does not already exist.
     $existing_names = db_select('field_data_field_minisite_name', 'f')->fields('f', array('field_minisite_name_value'))->execute()->fetchCol();
     if (in_array($top_folder, $existing_names)) {
       $errors[] = t('Mini-site named %folder already exists.', array('%folder' => $top_folder));
@@ -274,7 +278,14 @@ function agov_mini_site_node_revision_delete($node) {
  */
 function agov_mini_site_form_mini_site_node_form_alter(&$form, &$form_state, $form_id) {
   $node = $form['#node'];
-  $form['field_minisite_archive_file'][LANGUAGE_NONE][0]['#upload_validators']['agov_mini_sites_file_validate'] = array(isset($node->nid));
+  $minisite_name = NULL;
+  if (isset($node->field_minisite_archive_file[LANGUAGE_NONE][0])) {
+    $file_field = $node->field_minisite_archive_file[LANGUAGE_NONE][0];
+    if (isset($file_field['field_minisite_name'][LANGUAGE_NONE][0])) {
+      $minisite_name = $file_field['field_minisite_name'][LANGUAGE_NONE][0]['value'];
+    }
+  }
+  $form['field_minisite_archive_file'][LANGUAGE_NONE][0]['#upload_validators']['agov_mini_sites_file_validate'] = array($minisite_name);
   unset($form['field_link_to']);
   // Clear file upload field for new draft.
   if (isset($node->workbench_moderation)) {
