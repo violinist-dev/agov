@@ -9,10 +9,10 @@
  */
 function agov_styles_eck_bundle_info() {
   $items = array(
-    'style_style' => array(
-      'machine_name' => 'style_style',
-      'entity_type' => 'style',
-      'name' => 'style',
+    'paragraph_style_paragraph_style' => array(
+      'machine_name' => 'paragraph_style_paragraph_style',
+      'entity_type' => 'paragraph_style',
+      'name' => 'paragraph_style',
       'label' => 'Style',
     ),
   );
@@ -24,8 +24,8 @@ function agov_styles_eck_bundle_info() {
  */
 function agov_styles_eck_entity_type_info() {
   $items = array(
-    'style' => array(
-      'name' => 'style',
+    'paragraph_style' => array(
+      'name' => 'paragraph_style',
       'label' => 'Style',
       'properties' => array(
         'human_readable_name' => array(
