@@ -2,7 +2,6 @@ name = FAQ
 description = Frequently Asked Questions
 core = 7.x
 package = aGov
-version = 7.x-1.0
 project = agov_faq
 dependencies[] = agov_common_fields
 dependencies[] = ctools
