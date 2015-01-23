@@ -826,6 +826,7 @@ function _agov_default_variables() {
         'up_edit' => 1,
       ),
     ),
+    'site_403' => 'm4032404',
   );
 
   // Enable xmlsitemap includes for content types.
