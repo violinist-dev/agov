@@ -41,7 +41,8 @@ function _agov_mini_site_rrmdir($directory) {
   if (!is_dir($directory)) {
     return;
   }
-  foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory, FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST) as $path) {
+  $file_iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory, FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST);
+  foreach ($file_iterator as $path) {
     $path->isDir() && !$path->isLink() ? rmdir($path->getPathname()) : unlink($path->getPathname());
   }
   rmdir($directory);
@@ -121,7 +122,8 @@ function agov_mini_sites_file_validate(stdClass $file, $minisite_name = NULL) {
     $errors[] = t('Mini-site must contain a index.html file.');
   }
   // Check only allowed extensions are used.
-  $allowed_extensions = variable_get('agov_mini_sites_allowed_extensions', array('html', 'css', 'js', 'png', 'gif', 'jpg'));
+  $default_allowed_extensions = array('html', 'css', 'js', 'png', 'gif', 'jpg');
+  $allowed_extensions = variable_get('agov_mini_sites_allowed_extensions', $default_allowed_extensions);
   $invalid_files = array();
   foreach ($files as $file_name) {
     $path_info = pathinfo($file_name);
@@ -179,18 +181,18 @@ function agov_mini_site_file_delete($file) {
 /**
  * Perform actions for after mini-site node is saved.
  *
- * @param stdClass $node
+ * @param object $node
  *   The mini-site node.
- * @param $vid
+ * @param int $vid
  *   The version of the node.
- * @param $moderation_state
+ * @param string $moderation_state
  *   Moderation state of the node.
  */
 function agov_mini_site_node_postsave($node, $vid, $moderation_state) {
   $fid = $node->field_minisite_archive_file[LANGUAGE_NONE][0]['fid'];
   $file = file_load($fid);
   $minisite_name = $file->field_minisite_name[LANGUAGE_NONE][0]['value'];
-  $node_path =  _agov_mini_site_get_path() . '/revisions/' . $node->nid;
+  $node_path = _agov_mini_site_get_path() . '/revisions/' . $node->nid;
   $revision_path = $node_path . '/' . $vid;
   $target = '../../extract/' . $fid;
   if (!file_exists($node_path)) {
@@ -272,7 +274,7 @@ function agov_mini_site_node_delete($node) {
     $node_path = $path . '/revisions/' . $node->nid;
     _agov_mini_site_rrmdir($node_path);
 
-    // Delete publish link
+    // Delete publish link.
     $fid = $node->field_minisite_archive_file[LANGUAGE_NONE][0]['fid'];
     $file = file_load($fid);
     $minisite_name = $file->field_minisite_name[LANGUAGE_NONE][0]['value'];
