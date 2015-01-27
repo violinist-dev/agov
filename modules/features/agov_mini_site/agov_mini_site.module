@@ -112,6 +112,7 @@ function agov_mini_sites_file_validate(stdClass $file, $minisite_name = NULL) {
   $root_files = array_keys($tree);
   if (count($root_files) !== 1 || !is_array($tree[$root_files[0]])) {
     $errors[] = t('Mini-site must have a single top level directory.');
+    return $errors;
   }
   // Check mini-site has an index file.
   $top_folder = $root_files[0];
