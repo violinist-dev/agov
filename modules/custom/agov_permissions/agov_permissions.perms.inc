@@ -12,7 +12,7 @@
 /**
  * Return base agov permissions.
  *
- * PHPMD things this function is too long...
+ * PHPMD thinks this function is too long...
  * @SuppressWarnings(PHPMD)
  *
  * @return array
@@ -67,6 +67,12 @@ function agov_permissions_base_permissions() {
           0 => 'administrator',
           1 => 'Site editor',
           2 => 'Site builder',
+        ),
+      ),
+      'administer modules' => array(
+        'roles' => array(
+          0 => 'administrator',
+          1 => 'Site editor',
         ),
       ),
     ),
@@ -1019,6 +1025,18 @@ function agov_permissions_base_permissions() {
           4 => 'Content editor',
           5 => 'authenticated user',
           6 => 'anonymous user',
+        ),
+      ),
+    ),
+    'module_whitelist' => array(
+      'bypass module whitelist' => array(
+        'roles' => array(
+          0 => 'administrator',
+        ),
+      ),
+      'administer module whitelist' => array(
+        'roles' => array(
+          0 => 'administrator',
         ),
       ),
     ),

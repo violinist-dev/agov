@@ -17,6 +17,10 @@ function module_whitelist_form_system_modules_alter(&$form, &$form_state) {
   if (user_access('bypass module whitelist')) {
     return;
   }
+  // Remove module whitelist from form.
+  if (isset($form['modules']['Administration']['module_whitelist'])) {
+    unset($form['modules']['Administration']['module_whitelist']);
+  }
   // Remove modules from form that are not whitelisted.
   $whitelist_modules = variable_get('module_whitelist', array());
   $whitelist_modules = array_flip($whitelist_modules);

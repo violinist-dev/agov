@@ -25,7 +25,7 @@ function module_whitelist_admin_settings() {
     }
   }
 
-  // Remove module whitelist form display list.
+  // Remove module whitelist from display list.
   unset($visible_files['module_whitelist']);
 
   // Create module listing.
