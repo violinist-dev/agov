@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * @file
+ * The main Module Whitelist module file.
+ *
+ * Module whitelist allows only whitelisted modules to be enabled/disabled
+ * unless the user has permission to bypass the whitelist.
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Only show whitelisted modules.
+ */
+function module_whitelist_form_system_modules_alter(&$form, &$form_state) {
+  if (user_access('bypass module whitelist')) {
+    return;
+  }
+  // Remove modules from form that are not whitelisted.
+  $whitelist_modules = variable_get('module_whitelist', array());
+  $whitelist_modules = array_flip($whitelist_modules);
+  foreach (element_children($form['modules']) as $package) {
+    foreach (element_children($form['modules'][$package]) as $module) {
+      if (!isset($whitelist_modules[$module])) {
+        unset($form['modules'][$package][$module]);
+      }
+    }
+    $modules = element_children($form['modules'][$package]);
+    if (empty($modules)) {
+      unset($form['modules'][$package]);
+    }
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function module_whitelist_permission() {
+  return array(
+    'bypass module whitelist' => array(
+      'title' => t('Bypass module whitelist'),
+      'description' => t('Bypass the whitelist filtering of which modules can be enabled/disabled.'),
+    ),
+    'administer module whitelist' => array(
+      'title' => t('Administer module whitelist'),
+      'description' => t('Configure modules that are whitelisted.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function module_whitelist_menu_alter(&$items) {
+  $items['admin/config/system/module-whitelist'] = array(
+    'title' => 'Module Whitelist',
+    'description' => 'Add/remove modules from whitelist.',
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('module_whitelist_admin_settings'),
+    'access arguments' => array('administer modules'),
+    'file' => drupal_get_path('module', 'module_whitelist') . '/module_whitelist.admin.inc',
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function module_whitelist_theme() {
+  return array(
+    'module_whitelist_fieldset' => array(
+      'render element' => 'form',
+      'file' => 'module_whitelist.admin.inc',
+    ),
+  );
+}
