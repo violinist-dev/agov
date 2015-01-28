@@ -22,6 +22,18 @@ function _agov_mini_site_get_path() {
 }
 
 /**
+ * Get the list of allowed file extensions for files in mini-site archive.
+ *
+ * @return array
+ *   Array of allowed extensions.
+ */
+function _agov_mini_site_allowed_extensions() {
+  $default_allowed_extensions = 'html css js png gif jpg';
+  $allowed_extensions = variable_get('agov_mini_site_allowed_extensions', $default_allowed_extensions);
+  return explode(' ', $allowed_extensions);
+}
+
+/**
  * Validate a mini-site file.
  *
  * @param stdClass $file
@@ -57,8 +69,7 @@ function agov_mini_sites_file_validate(stdClass $file, $minisite_name = NULL) {
     $errors[] = t('Mini-site must contain a index.html file.');
   }
   // Check only allowed extensions are used.
-  $default_allowed_extensions = array('html', 'css', 'js', 'png', 'gif', 'jpg');
-  $allowed_extensions = variable_get('agov_mini_sites_allowed_extensions', $default_allowed_extensions);
+  $allowed_extensions = _agov_mini_site_allowed_extensions();
   $invalid_files = FileUtil::checkExtensions($files, $allowed_extensions);
   if (!empty($invalid_files)) {
     $errors[] = t('Mini-site contains files with invalid extensions: %files. Only files with the following extensions are allowed: %allowed-extensions', array(
@@ -265,4 +276,31 @@ function agov_mini_site_form_mini_site_node_form_alter(&$form, &$form_state, $fo
       unset($form['field_minisite_archive_file'][LANGUAGE_NONE][0]['#default_value']);
     }
   }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function agov_mini_site_permission() {
+  return array(
+    'administer minisite' => array(
+      'title' => t('Administer mini-site module'),
+      'description' => t('Perform administration tasks for mini-site module.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function agov_mini_site_menu_alter(&$items) {
+  $items['admin/config/system/minisite'] = array(
+    'title' => 'aGov Mini-site',
+    'description' => 'Manage the settings of mini-sites module.',
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('minisite_admin_settings'),
+    'access arguments' => array('administer minisite'),
+    'file' => drupal_get_path('module', 'agov_mini_site') . '/agov_mini_site.admin.inc',
+  );
 }
