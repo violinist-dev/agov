@@ -6,47 +6,8 @@
 
 include_once 'agov_mini_site.features.inc';
 
-/**
- * Convert a file listing into tree structure.
- *
- * @param array $listing
- *   List of files in the archive.
- *
- * @return array
- *   Nest array of file listing.
- */
-function _agov_mini_site_directory_tree($listing) {
-  $tree = array();
-  foreach ($listing as $file_path) {
-    $parts = explode('/', $file_path);
-    // Files in archive end in / if a directory.
-    if (substr($file_path, -1) === '/') {
-      $parts = array_slice($parts, 0, -1);
-      drupal_array_set_nested_value($tree, $parts, array('.' => $file_path));
-    }
-    else {
-      drupal_array_set_nested_value($tree, $parts, $file_path);
-    }
-  }
-  return $tree;
-}
-
-/**
- * Recursively delete a directory.
- *
- * @param string $directory
- *   The directory path.
- */
-function _agov_mini_site_rrmdir($directory) {
-  if (!is_dir($directory)) {
-    return;
-  }
-  $file_iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory, FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST);
-  foreach ($file_iterator as $path) {
-    $path->isDir() && !$path->isLink() ? rmdir($path->getPathname()) : unlink($path->getPathname());
-  }
-  rmdir($directory);
-}
+use Drupal\agov_mini_site\Archive;
+use Drupal\agov_mini_site\FileUtil;
 
 /**
  * Get the directory path where mini-sites are stored.
@@ -58,33 +19,6 @@ function _agov_mini_site_get_path() {
   $public_path = variable_get('file_public_path', conf_path() . '/files');
   $file_path = variable_get('agov_mini_site_file_path', $public_path . '/minisites');
   return $file_path;
-}
-
-/**
- * Open archive file.
- *
- * @param stdClass $file
- *   The file entity.
- *
- * @return ArchiverInterface|FALSE
- *   The archive. Or FALSE if unable to open the archive.
- */
-function _agov_mini_site_open_archive($file) {
-  $file_path = drupal_realpath($file->uri);
-  try {
-    if ($file->filemime === 'application/zip') {
-      $archiver = new ArchiverZip($file_path);
-    }
-    else {
-      $archiver = new ArchiverTar($file_path);
-    }
-    // Check archive is valid by listing contents.
-    $archiver->listContents();
-  }
-  catch (\Exception $e) {
-    return FALSE;
-  }
-  return $archiver;
 }
 
 /**
@@ -101,13 +35,13 @@ function _agov_mini_site_open_archive($file) {
  */
 function agov_mini_sites_file_validate(stdClass $file, $minisite_name = NULL) {
   $errors = array();
-  $archiver = _agov_mini_site_open_archive($file);
-  if (!$archiver) {
+  $archive = Archive::open($file);
+  if (!$archive) {
     $errors[] = t('Unable to open mini-site archive.');
     return $errors;
   }
-  $files = $archiver->listContents();
-  $tree = _agov_mini_site_directory_tree($files);
+  $files = $archive->listContents();
+  $tree = $archive->fileTree();
   // Check mini-site is in folder.
   $root_files = array_keys($tree);
   if (count($root_files) !== 1 || !is_array($tree[$root_files[0]])) {
@@ -125,13 +59,7 @@ function agov_mini_sites_file_validate(stdClass $file, $minisite_name = NULL) {
   // Check only allowed extensions are used.
   $default_allowed_extensions = array('html', 'css', 'js', 'png', 'gif', 'jpg');
   $allowed_extensions = variable_get('agov_mini_sites_allowed_extensions', $default_allowed_extensions);
-  $invalid_files = array();
-  foreach ($files as $file_name) {
-    $path_info = pathinfo($file_name);
-    if (isset($path_info['extension']) && !in_array($path_info['extension'], $allowed_extensions)) {
-      $invalid_files[] = $file_name;
-    }
-  }
+  $invalid_files = FileUtil::checkExtensions($files, $allowed_extensions);
   if (!empty($invalid_files)) {
     $errors[] = t('Mini-site contains files with invalid extensions: %files. Only files with the following extensions are allowed: %allowed-extensions', array(
       '%allowed-extensions' => implode(' ', $allowed_extensions),
@@ -161,9 +89,9 @@ function agov_mini_site_file_presave($file) {
   if ($file->status && $file->type === 'mini_site_archive') {
     // Extract contents of mini-site.
     $extract_path = _agov_mini_site_get_path() . '/extract/' . $file->fid;
-    $archive = _agov_mini_site_open_archive($file);
+    $archive = Archive::open($file);
     if ($archive) {
-      _agov_mini_site_rrmdir($extract_path);
+      FileUtil::rrmdir($extract_path);
       $archive->extract($extract_path);
     }
   }
@@ -175,7 +103,7 @@ function agov_mini_site_file_presave($file) {
 function agov_mini_site_file_delete($file) {
   if ($file->type === 'mini_site_archive') {
     $extract_path = _agov_mini_site_get_path() . '/extract/' . $file->fid;
-    _agov_mini_site_rrmdir($extract_path);
+    FileUtil::rrmdir($extract_path);
   }
 }
 
@@ -199,14 +127,16 @@ function agov_mini_site_node_postsave($node, $vid, $moderation_state) {
   if (!file_exists($node_path)) {
     mkdir($node_path, 0777, TRUE);
   }
-  if (file_exists($revision_path)) {
-    unlink($revision_path);
+  if (is_link($revision_path)) {
+    drupal_unlink($revision_path);
   }
   symlink($target, $revision_path);
   if ($moderation_state === workbench_moderation_state_published()) {
     // Create a shorten symlink for published version.
     $publish_path = _agov_mini_site_get_path() . '/' . $minisite_name;
-    @unlink($publish_path);
+    if (is_link($publish_path)) {
+      drupal_unlink($publish_path);
+    }
     $target = 'extract/' . $fid . '/' . $minisite_name;
     symlink($target, $publish_path);
 
@@ -235,7 +165,9 @@ function agov_mini_site_node_postsave($node, $vid, $moderation_state) {
     // If no published revision, remove symlink.
     if (isset($node->workbench_moderation) && empty($node->workbench_moderation['published'])) {
       $publish_path = _agov_mini_site_get_path() . '/' . $minisite_name;
-      @unlink($publish_path);
+      if (is_link($publish_path)) {
+        drupal_unlink($publish_path);
+      }
     }
   }
   field_attach_update('node', $node);
@@ -273,15 +205,16 @@ function agov_mini_site_node_delete($node) {
     // Remove revision symlinks.
     $path = _agov_mini_site_get_path();
     $node_path = $path . '/revisions/' . $node->nid;
-    _agov_mini_site_rrmdir($node_path);
+    FileUtil::rrmdir($node_path);
 
     // Delete publish link.
     $fid = $node->field_minisite_archive_file[LANGUAGE_NONE][0]['fid'];
     $file = file_load($fid);
     $minisite_name = $file->field_minisite_name[LANGUAGE_NONE][0]['value'];
     $publish_path = $path . '/' . $minisite_name;
-    @unlink($publish_path);
-
+    if (is_link($publish_path)) {
+      drupal_unlink($publish_path);
+    }
     // Force delete the associated managed files. The files should not be used
     // by any other modules but due to what I believe is a bug the usage counts
     // are incorrect, so this works around that problem.
@@ -307,7 +240,7 @@ function agov_mini_site_node_revision_delete($node) {
     $extract_path = _agov_mini_site_get_path();
     $node_path = $extract_path . '/revisions/' . $node->nid;
     $revision_path = $node_path . '/' . $node->vid;
-    unlink($revision_path);
+    drupal_unlink($revision_path);
   }
 }
 

@@ -38,3 +38,4 @@ features[variable][] = node_preview_mini_site
 features[variable][] = node_submitted_mini_site
 mtime = 1421902565
 project path = profiles/agov/modules/features
+registry_autoload[] = PSR-4
