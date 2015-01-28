@@ -42,7 +42,9 @@ function module_whitelist_admin_settings() {
         '#markup' => $module->info['version'],
       ),
       'description' => array(
+        //@codingStandardsIgnoreStart
         '#markup' => t($module->info['description']),
+        //@codingStandardsIgnoreEnd
       ),
       'whitelist' => array(
         '#type' => 'checkbox',
@@ -56,7 +58,9 @@ function module_whitelist_admin_settings() {
   foreach (element_children($form['modules']) as $package) {
     $form['modules'][$package] += array(
       '#type' => 'fieldset',
+      //@codingStandardsIgnoreStart
       '#title' => t($package),
+      //@codingStandardsIgnoreEnd
       '#collapsible' => TRUE,
       '#theme' => 'module_whitelist_fieldset',
       '#header' => array(
