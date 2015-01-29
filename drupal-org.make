@@ -129,6 +129,7 @@ projects[video_filter][patch][] = https://www.drupal.org/files/video_filter-auto
 projects[video_filter][version] = "3.1"
 projects[views][version] = "3.8"
 projects[views_bulk_operations][version] = "3.1"
+projects[views_rss][version] = "2.0-rc4"
 projects[view_unpublished][download][branch] = "7.x-1.x"
 projects[view_unpublished][download][revision] = e9df1d3f33b93410bb62e65f70981286db2007bd
 projects[view_unpublished][download][type] = "git"
