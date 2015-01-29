@@ -110,7 +110,7 @@ class ClassController {
     if (isset($entity->field_pbundle_style[$langcode][0]) && !empty($entity->field_pbundle_style[$langcode][0])) {
 
       // Styles are defined by the Style entity.
-      $style_entities = entity_load('style', array($entity->field_pbundle_style[$langcode][0]['target_id']));
+      $style_entities = entity_load('paragraph_style', array($entity->field_pbundle_style[$langcode][0]['target_id']));
       if (!empty($style_entities)) {
         foreach ($style_entities as $style_entity) {
 
