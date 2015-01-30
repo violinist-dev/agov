@@ -1,11 +1,8 @@
 name = aGov
 project = agov
-package = aGov Profile
-distribution_name = aGov
 description = A distribution for government and the public sector in Australia
 core = 7.x
-exclusive = TRUE
-hidden = FALSE
+
 php = 5.3
 
 ; System Requirements.
@@ -121,6 +118,8 @@ dependencies[] = username_enumeration_prevention
 dependencies[] = userprotect
 dependencies[] = video_filter
 dependencies[] = views
+dependencies[] = views_rss
+dependencies[] = views_rss_core
 dependencies[] = views_ui
 dependencies[] = views_bulk_operations
 dependencies[] = view_unpublished
@@ -164,6 +163,7 @@ dependencies[] = agov_contact
 dependencies[] = agov_front
 dependencies[] = agov_menu_block
 dependencies[] = agov_register
+dependencies[] = agov_rss
 dependencies[] = agov_slideshow
 dependencies[] = agov_superfish_configuration
 dependencies[] = agov_sitemap
