@@ -630,6 +630,7 @@ function _agov_default_blocks() {
   agov_core_insert_block('menu_block', 'agov_menu_block-sidebar', $themes, 'sidebar_second', -50);
   agov_core_insert_block('menu', 'menu-quick-links', $themes, 'sidebar_second', -48);
   agov_core_insert_block('agov_social_links', 'services', $themes, 'sidebar_second', -47);
+  agov_core_insert_block('htmlcs', 'htmlcs', $themes, 'footer', -46);
 
   // Set some blocks in the admin theme.
   agov_core_insert_block('system', 'main', AGOV_DEFAULT_ADMIN_THEME, 'content');
