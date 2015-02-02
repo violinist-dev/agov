@@ -87,3 +87,12 @@ function module_whitelist_theme() {
     ),
   );
 }
+
+/**
+ * Implements hook_help().
+ */
+function module_whitelist_help($path, $arg) {
+  if ($path === 'admin/config/system/module-whitelist') {
+    return '<p>' . t("The following selected modules will be available for users with permission 'Administer modules' to enable/disable.") . '</p>';
+  }
+}
