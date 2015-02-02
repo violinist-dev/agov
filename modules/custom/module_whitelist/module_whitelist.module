@@ -21,12 +21,20 @@ function module_whitelist_form_system_modules_alter(&$form, &$form_state) {
   if (isset($form['modules']['Administration']['module_whitelist'])) {
     unset($form['modules']['Administration']['module_whitelist']);
   }
+  // Move locked modules into different part of the form, this ensures
+  // the values are still submitted.
+  $form['locked'] = array('#tree' => TRUE, '#access' => FALSE);
   // Remove modules from form that are not whitelisted.
   $whitelist_modules = variable_get('module_whitelist', array());
   $whitelist_modules = array_flip($whitelist_modules);
   foreach (element_children($form['modules']) as $package) {
     foreach (element_children($form['modules'][$package]) as $module) {
       if (!isset($whitelist_modules[$module])) {
+        // Copy row into locked area.
+        $row = $form['modules'][$package][$module];
+        $row['#parent'] = array('modules', $package, $module);
+        $form['locked'][$package][$module] = $row;
+        // Remove from display.
         unset($form['modules'][$package][$module]);
       }
     }
