@@ -13,5 +13,5 @@
  * Implements hook_install().
  */
 function agov_default_arrangements_install() {
-  _agov_arrangements_default_arrangments();
+  _agov_arrangements_default_arrangements();
 }

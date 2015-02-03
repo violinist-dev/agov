@@ -731,26 +731,26 @@ h4 {
   margin-bottom: 0.58333em;
 }
 
-.field-name-body {
+article {
   /* Content List Styles */
   /* Display image inline to the right */
   /* Display image inline to the left */
 }
-.field-name-body ol {
+article ol {
   list-style-type: decimal;
   margin-left: 19px;
 }
-.field-name-body ul {
+article ul {
   list-style-type: square;
   margin-left: 15px;
 }
-.field-name-body p.img-float-right,
-.field-name-body img.img-float-right {
+article p.img-float-right,
+article img.img-float-right {
   float: right;
   margin: 5px 0 5px 5px;
 }
-.field-name-body p.img-float-left,
-.field-name-body img.img-float-left {
+article p.img-float-left,
+article img.img-float-left {
   float: left;
   margin: 0 5px 5px 5px;
 }

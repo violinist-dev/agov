@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5 {
 }
 
 // Mixin to include body styles into wysiwyg but only inside body fields in default theme.
-@mixin body-text-syles {
+@mixin body-text-styles {
   /* Content List Styles */
   ol {
     list-style-type: decimal;
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-// On default theme only implement these styles inside field-name-body.
-.field-name-body {
-  @include body-text-syles;
+// On default theme only implement these styles inside the content.
+article {
+  @include body-text-styles;
 }

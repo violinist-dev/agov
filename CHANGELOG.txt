@@ -3,8 +3,33 @@ aGov Changelog
 
 7.x-2.0-dev
 ==============
+
+Features:
+
 - Updated Google Analytics to 2.1 for SA-CONTRIB-2014-119 - Google Analytics -
   Information disclosure
+- WCAG Validator service removed, to be replaced with HTML Code Sniffer in future release
+- Add accessible_forms module to add aria attributes to form errors
+- Add module filter for better module page admin
+- Add paragraphs module for landing pages (includes agov_entity_layouts module)
+- Add diff module for revision comparisons
+- Add FAQ feature (agov_faq module)
+- Add Information Publication Scheme feature (agov_ips module)
+- Prevent autofill login forms (pci_update module) for better password security
+- Add Return 404 for 403 pages for better information disclosure security
+- Add RSS feeds for each content type
+- Add picture, breakpoint and focal_point modules for responsive images
+- Add Multi-path autocomplete for better menu link admin
+
+Fixes:
+
+- Fix make file for Simplytest.me
+- Fix skip-to-content link voiceover
+- Security updates for context, linkit
+- Updates password policy to match latest ISM specifications.
+- Documentation updates
+- agov_register is now a separate module
+
 
 7.x-2.0-alpha5
 ==============
