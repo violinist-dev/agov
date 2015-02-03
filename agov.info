@@ -109,7 +109,6 @@ dependencies[] = scheduler
 dependencies[] = scheduler_workbench
 dependencies[] = session_cookie_lifetime
 dependencies[] = shield
-dependencies[] = r4032login
 dependencies[] = seckit
 dependencies[] = simple_aggregation
 dependencies[] = site_map

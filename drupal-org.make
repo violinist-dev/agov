@@ -99,7 +99,6 @@ projects[pci_update][patch][] = "https://www.drupal.org/files/issues/pci_update_
 projects[phone][version] = "1.0-beta1"
 projects[picture][version] = "2.9"
 projects[quicktabs][version] = "3.6"
-projects[r4032login][version] = "1.5"
 projects[redirect][patch][] = "https://www.drupal.org/files/issues/redirect.circular-loops.1796596-172.patch"
 projects[redirect][version] = "1.0-rc1"
 projects[registry_autoload][version] = "1.2"
