@@ -62,7 +62,7 @@ function module_whitelist_module_filter_system_modules_submit_recent($form, &$fo
   foreach ($form_state['values']['modules'] as $package => $modules) {
     foreach ($modules as $key => $module) {
       if (isset($form['modules'][$package][$key]['enable']['#default_value'])) {
-        $default_value =  $form['modules'][$package][$key]['enable']['#default_value'];
+        $default_value = $form['modules'][$package][$key]['enable']['#default_value'];
       }
       else {
         $default_value = $form['locked'][$package][$key]['enable']['#default_value'];
