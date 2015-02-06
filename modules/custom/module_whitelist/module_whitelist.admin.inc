@@ -42,9 +42,7 @@ function module_whitelist_admin_settings() {
         '#markup' => $module->info['version'],
       ),
       'description' => array(
-        //@codingStandardsIgnoreStart
-        '#markup' => t($module->info['description']),
-        //@codingStandardsIgnoreEnd
+        '#markup' => t('!description', array('!description' => $module->info['description'])),
       ),
       'whitelist' => array(
         '#type' => 'checkbox',
@@ -58,9 +56,7 @@ function module_whitelist_admin_settings() {
   foreach (element_children($form['modules']) as $package) {
     $form['modules'][$package] += array(
       '#type' => 'fieldset',
-      //@codingStandardsIgnoreStart
-      '#title' => t($package),
-      //@codingStandardsIgnoreEnd
+      '#title' => t('!package', array('!package' => $package)),
       '#collapsible' => TRUE,
       '#theme' => 'module_whitelist_fieldset',
       '#header' => array(
@@ -135,7 +131,7 @@ function theme_module_whitelist_fieldset($variables) {
  */
 function module_whitelist_form_submit($form, &$form_state) {
   $whitelist_modules = array();
-  foreach ($form_state['values']['modules'] as $package => $modules) {
+  foreach ($form_state['values']['modules'] as $modules) {
     foreach ($modules as $name => $values) {
       $whitelist = $values['whitelist'];
       if ($whitelist) {
