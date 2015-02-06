@@ -28,7 +28,7 @@ function _agov_mini_site_get_path() {
  *   Array of allowed extensions.
  */
 function _agov_mini_site_allowed_extensions() {
-  $default_allowed_extensions = 'html css js png gif jpg';
+  $default_allowed_extensions = 'html htm css js png gif jpg jpeg woff woff2 eot ttf svg pdf doc xls docx odt ppt pptx txt rtf flv fla';
   $allowed_extensions = variable_get('agov_mini_site_allowed_extensions', $default_allowed_extensions);
   return explode(' ', $allowed_extensions);
 }
