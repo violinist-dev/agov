@@ -147,6 +147,7 @@ dependencies[] = iconomist
 dependencies[] = text_summary_options
 dependencies[] = agov_disable_defaultcontent
 dependencies[] = user_action_report
+dependencies[] = module_whitelist
 
 ; aGov
 
