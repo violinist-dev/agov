@@ -20,14 +20,13 @@ const AGOV_ENTITY_LAYOUTS_MODE_DYNAMIC = 'paragraphs';
  * Implements hook_entity_view().
  */
 function agov_entity_layouts_entity_view($entity, $type, $view_mode, $langcode) {
-  \Drupal\agov_entity_layouts\EntityContentizer::init()->entityView($entity, $type, $view_mode, $langcode);
+  \Drupal\agov_entity_layouts\EntityContentizer::entityView($entity, $type, $view_mode, $langcode);
 }
 
 /**
  * Callback to provide options for the layout_mode field.
  */
 function agov_entity_layouts_layout_mode_options() {
-
   return array(
     AGOV_ENTITY_LAYOUTS_MODE_NORMAL => t('Normal (default)'),
     AGOV_ENTITY_LAYOUTS_MODE_DYNAMIC => t('Dynamic'),
