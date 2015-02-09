@@ -65,7 +65,7 @@ function agov_paragraphs_entity_view($entity, $type, $view_mode, $langcode) {
   }
 
   // Class logic in the Class Controller.
-  \Drupal\agov_paragraphs\ClassController::init()->resolveClasses($entity, $type, $view_mode, $langcode);
+  \Drupal\agov_paragraphs\ClassController::resolveClasses($entity, $type, $view_mode, $langcode);
 }
 
 /**
