@@ -159,10 +159,10 @@ class ClassController {
    * @param string $element_kind
    *   The element kind. Should usually be 'element' or 'elements'.
    */
-  public function setElementClasses(&$variables, $element_kind) {
+  public static function setElementClasses(&$variables, $element_kind) {
     if (!empty($variables[$element_kind]['#attributes']['class']) && is_array($variables[$element_kind]['#attributes']['class'])) {
       foreach ($variables[$element_kind]['#attributes']['class'] as $class_name) {
-        if (!isset($variables['classes_array'][$class_name])) {
+        if (!in_array($class_name, $variables['classes_array'])) {
           $variables['classes_array'][] = $class_name;
         }
       }

@@ -78,7 +78,7 @@ function agov_paragraphs_preprocess_paragraphs_items(&$variables, $hook) {
   $variables['classes_array'][] = 'paragraphs-items_view-mode_' . drupal_html_class($variables['view_mode']);
 
   // Paragraphs doesn't properly add the element classes.
-  \Drupal\agov_paragraphs\ClassController::init()->setElementClasses($variables, 'element');
+  \Drupal\agov_paragraphs\ClassController::setElementClasses($variables, 'element');
 }
 
 /**
@@ -93,7 +93,7 @@ function agov_paragraphs_preprocess_entity(&$variables) {
     $variables['classes_array'][] = 'paragraphs-item_view-mode_' . drupal_html_class($variables['view_mode']);
 
     // Paragraphs doesn't properly add the element classes.
-    \Drupal\agov_paragraphs\ClassController::init()->setElementClasses($variables, 'elements');
+    \Drupal\agov_paragraphs\ClassController::setElementClasses($variables, 'elements');
   }
 }
 
@@ -104,6 +104,6 @@ function agov_paragraphs_preprocess_field(&$variables) {
   if ($variables['element']['#field_name'] == 'field_pbundle_view') {
     // Add the layout classes.
     // Paragraphs doesn't properly add the element classes.
-    \Drupal\agov_paragraphs\ClassController::init()->setElementClasses($variables, 'element');
+    \Drupal\agov_paragraphs\ClassController::setElementClasses($variables, 'element');
   }
 }
