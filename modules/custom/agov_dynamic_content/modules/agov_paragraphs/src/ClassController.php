@@ -33,7 +33,7 @@ class ClassController {
    *   This.
    * @static
    */
-  static public function init() {
+  public static function init() {
     return new static();
   }
 
@@ -50,15 +50,13 @@ class ClassController {
    *   The language code used for rendering.
    */
   public function resolveClasses($entity, $type, $view_mode, $langcode) {
-
     if ($type == 'paragraphs_item') {
-
       // Ensure every paragraph gets a unique identifying class, just in case.
       $this->setClass('paragraphs-item__' . drupal_html_class($entity->item_id));
 
       // Process any paragraphs with class settings.
       // These come from the field "field_pbundle_css_classes".
-      if (isset($entity->field_pbundle_css_classes[$langcode][0]['value']) && !empty($entity->field_pbundle_css_classes[$langcode][0]['value'])) {
+      if (!empty($entity->field_pbundle_css_classes[$langcode][0]['value'])) {
         $this->setClass(check_plain($entity->field_pbundle_css_classes[$langcode][0]['value']));
       }
 
@@ -80,7 +78,6 @@ class ClassController {
    *   A string of classes.
    */
   public function getClasses() {
-
     return implode(' ', $this->classes);
   }
 
@@ -91,7 +88,6 @@ class ClassController {
    *   The class.
    */
   public function setClass($class) {
-
     if (!in_array($class, $this->classes)) {
       $this->classes[] = $class;
     }
@@ -106,19 +102,13 @@ class ClassController {
    *   The language code used for rendering.
    */
   protected function processStyleClasses($entity, $langcode) {
-
-    if (isset($entity->field_pbundle_style[$langcode][0]) && !empty($entity->field_pbundle_style[$langcode][0])) {
-
+    if (!empty($entity->field_pbundle_style[$langcode][0])) {
       // Styles are defined by the Style entity.
       $style_entities = entity_load('paragraph_style', array($entity->field_pbundle_style[$langcode][0]['target_id']));
-      if (!empty($style_entities)) {
-        foreach ($style_entities as $style_entity) {
-
-          if (isset($style_entity->field_style_classes[$langcode][0]['value']) && !empty($style_entity->field_style_classes[$langcode][0]['value'])
-          ) {
-            foreach ($style_entity->field_style_classes[$langcode] as $style_item) {
-              $this->setClass(check_plain($style_item['value']));
-            }
+      foreach ($style_entities as $style_entity) {
+        if (!empty($style_entity->field_style_classes[$langcode][0]['value'])) {
+          foreach ($style_entity->field_style_classes[$langcode] as $style_item) {
+            $this->setClass(check_plain($style_item['value']));
           }
         }
       }
@@ -134,11 +124,12 @@ class ClassController {
    *   The language code used for rendering.
    */
   protected function processLayoutClasses($entity, $langcode) {
-
-    if (isset($entity->field_pbundle_container_layout[$langcode][0]) && !empty($entity->field_pbundle_container_layout[$langcode][0])) {
-
+    if (!empty($entity->field_pbundle_container_layout[$langcode][0])) {
       // Container arrangements are defined by the Arrangement entity.
       $arrangements = entity_load('arrangement', array($entity->field_pbundle_container_layout[$langcode][0]['target_id']));
+      if (empty($arrangements)) {
+        return;
+      }
       $arrangement = reset($arrangements);
 
       $layout_class = 'paragraphs-layout__' . drupal_html_class($arrangement->field_machine_name[$langcode][0]['value']);
@@ -146,11 +137,11 @@ class ClassController {
       // Any other usage should apply to the root element. This may not work
       // in any given case, since the element children may not be the right
       // kind to get the layout classes.
-      if ($entity->bundle == 'container') {
+      if ($entity->bundle === 'container') {
         // Containers apply layout to the container_content field.
         $entity->content['field_pbundle_container_content']['#attributes']['class'][] = $layout_class;
       }
-      elseif ($entity->bundle == 'view') {
+      elseif ($entity->bundle === 'view') {
         // Views apply layout to the view field.
         $entity->content['field_pbundle_view']['#attributes']['class'][] = $layout_class;
       }
@@ -169,11 +160,7 @@ class ClassController {
    *   The element kind. Should usually be 'element' or 'elements'.
    */
   public function setElementClasses(&$variables, $element_kind) {
-
-    if (isset($variables[$element_kind]['#attributes']['class'])
-      && !empty($variables[$element_kind]['#attributes']['class'])
-      && is_array($variables[$element_kind]['#attributes']['class'])
-    ) {
+    if (!empty($variables[$element_kind]['#attributes']['class']) && is_array($variables[$element_kind]['#attributes']['class'])) {
       foreach ($variables[$element_kind]['#attributes']['class'] as $class_name) {
         if (!isset($variables['classes_array'][$class_name])) {
           $variables['classes_array'][] = $class_name;
