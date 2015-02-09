@@ -26,11 +26,8 @@ function agov_entity_layouts_field_default_field_bases() {
     'locked' => 0,
     'module' => 'list',
     'settings' => array(
-      'allowed_values' => array(
-        'normal' => 'Normal',
-        'paragraphs' => 'Paragraphs',
-      ),
-      'allowed_values_function' => '',
+      'allowed_values' => array(),
+      'allowed_values_function' => 'agov_entity_layouts_layout_mode_options',
     ),
     'translatable' => 0,
     'type' => 'list_text',
@@ -42,7 +39,7 @@ function agov_entity_layouts_field_default_field_bases() {
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_paragraph_content',
+    'field_name' => 'field_entity_content',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
