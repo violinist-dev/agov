@@ -29,25 +29,6 @@ class EntityContentizer {
   const FIELD_PARAGRAPHS = 'field_entity_content';
 
   /**
-   * The content buffer.
-   *
-   * @var array
-   */
-  protected $contentBuffer = array();
-
-  /**
-   * Lazy constructor.
-   *
-   * @static
-   * @return static
-   *   Returns an instance of EntityContentizer
-   */
-  static public function init() {
-
-    return new static();
-  }
-
-  /**
    * Callback for hook_entity_view().
    *
    * @param object $entity
@@ -59,17 +40,14 @@ class EntityContentizer {
    * @param string $langcode
    *   The langcode
    */
-  public function entityView($entity, $entity_type, $view_mode, $langcode) {
-    $this->contentBuffer = $entity->content;
-
-    if ($view_mode == 'full') {
-      $layout_lang = $this->fieldLanguage($entity_type, $entity, $this::FIELD_LAYOUT, $langcode);
-      if (isset($entity->{$this::FIELD_LAYOUT}[$layout_lang][0]['value']) && !empty($entity->{$this::FIELD_LAYOUT}[$layout_lang][0]['value'])) {
-
+  public static function entityView($entity, $entity_type, $view_mode, $langcode) {
+    if ($view_mode === 'full') {
+      $layout_lang = static::fieldLanguage($entity_type, $entity, static::FIELD_LAYOUT, $langcode);
+      if (!empty($entity->{static::FIELD_LAYOUT}[$layout_lang][0]['value'])) {
         // The layout field switches content between normal and paragraphs
         // (dynamic) mode.
-        if ($entity->{$this::FIELD_LAYOUT}[$layout_lang][0]['value'] == AGOV_ENTITY_LAYOUTS_MODE_DYNAMIC) {
-          $this->processParagraphsEntity($entity, $entity_type, $langcode);
+        if ($entity->{static::FIELD_LAYOUT}[$layout_lang][0]['value'] === AGOV_ENTITY_LAYOUTS_MODE_DYNAMIC) {
+          static::processParagraphsEntity($entity, $entity_type, $langcode);
         }
         else {
           // The paragraphs field should not appear in normal mode.
@@ -89,8 +67,8 @@ class EntityContentizer {
    * @param string $langcode
    *   The langcode
    */
-  protected function processParagraphsEntity($entity, $entity_type, $langcode) {
-
+  protected static function processParagraphsEntity($entity, $entity_type, $langcode) {
+    $content = $entity->content;
     // Replace the entity content with the content of the paragraphs
     // field.
     $entity->content = field_view_field($entity_type, $entity, self::FIELD_PARAGRAPHS, array('label' => 'hidden'), $langcode);
@@ -99,13 +77,13 @@ class EntityContentizer {
     // with the current entity.
     if (isset($entity->content['#items'])) {
       foreach ($entity->content['#items'] as $paragraphs_index) {
-        foreach (array_keys($entity->content) as $content_row_id) {
-          if (!is_array($entity->content[$content_row_id])) {
+        $paragraphs_index = $paragraphs_index['value'];
+        foreach ($entity->content as $content_row_id => $content_row) {
+          if (!is_array($content_row)) {
             continue;
           }
-
-          if (isset($entity->content[$content_row_id]['entity']['paragraphs_item'][$paragraphs_index['value']]) && $entity->content[$content_row_id]['entity']['paragraphs_item'][$paragraphs_index['value']]['#bundle'] == 'entity_content') {
-            $entity->content[$content_row_id]['entity']['paragraphs_item'][$paragraphs_index['value']]['content'] = $this->contentBuffer;
+          if (isset($content_row['entity']['paragraphs_item'][$paragraphs_index]) && $content_row['entity']['paragraphs_item'][$paragraphs_index]['#bundle'] === 'entity_content') {
+            $entity->content[$content_row_id]['entity']['paragraphs_item'][$paragraphs_index]['content'] = $content;
           }
         }
       }
@@ -127,7 +105,7 @@ class EntityContentizer {
    * @return string
    *   The language code.
    */
-  protected function fieldLanguage($entity_type, $entity, $field_name, $langcode) {
+  protected static function fieldLanguage($entity_type, $entity, $field_name, $langcode) {
     return field_language($entity_type, $entity, $field_name, $langcode);
   }
 }
