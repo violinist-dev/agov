@@ -33,26 +33,21 @@ function agov_landing_pages_preprocess_page(&$variables) {
 
     // If we are on the right kind of node and we have a field setting, 'hide'
     // the sidebars using brute force.
-    if (!empty($node)) {
-      if ($node->type === 'landing_page') {
-        if (isset($node->field_hide_sidebars[LANGUAGE_NONE][0]['value'])) {
-          $sidebar_setting = $node->field_hide_sidebars[LANGUAGE_NONE][0]['value'];
+    if (!empty($node) && $node->type === 'landing_page' && isset($node->field_hide_sidebars[LANGUAGE_NONE][0]['value'])) {
+      $sidebar_setting = $node->field_hide_sidebars[LANGUAGE_NONE][0]['value'];
+      switch ($sidebar_setting) {
+        case 'first':
+          $variables['page']['sidebar_first'] = array();
+          break;
 
-          switch ($sidebar_setting) {
-            case 'first':
-              $variables['page']['sidebar_first'] = array();
-              break;
+        case 'second':
+          $variables['page']['sidebar_second'] = array();
+          break;
 
-            case 'second':
-              $variables['page']['sidebar_second'] = array();
-              break;
-
-            case 'all':
-              $variables['page']['sidebar_first'] = array();
-              $variables['page']['sidebar_second'] = array();
-              break;
-          }
-        }
+        case 'all':
+          $variables['page']['sidebar_first'] = array();
+          $variables['page']['sidebar_second'] = array();
+          break;
       }
     }
   }
