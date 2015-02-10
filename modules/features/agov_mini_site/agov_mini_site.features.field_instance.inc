@@ -143,7 +143,7 @@ function agov_mini_site_field_default_field_instances() {
   $field_instances['node-mini_site-field_minisite_archive_file'] = array(
     'bundle' => 'mini_site',
     'deleted' => 0,
-    'description' => 'The archive file must only contain a single top level directory and this directory must contain an index.html file. For example, the file contains my_site/index.html. If creating archive on MacOSX, create the zip without Resource Forks (ie. the __MACOSX folder).',
+    'description' => 'The archive file must only contain a single top level directory and this directory must contain an index.html file. For example, the file contains my_site/index.html.',
     'display' => array(
       'compact' => array(
         'label' => 'above',
