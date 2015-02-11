@@ -13,43 +13,41 @@ include_once 'agov_landing_pages.features.inc';
  * field.
  */
 function agov_landing_pages_preprocess_page(&$variables) {
-
-  if (arg(0) == 'node' && is_numeric(arg(1))) {
-
-    $state = arg(2);
-    // We only switch on view or draft callbacks. Exit on others.
-    if (!empty($state) &&  $state != 'draft') {
+  $options = array(
+    'options' => array(
+      'min_range' => 1,
+    ),
+  );
+  $nid = filter_var(arg(1), FILTER_VALIDATE_INT, $options);
+  $state = arg(2);
+  $draft_or_empty = empty($state) || $state === 'draft';
+  if (arg(0) === 'node' && $nid !== FALSE && $draft_or_empty) {
+    // Get the current node, and revision if relevant.
+    $node = node_load($nid);
+    if (empty($node)) {
       return;
     }
-
-    // Get the current node, and revision if relevant.
-    $node = node_load(arg(1));
-    if (arg(2) == 'draft' && $node->type == 'landing_page') {
+    if ($state === 'draft' && $node->type === 'landing_page') {
       $node = workbench_moderation_node_current_load($node);
     }
 
     // If we are on the right kind of node and we have a field setting, 'hide'
     // the sidebars using brute force.
-    if (isset($node) && !empty($node)) {
-      if ($node->type == 'landing_page') {
-        if (isset($node->field_hide_sidebars[LANGUAGE_NONE][0]['value'])) {
-          $sidebar_setting = $node->field_hide_sidebars[LANGUAGE_NONE][0]['value'];
+    if (!empty($node) && $node->type === 'landing_page' && isset($node->field_hide_sidebars[LANGUAGE_NONE][0]['value'])) {
+      $sidebar_setting = $node->field_hide_sidebars[LANGUAGE_NONE][0]['value'];
+      switch ($sidebar_setting) {
+        case 'first':
+          $variables['page']['sidebar_first'] = array();
+          break;
 
-          switch ($sidebar_setting) {
-            case 'first':
-              $variables['page']['sidebar_first'] = array();
-              break;
+        case 'second':
+          $variables['page']['sidebar_second'] = array();
+          break;
 
-            case 'second':
-              $variables['page']['sidebar_second'] = array();
-              break;
-
-            case 'all':
-              $variables['page']['sidebar_first'] = array();
-              $variables['page']['sidebar_second'] = array();
-              break;
-          }
-        }
+        case 'all':
+          $variables['page']['sidebar_first'] = array();
+          $variables['page']['sidebar_second'] = array();
+          break;
       }
     }
   }

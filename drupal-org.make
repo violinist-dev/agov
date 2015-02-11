@@ -30,6 +30,7 @@ projects[diff][version] = "3.2"
 projects[draggableviews][version] = "2.0"
 projects[ds][version] = "2.6"
 projects[eck][version] = "2.0-rc5"
+projects[eck][patch][] = "https://www.drupal.org/files/issues/eck-array_keys_error-2289241-15.patch"
 projects[elements][version] = "1.4"
 projects[entity_display_field][version] = "1.0-beta2"
 projects[entitycache][download][branch] = 7.x-1.x
