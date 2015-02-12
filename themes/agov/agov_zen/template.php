@@ -19,8 +19,8 @@ function agov_zen_preprocess_html(&$vars) {
  */
 function agov_zen_form_alter(&$form, &$form_state, $form_id) {
 
-  if ($form_id == 'search_block_form') {
-    $form['search_block_form']['#attributes']['placeholder'] = 'Enter keywords...';
+  if ($form_id == 'funnelback_search_block_form') {
+    $form['funnelback_search_field']['#attributes']['placeholder'] = 'Enter keywords...';
   }
 }
 
