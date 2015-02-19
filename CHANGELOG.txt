@@ -6,9 +6,6 @@ aGov Changelog
 
 Features:
 
-- Updated Google Analytics to 2.1 for SA-CONTRIB-2014-119 - Google Analytics -
-  Information disclosure
-- WCAG Validator service removed, to be replaced with HTML Code Sniffer in future release
 - Add accessible_forms module to add aria attributes to form errors
 - Add module filter for better module page admin
 - Add paragraphs module for landing pages (includes agov_entity_layouts module)
@@ -20,12 +17,15 @@ Features:
 - Add RSS feeds for each content type
 - Add picture, breakpoint and focal_point modules for responsive images
 - Add Multi-path autocomplete for better menu link admin
+- Add Funnelback Search support
+- Add support for static HTML mini-sites
+- WCAG Validator service removed, to be replaced with HTML Code Sniffer in future release
 
 Fixes:
 
 - Fix make file for Simplytest.me
 - Fix skip-to-content link voiceover
-- Security updates for context, linkit
+- Security updates for context, linkit, google analytics and views
 - Updates password policy to match latest ISM specifications.
 - Documentation updates
 - agov_register is now a separate module
