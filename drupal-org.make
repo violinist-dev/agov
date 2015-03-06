@@ -40,6 +40,7 @@ projects[entitycache][type] = "module"
 projects[entityreference][patch][] = "https://www.drupal.org/files/issues/entityreference-url-formatter-2370029-1-7.x-1.1.patch"
 projects[entityreference][version] = "1.1"
 projects[entity][version] = "1.6"
+projects[entity][patch][2307807] = https://www.drupal.org/files/issues/2307807-entity-reset-insert-1.patch
 projects[escape_admin][version] = "1.1"
 projects[event_log][version] = "1.2"
 projects[event_log][patch][] = "https://www.drupal.org/files/issues/event-log-request-password-2365895-2.patch"
