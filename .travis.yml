@@ -28,7 +28,7 @@ install:
   - sudo apt-get install -y --force-yes php5-cgi php5-mysql
 
   # Install global composer dependencies.
-  - composer global require --prefer-dist --no-interaction drush/drush:6.* phing/phing:2.7.* youngj/httpserver:dev-master#aabdd56e2be82c12c313b236cee94da1fa3401a2
+  - composer global require --prefer-dist --no-interaction phing/phing:2.7.* youngj/httpserver:dev-master#aabdd56e2be82c12c313b236cee94da1fa3401a2
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
 
   # Prepare build and install composer dependencies
