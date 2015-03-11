@@ -16,6 +16,7 @@
   <property name="db.password" value="agov" />
   <property name="db.name" value="agov" />
   <property name="db.host" value="agov.dev" />
+  <property name="drush.cmd" value="${project.basedir}/bin/drush" />
   <property file="build.properties" override="true"/>
 
   <target name="build" depends="clean:all, prepare:all, validate:all, make, site-install, test:all, login" description="Build the project" />
@@ -86,14 +87,14 @@
   </target>
 
   <target name="prepare:upgrade" depends="check:upgrade" if="is.upgrade" description="Downloads a previous aGov version to be updated.">
-    <exec command="drush dl agov-${env.UPGRADE} --destination=.. --drupal-project-rename=drupal --yes" logoutput="true" passthru="true" checkreturn="true"/>
+    <exec command="${drush.cmd} dl agov-${env.UPGRADE} --destination=.. --drupal-project-rename=drupal --yes" logoutput="true" passthru="true" checkreturn="true"/>
   </target>
 
   <target name="upgrade" depends="check:upgrade" if="is.upgrade" description="Upgrades previous aGov version with the latest.">
     <copy todir="${build.profile.dir}">
       <fileset dir="${project.basedir}"/>
     </copy>
-    <exec dir="${build.drupal.dir}" command="drush updb -y" logoutput="true" passthru="true" />
+    <exec dir="${build.drupal.dir}" command="${drush.cmd} updb -y" logoutput="true" passthru="true" />
   </target>
 
   <target name="validate:phpmd" description="Find code complexity issues">
@@ -101,21 +102,21 @@
     <exec command="bin/phpmd ${src.custom.themes} text phpmd.xml --exclude '*views*'" logoutput="true" passthru="true" checkreturn="true" />
   </target>
 
-  <target name="validate:make" description="Verify the drush makefile is valid for d.o">
-    <exec command="drush dl -y drupalorg_drush-7.x-1.x-dev --destination=${user.home}/.drush" logoutput="true" passthru="true" />
-    <exec command="drush cc drush" logoutput="true" passthru="true" />
-    <exec command="drush verify-makefile" logoutput="true" passthru="true" checkreturn="true"/>
+  <target name="validate:make" description="Verify the ${drush.cmd} makefile is valid for d.o">
+    <exec command="${drush.cmd} dl -y drupalorg_drush-7.x-1.x-dev --destination=${user.home}/.drush" logoutput="true" passthru="true" />
+    <exec command="${drush.cmd} cc drush" logoutput="true" passthru="true" />
+    <exec command="${drush.cmd} verify-makefile" logoutput="true" passthru="true" checkreturn="true"/>
   </target>
 
   <target name="make" depends="prepare:dirs, fix-perms" description="Build Drupal and contrib core modules from a make file">
-    <exec dir="${build.drupal.dir}" command="drush make -y profiles/agov/drupal-org.make --no-core --contrib-destination=profiles/agov" checkreturn="true" logoutput="true" passthru="true"/>
-    <exec dir="${build.drupal.dir}" command="drush make -y profiles/agov/drupal-org-core.make --prepare-install" checkreturn="true" logoutput="true" passthru="true"/>
+    <exec dir="${build.drupal.dir}" command="${drush.cmd} make -y profiles/agov/drupal-org.make --no-core --contrib-destination=profiles/agov" checkreturn="true" logoutput="true" passthru="true"/>
+    <exec dir="${build.drupal.dir}" command="${drush.cmd} make -y profiles/agov/drupal-org-core.make --prepare-install" checkreturn="true" logoutput="true" passthru="true"/>
   </target>
 
   <target name="site-install" depends="fix-perms" description="Install Drupal on a clean database">
-    <exec dir="${build.drupal.dir}" command="drush site-install agov -y --site-name=aGov --db-url=mysql://${db.username}:${db.password}@${db.host}/${db.name} agov_install_additional_options.install=1 agov" logoutput="true" passthru="true" />
-    <exec dir="${build.drupal.dir}" command="drush vset -y file_private_path 'sites/default/private'" logoutput="true" passthru="true" />
-    <exec dir="${build.drupal.dir}" command="drush vset -y file_temporary_path 'sites/default/files/tmp'" logoutput="true" passthru="true" />
+    <exec dir="${build.drupal.dir}" command="${drush.cmd} site-install agov -y --site-name=aGov --db-url=mysql://${db.username}:${db.password}@${db.host}/${db.name} agov_install_additional_options.install=1 agov" logoutput="true" passthru="true" />
+    <exec dir="${build.drupal.dir}" command="${drush.cmd} vset -y file_private_path 'sites/default/private'" logoutput="true" passthru="true" />
+    <exec dir="${build.drupal.dir}" command="${drush.cmd} vset -y file_temporary_path 'sites/default/files/tmp'" logoutput="true" passthru="true" />
   </target>
 
   <target name="test:all" depends="test:behat" description="Run all tests" />
@@ -127,17 +128,17 @@
   </target>
 
   <target name="test:behat" depends="behat:init" description="Run behat tests">
-    <exec command="drush -r ${build.drupal.dir} vset -y password_policy_new_login_change 0" />
+    <exec command="${drush.cmd} -r ${build.drupal.dir} vset -y password_policy_new_login_change 0" />
     <exec command="${project.basedir}/bin/behat --format pretty --ansi" logoutput="true" passthru="true" checkreturn="true" />
-    <exec command="drush -r ${build.drupal.dir} vset -y password_policy_new_login_change 1" />
+    <exec command="${drush.cmd} -r ${build.drupal.dir} vset -y password_policy_new_login_change 1" />
   </target>
 
   <target name="login" description="Login to the site">
-    <exec dir="${build.drupal.dir}" command="drush uli -l ${app.uri}" logoutput="true" passthru="true" />
+    <exec dir="${build.drupal.dir}" command="${drush.cmd} uli -l ${app.uri}" logoutput="true" passthru="true" />
   </target>
 
   <target name="devify" description="Set up dev environment defaults">
-    <exec dir="${build.drupal.dir}" command="drush -l ${app.uri} en devel search_krumo diff --yes" logoutput="true" passthru="true" />
+    <exec dir="${build.drupal.dir}" command="${drush.cmd} -l ${app.uri} en devel search_krumo diff --yes" logoutput="true" passthru="true" />
   </target>
 
   <target name="compass:clean"
