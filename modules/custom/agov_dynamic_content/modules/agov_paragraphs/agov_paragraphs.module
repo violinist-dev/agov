@@ -31,12 +31,16 @@ function agov_paragraphs_widget_view_modes() {
   $view_modes = array();
 
   // Paragraphs Item view modes.
+  $view_modes['default'] = array(
+    'label' => t('Default'),
+    'custom settings' => TRUE,
+    'entities' => array('paragraphs_item'),
+  );
   $view_modes['teaser'] = array(
     'label' => t('Teaser'),
     'custom settings' => TRUE,
     'entities' => array('paragraphs_item'),
   );
-  // Paragraphs Item view modes.
   $view_modes['nested'] = array(
     'label' => t('Nested'),
     'custom settings' => TRUE,
