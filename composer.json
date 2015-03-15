@@ -50,9 +50,11 @@
     "squizlabs/php_codesniffer": "~1.5",
     "nickschuch/phpcs-security-audit": "dev-master",
     "drupal/coder": "master",
-    "phpmd/phpmd": "~2.0"
+    "phpmd/phpmd": "~2.0",
+    "drush/drush": "~6.0"
   },
   "minimum-stability": "dev",
+  "prefer-stable": true,
   "config": {
     "bin-dir": "bin/"
   },
