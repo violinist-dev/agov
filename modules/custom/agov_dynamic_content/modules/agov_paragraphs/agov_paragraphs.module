@@ -32,7 +32,7 @@ function agov_paragraphs_widget_view_modes() {
 
   // Paragraphs Item view modes.
   $view_modes['default'] = array(
-    'label' => t('Default'),
+    'label' => t('Inherit'),
     'custom settings' => TRUE,
     'entities' => array('paragraphs_item'),
   );
