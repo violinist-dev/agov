@@ -135,6 +135,7 @@ projects[userprotect][version] = "1.1"
 projects[uuid][version] = "1.0-alpha6"
 projects[video_filter][patch][] = https://www.drupal.org/files/issues/video_filter-fix_modal-2335169-11.patch
 projects[video_filter][patch][] = https://www.drupal.org/files/video_filter-autoplay-ckeditor-1430680-8.patch
+projects[video_filter][patch][] = https://www.drupal.org/files/issues/2438439-video-filter-protocol-fix.patch
 projects[video_filter][version] = "3.1"
 projects[views][version] = "3.10"
 projects[views_bulk_operations][version] = "3.1"
