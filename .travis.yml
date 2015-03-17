@@ -28,7 +28,7 @@ install:
   - sudo apt-get install -y --force-yes php5-cgi php5-mysql
 
   # Install global composer dependencies.
-  - composer global require --prefer-dist --no-interaction drush/drush:6.* phing/phing:2.7.* youngj/httpserver:dev-master#aabdd56e2be82c12c313b236cee94da1fa3401a2
+  - composer global require --prefer-dist --no-interaction phing/phing:2.7.* youngj/httpserver:dev-master#aabdd56e2be82c12c313b236cee94da1fa3401a2
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
 
   # Prepare build and install composer dependencies
@@ -56,7 +56,7 @@ before_script:
   - phing upgrade
 
   # Start the server.
-  - cd ../agov-build && drush runserver 8888 &
+  - cd ../agov-build && ../agov/bin/drush runserver 8888 &
   - until netstat -an 2>/dev/null | grep '8888.*LISTEN'; do true; done
 
 script:
