@@ -32,9 +32,18 @@ footer .block {
     @include bp-nq($medium) {
       $zen-column-count:  3;
       @include zen-grid-container();
-      .views-row-1 { @include zen-clear(); @include zen-grid-item(1, 1); padding-left: 0px; }
-      .views-row-2 { @include zen-grid-item(1, 2);}
-      .views-row-3 { @include zen-grid-item(1, 3); padding-right: 0px; }
+      .views-row-1 {
+        @include zen-clear();
+        @include zen-grid-item(1, 1);
+        padding-left: 0px;
+      }
+      .views-row-2 {
+        @include zen-grid-item(1, 2);
+      }
+      .views-row-3 {
+        @include zen-grid-item(1, 3);
+        padding-right: 0px;
+      }
     }
     .views-row {
       margin-top: 10px;

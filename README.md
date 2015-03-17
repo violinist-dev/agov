@@ -36,6 +36,22 @@ phing login
 
 You should point your apache vhost configuration to `drupal`.
 
+### Vagrant
+
+Simplify your local aGov development using Vagrant.
+
+Use the _separate_ agov_local git project, checked out in a directory above the current project directory.
+
+```
+cd ..
+git clone https://github.com/previousnext/agov-local.git
+cd agov-local
+vagrant up
+```
+
+See the documentation for agov-local for more details https://github.com/previousnext/agov-local
+
+
 ### Testing
 
 aGov uses behat for its functional tests. To run behat tests, use the following:
