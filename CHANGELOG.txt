@@ -1,6 +1,18 @@
 
 aGov Changelog
 
+7.x-1.7
+=======
+
+Security updates:
+
+- Drupal 7.35
+- Context 7.x-3.6
+- Chaos tools 7.x-1.7
+- Entity API 7.x-1.6
+- Views 7.x-3.10
+- Webform 7.x-3.23
+
 7.x-1.6
 =======
 - SA-CONTRIB-2014-119 - Google Analytics - Information disclosure

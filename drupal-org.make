@@ -18,9 +18,9 @@ projects[ccl][version] = "1.5"
 projects[chosen][version] = 2.0-alpha2
 projects[chosen][patch][] = http://drupal.org/files/2021639-pin-chosen-26.patch
 
-projects[context][version] = "3.2"
+projects[context][version] = "3.6"
 
-projects[ctools][version] = "1.4"
+projects[ctools][version] = "1.7"
 
 projects[date][version] = "2.8"
 
@@ -28,7 +28,7 @@ projects[draggableviews][version] = "2.0"
 
 projects[ds][version] = "2.6"
 
-projects[entity][version] = "1.5"
+projects[entity][version] = "1.6"
 
 projects[entitycache][download][type] = "git"
 projects[entitycache][download][revision] = 7e390b5d4112b581ac2885d8bd0f2cb5ce873284
@@ -104,11 +104,11 @@ projects[view_unpublished][download][branch] = "7.x-1.x"
 projects[view_unpublished][type] = "module"
 
 
-projects[views][version] = "3.8"
+projects[views][version] = "3.10"
 
 projects[views_bulk_operations][version] = "3.1"
 
-projects[webform][version] = "3.20"
+projects[webform][version] = "3.23"
 
 projects[workbench][version] = "1.2"
 
