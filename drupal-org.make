@@ -137,6 +137,7 @@ projects[video_filter][patch][] = https://www.drupal.org/files/issues/video-filt
 projects[video_filter][patch][] = https://www.drupal.org/files/issues/2438439-video-filter-protocol-fix.patch
 projects[video_filter][version] = "3.1"
 projects[views][version] = "3.10"
+projects[views][patch][] = https://www.drupal.org/files/issues/views-ajaxfailing_fixed_in_exposed_form-2425099-46.patch
 projects[views_bulk_operations][version] = "3.1"
 projects[views_rss][version] = "2.0-rc4"
 projects[view_unpublished][download][branch] = "7.x-1.x"
