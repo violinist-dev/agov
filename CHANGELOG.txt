@@ -1,6 +1,18 @@
 
 aGov Changelog
 
+7.x-2.0-alpha7
+==============
+
+This release only contains security updates for Drupal core and contrib modules.
+
+Updates include:
+
+- Drupal core 7.35
+- ctools 7.x-1.7
+- webform 7.x-4.5
+- entity 7.x-1.6
+
 7.x-2.0-alpha6
 ==============
 
