@@ -31,12 +31,16 @@ function agov_paragraphs_widget_view_modes() {
   $view_modes = array();
 
   // Paragraphs Item view modes.
+  $view_modes['default'] = array(
+    'label' => t('Inherit'),
+    'custom settings' => TRUE,
+    'entities' => array('paragraphs_item'),
+  );
   $view_modes['teaser'] = array(
     'label' => t('Teaser'),
     'custom settings' => TRUE,
     'entities' => array('paragraphs_item'),
   );
-  // Paragraphs Item view modes.
   $view_modes['nested'] = array(
     'label' => t('Nested'),
     'custom settings' => TRUE,
@@ -58,10 +62,18 @@ function agov_paragraphs_entity_view($entity, $type, $view_mode, $langcode) {
   // We have a field which allows us to select a view mode for nodes.
   // However the switching doesn't work like it does normally, so we have to
   // manually apply the view here.
-  if ($type === 'paragraphs_item' && isset($entity->bundle) && $entity->bundle === 'node') {
-    if (isset($entity->field_pbundle_view_mode[$langcode][0]['entity_display']) && $entity->field_pbundle_view_mode[$langcode][0]['entity_display'] !== 'full') {
-      $entity->content['field_pbundle_node'] = node_view($entity->field_pbundle_node[$langcode][0]['entity'], $entity->field_pbundle_view_mode[$langcode][0]['entity_display'], $langcode);
+  if ($type === 'paragraphs_item' && isset($entity->bundle) && $entity->bundle === 'node' && isset($entity->field_pbundle_view_mode[$langcode][0]['entity_display'])) {
+    if (isset($entity->field_pbundle_node[$langcode][0]['target_id'])) {
+      $node = node_load($entity->field_pbundle_node[$langcode][0]['target_id']);
     }
+    else {
+      $node = $entity->field_pbundle_node[$langcode][0]['entity'];
+    }
+    $node_view_mode = $entity->field_pbundle_view_mode[$langcode][0]['entity_display'];
+    if ($node_view_mode === 'default') {
+      $node_view_mode = $view_mode;
+    }
+    $entity->content['field_pbundle_node'] = node_view($node, $node_view_mode, $langcode);
   }
 
   // Class logic in the Class Controller.

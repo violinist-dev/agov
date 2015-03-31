@@ -82,7 +82,7 @@ class FeatureContext extends DrupalContext {
    */
   public function iShouldNotBeAbleToCancelTheAccount($username) {
     $this->selectUserVBOCheckbox($username);
-    $this->getSession()->getPage()->fillField('operation', 'action::views_bulk_operations_delete_item');
+    $this->getSession()->getPage()->fillField('operation', 'action::views_bulk_operations_user_cancel_action');
     $this->getSession()->getPage()->pressButton('edit-submit--2');
     $this->assertElementNotOnPage('input[value=Confirm][type=submit]');
     return new Given('I should see "is protected from cancellation, and was not cancelled."');
@@ -93,9 +93,9 @@ class FeatureContext extends DrupalContext {
    */
   public function iShouldBeAbleToCancelTheAccount($username) {
     $this->selectUserVBOCheckbox($username);
-    $this->getSession()->getPage()->fillField('operation', 'action::views_bulk_operations_delete_item');
+    $this->getSession()->getPage()->fillField('operation', 'action::views_bulk_operations_user_cancel_action');
     $this->getSession()->getPage()->pressButton('edit-submit--2');
-    $this->assertElementOnPage('input[value=Confirm][type=submit]');
+    $this->assertElementOnPage('input[value=Next][type=submit]');
     return new Given('I should not see "is protected from cancellation, and was not cancelled."');
   }
 
