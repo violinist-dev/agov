@@ -14,8 +14,7 @@ projects[bean_panels][version] = "1.3"
 projects[blockreference][version] = "2.0"
 projects[breakpoints][version] = "1.3"
 projects[ccl][version] = "1.5"
-projects[chosen][patch][] = https://drupal.org/files/2021639-pin-chosen-26.patch
-projects[chosen][version] = 2.0-alpha2
+projects[chosen][version] = "2.0-beta4"
 projects[context][version] = "3.6"
 projects[crumbs][version] = "2.3"
 projects[ctools][version] = "1.7"
@@ -167,6 +166,11 @@ projects[zen][version] = "5.5"
 projects[shiny][version] = "1.6"
 
 ; Libraries
+
+libraries[chosen][download][type] = "get"
+libraries[chosen][download][url] = "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip"
+libraries[chosen][directory_name] = "chosen"
+libraries[chosen][type] = "library"
 
 libraries[superfish][download][type] = "get"
 libraries[superfish][download][url] = "https://github.com/mehrpadin/Superfish-for-Drupal/archive/1.x.zip"

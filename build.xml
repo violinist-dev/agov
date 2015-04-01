@@ -35,6 +35,7 @@
     <delete dir="${build.dir}" />
     <delete dir="modules/contrib"/>
     <delete dir="themes/contrib"/>
+    <delete dir="libraries"/>
   </target>
 
   <target name="fix-perms">
