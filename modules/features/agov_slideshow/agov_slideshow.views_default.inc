@@ -146,7 +146,7 @@ function agov_slideshow_views_default_views() {
   /* Display: Display Order */
   $handler = $view->new_display('page', 'Display Order', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Change order of slides';
+  $handler->display->display_options['title'] = 'Slide Order';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
@@ -180,6 +180,13 @@ function agov_slideshow_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Change the order of the slideshow on the front page.';
+  $handler->display->display_options['header']['area']['format'] = 'rich_text';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Draggableviews: Content */
   $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
@@ -213,7 +220,14 @@ function agov_slideshow_views_default_views() {
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'self';
   $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
-  $handler->display->display_options['path'] = 'slideshow/order';
+  $handler->display->display_options['path'] = 'admin/content/slideshow/order';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Slide Order';
+  $handler->display->display_options['menu']['description'] = 'Change the order of the slides in the slideshow.';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['slideshow'] = $view;
 
   return $export;
