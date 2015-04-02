@@ -88,6 +88,7 @@ projects[mpac][patch][] = "https://www.drupal.org/files/issues/2418317-2-mpac.pa
 projects[navbar][version] = "1.6"
 projects[node_clone][version] = "1.0-rc2"
 projects[oauth][version] = "3.2"
+projects[options_flatten][version] = "1.0-beta1"
 projects[panels][version] = "3.5"
 projects[paragraphs][version] = "1.0-beta6"
 projects[paranoia][version] = "1.4"
