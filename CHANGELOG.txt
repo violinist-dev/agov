@@ -34,7 +34,21 @@ aGov Changelog
 * 29717 Update libraries to 7.x-2.2 - Kim Pepper
 * 29717 Update module_filter to 7.x-2.0 - Kim Pepper
 * 29717 Update workbench moderation to 7.x-1.4 - Kim Pepper
-
+* 29717 Update paranoia to 7.x-1.4 - Kim Pepper
+* 29717 Update password_policy to 7.x-1.10 - Kim Pepper
+* 29717 Updates bean to 7.x-1.9 - Kim Pepper
+* 29717 update rules to 7.x-2.9 - Kim Pepper
+* 29717 Update search_api to 7.x-1.14 - Kim Pepper
+* 29717 Update site_map to 7.x-1.2 - Kim Pepper
+* 29717 Update twitter block to 7.x-2.2 - Kim Pepper
+* 29717 Update webform_phone to 7.x-1.21 - Kim Pepper
+* 29717 Updates token to 7.x-1.6 - Kim Pepper
+* 29717 Update eventlog - Kim Pepper
+* 29717 Updates features to 7.x-2.4 - Kim Pepper
+* 29717 Updates password policy - Kim Pepper
+* 29717 Updates draggable views to 7.x-2.1 - Kim Pepper
+* 29717 Updated slideshow feature - Kim Pepper
+* 29717 Updated chosen and settings - Kim Pepper
 
 7.x-2.0-alpha7
 ==============
