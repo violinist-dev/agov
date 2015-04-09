@@ -1227,13 +1227,8 @@ function agov_install_tasks($install_state) {
  * Implements hook_install_tasks_alter().
  */
 function agov_install_tasks_alter(&$tasks, $install_state) {
-
   $tasks['agov_finished'] = $tasks['install_finished'];
   unset($tasks['install_finished']);
-
-  _agov_set_theme(AGOV_INSTALL_DEFAULT_THEME);
-  drupal_add_css('profiles/agov/css/install.css');
-  drupal_add_js('profiles/agov/js/install.js');
 }
 
 /**
