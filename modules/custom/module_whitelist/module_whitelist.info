@@ -1,4 +1,0 @@
-name = "Module Whitelist"
-description = "Provides whitelisting of modules that can be enabled/disabled."
-core = 7.x
-package = Administration
