@@ -44,8 +44,6 @@ before_script:
   - bin/phing build
 
 script:
-  # Let's see what we get.
-  - curl http://localhost
   - bin/phing test
 
 notifications:
