@@ -47,7 +47,7 @@ This will take you to the root of the project **inside** of the vm.
 **2) Pull down the dependencies**
 
 ```bash
-$ composer install --prefer-dist --dev
+$ composer install --prefer-dist
 ```
 
 **3) Build the project**
