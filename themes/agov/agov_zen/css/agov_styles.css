@@ -1005,7 +1005,7 @@ html.js .collapsed .fieldset-legend {
 }
 
 #block-menu-menu-quick-links ul a, .menu-block-agov_menu_block-sidebar .menu a {
-  background: url('../images/block-li-bg.png?1416352646') no-repeat scroll left 5px;
+  background: url('../images/block-li-bg.png?1424906511') no-repeat scroll left 5px;
   display: block;
   padding-left: 15px;
   padding-bottom: 2px;
@@ -1592,7 +1592,7 @@ tr.selected td {
 }
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1416352646');
+  background-image: url('../images/progress.gif?1424906511');
 }
 
 #region-content .content ul li {
@@ -1797,28 +1797,32 @@ form#sweaver-frontend > div {
   margin-top: 2.7em;
 }
 
+#block-funnelback-search-form,
 .block-search,
 .block-search-api-page {
   padding-right: 32px;
   position: relative;
 }
+#block-funnelback-search-form .form-text,
 .block-search .form-text,
 .block-search-api-page .form-text {
   width: 100%;
   float: left;
 }
+#block-funnelback-search-form .form-submit,
 .block-search .form-submit,
 .block-search-api-page .form-submit {
   position: absolute;
   right: 0px;
   text-indent: -100px;
-  background: url('../images/search-btn-mobile.png?1416352646') 50% 50% no-repeat;
+  background: url('../images/search-btn-mobile.png?1424906511') 50% 50% no-repeat;
   background-color: #1b1b1b;
   width: 32px;
   font-weight: bold;
   text-align: center;
   height: 25px;
 }
+#block-funnelback-search-form div,
 .block-search div,
 .block-search-api-page div {
   display: inline;
@@ -1900,7 +1904,7 @@ th a, th img {
   display: inline-block;
   width: 26px;
   height: 26px;
-  background-image: url('../images/font-resize-bg.png?1416352646');
+  background-image: url('../images/font-resize-bg.png?1424906511');
   background-repeat: no-repeat;
 }
 .text-resize a.font-large {
@@ -2508,7 +2512,7 @@ body {
   border-top: none;
 }
 #comments .comment {
-  background-image: url('../images/comment-icon.png?1416352646');
+  background-image: url('../images/comment-icon.png?1424906511');
   background-position: 13px 15px;
   background-repeat: no-repeat;
   background-color: #f3f3f3;
@@ -2782,11 +2786,14 @@ footer .block {
 .header {
   position: relative;
 }
-.header .block-agov-text-resize, .header .block-search {
+.header .block-agov-text-resize,
+.header .block-search,
+.header #block-funnelback-search-form {
   margin: 0 10px;
   display: inline-block;
 }
 @media (max-width: 719px) {
+  .header #block-funnelback-search-form,
   .header .block-search,
   .header .block-search-api-page {
     max-width: 50%;
@@ -2797,6 +2804,7 @@ footer .block {
   }
 }
 @media (min-width: 720px) {
+  .header #block-funnelback-search-form,
   .header .block-search,
   .header .block-search-api-page {
     position: relative;
@@ -2804,7 +2812,8 @@ footer .block {
     width: 215px;
   }
 }
-.lt-ie9 .header .block-search, .lt-ie9
+.lt-ie9 .header #block-funnelback-search-form, .lt-ie9
+.header .block-search, .lt-ie9
 .header .block-search-api-page {
   position: relative;
   float: right;
@@ -3146,7 +3155,7 @@ a.tabledrag-handle .handle {
   text-align: left;
   text-indent: -100px;
   padding: 5px 14px;
-  background: url('../images/featured-articles-pause.png?1416352646') no-repeat 0px -27px;
+  background: url('../images/featured-articles-pause.png?1424906511') no-repeat 0px -27px;
 }
 .rslides_tabs li a.pause.paused {
   background-position: 0px 0px;

@@ -52,9 +52,10 @@ function agov_paragraphs_field_group_info() {
     'label' => 'Appearance',
     'weight' => '6',
     'children' => array(
-      0 => 'field_pbundle_css_classes',
-      1 => 'field_pbundle_container_layout',
+      0 => 'field_pbundle_container_layout',
+      1 => 'field_pbundle_css_classes',
       2 => 'field_pbundle_style',
+      3 => 'field_pbundle_view_mode',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

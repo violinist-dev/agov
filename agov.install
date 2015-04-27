@@ -827,7 +827,13 @@ function _agov_default_variables() {
         'up_edit' => 1,
       ),
     ),
+
+    // 403 to 404 settings.
     'site_403' => 'm4032404',
+
+    // Feed settings.
+    'feed_default_items' => '10',
+    'feed_item_length' => 'title',
   );
 
   // Enable xmlsitemap includes for content types.
@@ -977,7 +983,7 @@ function _agov_default_news_beans() {
             'title' => t('News and Media Intro'),
           ),
         ),
-      // Text field.
+        // Text field.
         'field_bean_text' => array(
           '0' => array(
             'value' => 'Optional intro block with image Est porttitor hac ultricies nec integer enim scelerisque proin sagittis porttitor, sit! Magnis sit egestas turpis parturient aliquam. Mauris duis nascetur vel porttitor scelerisque cursus nec, in dis sit sagittis, lacus lacus?',
@@ -987,7 +993,7 @@ function _agov_default_news_beans() {
       ),
     ),
 
-  // Current News block.
+    // Current News block.
     'current-news' => array(
       'label' => $t('News'),
       'title' => $t('News'),
@@ -995,7 +1001,7 @@ function _agov_default_news_beans() {
       'type' => 'image_and_text',
       'view_mode' => 'default',
       'fields' => array(
-      // Image field.
+        // Image field.
         'field_bean_image' => array(
           '0' => array(
             'fid' => $files['current-news']->fid,
@@ -1003,14 +1009,14 @@ function _agov_default_news_beans() {
             'title' => t('Current News'),
           ),
         ),
-      // Text field.
+        // Text field.
         'field_bean_text' => array(
           '0' => array(
             'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
             'format' => 'rich_text',
           ),
         ),
-      // Link to field.
+        // Link to field.
         'field_link_to' => array(
           '0' => array(
             'url' => $menus['current-news'],
@@ -1021,7 +1027,7 @@ function _agov_default_news_beans() {
       ),
     ),
 
-  // Media releases.
+    // Media releases.
     'media-releases' => array(
       'label' => $t('Media Releases'),
       'title' => $t('Media Releases'),
@@ -1037,14 +1043,14 @@ function _agov_default_news_beans() {
             'title' => t('Media Releases'),
           ),
         ),
-      // Text field.
+        // Text field.
         'field_bean_text' => array(
           '0' => array(
             'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
             'format' => 'rich_text',
           ),
         ),
-      // Link to field.
+        // Link to field.
         'field_link_to' => array(
           '0' => array(
             'url' => $menus['media-releases'],
@@ -1055,7 +1061,7 @@ function _agov_default_news_beans() {
       ),
     ),
 
-  // Events.
+    // Events.
     'events' => array(
       'label' => $t('Events'),
       'title' => $t('Events'),
@@ -1089,7 +1095,7 @@ function _agov_default_news_beans() {
       ),
     ),
 
-   // Blog.
+    // Blog.
     'blog' => array(
       'label' => $t('Blog'),
       'title' => $t('Blog'),
@@ -1222,13 +1228,8 @@ function agov_install_tasks($install_state) {
  * Implements hook_install_tasks_alter().
  */
 function agov_install_tasks_alter(&$tasks, $install_state) {
-
   $tasks['agov_finished'] = $tasks['install_finished'];
   unset($tasks['install_finished']);
-
-  _agov_set_theme(AGOV_INSTALL_DEFAULT_THEME);
-  drupal_add_css('profiles/agov/css/install.css');
-  drupal_add_js('profiles/agov/js/install.js');
 }
 
 /**

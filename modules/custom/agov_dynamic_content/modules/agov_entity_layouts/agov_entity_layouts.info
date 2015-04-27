@@ -2,6 +2,7 @@ name = Entity layouts
 description = Allows the use of Paragraphs as an entity layout tool
 core = 7.x
 package = aGov Dynamic Content
+dependencies[] = agov_paragraphs
 dependencies[] = features
 dependencies[] = list
 dependencies[] = paragraphs

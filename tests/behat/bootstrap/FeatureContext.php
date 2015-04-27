@@ -82,7 +82,7 @@ class FeatureContext extends DrupalContext {
    */
   public function iShouldNotBeAbleToCancelTheAccount($username) {
     $this->selectUserVBOCheckbox($username);
-    $this->getSession()->getPage()->fillField('operation', 'action::views_bulk_operations_delete_item');
+    $this->getSession()->getPage()->fillField('operation', 'action::views_bulk_operations_user_cancel_action');
     $this->getSession()->getPage()->pressButton('edit-submit--2');
     $this->assertElementNotOnPage('input[value=Confirm][type=submit]');
     return new Given('I should see "is protected from cancellation, and was not cancelled."');
@@ -93,9 +93,9 @@ class FeatureContext extends DrupalContext {
    */
   public function iShouldBeAbleToCancelTheAccount($username) {
     $this->selectUserVBOCheckbox($username);
-    $this->getSession()->getPage()->fillField('operation', 'action::views_bulk_operations_delete_item');
+    $this->getSession()->getPage()->fillField('operation', 'action::views_bulk_operations_user_cancel_action');
     $this->getSession()->getPage()->pressButton('edit-submit--2');
-    $this->assertElementOnPage('input[value=Confirm][type=submit]');
+    $this->assertElementOnPage('input[value=Next][type=submit]');
     return new Given('I should not see "is protected from cancellation, and was not cancelled."');
   }
 
@@ -188,6 +188,50 @@ class FeatureContext extends DrupalContext {
     if ($later <= $initial) {
       throw new \Exception('Scheduled suspend not changed to later.');
     }
+  }
+
+  /**
+   * Creates and authenticates a user with the given role via Drush.
+   *
+   * Overrides DrupalContext::assertAuthenticatedByRole() to make sure pathauto
+   * doesn't hose the menu_router table.
+   *
+   * @override Given /^I am logged in as a user with the "(?P<role>[^"]*)" role$/
+   */
+  public function assertAuthenticatedByRole($role) {
+    // Check if a user with this role is already logged in.
+    if ($this->loggedIn() && $this->user && isset($this->user->role) && $this->user->role == $role) {
+      return TRUE;
+    }
+    // Create user (and project)
+    $user = (object) array(
+      'name' => $this->getDrupal()->random->name(8),
+      'pass' => $this->getDrupal()->random->name(16),
+      'role' => $role,
+    );
+    $user->mail = "{$user->name}@example.com";
+    // Create a new user.
+    $this->getDriver()->userCreate($user);
+    $this->users[$user->name] = $this->user = $user;
+    if ($role == 'authenticated user') {
+      // Nothing to do.
+    }
+    else {
+      $this->getDriver()->userAddRole($user, $role);
+    }
+    // This is to remove password policy issues.
+    db_update('password_policy_force_change')
+      ->fields(array(
+        'force_change' => 0,
+      ))
+      ->condition('uid', $user->uid)
+      ->execute();
+    db_delete('password_policy_expiration')
+      ->condition('uid', $user->uid)
+      ->execute();
+    // Login.
+    $this->login();
+    return TRUE;
   }
 
 }
