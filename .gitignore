@@ -12,3 +12,6 @@
 /libraries/*
 /modules/contrib
 /themes/contrib
+.DS_Store
+/.idea
+/app
