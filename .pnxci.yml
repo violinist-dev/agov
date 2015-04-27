@@ -2,12 +2,11 @@ application: previousnext/lamp
 
 test: &test
   steps:
-    - echo "build.drupal.dir=./app" >> build.properties
-    - phing prepare:all
-    - phing make
+    - composer install --prefer-dist --dev
+    - bin/phing build
     - mkdir -p app/sites/default/files/tmp
     - mkdir -p app/sites/default/private
-    - phing site-install -Ddb.name=drupal_local -Ddb.username=drupal -Ddb.password=drupal -Ddb.host=localhost
+    - bin/phing install -Ddb.querystring="mysql://drupal:drupal@localhost/drupal_local"
     - chown -R www-data:www-data app/sites/default/files
     - chown -R www-data:www-data app/sites/default/private
 
