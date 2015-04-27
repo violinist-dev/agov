@@ -1,0 +1,16 @@
+# The eslint command is told to search the following directories:
+# - themes/agov
+# - modules/custom
+# - modules/features
+#
+# Ignore the following paths inside those directories.
+#
+themes/agov/AGOV_STARTERKIT
+themes/agov/agov_barton
+themes/agov/agov_zen
+
+# If more than one line matches a path, the last one takes precendent, so we
+# put these last.
+
+**/*.min.js
+**/vendor
