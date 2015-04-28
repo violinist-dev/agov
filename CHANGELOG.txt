@@ -1,5 +1,18 @@
 aGov Changelog
 
+7.x-2.0-beta2
+==============
+
+* Move text_summary_options to its own project - Kim Pepper
+* Move options_flatten to full project - Kim Pepper
+* Revert agov installer theme - Kim Pepper
+* Updates Drupal core to 7.36 and features to 7.x-2.5 - Kim Pepper
+* Move module_whitelist to it's own project - Kim Pepper
+* Move aGov text resize to it's own project - Kim Pepper
+* Move agov_appearance to its own project - Kim Pepper
+* Move agov_password_policy to its own project - Kim Pepper
+* [security] 30774 Update display suite - Kim Pepper
+
 7.x-2.0-beta1
 ==============
 
