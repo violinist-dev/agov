@@ -70,6 +70,7 @@ dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = google_analytics_reports
 dependencies[] = honeypot
+dependencies[] = htmlcs
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = linkchecker
