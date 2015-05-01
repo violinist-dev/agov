@@ -22,7 +22,6 @@ install:
 
   # Install global composer dependencies.
   - composer install --prefer-dist --dev
-  - composer global require --prefer-dist --no-interaction youngj/httpserver:dev-master#aabdd56e2be82c12c313b236cee94da1fa3401a2
 
   # Prepare build and install composer dependencies
   - cp build.travis.properties build.properties
