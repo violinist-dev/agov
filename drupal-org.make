@@ -170,7 +170,7 @@ projects[agov_register][version] = "1.0-alpha1"
 projects[agov_text_resize][version] = "1.0-beta1"
 
 ; Themes
-projects[zen][version] = "5.5"
+projects[zen][version] = "6.x-dev"
 projects[shiny][version] = "1.6"
 
 ; Libraries

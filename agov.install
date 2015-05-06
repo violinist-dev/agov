@@ -12,12 +12,12 @@
 /**
  * Define a default theme constant
  */
-define('AGOV_DEFAULT_THEME', 'agov_barton');
+define('AGOV_DEFAULT_THEME', 'agov_whitlam');
 
 /**
  * Define the install theme.
  */
-define('AGOV_INSTALL_DEFAULT_THEME', 'agov_zen');
+define('AGOV_INSTALL_DEFAULT_THEME', 'agov_whitlam');
 
 /**
  * Define the admin theme.
