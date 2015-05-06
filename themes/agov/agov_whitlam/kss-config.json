@@ -4,12 +4,12 @@
     "sass",
     "css/style-guide"
   ],
-  "destination": "../../../styleguide/next/",
+  "destination": "../../../styleguide/agov_whitlam/",
 
   "//": "The css and js paths are URLs relative to the generated style guide.",
   "css": [
-    "../../themes/agov/next/css/styles.css",
-    "../../themes/agov/next/css/style-guide/chroma-color-styles.css"
+    "../../themes/agov/agov_whitlam/css/styles.css",
+    "../../themes/agov/next/css/style-guide/chroma-kss-styles.css"
   ],
   "js": [
   ]

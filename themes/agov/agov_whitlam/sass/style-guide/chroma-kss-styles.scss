@@ -1,4 +1,4 @@
 // Add Chroma's KSS styles to our style guide.
-.kss-style {
-  @import 'chroma/kss-styles';
-}
+@import 'chroma/kss';
+
+@include chroma-kss-styles();
