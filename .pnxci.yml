@@ -3,7 +3,11 @@ application: previousnext/lamp
 test: &test
   steps:
     - composer install --prefer-dist --dev
+    - bundle install --path vendor/bundle
+    - npm install
     - bin/phing build
+    - bin/phing gulp:build
+    - bin/phing styleguide:link
     - mkdir -p app/sites/default/files/tmp
     - mkdir -p app/sites/default/private
     - bin/phing install -Ddb.querystring="mysql://drupal:drupal@localhost/drupal_local"
