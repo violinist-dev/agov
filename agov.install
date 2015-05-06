@@ -17,7 +17,7 @@ define('AGOV_DEFAULT_THEME', 'agov_whitlam');
 /**
  * Define the install theme.
  */
-define('AGOV_INSTALL_DEFAULT_THEME', 'agov_whitlam');
+define('AGOV_INSTALL_DEFAULT_THEME', 'agov_zen');
 
 /**
  * Define the admin theme.
