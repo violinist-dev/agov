@@ -15,8 +15,8 @@
 // Styleguide: base
 
 // Ensure fonts get loaded first to minimize front-end performance impact.
-//@import 'base/fonts';
-//@import 'base/**';
+@import 'base/fonts';
+@import 'base/**/*';
 
 // Layouts
 //
@@ -26,7 +26,7 @@
 //
 // Styleguide: layouts
 
-//@import 'layouts/sidebars';
+//@import 'layouts/**/*';
 
 // Components
 //
@@ -37,4 +37,4 @@
 //
 // Styleguide: components
 
-//@import 'components/**';
+//@import 'components/**/*';
