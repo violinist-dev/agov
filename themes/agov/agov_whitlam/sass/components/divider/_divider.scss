@@ -8,8 +8,7 @@
 
 .divider,
 %divider {
-  @include output-rhythm(margin-top, rhythm(1) 0);
-  @include output-rhythm(padding-top, rhythm(1) 0);
+  @include output-rhythm(margin, rhythm(1) 0);
   border-top: 1px solid color(border);
 
   // If used as a container, remove the first child's top margin.
