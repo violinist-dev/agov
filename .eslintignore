@@ -12,3 +12,4 @@ themes/agov/agov_zen
 
 **/*.min.js
 **/vendor
+**/bower_components

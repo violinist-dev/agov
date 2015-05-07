@@ -87,7 +87,7 @@ gulp.task('watch:js', ['lint:js'], function() {
 gulp.task('clean:styleguide', del.bind(null, [styleguide + '*.html', styleguide + 'public'], {force: true}));
 
 // Clean CSS directory.
-gulp.task('clean:css', del.bind(null, [theme + '**/.sass-cache', theme + compass.css + '/**/*.css', theme + compass.css + '/**/*.map'], {force: true}));
+gulp.task('clean:css', del.bind(null, [theme + '**/.sass-cache', theme + compass.css + '/**/*.css', theme + compass.css + '/**/*.map', theme + compass.css + '/**/*.hbs'], {force: true}));
 
 // Clean all directories.
 gulp.task('clean', ['clean:css', 'clean:styleguide']);
