@@ -1,46 +1,27 @@
 <?php
-
 /**
  * @file
- * Template file for aGov zen.
+ * Contains the theme's functions to manipulate Drupal's default markup.
+ *
+ * Complete documentation for this file is available online.
+ * @see https://drupal.org/node/1728096
  */
+
 
 /**
- * Implements template_preprocess_html().
+ * Override or insert variables into the maintenance page template.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("maintenance_page" in this case.)
  */
-function agov_zen_preprocess_html(&$vars) {
-
-  /* Adds HTML5 placeholder shim */
-  drupal_add_js(libraries_get_path('html5placeholder') . "/jquery.placeholder.js", 'file');
-}
-
-/**
- * Implements hook_form_alter().
- */
-function agov_zen_form_alter(&$form, &$form_state, $form_id) {
-
-  if ($form_id == 'funnelback_search_block_form') {
-    $form['funnelback_search_field']['#attributes']['placeholder'] = 'Enter keywords...';
-  }
-}
-
-/**
- * Implements hook_preprocess_page().
- */
-function agov_zen_preprocess_page(&$variables) {
-}
-
-/**
- * Implements hook_preprocess_region().
- */
-function agov_zen_preprocess_region(&$variables) {
-
-}
-
-/**
- * Implements hook_preprocess_maintenance_page().
- */
-function agov_zen_preprocess_maintenance_page(&$variables) {
+function agov_zen_preprocess_maintenance_page(&$variables, $hook) {
+  // When a variable is manipulated or added in preprocess_html or
+  // preprocess_page, that same work is probably needed for the maintenance page
+  // as well, so we can just re-use those functions to do that work here.
+  agov_zen_preprocess_html($variables, $hook);
+  //agov_zen_preprocess_page($variables, $hook);
 
   $t_function = get_t();
 
@@ -65,10 +46,83 @@ function agov_zen_preprocess_maintenance_page(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_node().
+ * Override or insert variables into the html templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("html" in this case.)
  */
-function agov_zen_preprocess_node(&$variables) {
+function agov_zen_preprocess_html(&$variables, $hook) {
+  // Adds HTML5 placeholder shim.
+  drupal_add_js(libraries_get_path('html5placeholder') . "/jquery.placeholder.js", 'file');
+}
 
+/**
+ * Override or insert variables into the page templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("page" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function agov_zen_preprocess_page(&$variables, $hook) {
+  $variables['sample_variable'] = t('Lorem ipsum.');
+}
+// */
+
+/**
+ * Override or insert variables into the region templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("region" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function agov_zen_preprocess_region(&$variables, $hook) {
+  // Don't use Zen's region--sidebar.tpl.php template for sidebars.
+  if (strpos($variables['region'], 'sidebar_') === 0) {
+    $variables['theme_hook_suggestions'] = array_diff(
+      $variables['theme_hook_suggestions'], array('region__sidebar')
+    );
+  }
+}
+// */
+
+/**
+ * Override or insert variables into the block templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function agov_zen_preprocess_block(&$variables, $hook) {
+  // Add a count to all the blocks in the region.
+  // $variables['classes_array'][] = 'count-' . $variables['block_id'];
+
+  // By default, Zen will use the block--no-wrapper.tpl.php for the main
+  // content. This optional bit of code undoes that:
+  if ($variables['block_html_id'] == 'block-system-main') {
+    $variables['theme_hook_suggestions'] = array_diff(
+      $variables['theme_hook_suggestions'], array('block__no_wrapper')
+    );
+  }
+}
+// */
+
+/**
+ * Override or insert variables into the node templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("node" in this case.)
+ */
+function agov_zen_preprocess_node(&$variables, $hook) {
   // Slides get a special read more link.
   if ($variables['type'] == 'slide') {
     if (!empty($variables['field_read_more'][0]['url'])) {
@@ -84,6 +138,11 @@ function agov_zen_preprocess_node(&$variables) {
  * Implements hook_process_node().
  */
 function agov_zen_process_node(&$variables) {
+  // The aGov node template includes a dynamic title tag. This defaults to
+  // h2, if not set elsewhere.
+  if (!isset($variables['title_tag']) || empty($variables['title_tag'])) {
+    $variables['title_tag'] = 'h2';
+  }
 
   // We only want to set these if Display Suite HASN'T already been used.
   // This allows us to control the defaults but let end-users override with
@@ -91,15 +150,7 @@ function agov_zen_process_node(&$variables) {
   // This happens in _process_node(), as DS doesn't do its thing till AFTER
   // _preprocess_node() has run.
   if (!isset($variables['rendered_by_ds']) || $variables['rendered_by_ds'] != TRUE) {
-
-    // The aGov node template includes a dynamic title tag. This defaults to
-    // h2, if not set elsewhere.
-    if (!isset($variables['title_tag']) || empty($variables['title_tag'])) {
-      $variables['title_tag'] = 'h2';
-    }
-
     if (isset($variables['view_mode'])) {
-
       // Compact view modes are intended to be embedded in views.
       if ($variables['view_mode'] == 'compact') {
         _agov_zen_process_node_compact($variables);
@@ -117,7 +168,7 @@ function agov_zen_process_node(&$variables) {
  * Private callback to process compact node view modes.
  *
  * @param array $variables
- *   Standard variables array
+ *   Variables to pass to the theme template.
  */
 function _agov_zen_process_node_compact(&$variables) {
   // Compact items are wrapped in an h3, as there is usually an h2
@@ -129,7 +180,7 @@ function _agov_zen_process_node_compact(&$variables) {
  * Private callback to process compact and teaser node view modes.
  *
  * @param array $variables
- *   Standard variables array
+ *   Variables to pass to the theme template.
  */
 function _agov_zen_process_node_compact_teaser(&$variables) {
   $fields = field_read_fields(array('entity_type' => 'node', 'bundle' => $variables['type']));
@@ -147,44 +198,27 @@ function _agov_zen_process_node_compact_teaser(&$variables) {
       }
     }
   }
-
 }
 
+/**
+ * Override or insert variables into the comment templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ * @param string $hook
+ *   The name of the template being rendered ("comment" in this case.)
+ */
+/* -- Delete this line if you want to use this function
+function agov_zen_preprocess_comment(&$variables, $hook) {
+  $variables['sample_variable'] = t('Lorem ipsum.');
+}
+// */
 
 /**
- * Overrides zen_status_messages to fix a small bug with output.
- *
- * @deprecated
- *
- * @todo: This can be removed when http://drupal.org/node/2344165 is fixed.
+ * Implements hook_form_alter().
  */
-function agov_zen_status_messages($variables) {
-  $display = $variables['display'];
-  $output = '';
-
-  $status_heading = array(
-    'status' => t('Status message'),
-    'error' => t('Error message'),
-    'warning' => t('Warning message'),
-  );
-  foreach (drupal_get_messages($display) as $type => $messages) {
-    $output .= "<div class=\"messages--$type messages $type\">\n";
-    if (!empty($status_heading[$type])) {
-      $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>\n";
-    }
-    if (count($messages) > 1) {
-      $output .= " <ul class=\"messages__list\">\n";
-      foreach ($messages as $message) {
-
-        // Fix is for this line only.
-        $output .= '  <li class="messages__item">' . $message . "</li>\n";
-      }
-      $output .= " </ul>\n";
-    }
-    else {
-      $output .= $messages[0];
-    }
-    $output .= "</div>\n";
+function agov_zen_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'funnelback_search_block_form') {
+    $form['funnelback_search_field']['#attributes']['placeholder'] = 'Enter keywords…';
   }
-  return $output;
 }
