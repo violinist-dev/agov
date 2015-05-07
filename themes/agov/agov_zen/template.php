@@ -21,7 +21,7 @@ function agov_zen_preprocess_maintenance_page(&$variables, $hook) {
   // preprocess_page, that same work is probably needed for the maintenance page
   // as well, so we can just re-use those functions to do that work here.
   agov_zen_preprocess_html($variables, $hook);
-  //agov_zen_preprocess_page($variables, $hook);
+  // agov_zen_preprocess_page($variables, $hook);
 
   $t_function = get_t();
 

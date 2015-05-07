@@ -73,7 +73,8 @@ function agov_whitlam_preprocess_node(&$variables, $hook) {
   $variables['sample_variable'] = t('Lorem ipsum.');
 
   // Optionally, run node-type-specific preprocess functions, like
-  // agov_whitlam_preprocess_node_page() or agov_whitlam_preprocess_node_story().
+  // agov_whitlam_preprocess_node_page() or
+  // agov_whitlam_preprocess_node_story().
   $function = __FUNCTION__ . '_' . $variables['node']->type;
   if (function_exists($function)) {
     $function($variables, $hook);
