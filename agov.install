@@ -92,10 +92,10 @@ function agov_install() {
  * Returns a list of the themes that aGov supports.
  */
 function agov_supported_themes() {
-  return array(
+  return array_unique(array(
     AGOV_DEFAULT_THEME,
     AGOV_INSTALL_DEFAULT_THEME,
-  );
+  ));
 }
 
 /**
