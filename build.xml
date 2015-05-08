@@ -25,6 +25,9 @@
   <!-- Drush -->
   <property name="drush.cmd" value="${project.basedir}/bin/drush" override="true" />
 
+  <!-- Gulp -->
+  <property name="gulp.cmd" value="${project.basedir}/node_modules/.bin/gulp" override="true" />
+
   <!-- Database -->
   <property name="db.querystring" value="mysql://drupal:drupal@localhost/local" override="true" />
 
@@ -128,6 +131,17 @@
           passthru="true" />
     <exec dir="${app.dir}"
           command="${drush.cmd} vset -y file_private_path '${app.files.private}'"
+          logoutput="true"
+          passthru="true" />
+  </target>
+
+  <target name="styleguide:link" description="Link the styleguide to make it publicly available.">
+    <symlink link="${app.dir}/styleguide" target="${project.basedir}/styleguide" />
+  </target>
+
+  <target name="gulp:build" description="Generate all compiled SASS and styleguide resources.">
+    <exec dir="${app.dir}"
+          command="${gulp.cmd} build"
           logoutput="true"
           passthru="true" />
   </target>

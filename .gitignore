@@ -7,6 +7,13 @@
 /vendor/*
 /build/*
 /build.properties
+node_modules
+npm-shrinkwrap.json
+Gemfile.lock
+
+# Exclude build files created by gulp and kss-node.
+/themes/agov/agov_whitlam/css/
+/styleguide/*
 
 # Exclude files added by drush make
 /libraries/*

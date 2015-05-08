@@ -1,0 +1,19 @@
+// Box
+//
+// A simple box styling. @TODO needs work
+//
+// Markup: box.hbs
+//
+// .box--alternate - Alternate box styling.
+//
+// Style guide: components.box
+
+.box,
+%box {
+  border: 2px solid color(border);
+  padding: 20px;
+
+  &--alternate {
+    background-color: color(border);
+  }
+}
