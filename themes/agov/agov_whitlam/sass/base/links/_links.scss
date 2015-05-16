@@ -33,13 +33,11 @@ a:focus {
 }
 
 a:active {
-  border: 2px solid color(link-active);
-  display: inline-block;
-  line-height: 1;
+  color: color(link-active);
 
   @if support-legacy-browser(ie, '10') {
     // Remove the gray background color from active links in IE 10.
-    // background-color: transparent;
+    background-color: transparent;
   }
 }
 
