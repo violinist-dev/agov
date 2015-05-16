@@ -130,6 +130,7 @@ $chroma: add-colors((
   black:                  #000,
 
   blue:                   #0072b9,
+  blue-steel:             #466bc8,
 
   purple:                 #639,
 
@@ -141,6 +142,8 @@ $chroma: add-colors((
   yellow-pale:            #ffd,
   yellow:                 #ff0,
   yellow-dark:            #ed5,
+
+  slate-gray-dark:        #52c2c7,
 
   green-pale:             #f8fff0,
   green-light:            #be7,
@@ -154,9 +157,9 @@ $chroma: add-colors('functional', (
   text:                   'black',
   text-bg:                'white',
 
-  link:                   'blue',
+  link:                   'blue-steel',
   link-visited:           'purple',
-  link-active:            'red',
+  link-active:            'slate-gray-dark',
 
   border:                 'grey-medium-light',
 
