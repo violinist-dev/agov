@@ -12,60 +12,49 @@
 //
 // Style guide: base.headings
 
+.heading,
+%heading {
+  // Set 1 unit of vertical rhythm on the top and bottom margins.
+  @include leader(1);
+  @include trailer(1);
+
+  font-family: $font-heading;
+}
+
 // Address variable `h1` font-size and margin within `section` and `article`
 // contexts in Firefox 4+, Safari, and Chrome.
 h1,
 %h1 {
-  // Set the font-size and line-height while keeping a proper vertical rhythm.
+  @extend %heading;
   @include adjust-font-size-to(2.875 * $base-font-size, 2.2);
-
-  // Set 1 unit of vertical rhythm on the top and bottom margins.
-  @include leader(1);
-  @include trailer(1);
 }
 
 h2,
 %h2 {
+  @extend %heading;
   @include adjust-font-size-to(1.5625 * $base-font-size, 1);
-  @include leader(1);
-  @include trailer(1);
 }
 
 h3,
 %h3 {
+  @extend %heading;
   @include adjust-font-size-to(1.25 * $base-font-size, 1);
-  @include leader(1);
-  @include trailer(1);
 }
 
 h4,
 %h4 {
+  @extend %heading;
   @include adjust-font-size-to(1 * $base-font-size, 1);
-  @include leader(1);
-  @include trailer(1);
 }
 
 h5,
 %h5 {
+  @extend %heading;
   @include adjust-font-size-to(.83 * $base-font-size);
-  @include leader(1);
-  @include trailer(1);
 }
 
 h6,
 %h6 {
+  @extend %heading;
   @include adjust-font-size-to(.67 * $base-font-size);
-  @include leader(1);
-  @include trailer(1);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.heading,
-%heading {
-  font-family: $font-heading;
 }
