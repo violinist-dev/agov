@@ -5,12 +5,11 @@ test: &test
     - composer install --prefer-dist --dev
     - bundle install --path vendor/bundle
     - npm install
-    - bin/phing build
+    - bin/phing build -Ddb.querystring="mysql://drupal:drupal@localhost/drupal_local"
     - bin/phing gulp:build
     - bin/phing styleguide:link
     - mkdir -p app/sites/default/files/tmp
     - mkdir -p app/sites/default/private
-    - bin/phing install -Ddb.querystring="mysql://drupal:drupal@localhost/drupal_local"
     - chown -R www-data:www-data app/sites/default/files
     - chown -R www-data:www-data app/sites/default/private
 
