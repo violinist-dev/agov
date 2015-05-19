@@ -15,11 +15,34 @@
   }
 }
 
+// Form element
+.form-element,
+%form-element {
+  // style default
+  padding: 10px 15px;
+  border-style: solid;
+  border-color: color(button-border) color(button-border) color(button-border-bottom);
+  border-width: 1px 1px 2px;
+  
+  &:hover {
+    border-color: color(border-color) color(border-color) color(link);
+    background-color: color(button-bg); 
+  }
+  
+  &[disabled] {
+    @include opacity(.65);
+    @include box-shadow(none);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
 button,
 input,
 optgroup,
 select,
 textarea {
+  @extend %form-element;
   // Keep form elements constrained in their containers.
   @include box-sizing(border-box);
   max-width: 100%;
@@ -253,6 +276,8 @@ label {
   // Drupal-style form labels.
   display: block;
   font-weight: bold;
+  margin-bottom: 5px;
+  max-width: 100%;
 }
 
 // Select list
@@ -289,4 +314,9 @@ textarea {
   @extend %text-input !optional;
   // Remove default vertical scrollbar in IE 8/9/10/11.
   overflow: auto;
+}
+
+// Form wrapper
+.form-group {
+  margin-bottom: 15px;
 }
