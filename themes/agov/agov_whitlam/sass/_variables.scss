@@ -121,6 +121,7 @@ $font-watermark:  $impact;
 $chroma: define-default-color-scheme('Descriptive color names for use in "functional" color names below.');
 $chroma: add-colors((
   white:                  #fff,
+  white-smoke:            #f3f3f3,
   grey-extra-light:       #eee,
   grey-light:             #ddd,
   grey-medium-light:      #ccc,
@@ -159,7 +160,8 @@ $chroma: add-colors('functional', (
   link-active:            'red',
 
   border:                 'grey-medium-light',
-
+  border-color:           'white-smoke',
+  
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
   autocomplete-select:    'white',
