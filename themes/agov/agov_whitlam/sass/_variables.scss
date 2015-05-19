@@ -128,6 +128,7 @@ $chroma: add-colors((
   grey-dark:              #666,
   grey-extra-dark:        #333,
   black:                  #000,
+  grayee:                 #eee,
 
   blue:                   #0072b9,
 
@@ -211,6 +212,8 @@ $chroma: add-colors('functional', (
   table-select:           'yellow-pale',
 
   watermark:              'grey-extra-light',
+
+  pager-bg:               'grayee',
 ));
 
 $chroma-active-scheme: 'functional';
