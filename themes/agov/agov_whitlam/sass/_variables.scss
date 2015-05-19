@@ -128,6 +128,7 @@ $chroma: add-colors((
   grey-dark:              #666,
   grey-extra-dark:        #333,
   black:                  #000,
+  graya0:                 #a0a0a0,
 
   blue:                   #0072b9,
 
@@ -211,6 +212,8 @@ $chroma: add-colors('functional', (
   table-select:           'yellow-pale',
 
   watermark:              'grey-extra-light',
+
+  breadcrumb-color:       'graya0',
 ));
 
 $chroma-active-scheme: 'functional';
