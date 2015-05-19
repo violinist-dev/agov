@@ -95,6 +95,7 @@ $tahoma:          Tahoma, Verdana, 'DejaVu Sans', sans-serif;
 $helvetica:       Helvetica, Arial, 'Nimbus Sans L', sans-serif;
 $arial:           Arial, Helvetica, 'Nimbus Sans L', sans-serif;
 $impact:          Impact, 'Arial Narrow', Helvetica, sans-serif;
+$opensansitalic:          OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
 
 // Monospace font stacks.
 // For an explanation of why "sans-serif" is at the end of this list, see
@@ -121,6 +122,7 @@ $font-watermark:  $impact;
 $chroma: define-default-color-scheme('Descriptive color names for use in "functional" color names below.');
 $chroma: add-colors((
   white:                  #fff,
+  white-smoke:            #f3f3f3,
   grey-extra-light:       #eee,
   grey-light:             #ddd,
   grey-medium-light:      #ccc,
@@ -158,7 +160,7 @@ $chroma: add-colors('functional', (
   link-visited:           'purple',
   link-active:            'red',
 
-  border:                 'grey-medium-light',
+  border:                 'white-smoke',
 
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
