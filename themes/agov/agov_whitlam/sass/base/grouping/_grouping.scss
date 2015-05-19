@@ -135,6 +135,23 @@ pre {
 // Markup: grouping-lists-dl.hbs
 //
 // Style guide: base.grouping.lists.dl
+.list-indent,
+%list-indent {
+  text-indent: 5px;
+}
+ul {
+  @extend %list-indent;
+  list-style-type: disc;
+}
+
+ol {
+  @extend %list-indent;
+  list-style-type: decimal;
+
+  ol {
+    list-style-type: lower-alpha;
+  }
+}
 
 dl,
 menu,
