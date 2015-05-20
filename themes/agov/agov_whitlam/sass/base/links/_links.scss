@@ -28,12 +28,14 @@
 }
 
 a:hover,
+a:active,
 a:focus {
   // Add your styles.
+  color: color(link-active);
 }
 
-a:active {
-  border: 2px solid color(link-active);
+a:focus {
+  border: 2px solid color(link-border-focus);
   display: inline-block;
   line-height: 1;
 
