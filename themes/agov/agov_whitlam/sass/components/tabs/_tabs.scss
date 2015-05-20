@@ -18,8 +18,10 @@
 .tabs,
 %tabs {
   @extend %clearfix;
-  @include background-image(linear-gradient(bottom, color(tabs-border) 1px, transparent 1px));
   @include output-rhythm(margin, rhythm(1) 0);
+  background-image: none;
+  margin-bottom: 36px;
+  border-bottom: 3px solid color(tabs-border);
   @if support-legacy-browser(ie, '9') {
     // IE 9 and earlier don't understand gradients.
     border-bottom: 1px solid color(tabs-border) \0/ie;
@@ -35,13 +37,8 @@
 
 .tabs__tab,
 %tabs__tab {
-  @include border-top-radius(4px);
-  @include single-text-shadow(color(tab-text-shadow), 1px, 1px, 0);
+  @include output-rhythm(margin, rhythm(1)/2 0);
   float: left;
-  margin: 0 3px;
-  border: 1px solid color(tabs-border);
-  // Allow the tabs gradient to appear just below the tab.
-  border-bottom-color: transparent;
   @if support-legacy-browser(ie, '9') {
     // IE 9 and earlier don't understand gradients.
     border-bottom: 0 \0/ie;
@@ -53,7 +50,7 @@
 
   &.is-active {
     // Cover the tabs gradient with the same color as the background.
-    border-bottom-color: color(tabs-bg);
+    //border-bottom-color: color(tabs-bg);
   }
 }
 
@@ -69,33 +66,40 @@
 
 .tabs__tab-link,
 %tabs__tab-link {
-  @extend %tabs__tab-link-common;
-  @include border-top-radius(4px);
-  @include transition(background-color .3s);
-  color: color(tab);
-  background-color: color(tab-bg);
-  letter-spacing: 1px;
-  padding: 0 1em;
-  text-align: center;
+  color: color(tab-secondary);
+  background-color: none;
+  padding: 0 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
 
   &:focus,
   &:hover {
-    background-color: lighten(color(tab-bg), 5%);
-    border-color: lighten(color(tab-bg), 8%);
+    color: color(tab-hover);
+    text-decoration: underline;
+    outline: none;
   }
 
-  &:active {
+  &:active { 
     @extend %tabs__tab-link-is-active;
   }
 }
 
 .tabs__tab-link.is-active,
 %tabs__tab-link-is-active {
-  @if support-legacy-browser(ie, '8') {
-    @include filter-gradient(rgba(lighten(color(tab-bg), 5%), 1), rgba(lighten(color(tab-bg), 5%), 0));
+  position: relative;
+  color: color(link);
+  text-decoration: none;
+  font-weight: bold;
+
+  &:before {
+    content: '';
+    border-bottom: 3px solid color(link);
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: -16px;
+    left: 0;
   }
-  @include background(linear-gradient(rgba(lighten(color(tab-bg), 5%), 1), rgba(lighten(color(tab-bg), 5%), 0)) transparent);
-  border-color: lighten(color(tab-bg), 10%);
 }
 
 // Secondary tabs

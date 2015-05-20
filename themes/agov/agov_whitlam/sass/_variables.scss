@@ -121,15 +121,18 @@ $font-watermark:  $impact;
 $chroma: define-default-color-scheme('Descriptive color names for use in "functional" color names below.');
 $chroma: add-colors((
   white:                  #fff,
+  white-smoke:            #f3f3f3,
   grey-extra-light:       #eee,
   grey-light:             #ddd,
   grey-medium-light:      #ccc,
   grey-medium:            #999,
   grey-dark:              #666,
   grey-extra-dark:        #333,
+  grey-dark-55:           #555,
   black:                  #000,
 
   blue:                   #0072b9,
+  royalblue3:             #3a59a5,
 
   purple:                 #639,
 
@@ -158,7 +161,7 @@ $chroma: add-colors('functional', (
   link-visited:           'purple',
   link-active:            'red',
 
-  border:                 'grey-medium-light',
+  border:                 'white-smoke',
 
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
@@ -205,7 +208,8 @@ $chroma: add-colors('functional', (
   tab:                    'grey-extra-dark',
   tab-text-shadow:        'white',
   tab-bg:                 'grey-light',
-  tab-secondary:          'grey-dark',
+  tab-secondary:          'grey-dark-55',
+  tab-hover:              'royalblue3',
 
   table-drag:             'yellow-pale',
   table-select:           'yellow-pale',
