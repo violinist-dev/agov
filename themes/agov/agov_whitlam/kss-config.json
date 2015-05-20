@@ -9,6 +9,7 @@
   "//": "The css and js paths are URLs relative to the generated style guide.",
   "css": [
     "../../profiles/agov/themes/agov/agov_whitlam/css/styles.css",
+    "../../profiles/agov/themes/agov/agov_whitlam/css/font-awesome/font-awesome.css",
     "../../profiles/agov/themes/agov/agov_whitlam/css/style-guide/chroma-kss-styles.css"
   ],
   "js": [
