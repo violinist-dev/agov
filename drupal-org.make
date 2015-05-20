@@ -155,10 +155,12 @@ projects[webform_clear][patch][] = "https://www.drupal.org/files/issues/webform_
 projects[webform_phone][version] = "1.21"
 projects[workbench][version] = "1.2"
 projects[workbench_moderation][version] = "1.4"
-projects[wysiwyg][patch][] = "https://drupal.org/files/1954910-wysiwyg-empty-after-installation_fixed.patch"
-projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg-857362-selection-bookmarking.patch"
-projects[wysiwyg][patch][] = "https://www.drupal.org/files/wysiwyg-html5-required-1338956-11.patch"
-projects[wysiwyg][version] = "2.2"
+projects[wysiwyg][download][branch] = "7.x-2.x"
+projects[wysiwyg][download][revision] = 898d022cf7d0b6c6a6e7d813199d561b4ad39f8b
+projects[wysiwyg][download][type] = "git"
+projects[wysiwyg][download][url] = "http://git.drupal.org/project/wysiwyg.git"
+projects[wysiwyg][type] = "module"
+projects[wysiwyg][patch][] = "https://www.drupal.org/files/issues/wysiwyg-html5-required-1338956-16.patch"
 projects[wysiwyg_filter][version] = "1.6-rc2"
 projects[xmlsitemap][version] = "2.2"
 
@@ -191,7 +193,7 @@ libraries[html5placeholder][directory_name] = "html5placeholder"
 libraries[html5placeholder][type] = "library"
 
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.2/ckeditor_3.6.6.2.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.7/ckeditor_4.4.7_standard.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
