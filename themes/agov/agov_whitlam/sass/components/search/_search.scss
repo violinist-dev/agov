@@ -1,0 +1,83 @@
+// Search
+//
+// A simple search styling. @TODO needs work
+//
+// Markup: search.hbs
+//
+// .search-form--search-bg-blue.search-form--light - Alternate search styling.
+//
+// Style guide: components.search
+
+.search-form,
+%search-form {
+  border: 2px solid color(border);
+  padding: 20px;
+  color: color(search-color);
+
+  &--search-bg-blue {
+    background: color(link);
+  }
+
+  &--light {
+    @extend %search-form--light;
+  }
+
+  &__wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 13px;
+  }
+
+  &__border {
+    border-bottom: 2px solid color(search-border);
+  }
+
+  .form-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: 0;
+    text-indent: -999em;
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+  .form-group {
+    .form-text {
+      @include box-shadow(none);
+      background: none;
+      border: 0;
+      font-style: italic;
+
+      &::-webkit-input-placeholder {
+        color: color(search-color);
+			}
+
+      &:-ms-input-placeholder {  
+        color: color(search-color); 
+			}
+  	}
+  }
+}
+
+.search-form--light,
+%search-form--light {
+  color: color(search-color-light);
+
+  .search-form__border {
+    border-bottom: 2px solid color(search-border-light);
+  }
+
+  .form-group {
+    .form-text {
+      &::-webkit-input-placeholder {
+        color: color(search-color-light);
+			}
+
+      &:-ms-input-placeholder {  
+        color: color(search-color-light); 
+			}
+  	}
+  }
+}
