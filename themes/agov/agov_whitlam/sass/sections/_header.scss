@@ -1,0 +1,19 @@
+.header__logo {
+  margin: rhythm(1) 0;
+  max-width: 50%;
+}
+
+.header__secondary-menu {
+  margin: rhythm(.5) 0;
+  max-width: 50%;
+}
+
+.header__region {
+  margin: rhythm(1) 0;
+  clear: right;
+  float: right;
+}
+
+.header {
+  background: color(header-background);
+}

@@ -133,6 +133,7 @@ $chroma: add-colors((
   black:                  #000,
 
   blue:                   #0072b9,
+  blue-drark:             #466bc8,
 
   purple:                 #639,
 
@@ -214,6 +215,8 @@ $chroma: add-colors('functional', (
   table-select:           'yellow-pale',
 
   watermark:              'grey-extra-light',
+
+  header-background:      'blue-drark',
 ));
 
 $chroma-active-scheme: 'functional';
