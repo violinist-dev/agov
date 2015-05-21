@@ -63,11 +63,10 @@ figcaption {
 // Style guide: base.grouping.hr
 
 hr {
-  //@extend %divider;
+  @extend %divider;
   // Address differences between Firefox and other browsers.
   @include box-sizing(content-box);
-  height: 10px;
-  background: color(hr-color);
+  height: 0;
 }
 
 // Body copy
