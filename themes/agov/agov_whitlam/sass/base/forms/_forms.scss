@@ -6,8 +6,6 @@
 //
 // Weight: 2
 //
-// Markup: button.hbs
-//
 // Style guide: base.forms
 
 // Correct margin displayed oddly in IE 6/7.
@@ -26,7 +24,8 @@
   border-color: color(button-border) color(button-border) color(button-border-bottom);
   border-width: 1px 1px 2px;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: color(border-color) color(border-color) color(link);
     background-color: color(button-bg); 
   }
@@ -37,7 +36,8 @@
     cursor: not-allowed;
     pointer-events: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: transparent;
       border-color: color(button-border) color(button-border) color(button-border-bottom);
     }
@@ -305,8 +305,11 @@ label {
 
 select {
   // Add your styles.
+  background: color(select-bg);
+  
   &:hover {
     border-color: color(button-border) color(button-border) color(button-border-bottom);
+    background: color(select-bg);
   }
 }
 
@@ -314,9 +317,11 @@ optgroup {
   // Don't inherit the `font-weight` (applied by a rule above).
   // NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
   font-weight: bold;
+  background: color(optgroup-bg);
 
   &:hover {
     border-color: color(button-border) color(button-border) color(button-border-bottom);
+    background: color(optgroup-bg);
   }
 }
 

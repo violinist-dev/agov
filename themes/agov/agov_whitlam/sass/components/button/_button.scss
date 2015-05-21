@@ -28,14 +28,16 @@
   &[disabled] {
     cursor: default;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: color(button-bg);
       border-color: color(button-border-bottom);
       color: color(button-color);
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: color(button-bg-hover);
     border-color: color(button-border-hover);
     color: color(button-color-hover);
@@ -47,7 +49,19 @@ a.button {
   @extend %button;
   background: none;
 
-  &:hover {
+  &[disabled] {
+    color: color(link);
+    background: none; 
+    
+    &:hover,
+    &:focus {
+      color: color(link);
+      background: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
     color: color(button-link-hover);
     background: none;
   }
