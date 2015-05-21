@@ -132,6 +132,7 @@ $chroma: add-colors((
   grey-medium:            #999,
   grey-dark:              #666,
   grey-extra-dark:        #333,
+  grey-f4:                #f4f4f4,
   black:                  #000,
 
   blue:                   #0072b9,
@@ -164,6 +165,8 @@ $chroma: add-colors('functional', (
   link-active:            'red',
 
   border:                 'white-smoke',
+
+  hr-color:               'grey-f4',
 
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
