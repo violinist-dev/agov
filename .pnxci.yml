@@ -10,7 +10,6 @@ test: &test
     - bin/phing styleguide:link
     - mkdir -p app/sites/default/files/tmp
     - mkdir -p app/sites/default/private
-    - bin/phing install -Ddb.querystring="mysql://drupal:drupal@localhost/drupal_local"
     - chown -R www-data:www-data app/sites/default/files
     - chown -R www-data:www-data app/sites/default/private
 

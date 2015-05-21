@@ -69,7 +69,7 @@ $browser-minimum-versions: (
 $base-font-size:        16px;
 
 // The base line height determines the basic unit of vertical rhythm.
-$base-line-height:      24px;
+$base-line-height:      25px;
 
 // The length unit in which to output vertical rhythm values.
 // Supported values: px, em, rem.
@@ -88,6 +88,8 @@ $rem-with-px-fallback:  true;
 $times-new-roman: 'Times New Roman', Times, Georgia, 'DejaVu Serif', serif;
 $times:           Times, 'Times New Roman', Georgia, 'DejaVu Serif', serif;
 $georgia:         Georgia, 'Times New Roman', 'DejaVu Serif', serif;
+$opensans:         OpenSansRegular, 'Times New Roman', 'DejaVu Serif', serif;
+$opensansbold:         OpenSansBold, 'Times New Roman', 'DejaVu Serif', serif;
 
 // Sans-serif font stacks.
 $verdana:         Verdana, Tahoma, 'DejaVu Sans', sans-serif;
@@ -102,7 +104,8 @@ $impact:          Impact, 'Arial Narrow', Helvetica, sans-serif;
 $menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier New', monospace;
 
 // Now create some variables using the font stacks we want on this site.
-$font-body:       $verdana;
+$font-body:       $opensans;
+$font-heading:       $opensansbold;
 $font-monospace:  $menlo;
 $font-watermark:  $impact;
 
@@ -134,6 +137,8 @@ $chroma: add-colors((
   blue:                   #0072b9,
   steelblue:              #466bc8,
   royalblue3:             #3a59a5,
+  blue-steel:             #466bc8,
+  blue-pale:              #3a59a5,
 
   purple:                 #639,
 
@@ -142,9 +147,13 @@ $chroma: add-colors((
   red-orange:             #ed541d,
   rust:                   #8c2e0b,
 
+  purple-pale:            #5a5f8d,
+
   yellow-pale:            #ffd,
   yellow:                 #ff0,
   yellow-dark:            #ed5,
+
+  slate-gray-dark:        #52c2c7,
 
   green-pale:             #f8fff0,
   green-light:            #be7,
@@ -155,12 +164,13 @@ $chroma: add-colors((
 $chroma: define-color-scheme('functional', 'Colors used by functional parts of the design.');
 $chroma: add-colors('functional', (
   // Colors used in the main content area.
-  text:                   'black',
+  text:                   'grey-extra-dark',
   text-bg:                'white',
 
-  link:                   'blue',
-  link-visited:           'purple',
-  link-active:            'red',
+  link:                   'blue-steel',
+  link-visited:           'purple-pale',
+  link-active:            'blue-pale',
+  link-border-focus:      'slate-gray-dark',
 
   border:                 'grey-medium-light',
   border-color:           'white-smoke',
