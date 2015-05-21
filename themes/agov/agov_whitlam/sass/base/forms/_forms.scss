@@ -312,6 +312,15 @@ select {
     border-color: color(button-border) color(button-border) color(button-border-bottom);
     background: color(select-bg);
   }
+
+  &[disabled] {
+    background: color(select-bg);
+    
+    &:hover,
+    &:focus {
+      background: color(select-bg);
+    }
+  }
 }
 
 optgroup {
