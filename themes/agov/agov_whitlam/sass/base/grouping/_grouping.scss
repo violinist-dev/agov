@@ -135,18 +135,14 @@ pre {
 // Markup: grouping-lists-dl.hbs
 //
 // Style guide: base.grouping.lists.dl
-.list-indent,
-%list-indent {
-  text-indent: 5px;
-}
 ul {
-  @extend %list-indent;
   list-style-type: disc;
+  text-indent: 6px;
 }
 
 ol {
-  @extend %list-indent;
   list-style-type: decimal;
+  text-indent: 10px;
 
   ol {
     list-style-type: lower-alpha;
@@ -166,7 +162,8 @@ ol,
 ul {
   ol,
   ul {
-    margin: 0;
+    @include output-rhythm(margin, rhythm(.32) 0);
+    @include output-rhythm(padding-left, rhythm(1.6));
   }
 }
 
