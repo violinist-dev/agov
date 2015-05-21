@@ -17,3 +17,7 @@
 .header {
   background: color(header-background);
 }
+.header__inner {
+  max-width: $container;
+  margin: 0 auto;
+}
