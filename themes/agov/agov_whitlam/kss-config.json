@@ -12,5 +12,8 @@
     "../../profiles/agov/themes/agov/agov_whitlam/css/style-guide/chroma-kss-styles.css"
   ],
   "js": [
-  ]
+  ],
+
+  "homepage": "homepage.md",
+  "title": "aGov Whitlam Style Guide"
 }
