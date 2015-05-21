@@ -31,12 +31,17 @@
     padding: 0;
     font-size: 15px;
     color: color(breadcrumb-color);
+    text-indent: 0;
 
-    span {
-      font-size: 22px;
-      margin: 0 5px 0 10px;
-      position: relative;
-      top: 2px;
+    a {
+      &:focus {
+        border: 0;
+      }
+    }
+
+    i {
+      font-size: 17px;
+      margin: 0 8px 0 11px;
     }
   }
 }
