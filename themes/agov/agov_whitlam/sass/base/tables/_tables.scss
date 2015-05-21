@@ -28,3 +28,8 @@ th {
   border: 2px solid color(border-color);
   padding: 11px 22px;
 }
+
+tr th {
+  font-family: $font-heading;
+  font-size: 20px;
+}
