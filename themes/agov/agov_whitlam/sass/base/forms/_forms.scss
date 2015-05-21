@@ -307,7 +307,8 @@ select {
   // Add your styles.
   background: color(select-bg);
   
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: color(button-border) color(button-border) color(button-border-bottom);
     background: color(select-bg);
   }
@@ -319,7 +320,8 @@ optgroup {
   font-weight: bold;
   background: color(optgroup-bg);
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: color(button-border) color(button-border) color(button-border-bottom);
     background: color(optgroup-bg);
   }
