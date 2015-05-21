@@ -27,11 +27,28 @@
   // Re-set default cursor for disabled elements.
   &[disabled] {
     cursor: default;
+
+    &:hover {
+      background: color(button-bg);
+      border-color: color(button-border-bottom);
+      color: color(button-color);
+    }
   }
 
   &:hover {
     background: color(button-bg-hover);
     border-color: color(button-border-hover);
     color: color(button-color-hover);
+  }
+}
+
+// A link has button class
+a.button {
+  @extend %button;
+  background: none;
+
+  &:hover {
+    color: color(button-link-hover);
+    background: none;
   }
 }
