@@ -15,6 +15,7 @@
 //
 // .messages--warning   - Warning messages.
 // .messages--error     - Error messages.
+// .messages--info     - Error information.
 //
 // Style guide: components.messages.single
 
@@ -24,45 +25,81 @@
 //
 // .messages--warning   - Warning messages.
 // .messages--error     - Error messages.
+// .messages--info      - Error information.
 //
 // Style guide: components.messages.multiple
 
 .messages,
 %messages {
   @extend %status--ok;
+  @extend .fa;
+  @extend .fa-check;
   @include output-rhythm(margin, rhythm(1) 0);
-  padding: 10px 10px 10px 50px;
-  background-image: inline-image('components/messages/messages--ok.png');
-  @if support-legacy-browser(ie, '7') {
-    *background-image: image-url('components/messages/messages--ok.png');
-  }
-  background-position: 8px 8px;
-  background-repeat: no-repeat;
-  border: 1px solid color(status-border);
+  padding: 30px 15px 30px 90px;
+  border: 1px solid color(message-ok);
+  position: relative;
+  display: inline-block;
+  width: 100%;
 
   @include rtl() {
     padding: 10px 50px 10px 10px;
     background-position: 99% 8px;
   }
 
+  &:before {
+    font-size: 32px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -18px;
+    color: color(message-color);
+    width: 62px;
+    text-align: center;
+    z-index: 1;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: color(message-ok);
+    width: 62px;
+    height: 100%;
+    content: '';
+  }
+
   &--warning {
     @extend %messages;
+    @extend .fa-warning;
     @extend %status--warning;
-    background-image: inline-image('components/messages/messages--warning.png');
-    @if support-legacy-browser(ie, '7') {
-      *background-image: image-url('components/messages/messages--warning.png');
-    }
     border-color: color(warning-border);
+
+    &:after {
+      background: color(message-warning);
+    }
   }
 
   &--error {
     @extend %messages;
+    @extend .fa-close;
     @extend %status--error;
-    background-image: inline-image('components/messages/messages--error.png');
-    @if support-legacy-browser(ie, '7') {
-      *background-image: image-url('components/messages/messages--error.png');
-    }
     border-color: color(error-border);
+
+    &:after {
+      background: color(message-error);
+    }
+  }
+
+  &--info {
+    @extend %messages;
+    @extend %status--info;
+    @extend .fa-info-circle;
+    border-color: color(info-border);
+
+    &:after {
+      background: color(message-info);
+    }
   }
 
   &--error__highlighted-text {
@@ -71,10 +108,17 @@
 
   &__list {
     margin: 0;
+    text-indent: 0;
+    padding-left: 15px;
   }
 
   &__item {
     list-style-image: none;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -89,6 +133,10 @@
 
   &.error {
     @extend %messages--error;
+  }
+
+  &.info {
+    @extend %messages--info;
   }
 }
 
