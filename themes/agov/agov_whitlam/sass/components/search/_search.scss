@@ -59,10 +59,12 @@
 			}
 
       &:-moz-placeholder {
+        @include opacity(1);
         color: color(search-color); 
       }
 
       &::-moz-placeholder { 
+        @include opacity(1);
         color: color(search-color);  
       }
 
@@ -93,19 +95,21 @@
   .form-item {
     .form-text {
       &::-webkit-input-placeholder {
-        color: color(search-placeholder-light);
+        color: color(search-border-light);
 			}
 
       &:-moz-placeholder {
-        color: color(search-placeholder-light); 
+        @include opacity(1);
+        color: color(search-border-light); 
       }
 
       &::-moz-placeholder { 
-        color: color(search-placeholder-light);  
+        @include opacity(1);
+        color: color(search-border-light);  
       }
 
       &:-ms-input-placeholder {  
-        color: color(search-placeholder-light); 
+        color: color(search-border-light); 
 			}
   	}
   }
