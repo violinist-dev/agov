@@ -30,7 +30,6 @@
 .messages,
 %messages {
   @extend %status--ok;
-  @extend .fa;
   @extend .fa-check;
   @include output-rhythm(margin, rhythm(1) 0);
   padding: 22px 15px 22px 90px;
@@ -38,6 +37,8 @@
   position: relative;
   display: inline-block;
   width: 100%;
+  font-size: 16px;
+  font-family: $font-body;
 
   @include rtl() {
     padding: 10px 50px 10px 10px;
@@ -45,6 +46,7 @@
   }
 
   &:before {
+    @extend .fa;
     font-size: 32px;
     position: absolute;
     top: 50%;
