@@ -31,7 +31,7 @@
 %messages {
   @extend %status--ok;
   @include output-rhythm(margin, rhythm(1) 0);
-  padding: 35px 10px 35px 100px;
+  padding: 10px 10px 10px 50px;
   background-image: inline-image('components/messages/messages--ok.png');
   @if support-legacy-browser(ie, '7') {
     *background-image: image-url('components/messages/messages--ok.png');
