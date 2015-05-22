@@ -19,7 +19,7 @@
   position: relative;
   text-decoration: none;
 
-  &:hover{
+  &:hover {
     background: color(pager-bg);
   }
 }
@@ -31,6 +31,7 @@
   text-align: center;
   display: inline-block;
   width: 100%;
+  text-indent: 0;
 
   @media print {
     display: none;
@@ -48,6 +49,11 @@
 
     a {
       @extend %pager-link;
+    }
+
+    i {
+      font-size: 17px;
+      width: 8px;
     }
   }
 
