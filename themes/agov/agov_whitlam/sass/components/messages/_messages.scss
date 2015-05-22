@@ -15,7 +15,6 @@
 //
 // .messages--warning   - Warning messages.
 // .messages--error     - Error messages.
-// .messages--info     - Error information.
 //
 // Style guide: components.messages.single
 
@@ -25,7 +24,6 @@
 //
 // .messages--warning   - Warning messages.
 // .messages--error     - Error messages.
-// .messages--info      - Error information.
 //
 // Style guide: components.messages.multiple
 
@@ -35,7 +33,7 @@
   @extend .fa;
   @extend .fa-check;
   @include output-rhythm(margin, rhythm(1) 0);
-  padding: 30px 15px 30px 90px;
+  padding: 22px 15px 22px 90px;
   border: 1px solid color(message-ok);
   position: relative;
   display: inline-block;
@@ -53,7 +51,7 @@
     left: 0;
     margin-top: -18px;
     color: color(message-color);
-    width: 62px;
+    width: 60px;
     text-align: center;
     z-index: 1;
   }
@@ -64,7 +62,7 @@
     bottom: 0;
     left: 0;
     background: color(message-ok);
-    width: 62px;
+    width: 60px;
     height: 100%;
     content: '';
   }
@@ -88,17 +86,6 @@
 
     &:after {
       background: color(message-error);
-    }
-  }
-
-  &--info {
-    @extend %messages;
-    @extend %status--info;
-    @extend .fa-info-circle;
-    border-color: color(info-border);
-
-    &:after {
-      background: color(message-info);
     }
   }
 
@@ -133,10 +120,6 @@
 
   &.error {
     @extend %messages--error;
-  }
-
-  &.info {
-    @extend %messages--info;
   }
 }
 
