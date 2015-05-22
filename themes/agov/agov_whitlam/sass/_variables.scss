@@ -106,9 +106,10 @@ $menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier Ne
 
 // Now create some variables using the font stacks we want on this site.
 $font-body:       $opensans;
-$font-heading:       $opensansbold;
+$font-heading:    $opensansbold;
 $font-monospace:  $menlo;
 $font-watermark:  $impact;
+$font-pager:      $opensansbold;
 
 
 // Colors
