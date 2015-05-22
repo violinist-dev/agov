@@ -16,9 +16,9 @@
   // style default
   line-height: inherit;
   background: color(button-bg);
-  border-color: color(button-border-bottom);
-  border-width: 0 0 2px;
+  border-bottom: 2px solid color(button-border-bottom);
   color: color(button-color);
+  padding: 15px 20px;
   @if support-legacy-browser(ie, '7') {
     // Remove inner spacing in IE 7 without affecting normal text inputs.
     *overflow: visible;
@@ -26,7 +26,10 @@
 
   // Re-set default cursor for disabled elements.
   &[disabled] {
-    cursor: default;
+    @include opacity(.65);
+    @include box-shadow(none);
+    cursor: not-allowed;
+    pointer-events: none;
 
     &:hover,
     &:focus {
@@ -47,22 +50,5 @@
 // A link has button class
 a.button {
   @extend %button;
-  background: none;
-
-  &[disabled] {
-    color: color(link);
-    background: none; 
-    
-    &:hover,
-    &:focus {
-      color: color(link);
-      background: none;
-    }
-  }
-
-  &:hover,
-  &:focus {
-    color: color(button-link-hover);
-    background: none;
-  }
+  display: inline-block;
 }
