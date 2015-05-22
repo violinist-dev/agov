@@ -12,4 +12,5 @@ group :frontend do
   gem 'sass-globbing',        '~> 1.1'
   gem 'scss_lint',            '~> 0.38'
   gem 'zen-grids',            '>= 2.0.0.beta.3'
+  gem 'font-awesome-sass',    '~> 4.3.0'
 end
