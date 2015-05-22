@@ -4,7 +4,7 @@
 //
 // Markup: search.hbs
 //
-// .search-form--search-bg-blue.search-form--light - Alternate search styling.
+// .search-form--light - Alternate search light styling.
 //
 // Style guide: components.search
 
@@ -13,10 +13,6 @@
   border: 2px solid color(border);
   padding: 20px;
   color: color(search-color);
-
-  &--search-bg-blue {
-    background: color(link);
-  }
 
   &--light {
     @extend %search-form--light;
@@ -33,26 +29,42 @@
   }
 
   .form-submit {
+    background: none;
+    background-repeat: no-repeat;
+    background-image: inline-image('components/search/search-icon-blue.png');
+    @if support-legacy-browser(ie, '7') {
+      *background-image: image-url('components/search/search-icon-blue.png');
+    }
     position: absolute;
     right: 0;
     top: 0;
-    background: none;
     border: 0;
     text-indent: -999em;
     display: inline-block;
-    padding: 0 10px;
+    width: 23px;
+    height: 23px;
+    background-color: none;
   }
 
-  .form-group {
+  .form-item {
     .form-text {
       @include box-shadow(none);
       background: none;
       border: 0;
       font-style: italic;
+      font-weight: bold;
 
       &::-webkit-input-placeholder {
         color: color(search-color);
 			}
+
+      &:-moz-placeholder {
+        color: color(search-color); 
+      }
+
+      &::-moz-placeholder { 
+        color: color(search-color);  
+      }
 
       &:-ms-input-placeholder {  
         color: color(search-color); 
@@ -69,14 +81,31 @@
     border-bottom: 2px solid color(search-border-light);
   }
 
-  .form-group {
+  .form-submit {
+    background: none;
+    background-repeat: no-repeat;
+    background-image: inline-image('components/search/search-icon.png');
+    @if support-legacy-browser(ie, '7') {
+      *background-image: image-url('components/search/search-icon.png');
+    }
+  }
+
+  .form-item {
     .form-text {
       &::-webkit-input-placeholder {
-        color: color(search-color-light);
+        color: color(search-placeholder-light);
 			}
 
+      &:-moz-placeholder {
+        color: color(search-placeholder-light); 
+      }
+
+      &::-moz-placeholder { 
+        color: color(search-placeholder-light);  
+      }
+
       &:-ms-input-placeholder {  
-        color: color(search-color-light); 
+        color: color(search-placeholder-light); 
 			}
   	}
   }
