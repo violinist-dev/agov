@@ -14,8 +14,10 @@
   padding: 6px 12px;
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: color(pager-bg);
+    display: inline;
   }
 }
 
