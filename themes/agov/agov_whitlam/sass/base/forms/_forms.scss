@@ -129,6 +129,8 @@ input {
 
   &[type="color"] {
     // Add your styles.
+    min-height: 30px;
+    padding: 4px;
   }
 
   &[type="file"] {
@@ -154,10 +156,11 @@ input {
     @include box-shadow(none);
     cursor: not-allowed;
     pointer-events: none;
+    background: none;
 
     &:hover,
     &:focus {
-      background: transparent;
+      background: none;
       border-color: color(button-border) color(button-border) color(button-border-bottom);
     }
   }
