@@ -97,6 +97,7 @@ $tahoma:          Tahoma, Verdana, 'DejaVu Sans', sans-serif;
 $helvetica:       Helvetica, Arial, 'Nimbus Sans L', sans-serif;
 $arial:           Arial, Helvetica, 'Nimbus Sans L', sans-serif;
 $impact:          Impact, 'Arial Narrow', Helvetica, sans-serif;
+$opensansitalic:          OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
 
 // Monospace font stacks.
 // For an explanation of why "sans-serif" is at the end of this list, see
@@ -124,6 +125,7 @@ $font-watermark:  $impact;
 $chroma: define-default-color-scheme('Descriptive color names for use in "functional" color names below.');
 $chroma: add-colors((
   white:                  #fff,
+  white-smoke:            #f3f3f3,
   grey-extra-light:       #eee,
   grey-light:             #ddd,
   grey-medium-light:      #ccc,
@@ -136,14 +138,12 @@ $chroma: add-colors((
   blue-steel:             #466bc8,
   blue-pale:              #3a59a5,
 
-  purple:                 #639,
+  purple:                 #5a5f8d,
 
   pink-pale:              #fef5f1,
   red:                    #c00,
   red-orange:             #ed541d,
   rust:                   #8c2e0b,
-
-  purple-pale:            #5a5f8d,
 
   yellow-pale:            #ffd,
   yellow:                 #ff0,
@@ -164,12 +164,13 @@ $chroma: add-colors('functional', (
   text-bg:                'white',
 
   link:                   'blue-steel',
-  link-visited:           'purple-pale',
-  link-active:            'blue-pale',
+  link-visited:           'purple',
+  link-hover:             'blue-pale',
   link-border-focus:      'slate-gray-dark',
 
-  border:                 'grey-medium-light',
-
+  border-color:           'white-smoke',
+  border:                 'white-smoke',
+  
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
   autocomplete-select:    'white',
@@ -223,6 +224,7 @@ $chroma: add-colors('functional', (
   watermark:              'grey-extra-light',
 
   header-background:      'blue-steel',
+  breadcrumb-color:       'grey-medium',
 ));
 
 $chroma-active-scheme: 'functional';
