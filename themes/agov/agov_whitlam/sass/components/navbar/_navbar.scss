@@ -1,0 +1,119 @@
+// Navbar menu
+//
+// Navbar menu
+// is available.
+//
+// Markup: navbar.hbs
+//
+// Style guide: components.navbar
+
+.main-navigation {
+  background: color(navbar-bg);
+  padding: 5px;
+}
+
+.region-navigation {
+  display: none;
+} 
+
+.main-menu {
+  width: 960px;
+  margin: 0 auto;
+
+  ul.menu,
+  ul.links {
+    display: inline-block;
+    width: 100%;
+    text-indent: 0;
+    margin: 0;
+
+    > li {
+      padding: 0;
+      float: left;
+
+      > a {
+        color: color(navbar);
+        font-family: $font-body;
+        padding: 15px 26px;
+        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 17px;
+        position: relative;
+        display: inline-block;
+
+        &:focus {
+          border: 0;
+          line-height: inherit;
+          outline: none;
+        }
+
+        &.active,
+        &:hover,
+        &:focus {
+          background: color(navbar);
+          color: color(navbar-active);
+        }
+      }
+    }
+
+    li {
+      position: relative;
+
+      &:hover {
+        a {
+          background: color(navbar-bg-hover);
+          color: color(navbar-active);
+        }
+
+        ul {
+          left: 0;
+          padding: 2px;
+          margin: 0;
+          background: color(navbar-bg-hover);
+        }
+      }
+    }
+
+    ul {
+      background: color(navbar-bg-hover);
+      left: -999em;
+      position: absolute;
+      width: 200px;
+      z-index: 99;
+      top: 55px; 
+
+      li {
+        width: 100%;
+
+        &:hover {
+          > a {
+            background: color(navbar);
+            color: color(link-hover);
+            text-decoration: underline;
+          }
+
+          ul {
+            left: 196px;
+            display: block;
+          }
+        }
+
+        a {
+          width: 100%;
+
+          &:hover { 
+            background: color(navbar);
+            color: color(link-hover);
+            text-decoration: underline;
+          }
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        top: -2px;
+      }
+    }
+  }
+}
