@@ -138,14 +138,12 @@ $chroma: add-colors((
   blue-steel:             #466bc8,
   blue-pale:              #3a59a5,
 
-  purple:                 #639,
+  purple:                 #5a5f8d,
 
   pink-pale:              #fef5f1,
   red:                    #c00,
   red-orange:             #ed541d,
   rust:                   #8c2e0b,
-
-  purple-pale:            #5a5f8d,
 
   yellow-pale:            #ffd,
   yellow:                 #ff0,
@@ -166,13 +164,18 @@ $chroma: add-colors('functional', (
   text-bg:                'white',
 
   link:                   'blue-steel',
+<<<<<<< HEAD
   link-visited:           'purple-pale',
   link-active:            'blue-pale',
+=======
+  link-visited:           'purple',
+>>>>>>> 7.x-3.x
   link-hover:             'blue-pale',
   link-border-focus:      'slate-gray-dark',
 
+  border-color:           'white-smoke',
   border:                 'white-smoke',
-
+  
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
   autocomplete-select:    'white',
@@ -229,6 +232,9 @@ $chroma: add-colors('functional', (
   navbar-active:          'grey-extra-dark',
   navbar:                 'white',
   navbar-bg-hover:        'white-smoke',
+
+  breadcrumb-color:       'grey-medium',
+
 ));
 
 $chroma-active-scheme: 'functional';
