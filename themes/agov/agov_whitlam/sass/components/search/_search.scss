@@ -11,21 +11,40 @@
 .search-form,
 %search-form {
   border: 2px solid color(border);
-  padding: 20px;
+  padding: 10px 20px;
   color: color(search-color);
+
+  @include respond-to('small') {
+    padding: 20px;
+  }
 
   &--light {
     @extend %search-form--light;
   }
-
+  
   &__wrap {
     position: relative;
     display: inline-block;
     padding-bottom: 13px;
+    width: 100%;
+
+    @include respond-to('larger') {
+      min-width: 363px;
+      width: auto;
+    }
+
+    @include respond-to('small') {
+      min-width: 320px;
+      width: auto;
+    }
   }
 
   &__border {
-    border-bottom: 2px solid color(search-border);
+    border-bottom: 1px solid color(search-border);
+
+    @include respond-to('small') {
+      border-bottom: 2px solid color(search-border);
+    }
   }
 
   .form-submit {
@@ -55,6 +74,7 @@
       font-weight: bold;
 
       &::-webkit-input-placeholder {
+        @include opacity(1);
         color: color(search-color);
 			}
 
@@ -80,7 +100,11 @@
   color: color(search-color-light);
 
   .search-form__border {
-    border-bottom: 2px solid color(search-border-light);
+    border-bottom: 1px solid color(search-border-light);
+
+    @include respond-to('small') {
+      border-bottom: 2px solid color(search-border-light);
+    }
   }
 
   .form-submit {
@@ -95,6 +119,7 @@
   .form-item {
     .form-text {
       &::-webkit-input-placeholder {
+        @include opacity(1);
         color: color(search-border-light);
 			}
 

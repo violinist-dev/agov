@@ -139,14 +139,12 @@ $chroma: add-colors((
   blue-steel:             #466bc8,
   blue-pale:              #3a59a5,
 
-  purple:                 #639,
+  purple:                 #5a5f8d,
 
   pink-pale:              #fef5f1,
   red:                    #c00,
   red-orange:             #ed541d,
   rust:                   #8c2e0b,
-
-  purple-pale:            #5a5f8d,
 
   yellow-pale:            #ffd,
   yellow:                 #ff0,
@@ -167,12 +165,13 @@ $chroma: add-colors('functional', (
   text-bg:                'white',
 
   link:                   'blue-steel',
-  link-visited:           'purple-pale',
-  link-active:            'blue-pale',
+  link-visited:           'purple',
+  link-hover:             'blue-pale',
   link-border-focus:      'slate-gray-dark',
 
+  border-color:           'white-smoke',
   border:                 'white-smoke',
-
+  
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
   autocomplete-select:    'white',
@@ -230,6 +229,7 @@ $chroma: add-colors('functional', (
   search-border:          'gray-bb',
   search-border-light:    'white-smoke',
 
+  breadcrumb-color:       'grey-medium',
 ));
 
 $chroma-active-scheme: 'functional';
@@ -242,11 +242,11 @@ $chroma-active-scheme: 'functional';
 // Style guide: sass.variables.breakpoints
 
 $breakpoints: (
-  'small':        (444px,       'no-query' true),
-  'medium':       (777px,       'no-query' true),
-  'medium-only':  (777px 998px, 'no-query' true),
-  'large':        (999px,       'no-query' true),
-  'larger':       (1222px),
+  'small':        (480px,       'no-query' true),
+  'medium':       (768px,       'no-query' true),
+  'medium-only':  (768px 960px, 'no-query' true),
+  'large':        (960px,       'no-query' true),
+  'larger':       (1024px),
 );
 
 
