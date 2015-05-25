@@ -17,7 +17,7 @@
 // .layout-3col__col-3 - 1-column wide grid item spanning column 3. Starts a new row on tablet screens.
 // .layout-3col__col-4 Could we use this? - (At tablet sizes, the col-x grid items will form an irregular layout of 2 items in the first row and 1 item in the second row. We could add a "hidden" col-4 item that does not appear on the large-screen 3-column grid.) 1-column wide grid item spanning column 2 on tablet screens.
 //
-// Style guide: components.layout-3column
+// Style guide: layouts.layout-3column
 
 $zen-columns: 3;
 $zen-gutters: 40px;
@@ -46,9 +46,6 @@ $zen-gutters: 40px;
   &__right-content {
     //@include zen-clear();
     @include zen-grid-item(2, 2);
-    @include respond-to('small') {
-      background: red;
-    }
   }
 
   &__left-sidebar {
