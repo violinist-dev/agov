@@ -5,12 +5,6 @@ description = The aGov base theme, based on Zen
 core        = 7.x
 base theme  = zen
 
-scripts[] = js/tinynav.min.js
-scripts[] = js/script.js
-scripts[] = js/superfish.js
-scripts[] = js/hoverIntent.js
-scripts[] = js/responsiveslides.js
-
 features[] = logo
 features[] = name
 features[] = slogan
