@@ -239,6 +239,7 @@ $breakpoints: (
   'small':        (444px,       'no-query' true),
   'medium':       (777px,       'no-query' true),
   'medium-only':  (777px 998px, 'no-query' true),
+  'except-large': (1px 998px, 'no-query' true),
   'large':        (999px,       'no-query' true),
   'larger':       (1222px),
 );
