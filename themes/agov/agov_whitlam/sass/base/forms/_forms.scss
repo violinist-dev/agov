@@ -277,7 +277,7 @@ label {
   // Drupal-style form labels.
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 // Select list
@@ -316,9 +316,4 @@ textarea {
   @extend %form-element;
   // Remove default vertical scrollbar in IE 8/9/10/11.
   overflow: auto;
-}
-
-// Form wrapper
-.form-group {
-  margin-bottom: 15px;
 }

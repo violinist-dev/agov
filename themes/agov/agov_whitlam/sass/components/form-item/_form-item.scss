@@ -28,7 +28,7 @@
 
 .form-item,
 %form-item {
-  @include output-rhythm(margin, rhythm(1) 0);
+  margin-bottom: 15px;
 
   // The part of the label that indicates a required field.
   &__required {
