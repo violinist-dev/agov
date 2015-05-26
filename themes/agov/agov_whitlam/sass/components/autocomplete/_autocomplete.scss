@@ -3,6 +3,9 @@
 // As the user starts to type a value, a selection list appears below the form
 // item allowing them to choose an option.
 //
+// @TODO: The current icon is broken. We will need to replace the old
+// throbber.gif with an icon from the icon library.
+//
 // Markup: autocomplete.hbs
 //
 // .is-throbbing - Waiting for search result.
