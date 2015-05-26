@@ -1,0 +1,61 @@
+// Comment
+//
+// Comment for node article
+//
+//@todo
+//
+
+.page {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.comment-inner-wrapper {
+  .submitted {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: $font-comment;
+	}
+}
+
+.author {
+  a {
+    color: color(text);
+    text-transform: capitalize;
+    text-decoration: none;
+		
+    &:hover,
+    &:focus {
+      color: color(link);
+      outline: none;
+		}
+	}
+}
+
+.date-month {
+  color: color(comment-date);
+}
+
+.comment {
+  header {
+    position: relative;
+
+    .mark {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+	}
+
+  .field-name-comment-body {
+    p {
+      margin-top: 0;
+		}
+	}
+}
+
+// Reply 
+.indented {
+  padding-left: 70px;
+}
+
