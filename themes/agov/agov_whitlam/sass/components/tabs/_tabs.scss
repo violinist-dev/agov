@@ -18,30 +18,39 @@
 .tabs,
 %tabs {
   @extend %clearfix;
-  @include background-image(linear-gradient(bottom, color(tabs-border) 1px, transparent 1px));
   @include output-rhythm(margin, rhythm(1) 0);
+  background-image: none;
+  margin-bottom: 36px;
+  border-left: 3px solid color(tabs-border);
+  text-indent: 0;
   @if support-legacy-browser(ie, '9') {
     // IE 9 and earlier don't understand gradients.
     border-bottom: 1px solid color(tabs-border) \0/ie;
   }
-  padding: 0 2px;
+  padding: 0;
   list-style: none;
   white-space: nowrap;
 
   @media print {
     display: none;
   }
+
+  @include respond-to('small') {
+    border-bottom: 3px solid color(tabs-border);
+    border-left: 0;
+  }
 }
 
 .tabs__tab,
 %tabs__tab {
-  @include border-top-radius(4px);
-  @include single-text-shadow(color(tab-text-shadow), 1px, 1px, 0);
+  @include output-rhythm(margin, 0);
   float: left;
-  margin: 0 3px;
-  border: 1px solid color(tabs-border);
-  // Allow the tabs gradient to appear just below the tab.
-  border-bottom-color: transparent;
+  width: 100%;
+
+  @include respond-to('small') { 
+    width: auto;
+  }
+
   @if support-legacy-browser(ie, '9') {
     // IE 9 and earlier don't understand gradients.
     border-bottom: 0 \0/ie;
@@ -53,8 +62,10 @@
 
   &.is-active {
     // Cover the tabs gradient with the same color as the background.
-    border-bottom-color: color(tabs-bg);
+    //border-bottom-color: color(tabs-bg);
   }
+
+  
 }
 
 %tabs__tab-link-common {
@@ -69,33 +80,55 @@
 
 .tabs__tab-link,
 %tabs__tab-link {
-  @extend %tabs__tab-link-common;
-  @include border-top-radius(4px);
-  @include transition(background-color .3s);
-  color: color(tab);
-  background-color: color(tab-bg);
-  letter-spacing: 1px;
-  padding: 0 1em;
-  text-align: center;
+  color: color(tab-secondary);
+  background-color: none;
+  width: 100%;
+  padding: 18px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 1;
+
+  @include respond-to('small') { 
+    width: auto;
+    padding: 20px 25px;
+  }
 
   &:focus,
   &:hover {
-    background-color: lighten(color(tab-bg), 5%);
-    border-color: lighten(color(tab-bg), 8%);
-  }
-
-  &:active {
-    @extend %tabs__tab-link-is-active;
+    color: color(tab-hover);
+    text-decoration: underline;
+    outline: none;
+    border: 0;
   }
 }
 
 .tabs__tab-link.is-active,
 %tabs__tab-link-is-active {
-  @if support-legacy-browser(ie, '8') {
-    @include filter-gradient(rgba(lighten(color(tab-bg), 5%), 1), rgba(lighten(color(tab-bg), 5%), 0));
+  position: relative;
+  color: color(link);
+  text-decoration: none;
+  font-weight: bold;
+
+  &:before {
+    content: '';
+    width: 3px;
+    height: 100%;
+    border-left: 3px solid color(link);
+    border-bottom: 0;
+    bottom: 0;
+    left: -3px;
+    position: absolute;
+
+    @include respond-to('small') {  
+      border-bottom: 3px solid color(link);
+      border-left: 0;
+      width: 100%;
+      height: 3px;
+      bottom: -3px;
+      left: 0;
+    }
   }
-  @include background(linear-gradient(rgba(lighten(color(tab-bg), 5%), 1), rgba(lighten(color(tab-bg), 5%), 0)) transparent);
-  border-color: lighten(color(tab-bg), 10%);
 }
 
 // Secondary tabs
@@ -109,6 +142,7 @@
   @extend %tabs;
   font-size: .9em;
   background-image: none;
+  border: 0;
 }
 
 .tabs +,
