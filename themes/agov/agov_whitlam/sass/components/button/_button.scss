@@ -48,12 +48,13 @@
   // Re-set default cursor for disabled elements.
   &[disabled] {
     @include opacity(.65);
+    color: color(text);
 
     &:hover,
     &:focus {
       background: color(button-bg);
       border-color: color(form-element-border);
-      color: color(button-color);
+      color: color(text);
     }
   }
 }
