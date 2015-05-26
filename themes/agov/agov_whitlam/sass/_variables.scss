@@ -84,31 +84,20 @@ $rem-with-px-fallback:  true;
 // monospace) hints at what type of font to use if the web browser doesn't
 // find any of the fonts in the list.
 
-// Serif font stacks.
-$times-new-roman: 'Times New Roman', Times, Georgia, 'DejaVu Serif', serif;
-$times:           Times, 'Times New Roman', Georgia, 'DejaVu Serif', serif;
-$georgia:         Georgia, 'Times New Roman', 'DejaVu Serif', serif;
-$opensans:         OpenSansRegular, 'Times New Roman', 'DejaVu Serif', serif;
-$opensansbold:         OpenSansBold, 'Times New Roman', 'DejaVu Serif', serif;
-
 // Sans-serif font stacks.
-$verdana:         Verdana, Tahoma, 'DejaVu Sans', sans-serif;
-$tahoma:          Tahoma, Verdana, 'DejaVu Sans', sans-serif;
-$helvetica:       Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-$arial:           Arial, Helvetica, 'Nimbus Sans L', sans-serif;
-$impact:          Impact, 'Arial Narrow', Helvetica, sans-serif;
-$opensansitalic:          OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
+$opensans:        OpenSansRegular, 'Times New Roman', 'DejaVu Serif', sans-serif;
+$opensansbold:    OpenSansBold, 'Times New Roman', 'DejaVu Serif', sans-serif;
+$opensansitalic:  OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
 
 // Monospace font stacks.
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
-$menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier New', monospace;
+$menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier New', monospace, sans-serif;
 
 // Now create some variables using the font stacks we want on this site.
 $font-body:       $opensans;
-$font-heading:       $opensansbold;
+$font-bold:       $opensansbold;
 $font-monospace:  $menlo;
-$font-watermark:  $impact;
 
 
 // Colors
@@ -126,7 +115,7 @@ $chroma: define-default-color-scheme('Descriptive color names for use in "functi
 $chroma: add-colors((
   white:                  #fff,
   white-smoke:            #f3f3f3,
-  grey-extra-light:       #eee,
+  grey-extra-light:       #e8e8e8,
   grey-light:             #ddd,
   grey-medium-light:      #ccc,
   grey-medium:            #999,
@@ -135,8 +124,11 @@ $chroma: add-colors((
   black:                  #000,
 
   blue:                   #0072b9,
+  steelblue:              #466bc8,
+  royalblue:              #3a59a5,
   blue-steel:             #466bc8,
   blue-pale:              #3a59a5,
+  turquoise:              #52c2c7,
 
   purple:                 #5a5f8d,
 
@@ -148,8 +140,6 @@ $chroma: add-colors((
   yellow-pale:            #ffd,
   yellow:                 #ff0,
   yellow-dark:            #ed5,
-
-  slate-gray-dark:        #52c2c7,
 
   green-pale:             #f8fff0,
   green-light:            #be7,
@@ -166,11 +156,11 @@ $chroma: add-colors('functional', (
   link:                   'blue-steel',
   link-visited:           'purple',
   link-hover:             'blue-pale',
-  link-border-focus:      'slate-gray-dark',
+  link-border-focus:      'turquoise',
 
   border-color:           'white-smoke',
   border:                 'white-smoke',
-  
+
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
   autocomplete-select:    'white',
@@ -223,6 +213,17 @@ $chroma: add-colors('functional', (
 
   watermark:              'grey-extra-light',
 
+  button-color:           'blue',
+  button-color-hover:     'white',
+  button-bg:              'white-smoke',
+  button-bg-hover:        'steelblue',
+
+  form-element-border:        'grey-extra-light',
+  form-element-border-bottom: 'grey-medium-light',
+  form-element-border-hover:  'royalblue',
+  form-element-bg:            'body-bg',
+  form-element-bg-hover:      'white-smoke',
+
   breadcrumb-color:       'grey-medium',
 ));
 
@@ -257,4 +258,4 @@ $nav-height: 2 * $base-line-height;
 // Drupal RTL support: Rather than include a seperate *-rtl.css file, Zen 6 uses
 // Drupal 8's standard [dir='rtl'] selector for RTL langauge support. You can
 // turn off all RTL CSS by setting the following variable to false.
-$include-rtl: true;
+$include-rtl: false;
