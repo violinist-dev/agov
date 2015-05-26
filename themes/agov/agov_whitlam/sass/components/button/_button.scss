@@ -28,7 +28,8 @@
   // Improve usability and consistency of cursor style between image-type `input` and others.
   cursor: pointer;
   background: color(button-bg);
-  border-bottom: 2px solid color(button-border-bottom);
+  border: 0;
+  border-bottom: 2px solid color(form-element-border);
   color: color(button-color);
   padding: 15px 20px;
   @if support-legacy-browser(ie, '7') {
@@ -39,7 +40,7 @@
   &:hover,
   &:focus {
     background: color(button-bg-hover);
-    border-color: color(button-border-hover);
+    border-color: color(form-element-border-hover);
     color: color(button-color-hover);
     text-decoration: none;
   }
@@ -51,7 +52,7 @@
     &:hover,
     &:focus {
       background: color(button-bg);
-      border-color: color(button-border-bottom);
+      border-color: color(form-element-border);
       color: color(button-color);
     }
   }
