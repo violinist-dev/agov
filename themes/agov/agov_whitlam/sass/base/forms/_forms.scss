@@ -122,6 +122,8 @@ button,
   padding: (50px - 3px - $base-line-height)/2 18px;
   border: 1px solid color(form-element-border);
   border-bottom: 2px solid color(form-element-border-bottom);
+  // Needed for select elements in webkit.
+  background-color: color(form-element-bg);
   // Address Firefox 4+ setting `line-height` on `input` using `!important` in
   // the UA stylesheet.
   line-height: $base-line-height;
