@@ -120,19 +120,18 @@ button,
 // the same time.
 %form-element {
   padding: 15px 20px;
-  border-style: solid;
-  border-color: color(button-border) color(button-border) color(button-border-bottom);
-  border-width: 1px 1px 2px;
+  border: 1px solid color(form-element-border);
+  border-bottom: 2px solid color(form-element-border-bottom);
   // Address Firefox 4+ setting `line-height` on `input` using `!important` in
   // the UA stylesheet.
   line-height: $base-line-height;
 
   &:hover,
   &:focus {
-    border-color: color(border-color) color(border-color) color(link);
-    background-color: color(button-bg); 
+    background-color: color(button-bg);
+    border-bottom-color: color(form-element-border-hover);
   }
-  
+
   &[disabled] {
     @include opacity(.65);
     @include box-shadow(none);
@@ -143,7 +142,7 @@ button,
     &:hover,
     &:focus {
       background: none;
-      border-color: color(button-border) color(button-border) color(button-border-bottom);
+      border-bottom-color: color(form-element-border-bottom);
     }
   }
 }
