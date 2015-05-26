@@ -58,9 +58,3 @@
     }
   }
 }
-
-// A link has button class
-a.button {
-  @extend %button;
-  display: inline-block;
-}
