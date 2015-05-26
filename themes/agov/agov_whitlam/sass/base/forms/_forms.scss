@@ -8,6 +8,12 @@
 //
 // Style guide: base.forms
 
+//
+// The following 8 rules are from normalize.css and help to fix inconsistencies
+// across various browsers. You should probably leave these rules as is and jump
+// to the "Buttons" rule on line 98 before you start editing this file.
+//
+
 // Correct margin displayed oddly in IE 6/7.
 @if support-legacy-browser(ie, '7') {
   form {
@@ -20,7 +26,7 @@ input,
 optgroup,
 select,
 textarea {
-  @extend %text-input;
+  @extend %form-element;
   // Keep form elements constrained in their containers.
   @include box-sizing(border-box);
   max-width: 100%;
@@ -60,29 +66,6 @@ input::-moz-focus-inner {
   padding: 0;
 }
 
-// Buttons
-//
-// Buttons built with the &lt;button&gt; tag are the most flexible for styling
-// purposes. But &lt;input&gt; tags with <code>type</code> set to
-// <code>submit</code>, <code>image</code>, <code>reset</code>, or
-// <code>button</code> are also supported.
-//
-// Markup: forms-button.hbs
-//
-// :hover   - Buttons that are being hovered over.
-//
-// Style guide: base.forms.button
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  @extend %button;
-  // Prevent "line-height: normal" rule below from breaking the
-  // "appearance: button" styling on the input elements in Firefox.
-  line-height: inherit;
-}
-
 // 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
 //    and `video` controls.
 // 2. Correct inability to style clickable `input` types in iOS.
@@ -92,58 +75,57 @@ html input[type="button"], // 1
   -webkit-appearance: button; // 2
 }
 
-// Inputs
-//
-// Input fields are mostly text-based inputs that include the HTML5 types:
-// <code>text</code>, <code>search</code>, <code>tel</code>, <code>url</code>,
-// <code>email</code>, <code>password</code>, <code>date</code>,
-// <code>time</code>, <code>number</code>, <code>range</code>,
-// <code>color</code>, and <code>file</code>.
-//
-// Markup: forms-input.hbs
-//
-// :hover   - Inputs that is being hovered over.
-//
-// Style guide: base.forms.input
+// Fix the cursor style for Chrome's increment/decrement buttons. For certain
+// `font-size` values of the `input`, it causes the cursor style of the
+// decrement button to change from `default` to `text`.
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
 
-input {
-  // Address Firefox 4+ setting `line-height` on `input` using `!important` in
-  // the UA stylesheet.
-  line-height: normal;
+input[type="search"] {
+  // Address `appearance` set to `searchfield` in Safari and Chrome.
+  -webkit-appearance: textfield;
 
-  &[type="text"],
-  &[type="search"],
-  &[type="tel"],
-  &[type="url"],
-  &[type="email"],
-  &[type="password"],
-  &[type="date"],
-  &[type="time"],
-  &[type="number"] {
-    @extend %text-input !optional;
-  }
-
-  &[type="range"] {
-    // Add your styles.
-  }
-
-  &[type="color"] {
-    // Add your styles.
-    min-height: 30px;
-    padding: 4px;
-  }
-
-  &[type="file"] {
-    // Add your styles.
+  // Remove inner padding and search cancel button in Safari and Chrome on OS X.
+  // Safari (but not Chrome) clips the cancel button when the search input has
+  // padding (and `textfield` appearance).
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
   }
 }
 
-%text-input {
-  // style default
+// Buttons
+//
+// Buttons built with the `<button>` element are the most flexible for styling
+// purposes. But `<input>` elements with `type` set to `submit`, `image`,
+// `reset`, or `button` are also supported.
+//
+// Markup: forms-button.hbs
+//
+// :hover  - Hover styling.
+// :active - Depressed button styling.
+//
+// Style guide: base.forms.button
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  @extend %button;
+}
+
+// The %form-element can be used to style different kinds of form elements at
+// the same time.
+%form-element {
   padding: 15px 20px;
   border-style: solid;
   border-color: color(button-border) color(button-border) color(button-border-bottom);
   border-width: 1px 1px 2px;
+  // Address Firefox 4+ setting `line-height` on `input` using `!important` in
+  // the UA stylesheet.
+  line-height: $base-line-height;
 
   &:hover,
   &:focus {
@@ -166,13 +148,53 @@ input {
   }
 }
 
+// Inputs
+//
+// The `<input>` element is mostly used for text-based inputs that include the
+// HTML5 types: `text`, `search`, `tel`, `url`, `email`, `password`, `date`,
+// `time`, `number`, `range`, `color`, and `file`.
+//
+// Markup: forms-input.hbs
+//
+// :hover - Hover styling.
+//
+// Style guide: base.forms.input
+
+input {
+  &[type="text"],
+  &[type="search"],
+  &[type="tel"],
+  &[type="url"],
+  &[type="email"],
+  &[type="password"],
+  &[type="date"],
+  &[type="time"],
+  &[type="number"] {
+    @extend %form-element;
+  }
+
+  &[type="range"] {
+    // Add your styles.
+  }
+
+  &[type="color"] {
+    // Add your styles.
+    min-height: 30px;
+    padding: 4px;
+  }
+
+  &[type="file"] {
+    @extend %form-element;
+  }
+}
+
 // Checkboxes
 //
-// If an &lt;input&gt; element has the <code>type="checkbox"</code> attribute
-// set, the form field is displayed as a checkbox.
+// If an `<input>` element has the `type="checkbox"` attribute set, the form
+// field is displayed as a checkbox.
 //
-// It's recommended that you don't attempt to style these elements.
-// Firefox's implementation doesn't respect box-sizing, padding, or width.
+// It's recommended that you don't attempt to style these elements. Firefox's
+// implementation doesn't respect `box-sizing`, `padding`, or `width`.
 //
 // Markup: forms-input-checkbox.hbs
 //
@@ -180,11 +202,11 @@ input {
 
 // Radio buttons
 //
-// If an &lt;input&gt; element has the <code>type="radio"</code> attribute
-// set, the form field is displayed as a radio button.
+// If an `<input>` element has the `type="radio"` attribute set, the form field
+// is displayed as a radio button.
 //
-// It's recommended that you don't attempt to style these elements.
-// Firefox's implementation doesn't respect box-sizing, padding, or width.
+// It's recommended that you don't attempt to style these elements. Firefox's
+// implementation doesn't respect `box-sizing`, `padding`, or `width`.
 //
 // Markup: forms-input-radio.hbs
 //
@@ -206,46 +228,18 @@ input[type="radio"] {
   }
 }
 
-// Fix the cursor style for Chrome's increment/decrement buttons. For certain
-// `font-size` values of the `input`, it causes the cursor style of the
-// decrement button to change from `default` to `text`.
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-input[type="search"] {
-  // Address `box-sizing` set to `border-box` in Safari and Chrome
-  // (include `-moz` to future-proof).
-  @include box-sizing(content-box);
-  // Address `appearance` set to `searchfield` in Safari and Chrome.
-  -webkit-appearance: textfield;
-
-  // Remove inner padding and search cancel button in Safari and Chrome on OS X.
-  // Safari (but not Chrome) clips the cancel button when the search input has
-  // padding (and `textfield` appearance).
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-}
-
 // Fieldsets
 //
-// The fieldset element groups a set of form fields, optionally under a common
-// name given by the legend element.
+// The `<fieldset>` element groups a set of form fields, optionally under a
+// common name given by the `<legend>` element.
 //
 // Markup: forms-fieldset.hbs
 //
 // Style guide: base.forms.fieldset
 
 fieldset {
-  // Apply borders and padding that keep the vertical rhythm.
-  @include apply-side-rhythm-border(top, $width: 1px, $lines: .35);
-  @include apply-side-rhythm-border(bottom, $width: 1px, $lines: .65);
-  @include apply-side-rhythm-border(left, $width: 1px, $lines: .625);
-  @include apply-side-rhythm-border(right, $width: 1px, $lines: .625);
-  border-color: color(border);
+  @include output-rhythm(padding, rhythm(.35) rhythm(.625) rhythm(.65));
+  border: 1px solid color(border);
   // Define consistent border, margin, and padding.
   margin: 0 2px;
 }
@@ -272,9 +266,9 @@ legend {
 
 // Labels
 //
-// The &lt;label&gt; tag represents a caption of a form field. The label can be
-// associated with a specific form control by using the <code>for</code>
-// attribute or by putting the form control inside the label element itself.
+// The `<label>` element represents a caption of a form field. The label can be
+// associated with a specific form control by using the `for` attribute or by
+// putting the form control inside the label element itself.
 //
 // Markup: forms-label.hbs
 //
@@ -290,11 +284,11 @@ label {
 
 // Select list
 //
-// The &lt;select&gt; tag represents a form field for selecting amongst a set of
+// The `<select>` element represents a form field for selecting amongst a set of
 // options.
 //
 // Known limitation: by default, Chrome and Safari on OS X allow very limited
-// styling of `select`, unless a `border` property is set.
+// styling of `<select>`, unless a `border` property is set.
 //
 // Markup: forms-select.hbs
 //
@@ -335,16 +329,16 @@ optgroup {
 
 // Text areas
 //
-// The &lt;textarea&gt; tag represents a multiline plain text form field.
+// The `<textarea>` element represents a multi-line plain text form field.
 //
 // Markup: forms-textarea.hbs
 //
-// :hover   - Textarea that is being hovered over.
+// :hover - Hover styling.
 //
 // Style guide: base.forms.textarea
 
 textarea {
-  @extend %text-input !optional;
+  @extend %form-element;
   // Remove default vertical scrollbar in IE 8/9/10/11.
   overflow: auto;
   width: 100%;
