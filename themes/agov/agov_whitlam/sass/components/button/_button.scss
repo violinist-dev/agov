@@ -27,7 +27,6 @@
   text-decoration: none;
   // Improve usability and consistency of cursor style between image-type `input` and others.
   cursor: pointer;
-  // style default
   background: color(button-bg);
   border-bottom: 2px solid color(button-border-bottom);
   color: color(button-color);
@@ -48,9 +47,6 @@
   // Re-set default cursor for disabled elements.
   &[disabled] {
     @include opacity(.65);
-    @include box-shadow(none);
-    cursor: not-allowed;
-    pointer-events: none;
 
     &:hover,
     &:focus {
