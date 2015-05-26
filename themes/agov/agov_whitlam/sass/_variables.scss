@@ -123,6 +123,7 @@ $chroma: add-colors((
   grey-extra-dark:        #333,
   grey-dark-55:           #555,
   black:                  #000,
+  grayfa:                 #fafafb,
 
   blue:                   #0072b9,
   steelblue:              #466bc8,
@@ -145,6 +146,11 @@ $chroma: add-colors((
   green-pale:             #f8fff0,
   green-light:            #be7,
   green-dark:             #234600,
+  green1:                 #00852c,
+
+  orange1:                #e86c19,
+
+  violet1:                #6c6f8f,
 ));
 
 // Define color names for functional uses.
@@ -191,16 +197,24 @@ $chroma: add-colors('functional', (
   skip-link:              'white',
   skip-link-bg:           'grey-dark',
 
-  status:                 'green-dark',
+  status:                 'green1',
   status-bg:              'green-pale',
-  status-border:          'green-light',
+  status-border:          'green1',
   status-highlight:       'text',
   warning:                'rust',
   warning-bg:             'yellow-pale',
-  warning-border:         'yellow-dark',
-  error:                  'rust',
+  warning-border:         'orange1',
+  error:                  'red',
   error-bg:               'pink-pale',
-  error-border:           'red-orange',
+  error-border:           'red',
+  info-border:            'violet1',
+  info-bg:                'grayfa',
+  info:                   'violet1',
+  message-ok:             'green1',
+  message-error:          'red',
+  message-info:           'violet1',
+  message-warning:        'orange1',
+  message-color:          'white',
 
   tabs-border:            'border',
   tabs-bg:                'text-bg',
