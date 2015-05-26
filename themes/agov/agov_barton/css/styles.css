@@ -14,11 +14,13 @@ a :focus {
 
 .header {
   background: #006893;
+  color: #fff;
   font-family: "OpenSansRegular", Arial, sans-serif;
 }
 
 .region-navigation {
   background: #333333;
+  color: #fff;
   font-family: "OpenSansRegular", Arial, sans-serif;
 }
 
