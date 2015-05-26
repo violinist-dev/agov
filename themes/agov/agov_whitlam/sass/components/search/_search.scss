@@ -63,13 +63,17 @@
     width: 23px;
     height: 23px;
     background-color: none;
+    padding: 0;
   }
 
   .form-item {
+    margin-bottom: 0;
+
     .form-text {
       @include box-shadow(none);
       background: none;
       border: 0;
+      padding: 0;
       font-style: italic;
       font-weight: bold;
 
@@ -117,7 +121,11 @@
   }
 
   .form-item {
+    margin-bottom: 0;
+
     .form-text {
+      padding: 0;
+
       &::-webkit-input-placeholder {
         @include opacity(1);
         color: color(search-border-light);
