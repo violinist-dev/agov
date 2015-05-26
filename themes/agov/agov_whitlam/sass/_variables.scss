@@ -98,6 +98,8 @@ $helvetica:       Helvetica, Arial, 'Nimbus Sans L', sans-serif;
 $arial:           Arial, Helvetica, 'Nimbus Sans L', sans-serif;
 $impact:          Impact, 'Arial Narrow', Helvetica, sans-serif;
 $opensansitalic:          OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
+$opensansbolditalic:          OpenSansBoldItalic, 'Arial Narrow', Helvetica, sans-serif;
+$opensanssemibolditalic:          OpenSansSemiboldItalic, 'Arial Narrow', Helvetica, sans-serif;
 
 // Monospace font stacks.
 // For an explanation of why "sans-serif" is at the end of this list, see
@@ -106,9 +108,10 @@ $menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier Ne
 
 // Now create some variables using the font stacks we want on this site.
 $font-body:       $opensans;
-$font-heading:       $opensansbold;
+$font-heading:    $opensansbold;
 $font-monospace:  $menlo;
 $font-watermark:  $impact;
+$font-comment:    $opensanssemibolditalic;
 
 
 // Colors
@@ -224,6 +227,8 @@ $chroma: add-colors('functional', (
   watermark:              'grey-extra-light',
 
   breadcrumb-color:       'grey-medium',
+
+  comment-date:            'grey-medium',
 ));
 
 $chroma-active-scheme: 'functional';

@@ -95,6 +95,23 @@ function agov_whitlam_preprocess_comment(&$variables, $hook) {
   $variables['sample_variable'] = t('Lorem ipsum.');
 }
 // */
+function agov_whitlam_preprocess_comment(&$variables, $hook) {
+  $comment = $variables['comment'];
+  $variables['submitted'] = t('<span class="field author">!username</span> - <span class="field date-month">'.format_date($comment->created,'custom','l d M, Y').'</span>', array('!username' => $variables['author']));
+  if (variable_get('comment_subject_field_' . $variables['node']->type, 1) == 0) {
+    $variables['title'] = '';
+  }
+}
+
+function agov_whitlam_preprocess_comment_wrapper(&$variables, $hook) {
+  if($variables['node']->comment_count) {
+  $variables['total_comments_in_node']= $variables['node']->comment_count;
+  }
+  else {
+  $variables['total_comments_in_node'] = 0;
+  }
+}
+
 
 /**
  * Override or insert variables into the region templates.
