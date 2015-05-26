@@ -243,11 +243,11 @@ $chroma-active-scheme: 'functional';
 // Style guide: sass.variables.breakpoints
 
 $breakpoints: (
-  'small':        (444px,       'no-query' true),
-  'medium':       (777px,       'no-query' true),
-  'medium-only':  (777px 998px, 'no-query' true),
-  'large':        (999px,       'no-query' true),
-  'larger':       (1222px),
+  'small':        (480px,       'no-query' true),
+  'medium':       (768px,       'no-query' true),
+  'medium-only':  (768px 960px, 'no-query' true),
+  'large':        (960px,       'no-query' true),
+  'larger':       (1024px),
 );
 
 

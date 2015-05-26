@@ -14,106 +14,149 @@
 
 .region-navigation {
   display: none;
-} 
+}
 
-.main-menu {
-  width: 960px;
+nav,
+%navbar {
+  width: 100%;
   margin: 0 auto;
 
-  ul.menu,
-  ul.links {
+  @include respond-to('larger') {
+    width: 960px;
+  } 
+
+  .menu {
     display: inline-block;
     width: 100%;
     text-indent: 0;
     margin: 0;
+    padding: 0;
 
-    > li {
-      padding: 0;
-      float: left;
-
-      > a {
-        color: color(navbar);
-        font-family: $font-body;
-        padding: 15px 26px;
-        text-decoration: none;
-        text-transform: capitalize;
-        font-size: 17px;
-        position: relative;
-        display: inline-block;
-
-        &:focus {
-          border: 0;
-          line-height: inherit;
-          outline: none;
-        }
-
-        &.active,
-        &:hover,
-        &:focus {
-          background: color(navbar);
-          color: color(navbar-active);
-        }
-      }
+    &__item {
+      @extend %menu__item;
     }
 
-    li {
-      position: relative;
+    .menu {
+      @extend %sub-menu;
+    }
+  }
+}
 
-      &:hover {
-        a {
-          background: color(navbar-bg-hover);
-          color: color(navbar-active);
-        }
+.menu__item,
+%menu__item {
+  padding: 0;
+  float: left;
+  list-style: none;
+  position: relative;
+  width: 100%;
 
-        ul {
-          left: 0;
-          padding: 2px;
-          margin: 0;
-          background: color(navbar-bg-hover);
-        }
+  @include respond-to('small') {
+    width: auto;
+  } 
+
+  a {
+    color: color(navbar);
+    font-family: $font-body;
+    padding: 7px 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    @include respond-to('larger') {
+      width: auto;
+      padding: 15px 26px;
+    } 
+
+    &:focus {
+      border: 0;
+      line-height: inherit;
+      outline: none;
+    }
+
+    &.active,
+    &:hover,
+    &:focus {
+      background: color(navbar);
+      color: color(navbar-active);
+    }
+  }
+
+  &:hover {
+    a {
+      @include respond-to('larger') {
+        background: color(navbar-bg-hover);
+        color: color(navbar-active);
       }
     }
 
     ul {
-      background: color(navbar-bg-hover);
-      left: -999em;
-      position: absolute;
-      width: 200px;
-      z-index: 99;
-      top: 55px; 
+      @include respond-to('larger') {
+        left: 0;
+        padding: 2px;
+        margin: 0;
+        background: color(navbar-bg-hover);
+      }
+    }
+  }
+}
 
-      li {
-        width: 100%;
+.sub-menu,
+%sub-menu {
+  @include respond-to('larger') {
+    background: color(navbar-bg-hover);
+    left: -999em;
+    position: absolute;
+    width: 200px;
+    z-index: 99;
+    top: 55px; 
+  } 
 
-        &:hover {
-          > a {
-            background: color(navbar);
-            color: color(link-hover);
-            text-decoration: underline;
-          }
+  li {
+    width: 100%;
 
-          ul {
-            left: 196px;
-            display: block;
-          }
-        }
-
-        a {
-          width: 100%;
-
-          &:hover { 
-            background: color(navbar);
-            color: color(link-hover);
-            text-decoration: underline;
-          }
+    &:hover {
+      > a {
+        @include respond-to('larger') {
+          background: color(navbar);
+          color: color(link-hover);
+          text-decoration: underline;
         }
       }
 
       ul {
-        display: none;
-        position: absolute;
-        top: -2px;
+        @include respond-to('larger') {
+          left: 196px;
+          display: block;
+        }
       }
+    }
+
+    a {
+      width: 100%;
+      padding-left: 30px;
+
+      @include respond-to('larger') {
+        padding-left: 15px;
+      }
+
+      &:hover { 
+        @include respond-to('larger') {
+          background: color(navbar);
+          color: color(link-hover);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  ul {
+    @include respond-to('larger') {
+      display: none;
+      position: absolute;
+      top: -2px;
     }
   }
 }
