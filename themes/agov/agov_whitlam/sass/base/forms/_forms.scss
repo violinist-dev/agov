@@ -26,7 +26,6 @@ input,
 optgroup,
 select,
 textarea {
-  @extend %form-element;
   // Keep form elements constrained in their containers.
   @include box-sizing(border-box);
   max-width: 100%;
@@ -294,36 +293,13 @@ label {
 // Style guide: base.forms.select
 
 select {
-  // Add your styles.
-  background: none;
-  
-  &:hover,
-  &:focus {
-    border-color: color(button-border) color(button-border) color(button-border-bottom);
-    background: none;
-  }
-
-  &[disabled] {
-    background: none;
-    
-    &:hover,
-    &:focus {
-      background: none;
-    }
-  }
+  @extend %form-element;
 }
 
 optgroup {
   // Don't inherit the `font-weight` (applied by a rule above).
   // NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
   font-weight: bold;
-  background: none;
-
-  &:hover,
-  &:focus {
-    border-color: color(button-border) color(button-border) color(button-border-bottom);
-    background: none;
-  }
 }
 
 // Text areas
