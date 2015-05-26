@@ -17,7 +17,6 @@
 
 .button,
 %button {
-  @include appearance(button);
   // Prevent "line-height: normal" rule below from breaking the
   // "appearance: button" styling on the input elements in Firefox.
   line-height: inherit;
