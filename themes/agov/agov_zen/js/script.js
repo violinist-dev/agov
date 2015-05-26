@@ -19,7 +19,7 @@ Drupal.behaviors.mainMenuTinyNav = {
     $(".region-navigation .block__content > .menu").tinyNav({
       active: 'active-trail:last'
     });
-    $('select.tinynav').prepend('<option value="#">Menu</option>');
+    $('select.tinynav').parent().prepend('<label for="tinynav1" class="element-invisible">Menu</label>');
   }
 };
 
