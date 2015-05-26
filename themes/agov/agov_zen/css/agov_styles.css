@@ -1123,6 +1123,7 @@ html.js .collapsed .fieldset-legend {
   width: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
+  color: inherit;
 }
 
 /* Turns off the element-invisible effect. */
@@ -1901,6 +1902,7 @@ th a, th img {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
+  color: inherit;
   display: inline-block;
   width: 26px;
   height: 26px;
@@ -2724,6 +2726,7 @@ footer .block {
   overflow: hidden;
   margin: 0;
   background: #7a797a;
+  color: white;
   padding-bottom: 2.8em;
   padding-top: 1.4em;
 }
@@ -2765,6 +2768,7 @@ footer .block {
 
 .header {
   background: white;
+  color: #444444;
 }
 
 .header__logo {
@@ -2839,6 +2843,7 @@ footer .block {
   width: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
+  color: inherit;
 }
 
 .front .breadcrumb {
@@ -2882,6 +2887,7 @@ footer .block {
 
 .region-navigation {
   background: #7a797a;
+  color: white;
   position: relative;
   display: inline-block;
   width: 100%;
@@ -3070,7 +3076,6 @@ a.tabledrag-handle .handle {
 #block-views-slideshow-block {
   position: relative;
   overflow: hidden;
-  background: #f1efed;
 }
 #block-views-slideshow-block .view-slideshow ul {
   margin: 0px;
@@ -3102,6 +3107,10 @@ a.tabledrag-handle .handle {
   width: 100%;
 }
 
+#block-views-slideshow-block {
+  background: #f1efed;
+  color: #444444;
+}
 #block-views-slideshow-block .field-name-field-slide-image {
   margin: 0;
   position: relative;
