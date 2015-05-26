@@ -101,10 +101,12 @@ input[type="search"] {
 // purposes. But `<input>` elements with `type` set to `submit`, `image`,
 // `reset`, or `button` are also supported.
 //
+// Below is the default button styling. To see variations on the button styling
+// see the [button component](section-components.html#kssref-components-button).
+//
 // Markup: forms-button.hbs
 //
 // :hover  - Hover styling.
-// :active - Depressed button styling.
 //
 // Style guide: base.forms.button
 
