@@ -136,6 +136,7 @@ $chroma: add-colors((
   grey-dark:              #666,
   grey-extra-dark:        #333,
   black:                  #000,
+  gray77:                 #777,
 
   blue:                   #0072b9,
   blue-steel:             #466bc8,
@@ -228,7 +229,8 @@ $chroma: add-colors('functional', (
 
   breadcrumb-color:       'grey-medium',
 
-  comment-date:            'grey-medium',
+  comment-date:           'grey-dark',
+  comment-icon:           'gray77',
 ));
 
 $chroma-active-scheme: 'functional';
