@@ -84,31 +84,20 @@ $rem-with-px-fallback:  true;
 // monospace) hints at what type of font to use if the web browser doesn't
 // find any of the fonts in the list.
 
-// Serif font stacks.
-$times-new-roman: 'Times New Roman', Times, Georgia, 'DejaVu Serif', serif;
-$times:           Times, 'Times New Roman', Georgia, 'DejaVu Serif', serif;
-$georgia:         Georgia, 'Times New Roman', 'DejaVu Serif', serif;
-$opensans:         OpenSansRegular, 'Times New Roman', 'DejaVu Serif', serif;
-$opensansbold:         OpenSansBold, 'Times New Roman', 'DejaVu Serif', serif;
-
 // Sans-serif font stacks.
-$verdana:         Verdana, Tahoma, 'DejaVu Sans', sans-serif;
-$tahoma:          Tahoma, Verdana, 'DejaVu Sans', sans-serif;
-$helvetica:       Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-$arial:           Arial, Helvetica, 'Nimbus Sans L', sans-serif;
-$impact:          Impact, 'Arial Narrow', Helvetica, sans-serif;
-$opensansitalic:          OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
+$opensans:        OpenSansRegular, 'Times New Roman', 'DejaVu Serif', sans-serif;
+$opensansbold:    OpenSansBold, 'Times New Roman', 'DejaVu Serif', sans-serif;
+$opensansitalic:  OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
 
 // Monospace font stacks.
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
-$menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier New', monospace;
+$menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier New', monospace, sans-serif;
 
 // Now create some variables using the font stacks we want on this site.
 $font-body:       $opensans;
-$font-heading:       $opensansbold;
+$font-bold:       $opensansbold;
 $font-monospace:  $menlo;
-$font-watermark:  $impact;
 
 
 // Colors
@@ -126,17 +115,22 @@ $chroma: define-default-color-scheme('Descriptive color names for use in "functi
 $chroma: add-colors((
   white:                  #fff,
   white-smoke:            #f3f3f3,
-  grey-extra-light:       #eee,
+  grey-extra-light:       #e8e8e8,
   grey-light:             #ddd,
   grey-medium-light:      #ccc,
   grey-medium:            #999,
   grey-dark:              #666,
   grey-extra-dark:        #333,
+  grey-dark-55:           #555,
   black:                  #000,
+  grayfa:                 #fafafb,
 
   blue:                   #0072b9,
+  steelblue:              #466bc8,
+  royalblue:              #3a59a5,
   blue-steel:             #466bc8,
   blue-pale:              #3a59a5,
+  turquoise:              #52c2c7,
 
   purple:                 #5a5f8d,
 
@@ -149,11 +143,14 @@ $chroma: add-colors((
   yellow:                 #ff0,
   yellow-dark:            #ed5,
 
-  slate-gray-dark:        #52c2c7,
-
   green-pale:             #f8fff0,
   green-light:            #be7,
   green-dark:             #234600,
+  green1:                 #00852c,
+
+  orange1:                #e86c19,
+
+  violet1:                #6c6f8f,
 ));
 
 // Define color names for functional uses.
@@ -166,11 +163,11 @@ $chroma: add-colors('functional', (
   link:                   'blue-steel',
   link-visited:           'purple',
   link-hover:             'blue-pale',
-  link-border-focus:      'slate-gray-dark',
+  link-border-focus:      'turquoise',
 
   border-color:           'white-smoke',
   border:                 'white-smoke',
-  
+
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
   autocomplete-select:    'white',
@@ -200,28 +197,48 @@ $chroma: add-colors('functional', (
   skip-link:              'white',
   skip-link-bg:           'grey-dark',
 
-  status:                 'green-dark',
+  status:                 'green1',
   status-bg:              'green-pale',
-  status-border:          'green-light',
+  status-border:          'green1',
   status-highlight:       'text',
   warning:                'rust',
   warning-bg:             'yellow-pale',
-  warning-border:         'yellow-dark',
-  error:                  'rust',
+  warning-border:         'orange1',
+  error:                  'red',
   error-bg:               'pink-pale',
-  error-border:           'red-orange',
+  error-border:           'red',
+  info-border:            'violet1',
+  info-bg:                'grayfa',
+  info:                   'violet1',
+  message-ok:             'green1',
+  message-error:          'red',
+  message-info:           'violet1',
+  message-warning:        'orange1',
+  message-color:          'white',
 
   tabs-border:            'border',
   tabs-bg:                'text-bg',
   tab:                    'grey-extra-dark',
   tab-text-shadow:        'white',
   tab-bg:                 'grey-light',
-  tab-secondary:          'grey-dark',
+  tab-secondary:          'grey-dark-55',
+  tab-hover:              'blue-pale',
 
   table-drag:             'yellow-pale',
   table-select:           'yellow-pale',
 
   watermark:              'grey-extra-light',
+
+  button-color:           'blue',
+  button-color-hover:     'white',
+  button-bg:              'white-smoke',
+  button-bg-hover:        'steelblue',
+
+  form-element-border:        'grey-extra-light',
+  form-element-border-bottom: 'grey-medium-light',
+  form-element-border-hover:  'royalblue',
+  form-element-bg:            'body-bg',
+  form-element-bg-hover:      'white-smoke',
 
   breadcrumb-color:       'grey-medium',
 ));
@@ -235,11 +252,11 @@ $chroma-active-scheme: 'functional';
 //
 // Style guide: sass.variables.breakpoints
 
-$small: 444px;
-$medium: 777px;
-$large-1: 998px;
-$large: 999px;
-$larger: 1222px;
+$small: 480px;
+$medium: 768px;
+$large: 960px;
+$large-1: 959px;
+$larger: 1024px;
 
 $breakpoints: (
   'small':        ($small,       'no-query' true),
@@ -248,7 +265,6 @@ $breakpoints: (
   'large':        ($large,       'no-query' true),
   'larger':       ($larger),
 );
-
 
 //
 // Misc
@@ -263,4 +279,4 @@ $nav-height: 2 * $base-line-height;
 // Drupal RTL support: Rather than include a seperate *-rtl.css file, Zen 6 uses
 // Drupal 8's standard [dir='rtl'] selector for RTL langauge support. You can
 // turn off all RTL CSS by setting the following variable to false.
-$include-rtl: true;
+$include-rtl: false;
