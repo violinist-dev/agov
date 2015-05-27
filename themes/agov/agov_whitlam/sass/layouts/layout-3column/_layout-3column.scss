@@ -1,6 +1,3 @@
-// Dependencies.
-@import 'zen-grids';
-
 // Layout 3 Column
 //
 // Layout 3 Column
@@ -19,61 +16,163 @@
 //
 // Style guide: layouts.layout-3column
 
-$zen-columns: 3;
-$zen-gutters: 40px;
-
 .layout-3col,
 %layout-3col {
+  @include zen-grid-container($context: flow);
+
   &__grid-item-container {
-    @include zen-grid-container($context: flow);
+    @include zen-grid-container();
   }
+}
 
-  &__full {
-    @include zen-new-row(both);
-    @include zen-grid-item(3, 1);
-  }
+$zen-columns: 1;
+$zen-gutters: 40px;
 
-  &__left-content {
-    @include zen-new-row(left);
-    @include zen-grid-item(2, 1);
-  }
-
-  &__right-content {
-    @include zen-new-row(right);
-    @include zen-grid-item(2, 2);
-  }
-
-  &__left-sidebar {
-    @include zen-grid-item(1, 1);
-    @include respond-to('except-large') {
+@media all and (max-width: $medium) {
+  .layout-3col,
+  %layout-3col {
+    &__full {
       @include zen-new-row(both);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__left-content {
+      @include zen-new-row(both);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__right-content {
+      @include zen-new-row(both);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__left-sidebar {
+      @include zen-new-row(both);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__right-sidebar {
+      @include zen-new-row(both);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__col-1 {
+      @include zen-new-row(both);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__col-2 {
+      @include zen-new-row(both);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__col-3 {
+      @include zen-new-row(both);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__col-4 {
+      @include zen-new-row(both);
+      @include zen-grid-item(1, 1);
     }
   }
+}
 
-  &__right-sidebar {
-    @include zen-grid-item(1, 3);
-    @include respond-to('except-large') {
+$zen-columns: 2;
+$zen-gutters: 25px;
+
+@media all and (min-width: $medium) {
+  .layout-3col,
+  %layout-3col {
+    &__full {
       @include zen-new-row(both);
+      @include zen-grid-item(2, 1);
+    }
+
+    &__left-content {
+      @include zen-new-row(both);
+      @include zen-grid-item(2, 1);
+    }
+
+    &__right-content {
+      @include zen-new-row(both);
+      @include zen-grid-item(2, 1);
+    }
+
+    &__left-sidebar {
+      @include zen-new-row(both);
+      @include zen-grid-item(2, 1);
+    }
+
+    &__right-sidebar {
+      @include zen-new-row(both);
+      @include zen-grid-item(2, 1);
+    }
+
+    &__col-1 {
+      @include zen-new-row(left);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__col-2 {
+      @include zen-grid-item(1, 2);
+    }
+
+    &__col-3 {
+      @include zen-new-row(left);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__col-4 {
+      @include zen-grid-item(1, 2);
     }
   }
+}
 
-  &__col-1 {
-    @include zen-new-row(left);
-    @include zen-grid-item(1, 1);
-  }
+$zen-columns: 3;
+$zen-gutters: 25px;
 
-  &__col-2 {
-    @include zen-grid-item(1, 2);
-  }
-
-  &__col-3 {
-    @include zen-grid-item(1, 3);
-    @include respond-to('except-large') {
+@media all and (min-width: $large) {
+  .layout-3col,
+  %layout-3col {
+    &__full {
       @include zen-new-row(both);
+      @include zen-grid-item(3, 1);
     }
-  }
 
-  &__col-4 {
+    &__left-content {
+      @include zen-new-row(left);
+      @include zen-grid-item(2, 1);
+    }
 
+    &__right-content {
+      @include zen-new-row(right);
+      @include zen-grid-item(2, 2);
+    }
+
+    &__left-sidebar {
+      @include zen-grid-item(1, 1);
+    }
+
+    &__right-sidebar {
+      @include zen-grid-item(1, 3);
+    }
+
+    &__col-1 {
+      @include zen-new-row(left);
+      @include zen-grid-item(1, 1);
+    }
+
+    &__col-2 {
+      @include zen-grid-item(1, 2);
+    }
+
+    &__col-3 {
+      @include zen-grid-item(1, 3);
+    }
+
+    &__col-4 {
+      display: none;
+    }
   }
 }
