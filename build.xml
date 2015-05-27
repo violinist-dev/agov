@@ -21,6 +21,8 @@
   <property name="app.files.public"    value="sites/default/files"                       override="true" />
   <property name="app.files.tmp"       value="sites/default/files/tmp"                   override="true" />
   <property name="app.files.private"   value="sites/default/private"                     override="true" />
+  <!-- This should get overidden for secure builds. -->
+  <property name="app.password"        value="password"                                  override="true" />
 
   <!-- Drush -->
   <property name="drush.cmd" value="${project.basedir}/bin/drush" override="true" />
@@ -116,7 +118,7 @@
           description="Install aGov with standard configuration.">
     <!-- Install the site -->
     <exec dir="${app.dir}"
-          command="${drush.cmd} site-install ${app.profile.name} -y --site-name=${app.name} --db-url=${db.querystring} ${app.profile.options}"
+          command="${drush.cmd} site-install ${app.profile.name} -y --site-name=${app.name} --account-pass='${app.password}' --db-url=${db.querystring} ${app.profile.options}"
           logoutput="true"
           passthru="true" />
 
