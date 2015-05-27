@@ -96,6 +96,9 @@ $menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier Ne
 
 // Now create some variables using the font stacks we want on this site.
 $font-body:       $opensans;
+$font-heading:    $opensansbold;
+$font-monospace:  $menlo;
+$font-pager:      $opensansbold;
 $font-bold:       $opensansbold;
 $font-monospace:  $menlo;
 
@@ -123,6 +126,7 @@ $chroma: add-colors((
   grey-extra-dark:        #333,
   grey-dark-55:           #555,
   black:                  #000,
+  grayee:                 #eee,
   grayfa:                 #fafafb,
 
   blue:                   #0072b9,
@@ -229,6 +233,7 @@ $chroma: add-colors('functional', (
 
   watermark:              'grey-extra-light',
 
+  pager-bg:               'grayee',
   button-color:           'blue',
   button-color-hover:     'white',
   button-bg:              'white-smoke',
