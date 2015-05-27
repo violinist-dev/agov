@@ -7,11 +7,27 @@
 //
 // Style guide: components.navigation.pager
 
+.pager-link,
+%pager-link {
+  border: 1px solid color(border);
+  color: color(link);
+  padding: 6px 12px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background: color(pager-bg);
+    display: inline;
+  }
+}
+
 .pager,
 %pager {
   clear: both;
   padding: 0;
   text-align: center;
+  width: 100%;
+  text-indent: 0;
 
   @media print {
     display: none;
@@ -20,15 +36,28 @@
   // A page item in the pager list.
   &__item {
     display: inline;
-    padding: 0 .5em;
+    padding: 0;
     list-style-type: none;
     background-image: none;
+    margin-right: 5px;
+
+    a {
+      @extend %pager-link;
+    }
+
+    i {
+      font-size: 17px;
+      padding: 0 2px;
+    }
   }
 
   // The current page's list item.
   &__current-item {
     @extend %pager__item;
-    font-weight: bold;
+    @extend %pager-link;
+    background: color(pager-bg);
+    padding: 6px 12px;
+    font-family: $font-pager;
   }
 }
 
