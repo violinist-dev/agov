@@ -1123,7 +1123,7 @@ html.js .collapsed .fieldset-legend {
   width: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
-  color: inherit;
+  color: inherit !important;
 }
 
 /* Turns off the element-invisible effect. */
