@@ -7,8 +7,10 @@
 // Style guide: components.comment
 
 .comment__section-title {
+  @extend %divider;
   margin-bottom: 45px;
   font-weight: 400;
+  padding-top: 25px;
 }
 
 .comment-inner-wrapper {
@@ -117,25 +119,48 @@
 }
 
 // Reply 
+$padding-left: 50px;
+$padding-left-with-picture: 64px;
+$padding-left-no-picture: 42px;
+
 .indented {
   .comment {
     margin-top: -12px;
     padding-left: 8px;
 
     @include respond-to('medium') {
-      padding-left: 50px;
+      padding-left: $padding-left;
     }
 
     &.with-picture {
       padding-left: 14px;
 
       @include respond-to('medium') {
-        padding-left: 64px;
+        padding-left: $padding-left-with-picture;
       }
 
       .comment-inner-wrapper {
-        padding-left: 48px;
-  	  }
+        padding-left: $padding-left;
+      }
+    }
+  }
+
+  .indented {
+    .comment {
+      margin-top: -12px;
+      padding-left: 8px;
+
+      @include respond-to('medium') {
+        padding-left: $padding-left + $padding-left-no-picture;
+      }
+
+      &.with-picture {
+        padding-left: 14px;
+
+        @include respond-to('medium') {
+          padding-left: $padding-left-with-picture + $padding-left;
+        }
+      }
     }
   }
 
@@ -145,7 +170,7 @@
   }
 
   .comment-inner-wrapper {
-    padding-left: 42px;
+    padding-left: $padding-left-no-picture;
 
     &:before {
       font-size: 24px;
