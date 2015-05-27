@@ -1,0 +1,19 @@
+// Lede
+//
+// Lede style guide
+// is available.
+//
+// Markup: lede.hbs
+//
+// Style guide: components.lede
+
+.lede,
+%lede {
+  &__title {
+    line-height: 35px;
+  }
+  
+  hr {
+    margin-top: 63px;
+  }
+}
