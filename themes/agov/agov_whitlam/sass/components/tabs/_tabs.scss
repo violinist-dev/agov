@@ -59,13 +59,6 @@
   @include rtl() {
     float: right;
   }
-
-  &.is-active {
-    // Cover the tabs gradient with the same color as the background.
-    //border-bottom-color: color(tabs-bg);
-  }
-
-  
 }
 
 %tabs__tab-link-common {
