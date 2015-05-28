@@ -68,7 +68,7 @@ gulp.task('watch', ['clean:css', 'watch:css', 'watch:js'],
   // This task cannot be used in a dependency, since this task won't ever end
   // due to "compass watch" never completing.
   $.shell.task(
-    ['bundle exec compass watch --time --sourcemap --output-style expanded'],
+    ['bundle exec compass watch --poll --time --sourcemap --output-style expanded'],
     {cwd: theme}
   )
 );
