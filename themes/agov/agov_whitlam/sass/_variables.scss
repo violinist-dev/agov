@@ -22,7 +22,7 @@
 // The browser usage threshold for features that cannot degrade gracefully.
 // A value of 100 means 100% of users would have to use the browser before it is
 // supported. A value of .01 (the default) means 1 user in 10,000.
-$critical-usage-threshold: .01 !default;
+$critical-usage-threshold: .3 !default;
 
 // Set this to true to generate comments that will explain why a prefix was
 // included or omitted.
@@ -35,7 +35,7 @@ $debug-browser-support: false;
 $browser-minimum-versions: (
   'chrome':  null,
   'firefox': null,
-  'ie':      null,
+  'ie':      '8',
   'safari':  null,
   'opera':   null
 ) !default;
@@ -253,22 +253,23 @@ $chroma-active-scheme: 'functional';
 
 // Breakpoints
 //
-// Use the <code>respond-to()</code> mixin to use named breakpoints.
+// Use the `respond-to()` mixin to use named breakpoints. Documentation is
+// available in the [Breakpoint wiki
+// pages](https://github.com/at-import/breakpoint/wiki/Respond-To).
 //
 // Style guide: sass.variables.breakpoints
 
-$small: 480px;
+$small:  480px;
 $medium: 768px;
-$large: 960px;
-$large-1: 959px;
+$large:  960px;
 $larger: 1024px;
 
 $breakpoints: (
-  'small':        ($small,       'no-query' true),
-  'medium':       ($medium,       'no-query' true),
-  'medium-only':  ($medium $large-1, 'no-query' true),
-  'large':        ($large,       'no-query' true),
-  'larger':       ($larger),
+  'small':       ($small,               'no-query' true),
+  'medium':      ($medium,              'no-query' true),
+  'medium-only': ($medium ($large - 1), 'no-query' true),
+  'large':       ($large,               'no-query' true),
+  'larger':      ($larger),
 );
 
 //
