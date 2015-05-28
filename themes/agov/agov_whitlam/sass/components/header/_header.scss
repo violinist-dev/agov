@@ -2,7 +2,7 @@
 //
 // The header of page.
 //
-// @Work
+// Markup: header.hbs
 //
 // Style guide: components.header
 
@@ -12,10 +12,14 @@
 }
 
 .header__inner {
-  max-width: 960px;
+  max-width: $container;
   margin: 0 auto;
-  padding-top: 30px;
-  padding-bottom: 35px;
+  padding: 30px 35px 20px;
+
+  @include respond-to(medium) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .header__logo {
@@ -23,5 +27,7 @@
 }
 
 .header__region {
-  float: right;
+  @include respond-to(medium) {
+    float: right;
+  }
 }
