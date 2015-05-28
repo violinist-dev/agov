@@ -7,7 +7,7 @@
 // Style guide: components.progress-bar
 
 .progress-bar,
-%progress-bar{
+%progress-bar {
   @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.1) inset);
   background-color: color(white-smoke);
   border-radius: 4px;
@@ -16,7 +16,7 @@
   overflow: hidden;
   position: relative;
 
-  .bar {
+  &__bar {
     bottom: 0;
     height: 100%;
     left: 0;
@@ -26,7 +26,7 @@
     width: 100%;
   }
 
-  .filled {
+  &__fill {
     @include box-shadow(0 -1px 0 rgba(0, 0, 0, 0.15) inset);
     @include transition(width 0.6s ease 0s);
     background-color: color(steelblue);
@@ -39,8 +39,8 @@
     width: 0;
   }
 
-  .percentage,
-  .message {
+  &__percentage,
+  &__message {
   	color: color(white);
   	float: left;
   	margin-left: 5px;
@@ -50,6 +50,26 @@
   }
 }
 
+//
+// Drupal selectors.
+//
+
 .progress {
   @extend %progress-bar;
+
+  .bar {
+    @extend %progress-bar__bar;
+  }
+
+  .filled {
+    @extend %progress-bar__fill;
+  }
+
+  .percentage {
+    @extend %progress-bar__percentage;
+  }
+
+  .message {
+    @extend %progress-bar__message;
+  }
 }
