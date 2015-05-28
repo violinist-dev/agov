@@ -1,0 +1,35 @@
+// Box icon
+//
+// A simple box-icon styling. @TODO needs work
+//
+// Markup: box-icon.hbs
+//
+// .box-icon--alternate - Alternate box styling.
+//
+// Style guide: components.box.box-icon
+
+.box-icon {
+  @extend %box;
+  display: table;
+
+  &--alternate {
+    background-color: color(border);
+  }
+
+  &-left {
+    display: table-cell;
+    margin-bottom: -27px;
+    padding: 5px 25px 5px 5px;
+    vertical-align: top;
+
+    i {
+      font-size: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+}
