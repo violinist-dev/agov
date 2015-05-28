@@ -17,10 +17,14 @@
   }
 
   &-left {
-    display: table-cell;
-    margin-bottom: -27px;
-    padding: 5px 25px 5px 5px;
+    display: inline-block;
+    padding: 0;
     vertical-align: top;
+
+    @include respond-to('small') {
+      display: table-cell;
+      padding: 5px 25px 5px 5px;
+    }
 
     i {
       font-size: 40px;
