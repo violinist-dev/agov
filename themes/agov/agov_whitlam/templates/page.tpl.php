@@ -113,7 +113,9 @@
 
   </div>
 
-  <?php print render($page['footer']); ?>
+  <div class="footer-wrapper">
+    <?php print render($page['footer']); ?>
+  </div>
 
 </div>
 
