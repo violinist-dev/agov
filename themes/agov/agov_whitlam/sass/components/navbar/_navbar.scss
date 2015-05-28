@@ -12,12 +12,10 @@
   padding: 5px;
 }
 
-.region-navigation {
-  display: none;
-}
-
 nav,
-%navbar {
+.navbar,
+%navbar,
+.block-superfish {
   width: 100%;
   margin: 0 auto;
 
@@ -26,16 +24,16 @@ nav,
   } 
 
   .menu {
-    display: inline-block;
-    width: 100%;
+    @extend .clearfix;
     text-indent: 0;
     margin: 0;
     padding: 0;
 
-    &__item {
+    li {
       @extend %menu__item;
     }
 
+    ul,
     .menu {
       @extend %sub-menu;
     }
@@ -49,6 +47,7 @@ nav,
   list-style: none;
   position: relative;
   width: 100%;
+  border: 0;
 
   @include respond-to('small') {
     width: auto;
@@ -64,10 +63,12 @@ nav,
     position: relative;
     display: inline-block;
     width: 100%;
+    font-weight: inherit;
 
     @include respond-to('larger') {
       width: auto;
-      padding: 15px 26px;
+      padding: 15px 30px 16px;
+      display: block;
     } 
 
     &:focus {
@@ -111,7 +112,7 @@ nav,
     position: absolute;
     width: 200px;
     z-index: 99;
-    top: 55px; 
+    top: 56px; 
   } 
 
   li {
@@ -139,7 +140,7 @@ nav,
       padding-left: 30px;
 
       @include respond-to('larger') {
-        padding-left: 15px;
+        padding: 7px 20px;
       }
 
       &:hover { 
