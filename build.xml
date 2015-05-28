@@ -141,4 +141,11 @@
           passthru="true" />
   </target>
 
+  <target name="login" description="Generate a one-time login link">
+    <exec dir="${app.dir}"
+          command="${drush.cmd} uli -l ${app.uri}"
+          logoutput="true"
+          passthru="true" />
+  </target>
+
 </project>
