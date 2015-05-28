@@ -8,3 +8,8 @@
 [id^="kssref-layouts-"] [class^="layout-"][class*="__"] {
   outline: 1px dotted color(grey-medium);
 }
+
+// Show demo style in styleguide
+.wrap-demo .search-form--light {
+  background-color: color(link);
+}

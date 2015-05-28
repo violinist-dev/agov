@@ -129,7 +129,7 @@
       &::-webkit-input-placeholder {
         @include opacity(1);
         color: color(search-border-light);
-			}
+      }
 
       &:-moz-placeholder {
         @include opacity(1);
@@ -143,7 +143,7 @@
 
       &:-ms-input-placeholder {  
         color: color(search-border-light); 
-			}
+      }
   	}
   }
 }
