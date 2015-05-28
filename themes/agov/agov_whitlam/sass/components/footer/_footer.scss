@@ -6,8 +6,12 @@
 //
 // Style guide: components.footer
 
-.footer,
-%footer {
+.footer-wrapper {
   background-color: color(white-smoke);
-  padding: 30px 0 20px;
+}
+
+.footer {
+  max-width: $container;
+  padding: 30px 15px 20px;
+  margin: 0 auto;
 }
