@@ -9,26 +9,54 @@
 
 .pager,
 %pager {
+  @extend %print-none;
   clear: both;
   padding: 0;
   text-align: center;
-
-  @media print {
-    display: none;
-  }
+  text-indent: 0;
 
   // A page item in the pager list.
   &__item {
     display: inline;
-    padding: 0 .5em;
+    padding: 0;
     list-style-type: none;
     background-image: none;
+  }
+
+  &__item-icon {
+    font-size: 17px;
+    padding: 0 2px;
+  }
+
+  .fa {
+    @extend %pager__item-icon;
   }
 
   // The current page's list item.
   &__current-item {
     @extend %pager__item;
-    font-weight: bold;
+    @extend %pager__link;
+    background: color(pager-bg);
+    font-family: $font-bold;
+    color: color(link);
+  }
+
+  &__link {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    border: 1px solid color(border);
+    padding: 6px 12px;
+    text-decoration: none;
+
+    .pager__item:last-child &,
+    %pager__item:last-child & {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background: color(pager-bg);
+    }
   }
 }
 
@@ -50,6 +78,10 @@
 .pager-last,
 .pager-ellipsis {
   @extend %pager__item;
+
+  a {
+    @extend %pager__link;
+  }
 }
 
 .pager-current {

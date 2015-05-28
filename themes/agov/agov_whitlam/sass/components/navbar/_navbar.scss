@@ -11,12 +11,9 @@
   background: color(navbar-bg);
 }
 
-.block-superfish {
-  @extend %navbar;  
-}
-
 .navbar,
-%navbar {
+%navbar,
+.block-superfish {
   width: 100%;
   margin: 0 auto;
 

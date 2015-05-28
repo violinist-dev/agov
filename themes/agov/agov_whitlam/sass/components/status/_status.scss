@@ -26,6 +26,11 @@
     background-color: color(error-bg);
     color: color(error);
   }
+
+  &--info {
+    background-color: color(info-bg);
+    color: color(info);
+  }
 }
 
 //

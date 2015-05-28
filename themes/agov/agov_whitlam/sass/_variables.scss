@@ -22,7 +22,7 @@
 // The browser usage threshold for features that cannot degrade gracefully.
 // A value of 100 means 100% of users would have to use the browser before it is
 // supported. A value of .01 (the default) means 1 user in 10,000.
-$critical-usage-threshold: .01 !default;
+$critical-usage-threshold: .3 !default;
 
 // Set this to true to generate comments that will explain why a prefix was
 // included or omitted.
@@ -35,7 +35,7 @@ $debug-browser-support: false;
 $browser-minimum-versions: (
   'chrome':  null,
   'firefox': null,
-  'ie':      null,
+  'ie':      '8',
   'safari':  null,
   'opera':   null
 ) !default;
@@ -84,31 +84,21 @@ $rem-with-px-fallback:  true;
 // monospace) hints at what type of font to use if the web browser doesn't
 // find any of the fonts in the list.
 
-// Serif font stacks.
-$times-new-roman: 'Times New Roman', Times, Georgia, 'DejaVu Serif', serif;
-$times:           Times, 'Times New Roman', Georgia, 'DejaVu Serif', serif;
-$georgia:         Georgia, 'Times New Roman', 'DejaVu Serif', serif;
-$opensans:         OpenSansRegular, 'Times New Roman', 'DejaVu Serif', serif;
-$opensansbold:         OpenSansBold, 'Times New Roman', 'DejaVu Serif', serif;
-
 // Sans-serif font stacks.
-$verdana:         Verdana, Tahoma, 'DejaVu Sans', sans-serif;
-$tahoma:          Tahoma, Verdana, 'DejaVu Sans', sans-serif;
-$helvetica:       Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-$arial:           Arial, Helvetica, 'Nimbus Sans L', sans-serif;
-$impact:          Impact, 'Arial Narrow', Helvetica, sans-serif;
-$opensansitalic:          OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
+$opensans:        OpenSansRegular, 'Times New Roman', 'DejaVu Serif', sans-serif;
+$opensansbold:    OpenSansBold, 'Times New Roman', 'DejaVu Serif', sans-serif;
+$opensansitalic:  OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
 
 // Monospace font stacks.
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
-$menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier New', monospace;
+$menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier New', monospace, sans-serif;
 
 // Now create some variables using the font stacks we want on this site.
 $font-body:       $opensans;
-$font-heading:       $opensansbold;
+$font-bold:       $opensansbold;
+$font-italic:     $opensansitalic;
 $font-monospace:  $menlo;
-$font-watermark:  $impact;
 
 
 // Colors
@@ -126,9 +116,8 @@ $chroma: define-default-color-scheme('Descriptive color names for use in "functi
 $chroma: add-colors((
   white:                  #fff,
   white-smoke:            #f3f3f3,
-  grey-extra-light:       #eee,
-  grey-light:             #ddd,
-  grey-medium-light:      #ccc,
+  grey-extra-light:       #e8e8e8,
+  grey-light:             #ccc,
   grey-medium:            #999,
   grey-dark:              #666,
   grey-extra-dark:        #333,
@@ -136,23 +125,25 @@ $chroma: add-colors((
 
   blue:                   #0072b9,
   blue-steel:             #466bc8,
+  blue-royal:             #3a59a5,
+  turquoise:              #52c2c7,
   blue-pale:              #3a59a5,
 
   purple:                 #5a5f8d,
+  violet:                 #6c6f8f,
 
   pink-pale:              #fef5f1,
   red:                    #c00,
-  red-orange:             #ed541d,
   rust:                   #8c2e0b,
+  orange:                 #e86c19,
 
   yellow-pale:            #ffd,
   yellow:                 #ff0,
   yellow-dark:            #ed5,
 
-  slate-gray-dark:        #52c2c7,
-
   green-pale:             #f8fff0,
   green-light:            #be7,
+  green:                  #00852c,
   green-dark:             #234600,
 ));
 
@@ -166,12 +157,12 @@ $chroma: add-colors('functional', (
   link:                   'blue-steel',
   link-active:            'blue-pale',
   link-visited:           'purple',
-  link-hover:             'blue-pale',
-  link-border-focus:      'slate-gray-dark',
+  link-hover:             'blue-royal',
+  link-border-focus:      'turquoise',
 
   border-color:           'white-smoke',
   border:                 'white-smoke',
-  
+
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
   autocomplete-select:    'white',
@@ -189,28 +180,36 @@ $chroma: add-colors('functional', (
 
   preview-bg:             'yellow-pale',
 
-  progress-bar:           'blue',
-  progress-bar-bg:        'grey-medium-light',
-  progress-bar-border:    'grey-dark',
+  progress-bar:           'blue-steel',
+  progress-bar-bg:        'white-smoke',
+  progress-bar-text:      'white',
 
   resizable-grippie:      'grey-extra-light',
 
   row-stripe:             'grey-extra-light',
-  row-disabled:           'grey-medium-light',
+  row-disabled:           'grey-light',
 
   skip-link:              'white',
   skip-link-bg:           'grey-dark',
 
-  status:                 'green-dark',
+  status:                 'green',
   status-bg:              'green-pale',
-  status-border:          'green-light',
+  status-border:          'green',
   status-highlight:       'text',
   warning:                'rust',
   warning-bg:             'yellow-pale',
-  warning-border:         'yellow-dark',
-  error:                  'rust',
+  warning-border:         'orange',
+  error:                  'red',
   error-bg:               'pink-pale',
-  error-border:           'red-orange',
+  error-border:           'red',
+  info-border:            'violet',
+  info-bg:                'white-smoke',
+  info:                   'violet',
+  message-ok:             'green',
+  message-error:          'red',
+  message-info:           'violet',
+  message-warning:        'orange',
+  message-color:          'white',
 
   tabs-border:            'border',
   tabs-bg:                'text-bg',
@@ -218,17 +217,28 @@ $chroma: add-colors('functional', (
   tab-text-shadow:        'white',
   tab-bg:                 'grey-light',
   tab-secondary:          'grey-dark',
+  tab-hover:              'blue-royal',
 
   table-drag:             'yellow-pale',
   table-select:           'yellow-pale',
 
   watermark:              'grey-extra-light',
-
   navbar-bg:              'grey-extra-dark',
   navbar-active:          'grey-extra-dark',
   navbar:                 'white',
   navbar-bg-hover:        'white-smoke',
 
+  pager-bg:               'grey-extra-light',
+  button-color:           'blue',
+  button-color-hover:     'white',
+  button-bg:              'white-smoke',
+  button-bg-hover:        'blue-steel',
+
+  form-element-border:        'grey-extra-light',
+  form-element-border-bottom: 'grey-light',
+  form-element-border-hover:  'blue-royal',
+  form-element-bg:            'body-bg',
+  form-element-bg-hover:      'white-smoke',
   breadcrumb-color:       'grey-medium',
 
 ));
@@ -238,18 +248,24 @@ $chroma-active-scheme: 'functional';
 
 // Breakpoints
 //
-// Use the <code>respond-to()</code> mixin to use named breakpoints.
+// Use the `respond-to()` mixin to use named breakpoints. Documentation is
+// available in the [Breakpoint wiki
+// pages](https://github.com/at-import/breakpoint/wiki/Respond-To).
 //
 // Style guide: sass.variables.breakpoints
 
-$breakpoints: (
-  'small':        (480px,       'no-query' true),
-  'medium':       (768px,       'no-query' true),
-  'medium-only':  (768px 960px, 'no-query' true),
-  'large':        (960px,       'no-query' true),
-  'larger':       (1024px),
-);
+$small:  480px;
+$medium: 768px;
+$large:  960px;
+$larger: 1024px;
 
+$breakpoints: (
+  'small':       ($small,               'no-query' true),
+  'medium':      ($medium,              'no-query' true),
+  'medium-only': ($medium ($large - 1), 'no-query' true),
+  'large':       ($large,               'no-query' true),
+  'larger':      ($larger),
+);
 
 //
 // Misc
@@ -264,4 +280,4 @@ $nav-height: 2 * $base-line-height;
 // Drupal RTL support: Rather than include a seperate *-rtl.css file, Zen 6 uses
 // Drupal 8's standard [dir='rtl'] selector for RTL langauge support. You can
 // turn off all RTL CSS by setting the following variable to false.
-$include-rtl: true;
+$include-rtl: false;
