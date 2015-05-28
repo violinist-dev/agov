@@ -8,45 +8,41 @@
 
 .progress-bar,
 %progress-bar {
-  @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.1) inset);
-  background-color: color(white-smoke);
-  border-radius: 4px;
-  height: 20px;
+  @include box-shadow(0 1px 2px rgba(0, 0, 0, .1) inset);
+  @include border-radius(4px);
+  background-color: color(progress-bar-bg);
   margin-bottom: 20px;
   overflow: hidden;
   position: relative;
 
   &__bar {
-    bottom: 0;
-    height: 100%;
-    left: 0;
     position: absolute;
-    right: 0;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    height: 100%;
   }
 
   &__fill {
-    @include box-shadow(0 -1px 0 rgba(0, 0, 0, 0.15) inset);
-    @include transition(width 0.6s ease 0s);
-    background-color: color(steelblue);
-    color: color(white);
+    @include box-shadow(0 -1px 0 rgba(0, 0, 0, .15) inset);
+    @include transition(width .6s ease 0s);
+    background-color: color(progress-bar);
+    color: color(progress-bar-text);
     float: left;
-    font-size: 12px;
     height: 100%;
-    line-height: 20px;
     text-align: center;
     width: 0;
   }
 
   &__percentage,
   &__message {
-  	color: color(white);
-  	float: left;
-  	margin-left: 5px;
-  	margin-top: -2px;
-  	position: relative;
-  	z-index: 2;
+    color: color(progress-bar-text);
+    float: left;
+    margin-left: 10px;
+    position: relative;
+    z-index: 2;
   }
 }
 
