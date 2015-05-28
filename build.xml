@@ -150,6 +150,13 @@
     <symlink link="${app.dir}/styleguide" target="${project.basedir}/styleguide" />
   </target>
 
+  <target name="login" description="Generate a one-time login link">
+    <exec dir="${app.dir}"
+          command="${drush.cmd} uli -l ${app.uri}"
+          logoutput="true"
+          passthru="true" />
+  </target>
+
   <target name="gulp:build" description="Generate all compiled SASS and styleguide resources.">
     <exec dir="${app.dir}"
           command="${gulp.cmd} build"
