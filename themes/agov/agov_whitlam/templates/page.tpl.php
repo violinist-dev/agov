@@ -77,7 +77,7 @@
       <?php print render($page['navigation']); ?>
 
     </div>
-  <div class="main">
+  <div class="main layout-center">
 
     <div class="main-content" role="main">
       <?php print render($page['highlighted']); ?>

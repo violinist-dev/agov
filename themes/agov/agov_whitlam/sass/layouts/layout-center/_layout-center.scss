@@ -8,6 +8,7 @@
 
 .layout-center,
 %layout-center {
-  max-width: 960px;
+  max-width: $container;
   margin: 0 auto;
+  padding: 20px 15px;
 }
