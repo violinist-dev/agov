@@ -117,29 +117,24 @@ $chroma: add-colors((
   white:                  #fff,
   white-smoke:            #f3f3f3,
   grey-extra-light:       #e8e8e8,
-  grey-light:             #ddd,
-  grey-medium-light:      #ccc,
+  grey-light:             #ccc,
   grey-medium:            #999,
   grey-dark:              #666,
   grey-extra-dark:        #333,
-  grey-dark-55:           #555,
   black:                  #000,
-  grayee:                 #eee,
-  grayfa:                 #fafafb,
 
   blue:                   #0072b9,
-  steelblue:              #466bc8,
-  royalblue:              #3a59a5,
   blue-steel:             #466bc8,
-  blue-pale:              #3a59a5,
+  blue-royal:             #3a59a5,
   turquoise:              #52c2c7,
 
   purple:                 #5a5f8d,
+  violet:                 #6c6f8f,
 
   pink-pale:              #fef5f1,
   red:                    #c00,
-  red-orange:             #ed541d,
   rust:                   #8c2e0b,
+  orange:                 #e86c19,
 
   yellow-pale:            #ffd,
   yellow:                 #ff0,
@@ -147,12 +142,8 @@ $chroma: add-colors((
 
   green-pale:             #f8fff0,
   green-light:            #be7,
+  green:                  #00852c,
   green-dark:             #234600,
-  green1:                 #00852c,
-
-  orange1:                #e86c19,
-
-  violet1:                #6c6f8f,
 ));
 
 // Define color names for functional uses.
@@ -164,7 +155,7 @@ $chroma: add-colors('functional', (
 
   link:                   'blue-steel',
   link-visited:           'purple',
-  link-hover:             'blue-pale',
+  link-hover:             'blue-royal',
   link-border-focus:      'turquoise',
 
   border-color:           'white-smoke',
@@ -188,34 +179,34 @@ $chroma: add-colors('functional', (
   preview-bg:             'yellow-pale',
 
   progress-bar:           'blue',
-  progress-bar-bg:        'grey-medium-light',
+  progress-bar-bg:        'grey-light',
   progress-bar-border:    'grey-dark',
 
   resizable-grippie:      'grey-extra-light',
 
   row-stripe:             'grey-extra-light',
-  row-disabled:           'grey-medium-light',
+  row-disabled:           'grey-light',
 
   skip-link:              'white',
   skip-link-bg:           'grey-dark',
 
-  status:                 'green1',
+  status:                 'green',
   status-bg:              'green-pale',
-  status-border:          'green1',
+  status-border:          'green',
   status-highlight:       'text',
   warning:                'rust',
   warning-bg:             'yellow-pale',
-  warning-border:         'orange1',
+  warning-border:         'orange',
   error:                  'red',
   error-bg:               'pink-pale',
   error-border:           'red',
-  info-border:            'violet1',
-  info-bg:                'grayfa',
-  info:                   'violet1',
-  message-ok:             'green1',
+  info-border:            'violet',
+  info-bg:                'white-smoke',
+  info:                   'violet',
+  message-ok:             'green',
   message-error:          'red',
-  message-info:           'violet1',
-  message-warning:        'orange1',
+  message-info:           'violet',
+  message-warning:        'orange',
   message-color:          'white',
 
   tabs-border:            'border',
@@ -223,23 +214,23 @@ $chroma: add-colors('functional', (
   tab:                    'grey-extra-dark',
   tab-text-shadow:        'white',
   tab-bg:                 'grey-light',
-  tab-secondary:          'grey-dark-55',
-  tab-hover:              'blue-pale',
+  tab-secondary:          'grey-dark',
+  tab-hover:              'blue-royal',
 
   table-drag:             'yellow-pale',
   table-select:           'yellow-pale',
 
   watermark:              'grey-extra-light',
 
-  pager-bg:               'grayee',
+  pager-bg:               'grey-extra-light',
   button-color:           'blue',
   button-color-hover:     'white',
   button-bg:              'white-smoke',
-  button-bg-hover:        'steelblue',
+  button-bg-hover:        'blue-steel',
 
   form-element-border:        'grey-extra-light',
-  form-element-border-bottom: 'grey-medium-light',
-  form-element-border-hover:  'royalblue',
+  form-element-border-bottom: 'grey-light',
+  form-element-border-hover:  'blue-royal',
   form-element-bg:            'body-bg',
   form-element-bg-hover:      'white-smoke',
 
