@@ -112,10 +112,11 @@
     <?php endif; ?>
 
   </div>
-  <div class="footer-wrapper">
-    <?php print render($page['footer']); ?>
-  </div>
+
+  <?php print render($page['footer']); ?>
 
 </div>
 
-<?php print render($page['bottom']); ?>
+<div class="page-bottom-wrapper">
+  <?php print render($page['bottom']); ?>
+</div>

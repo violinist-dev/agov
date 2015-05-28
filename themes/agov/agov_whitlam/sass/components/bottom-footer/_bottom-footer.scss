@@ -1,0 +1,17 @@
+// Bottom Footer
+//
+// The bottom footer of page
+//
+// Markup: bottom-footer.hbs
+//
+// Style guide: components.footer.bottom-footer
+
+.page-bottom-wrapper {
+  background-color: color(grey-extra-dark);
+  color: color(white);
+}
+
+.region-bottom {
+  @extend %layout-center;
+  padding: 30px 15px 20px;
+}
