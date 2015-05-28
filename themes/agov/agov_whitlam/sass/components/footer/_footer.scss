@@ -1,0 +1,13 @@
+// Footer
+//
+// The footer of page
+//
+// Markup: footer.hbs
+//
+// Style guide: components.footer
+
+.footer,
+%footer {
+  background-color: color(white-smoke);
+  padding: 30px 0 20px;
+}
