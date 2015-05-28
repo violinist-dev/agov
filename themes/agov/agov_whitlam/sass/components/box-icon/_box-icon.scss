@@ -31,6 +31,7 @@
     @include respond-to('small') {
       float: left;
       text-align: center;
+      padding: 6px 0;
       width: 85px;
     }
 
