@@ -34,9 +34,21 @@
     <?php endif; ?>
   <?php endif; ?>
 
-  <?php if (!empty($content['footer'])) : ?>
-    <div class="layout-3col__full">
-      <?php print $content['footer'];?>
+  <?php if (!empty($content['footer-1'])) : ?>
+    <div class="layout-3col__col-1">
+      <?php print $content['footer-1'];?>
+    </div>
+  <?php endif; ?>
+
+  <?php if (!empty($content['footer-2'])) : ?>
+    <div class="layout-3col__col-2">
+      <?php print $content['footer-2'];?>
+    </div>
+  <?php endif; ?>
+
+  <?php if (!empty($content['footer-3'])) : ?>
+    <div class="layout-3col__col-3">
+      <?php print $content['footer-3'];?>
     </div>
   <?php endif; ?>
 

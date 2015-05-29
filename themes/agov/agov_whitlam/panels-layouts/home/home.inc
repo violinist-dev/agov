@@ -18,6 +18,8 @@ $plugin = array(
     'header' => t('Header region'),
     'main' => t('Main region'),
     'right-sidebar' => t('Right sidebar region'),
-    'footer' => t('Footer region'),
+    'footer-1' => t('Footer region 1'),
+    'footer-2' => t('Footer region 2'),
+    'footer-3' => t('Footer region 3'),
   ),
 );
