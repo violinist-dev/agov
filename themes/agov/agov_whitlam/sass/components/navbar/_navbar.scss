@@ -24,10 +24,12 @@
 %navbar {
   width: 100%;
   margin: 0 auto;
+  max-width: 250px;
 
-  @include respond-to('larger') {
+  @include respond-to('medium') {
     width: $container;
-  } 
+    max-width: inherit;
+  }
 
   .menu {
     @extend .clearfix;
@@ -54,9 +56,9 @@
   width: 100%;
   border: 0;
 
-  @include respond-to('small') {
+  @include respond-to('medium') {
     width: auto;
-  } 
+  }
 
   a {
     color: color(navbar);
@@ -75,11 +77,10 @@
       width: auto;
       padding: 19px 30px;
       display: block;
-    } 
+    }
 
     &:focus {
       border: 0;
-      line-height: inherit;
       outline: none;
     }
 
