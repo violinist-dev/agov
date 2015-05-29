@@ -13,4 +13,9 @@
 .footer {
   @extend %layout-center;
   padding: 30px 15px 20px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 }
