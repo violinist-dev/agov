@@ -7,8 +7,13 @@
 //
 // Style guide: components.navbar
 
-.bg-navbar {
+.bg-navbar,
+%bg-navbar {
   background: color(navbar-bg);
+}
+
+.region-navigation {
+  @extend %bg-navbar;
 }
 
 .block-superfish {
