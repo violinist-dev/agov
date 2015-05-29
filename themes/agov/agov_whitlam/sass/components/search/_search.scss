@@ -21,7 +21,7 @@
   &--light {
     @extend %search-form--light;
   }
-  
+
   &__wrap {
     position: relative;
     display: inline-block;
@@ -80,43 +80,45 @@
       &::-webkit-input-placeholder {
         @include opacity(1);
         color: color(search-color);
-			}
+      }
 
       &:-moz-placeholder {
         @include opacity(1);
-        color: color(search-color); 
+        color: color(search-color);
       }
 
-      &::-moz-placeholder { 
+      &::-moz-placeholder {
         @include opacity(1);
-        color: color(search-color);  
+        color: color(search-color);
       }
 
-      &:-ms-input-placeholder {  
-        color: color(search-color); 
-			}
-  	}
+      &:-ms-input-placeholder {
+        color: color(search-color);
+      }
+    }
   }
 }
 
 .search-form--light,
 %search-form--light {
-  color: color(search-color-light);
+  @include respond-to('medium') {
+    color: color(search-color-light);
+  }
 
   .search-form__border {
-    border-bottom: 1px solid color(search-border-light);
-
-    @include respond-to('small') {
+    @include respond-to('medium') {
       border-bottom: 2px solid color(search-border-light);
     }
   }
 
   .form-submit {
-    background: none;
-    background-repeat: no-repeat;
-    background-image: inline-image('components/search/search-icon.png');
-    @if support-legacy-browser(ie, '7') {
-      *background-image: image-url('components/search/search-icon.png');
+    @include respond-to('medium') {
+      background: none;
+      background-repeat: no-repeat;
+      background-image: inline-image('components/search/search-icon.png');
+      @if support-legacy-browser(ie, '7') {
+        *background-image: image-url('components/search/search-icon.png');
+      }
     }
   }
 
@@ -126,23 +128,25 @@
     .form-text {
       padding: 0;
 
-      &::-webkit-input-placeholder {
-        @include opacity(1);
-        color: color(search-border-light);
-      }
+      @include respond-to('medium') {
+        &::-webkit-input-placeholder {
+          @include opacity(1);
+          color: color(search-border-light);
+        }
 
-      &:-moz-placeholder {
-        @include opacity(1);
-        color: color(search-border-light); 
-      }
+        &:-moz-placeholder {
+          @include opacity(1);
+          color: color(search-border-light);
+        }
 
-      &::-moz-placeholder { 
-        @include opacity(1);
-        color: color(search-border-light);  
-      }
+        &::-moz-placeholder {
+          @include opacity(1);
+          color: color(search-border-light);
+        }
 
-      &:-ms-input-placeholder {  
-        color: color(search-border-light); 
+        &:-ms-input-placeholder {
+          color: color(search-border-light);
+        }
       }
     }
   }

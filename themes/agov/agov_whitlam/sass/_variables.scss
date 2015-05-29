@@ -124,9 +124,6 @@ $chroma: add-colors((
   grey-dark:              #666,
   grey-extra-dark:        #333,
   black:                  #000,
-  grey-bb:                #bbb,
-  greyee:                 #eee,
-  greyfa:                 #fafafb,
 
   blue:                   #0072b9,
   blue-steel:             #466bc8,
@@ -229,10 +226,10 @@ $chroma: add-colors('functional', (
 
   search-color-light:     'white-smoke',
   search-color:           'grey-dark',
-  search-border:          'grey-bb',
+  search-border:          'grey-light',
   search-border-light:    'white-smoke',
 
-  pager-bg:               'greyee',
+  pager-bg:               'grey-extra-light',
   button-color:           'blue',
   button-color-hover:     'white',
   button-bg:              'white-smoke',
