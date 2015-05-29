@@ -1,0 +1,56 @@
+// List links
+//
+// A list of links that are list with each other.
+//
+// Markup: list-links.hbs
+//
+// Style guide: components.list-links
+
+.list-links,
+%list-links {
+  padding: 0;
+  text-indent: 0;
+
+  &__item {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 9px;
+    list-style: none;
+
+    &.is-expanded {
+      list-style: none;
+
+      ul {
+        padding-left: 28px;
+      }
+    }
+
+    &.is-collapsed {
+      list-style: none;
+    }
+  }
+
+  &__link {
+    &.is-active {
+      text-decoration: none;
+      font-family: $font-bold;
+      color: color(list-links-active);
+    }
+  }
+}
+
+//
+// Drupal selectors.
+//
+
+.list-links {
+  @extend %list-links;
+
+  li {
+    @extend %list-links__item;
+
+    a {
+      @extend %list-links__link;
+    }
+  }
+}
