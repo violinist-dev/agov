@@ -11,7 +11,8 @@
   padding: 0;
   text-indent: 0;
 
-  &__item {
+  &__item,
+  li {
     list-style-type: none;
     padding: 0;
     margin-bottom: 9px;
@@ -30,7 +31,8 @@
     }
   }
 
-  &__link {
+  &__link,
+  a {
     &.is-active {
       text-decoration: none;
       font-family: $font-bold;
@@ -39,18 +41,3 @@
   }
 }
 
-//
-// Drupal selectors.
-//
-
-.list-links {
-  @extend %list-links;
-
-  li {
-    @extend %list-links__item;
-
-    a {
-      @extend %list-links__link;
-    }
-  }
-}
