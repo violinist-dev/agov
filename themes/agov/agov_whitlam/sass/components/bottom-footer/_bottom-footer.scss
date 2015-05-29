@@ -14,4 +14,25 @@
 .region-bottom {
   @extend %layout-center;
   padding: 30px 15px;
+
+  a {
+    color: color(white);
+  }
+
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+
+  @include respond-to(medium) {
+    .copyright {
+      float: left;
+      margin: 0;
+  	}
+
+    .to-top {
+      float: right;
+    }
+  }
 }
