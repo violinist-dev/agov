@@ -11,14 +11,17 @@
   background: color(navbar-bg);
 }
 
-.navbar,
-%navbar,
 .block-superfish {
+  @extend %navbar;
+}
+
+.navbar,
+%navbar {
   width: 100%;
   margin: 0 auto;
 
   @include respond-to('larger') {
-    width: 960px;
+    width: $container;
   } 
 
   .menu {
@@ -31,8 +34,7 @@
       @extend %menu__item;
     }
 
-    ul,
-    .menu {
+    ul {
       @extend %sub-menu;
     }
   }
@@ -54,7 +56,7 @@
   a {
     color: color(navbar);
     font-family: $font-body;
-    padding: 7px 20px;
+    padding: 7px 22px;
     text-decoration: none;
     text-transform: capitalize;
     font-size: 17px;
@@ -62,10 +64,11 @@
     display: inline-block;
     width: 100%;
     font-weight: inherit;
+    line-height: 1;
 
     @include respond-to('larger') {
       width: auto;
-      padding: 15px 30px 16px;
+      padding: 19px 30px;
       display: block;
     } 
 
@@ -97,10 +100,12 @@
         padding: 2px;
         margin: 0;
         background: color(navbar-bg-hover);
+        top: 55px;
       }
 
       ul {
         margin: 0 -2px;
+        top: -2px;
       }
     }
   }
@@ -131,7 +136,7 @@
 
       ul {
         @include respond-to('larger') {
-          left: 196px;
+          left: 200px;
           display: block;
         }
       }
