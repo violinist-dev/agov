@@ -12,8 +12,6 @@
 }
 
 .header__inner {
-  max-width: $container;
-  margin: 0 auto;
   padding: 30px 35px 20px;
 
   @include respond-to(medium) {
@@ -22,12 +20,13 @@
   }
 }
 
-.header__logo {
-  float: left;
-}
 
-.header__region {
-  @include respond-to(medium) {
+@include respond-to(medium) {
+  .header__logo {
+    float: left;
+  }
+
+  .header__region {
     float: right;
   }
 }

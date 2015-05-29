@@ -9,7 +9,7 @@
 ?>
 
 <header class="header" role="banner">
-  <div class="header__inner clearfix">
+  <div class="layout-center header__inner clearfix">
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
     <?php endif; ?>
