@@ -222,6 +222,7 @@ $chroma: add-colors('functional', (
 
   watermark:              'grey-extra-light',
 
+  header-background:      'blue-steel',
   pager-bg:               'grey-extra-light',
   button-color:           'blue',
   button-color-hover:     'white',
@@ -264,6 +265,8 @@ $breakpoints: (
 //
 // Misc
 //
+
+$container: 1140px;
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 2 * $base-font-size;
