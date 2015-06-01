@@ -5,9 +5,10 @@ test: &test
     - composer install --prefer-dist --dev
     - bundle install --path vendor/bundle
     - npm install
-    - bin/phing build
+    - bin/phing build -Dapp.password=$PASSWORD
     - bin/phing gulp:build
     - bin/phing styleguide:link
+    - bin/phing test 
     - mkdir -p app/sites/default/files/tmp
     - mkdir -p app/sites/default/private
     - chown -R www-data:www-data app/sites/default/files

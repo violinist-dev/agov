@@ -1,19 +1,70 @@
 // Box
 //
-// A simple box styling. @TODO needs work
+// A simple box styling.
 //
 // Markup: box.hbs
 //
 // .box--alternate - Alternate box styling.
+//
+// :hover  - Hover styling.
 //
 // Style guide: components.box
 
 .box,
 %box {
   border: 2px solid color(border);
-  padding: 20px;
+  padding: 10px;
+  text-align: center;
 
-  &--alternate {
+  @include respond-to('small') {
+    padding: 20px;
+    text-align: left;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    margin-top: 0;
+  }
+
+  &:hover {
     background-color: color(border);
+  }
+}
+
+// Icon box
+//
+// A variation of the default box icon styling.
+//
+// Markup: box--icon.hbs
+//
+// :hover  - Hover styling.
+//
+// Style guide: components.box.box--icon
+
+.box--icon,
+%box--icon {
+  @extend %box;
+
+  @include respond-to('small') {
+    padding: 20px 0;
+  }
+
+  &__left {
+    @include respond-to('small') {
+      float: left;
+      text-align: center;
+      padding: 2px 0;
+      width: 85px;
+    }
+
+    i {
+      font-size: 40px;
+    }
+  }
+
+  &__right {
+    @include respond-to('small') {
+      padding-left: 85px;
+    }
   }
 }
