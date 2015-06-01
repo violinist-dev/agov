@@ -127,6 +127,16 @@
 
     &__col-1 {
       @include zen-grid-item(1, 1);
+
+      &:nth-child(3n+1) {
+        @include zen-new-row(none);
+        @include zen-grid-item(1,2);
+      }
+
+      &:nth-child(3n+2) {
+        @include zen-new-row(none);
+        @include zen-grid-item(1,3);
+      }
     }
 
     &__col-2 {
