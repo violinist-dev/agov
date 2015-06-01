@@ -25,6 +25,9 @@
     display: table;
   }
 
+  .copyright {
+    margin-top: 0;
+  }
   @include respond-to(medium) {
     .copyright {
       float: left;
