@@ -911,7 +911,7 @@ function _agov_default_beans() {
     $fields = array(
       'field_bean_body' => array(
         '0' => array(
-          'value' => '&#169; ' . $this_year . ' Government | Powered by <a href="http://agov.com.au">aGov</a>',
+          'value' => '&#169; Copyright ' . $this_year . ' aGov',
           'format' => 'rich_text',
         ),
       ),
