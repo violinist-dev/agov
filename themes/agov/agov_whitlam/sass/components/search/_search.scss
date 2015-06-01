@@ -4,8 +4,6 @@
 //
 // Markup: search.hbs
 //
-// .search-form--light - Alternate search light styling.
-//
 // Style guide: components.search
 
 .search-form,
@@ -18,8 +16,8 @@
     padding: 20px;
   }
 
-  &--light {
-    @extend %search-form--light;
+  @include respond-to('medium') {
+    color: color(search-color-light);
   }
 
   &__wrap {
@@ -64,6 +62,15 @@
     height: 23px;
     background-color: none;
     padding: 0;
+
+    @include respond-to('medium') {
+      background: none;
+      background-repeat: no-repeat;
+      background-image: inline-image('components/search/search-icon.png');
+      @if support-legacy-browser(ie, '7') {
+        *background-image: image-url('components/search/search-icon.png');
+      }
+    }
   }
 
   .form-item {
@@ -80,71 +87,34 @@
       &::-webkit-input-placeholder {
         @include opacity(1);
         color: color(search-color);
+
+        @include respond-to('medium') {
+          color: color(search-border-light);
+        }
       }
 
       &:-moz-placeholder {
         @include opacity(1);
         color: color(search-color);
+
+        @include respond-to('medium') {
+          color: color(search-border-light);
+        }
       }
 
       &::-moz-placeholder {
         @include opacity(1);
         color: color(search-color);
+
+        @include respond-to('medium') {
+          color: color(search-border-light);
+        }
       }
 
       &:-ms-input-placeholder {
         color: color(search-color);
-      }
-    }
-  }
-}
 
-.search-form--light,
-%search-form--light {
-  @include respond-to('medium') {
-    color: color(search-color-light);
-  }
-
-  .search-form__border {
-    @include respond-to('medium') {
-      border-bottom: 2px solid color(search-border-light);
-    }
-  }
-
-  .form-submit {
-    @include respond-to('medium') {
-      background: none;
-      background-repeat: no-repeat;
-      background-image: inline-image('components/search/search-icon.png');
-      @if support-legacy-browser(ie, '7') {
-        *background-image: image-url('components/search/search-icon.png');
-      }
-    }
-  }
-
-  .form-item {
-    margin-bottom: 0;
-
-    .form-text {
-      padding: 0;
-
-      @include respond-to('medium') {
-        &::-webkit-input-placeholder {
-          @include opacity(1);
-          color: color(search-border-light);
-        }
-
-        &:-moz-placeholder {
-          @include opacity(1);
-          color: color(search-border-light);
-        }
-
-        &::-moz-placeholder {
-          @include opacity(1);
-          color: color(search-border-light);
-        }
-
-        &:-ms-input-placeholder {
+        @include respond-to('medium') {
           color: color(search-border-light);
         }
       }

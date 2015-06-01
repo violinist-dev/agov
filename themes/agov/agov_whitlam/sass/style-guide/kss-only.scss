@@ -10,7 +10,7 @@
 }
 
 // Show demo style in styleguide
-.wrap-demo .search-form--light {
+.wrap-demo .search-form {
   @include respond-to('medium') {
     background-color: color(link);
   }
