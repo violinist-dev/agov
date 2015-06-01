@@ -25,7 +25,7 @@
 // Style guide: components.teaser.teaser-image
 
 .teaser--image {
-  .teaser--wrap-image {
+  .teaser--wrap__image {
     margin-bottom: 10px;
   }
 }
@@ -36,17 +36,12 @@
   display: inline-block;
   width: 100%;
 
-  .teaser--wrap-image {
+  .teaser--wrap__image {
     float: left;
     padding-right: 30px;
-
-    img {
-      width: 200px;
-      height: 113px;
-    }
   }
 
-  .teaser--wrap-content {
+  .teaser--wrap__content {
     margin-top: 5px;
   }
 }
