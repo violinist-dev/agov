@@ -20,6 +20,8 @@
 //
 // Markup: teaser-image.hbs
 //
+// .teaser--wide  - Teaser Wide.
+//
 // Style guide: components.teaser.teaser-image
 
 .teaser--image {
@@ -28,3 +30,23 @@
   }
 }
 
+// Teaser wide
+
+.teaser--wide {
+  display: inline-block;
+  width: 100%;
+
+  .teaser--wrap-image {
+    float: left;
+    padding-right: 30px;
+
+    img {
+      width: 200px;
+      height: 113px;
+    }
+  }
+
+  .teaser--wrap-content {
+    margin-top: 5px;
+  }
+}
