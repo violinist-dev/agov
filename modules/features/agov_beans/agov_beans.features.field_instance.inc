@@ -62,7 +62,7 @@ function agov_beans_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'highlight' => array(
         'label' => 'above',
@@ -103,10 +103,11 @@ function agov_beans_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
+        'type' => 'list_default',
+        'weight' => 0,
       ),
       'highlight' => array(
         'label' => 'above',
@@ -180,7 +181,7 @@ function agov_beans_field_default_field_instances() {
         'profile' => '',
       ),
       'rel_remove' => 'default',
-      'title' => 'none',
+      'title' => 'required',
       'title_label_use_field_label' => 0,
       'title_maxlength' => 255,
       'title_value' => '',
