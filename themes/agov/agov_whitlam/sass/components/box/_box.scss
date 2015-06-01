@@ -13,7 +13,13 @@
 .box,
 %box {
   border: 2px solid color(border);
-  padding: 20px;
+  padding: 10px;
+  text-align: center;
+
+  @include respond-to('small') {
+    padding: 20px 0;
+    text-align: left;
+  }
 
   &__title {
     margin-bottom: 4px;
@@ -36,16 +42,6 @@
 // Style guide: components.box.box--icon
 
 .box--icon {
-  &.box {
-    padding: 10px;
-    text-align: center;
-
-    @include respond-to('small') {
-      padding: 20px 0;
-      text-align: left;
-    }
-  }
-
   &__left {
     @include respond-to('small') {
       float: left;
