@@ -56,6 +56,23 @@ function agov_social_links_services_list() {
 }
 
 /**
+ * Returns a font awesome by services.
+ */
+function agov_social_links_get_fontawesome($service) {
+  $social_font = array(
+    'facebook' => 'fa-facebook',
+    'twitter' => 'fa-twitter',
+    'youtube' => 'fa-youtube',
+    'vimeo' => 'fa-vimeo-square',
+    'flickr' => 'fa-flickr',
+    'rss' => 'fa-rss',
+    'email' => 'fa-envelope',
+  );
+
+  return isset($social_font[$service]) ? $social_font[$service] : $service;
+}
+
+/**
  * Implements hook_block_info().
  */
 function agov_social_links_block_info() {
@@ -131,6 +148,7 @@ function agov_social_links_block_view($delta = '') {
     case 'services':
       $block['subject'] = t('Connect with us');
       $block['content'] = '';
+      $items = array();
 
       foreach ($services as $service) {
         $service_default = constant('AGOV_SOCIAL_LINKS_' . strtoupper($service) . '_DEFAULT');
@@ -143,16 +161,29 @@ function agov_social_links_block_view($delta = '') {
             $service_title = 'RSS Feed';
           }
 
-          // Load the service's image.
-          $icon = drupal_get_path('module', 'agov_social_links') . '/images/' . $service . '.png';
-
-          $block['content'][$service] = array(
+          // Get font awesome for service.
+          $icon = agov_social_links_get_fontawesome($service);
+          $service_link = array(
             '#theme' => 'agov_social_link',
             '#title' => $service_title,
             '#icon' => $icon,
             '#url' => $service_url,
           );
+
+          $items[$service] = array(
+            'data' => drupal_render($service_link),
+            'class' => array('social__item'),
+          );
         }
+      }
+
+      if (!empty($items)) {
+        $block['content'] = theme('item_list', array(
+          'items' => $items,
+          'type' => 'ul',
+          'attributes' => array('class' => array('social__list')),
+          )
+        );
       }
 
       break;
@@ -180,18 +211,16 @@ function agov_social_links_theme($existing, $type, $theme, $path) {
  * Default theme implementation for agov_social_link.
  */
 function theme_agov_social_link($variables) {
-  $service_image = theme('image', array(
-    'path' => $variables['icon'],
-    'title' => $variables['title'],
-    'alt' => $variables['title'],
-  ));
+  $service_icon = '<i class="fa ' . $variables['icon'] . '"> </i>';
 
   return theme('link', array(
-    'text' => $service_image,
+    'text' => $service_icon,
     'path' => $variables['url'],
     'options' => array(
       'html' => TRUE,
-      'attributes' => array(),
+      'attributes' => array(
+        'title' => $variables['title'],
+      ),
     ),
   ));
 }
