@@ -24,3 +24,44 @@
     background-color: color(border);
   }
 }
+
+// Box icon
+//
+// A simple box icon styling.
+//
+// Markup: box--icon.hbs
+//
+// :hover  - Hover styling.
+//
+// Style guide: components.box.box--icon
+
+.box--icon {
+  &.box {
+    padding: 10px;
+    text-align: center;
+
+    @include respond-to('small') {
+      padding: 20px 0;
+      text-align: left;
+    }
+  }
+
+  &__left {
+    @include respond-to('small') {
+      float: left;
+      text-align: center;
+      padding: 2px 0;
+      width: 85px;
+    }
+
+    i {
+      font-size: 40px;
+    }
+  }
+
+  &__right {
+    @include respond-to('small') {
+      padding-left: 85px;
+    }
+  }
+}
