@@ -31,9 +31,9 @@
   }
 }
 
-// Box icon
+// Icon box
 //
-// A simple box icon styling.
+// A variation of the default box icon styling.
 //
 // Markup: box--icon.hbs
 //
@@ -41,12 +41,12 @@
 //
 // Style guide: components.box.box--icon
 
-.box--icon {
-  &.box {
-    @include respond-to('small') {
-      padding: 20px 0;
-      text-align: left;
-    }
+.box--icon,
+%box--icon {
+  @extend %box;
+
+  @include respond-to('small') {
+    padding: 20px 0;
   }
 
   &__left {
