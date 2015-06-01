@@ -48,28 +48,8 @@
   </div>
 </header>
 
-<div class="main">
-
-  <div class="main-content" role="main">
-    <?php print render($page['highlighted']); ?>
-    <?php print $breadcrumb; ?>
-    <a href="#skip-link" class="visually-hidden--focusable" id="main-content">Back to top</a>
-    <?php print render($title_prefix); ?>
-    <?php if ($title): ?>
-      <h1><?php print $title; ?></h1>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
-    <?php print $messages; ?>
-    <?php print render($tabs); ?>
-    <?php print render($page['help']); ?>
-    <?php if ($action_links): ?>
-      <ul class="action-links"><?php print render($action_links); ?></ul>
-    <?php endif; ?>
-    <?php print render($page['content']); ?>
-    <?php print $feed_icons; ?>
-  </div>
-
-  <div class="main-navigation">
+<div class="navigation">
+  <div class="layout-center">
 
     <?php if ($main_menu): ?>
       <nav class="main-menu" role="navigation" id="main-menu" tabindex="-1">
@@ -95,16 +75,48 @@
     <?php print render($page['navigation']); ?>
 
   </div>
+</div>
+
+<div class="layout-center layout-3col" role="main">
 
   <?php
     // Render the sidebars to see if there's anything in them.
     $sidebar_first  = render($page['sidebar_first']);
     $sidebar_second = render($page['sidebar_second']);
+    // Decide on layout classes by checking if sidebars have content.
+    // @TODO: Implement the logic.
+    $content_class = 'layout-3col__left-content';
+    $sidebar_first_class = 'layout-3col__right-sidebar';
+    $sidebar_second_class = 'layout-3col__right-sidebar';
   ?>
 
-  <?php if ($sidebar_first || $sidebar_second): ?>
-    <aside class="sidebars" role="complementary">
+  <div class="<?php print $content_class; ?>">
+    <?php print render($page['highlighted']); ?>
+    <?php print $breadcrumb; ?>
+    <a href="#skip-link" class="visually-hidden--focusable" id="main-content">Back to top</a>
+    <?php print render($title_prefix); ?>
+    <?php if ($title): ?>
+      <h1><?php print $title; ?></h1>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
+    <?php print $messages; ?>
+    <?php print render($tabs); ?>
+    <?php print render($page['help']); ?>
+    <?php if ($action_links): ?>
+      <ul class="action-links"><?php print render($action_links); ?></ul>
+    <?php endif; ?>
+    <?php print render($page['content']); ?>
+    <?php print $feed_icons; ?>
+  </div>
+
+  <?php if ($sidebar_first): ?>
+    <aside class="<?php print $sidebar_first_class; ?>" role="complementary">
       <?php print $sidebar_first; ?>
+    </aside>
+  <?php endif; ?>
+
+  <?php if ($sidebar_second): ?>
+    <aside class="<?php print $sidebar_second_class; ?>" role="complementary">
       <?php print $sidebar_second; ?>
     </aside>
   <?php endif; ?>

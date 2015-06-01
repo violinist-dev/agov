@@ -115,14 +115,13 @@
     }
 
     &__left-sidebar {
-      @include zen-new-row(none);
-      @include zen-grid-item(1, 1);
+      @include zen-new-row(right);
+      @include zen-grid-item(1, 3, right);
     }
 
-    &__right-sidebar,
-    &__col-3 {
-      @include zen-new-row(none);
-      @include zen-grid-item(1, 3);
+    &__right-sidebar {
+      @include zen-new-row(right);
+      @include zen-grid-item(1, 1, right);
     }
 
     &__col-1 {
@@ -131,6 +130,11 @@
 
     &__col-2 {
       @include zen-grid-item(1, 2);
+    }
+
+    &__col-3 {
+      @include zen-new-row(none);
+      @include zen-grid-item(1, 3);
     }
 
     &__col-4 {
