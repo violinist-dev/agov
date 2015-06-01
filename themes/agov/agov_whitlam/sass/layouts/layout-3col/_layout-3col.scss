@@ -29,6 +29,10 @@
 //   row. The `__col-4` is a "hidden" item that does not appear on the
 //   large-screen 3-column grid, but is a 1-column wide grid item spanning
 //   column 2 on tablet screens.
+// - `.layout-3col__col-x` : 1-column wide grid item spanning column 1; when
+//   several of these are used inside a `.layout-3col__grid-item-container` or
+//   `.layout-3col__container`, the first one is positioned like `__col-1`, the
+//   second like `__col-2`, etc.
 //
 // There are 2 ways to do a nested grid:
 // 1. Place a grid container div inside a grid item. Just apply the normal
@@ -45,10 +49,6 @@
 %layout-3col {
   @include zen-grid-container($context: flow);
 
-  &__grid-item-container {
-    @include zen-grid-container($context: grid-item);
-  }
-
   $zen-columns: 1 !global;
   $zen-gutters: 40px !global;
   $zen-auto-include-grid-item-base: false !global;
@@ -62,8 +62,9 @@
   &__col-1,
   &__col-2,
   &__col-3,
-  &__col-4 {
-    @include zen-new-row();
+  &__col-4,
+  &__col-x {
+    @include zen-new-row(both);
     @include zen-grid-item-base();
     @include zen-grid-item(1, 1);
   }
@@ -84,13 +85,15 @@
     }
 
     &__col-1,
-    &__col-3 {
+    &__col-3,
+    &__col-x:nth-child(2n + 1) {
       @include zen-grid-item(1, 1);
       @include zen-apply-gutter-padding();
     }
 
     &__col-2,
-    &__col-4 {
+    &__col-4,
+    &__col-x:nth-child(2n) {
       // Since this inherits from the mobile layout, we have to explicitly turn
       // off the new-row mixin.
       @include zen-new-row(none);
@@ -124,15 +127,20 @@
       @include zen-grid-item(1, 1, right);
     }
 
-    &__col-1 {
+    &__col-1,
+    &__col-x:nth-child(3n+1) {
+      @include zen-new-row(both);
       @include zen-grid-item(1, 1);
     }
 
-    &__col-2 {
+    &__col-2,
+    &__col-x:nth-child(3n+2) {
+      @include zen-new-row(none);
       @include zen-grid-item(1, 2);
     }
 
-    &__col-3 {
+    &__col-3,
+    &__col-x:nth-child(3n) {
       @include zen-new-row(none);
       @include zen-grid-item(1, 3);
     }
@@ -140,5 +148,10 @@
     &__col-4 {
       display: none;
     }
+  }
+
+  // Place last so it can override the padding of grid items.
+  &__grid-item-container {
+    @include zen-grid-container($context: grid-item);
   }
 }
