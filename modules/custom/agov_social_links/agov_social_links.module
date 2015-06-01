@@ -69,6 +69,8 @@ function agov_social_links_get_fontawesome($service) {
     'email' => 'fa-envelope',
   );
 
+  drupal_alter('agov_social_links_fontawesome', $social_font, $service);
+
   return isset($social_font[$service]) ? $social_font[$service] : $service;
 }
 
@@ -80,6 +82,7 @@ function agov_social_links_block_info() {
 
   $blocks['services'] = array(
     'info' => t('Social links'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
   );
 
   return $blocks;
@@ -163,26 +166,25 @@ function agov_social_links_block_view($delta = '') {
 
           // Get font awesome for service.
           $icon = agov_social_links_get_fontawesome($service);
-          $service_link = array(
-            '#theme' => 'agov_social_link',
-            '#title' => $service_title,
-            '#icon' => $icon,
-            '#url' => $service_url,
+          $service_link = l(
+            '<i class="fa ' . $icon . '"> </i>',
+            $service_url,
+            array('html' => TRUE)
           );
 
           $items[$service] = array(
-            'data' => drupal_render($service_link),
+            'data' => $service_link,
             'class' => array('social__item'),
           );
         }
       }
 
       if (!empty($items)) {
-        $block['content'] = theme('item_list', array(
-          'items' => $items,
-          'type' => 'ul',
-          'attributes' => array('class' => array('social__list')),
-          )
+        $block['content'] = array(
+          '#theme' => 'item_list',
+          '#items' => $items,
+          '#type' => 'ul',
+          '#attributes' => array('class' => array('social__list')),
         );
       }
 
