@@ -26,13 +26,13 @@
     padding-bottom: 13px;
     width: 100%;
 
-    @include respond-to('larger') {
-      min-width: 363px;
+    @include respond-to('small') {
+      min-width: 320px;
       width: auto;
     }
 
-    @include respond-to('small') {
-      min-width: 320px;
+    @include respond-to('larger') {
+      min-width: 363px;
       width: auto;
     }
   }
