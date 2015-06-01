@@ -1,0 +1,30 @@
+// Teaser
+//
+// Teaser of page
+//
+// Markup: teaser.hbs
+//
+// Style guide: components.teaser
+
+.teaser,
+%teaser {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+}
+
+// Teaser has image
+//
+// Teaser of page
+//
+// Markup: teaser-image.hbs
+//
+// Style guide: components.teaser.teaser-image
+
+.teaser--image {
+  .teaser--wrap-image {
+    margin-bottom: 10px;
+  }
+}
+
