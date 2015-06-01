@@ -30,8 +30,9 @@
 //   large-screen 3-column grid, but is a 1-column wide grid item spanning
 //   column 2 on tablet screens.
 // - `.layout-3col__col-x` : 1-column wide grid item spanning column 1; when
-//   several of these are used inside a `.layout-3col__grid-item-container`,
-//   the first one is positioned like `__col-1`, the second like `__col-2`, etc.
+//   several of these are used inside a `.layout-3col__grid-item-container` or
+//   `.layout-3col__container`, the first one is positioned like `__col-1`, the
+//   second like `__col-2`, etc.
 //
 // There are 2 ways to do a nested grid:
 // 1. Place a grid container div inside a grid item. Just apply the normal
