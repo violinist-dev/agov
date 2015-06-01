@@ -69,9 +69,6 @@ function agov_install() {
   // Enable full image display mode.
   _agov_install_full_image_display();
 
-  // Set default menu items.
-  _agov_set_menu();
-
   // Set default tags.
   _agov_default_tags();
 
@@ -620,7 +617,6 @@ function _agov_default_blocks() {
   agov_core_insert_block('menu', 'menu-footer-sub-menu', $themes, 'footer', 3);
 
   // Set aGov blocks.
-  agov_core_insert_block('agov_text_resize', 'text_resize', $themes, 'header');
   agov_core_insert_block('workbench', 'block', $themes, 'content', -14);
   agov_core_insert_block('menu_block', 'agov_menu_block-footer', $themes, 'footer', 2);
   agov_core_insert_block('views', 'slideshow-block', $themes, 'highlighted', 0, 1, '<front>');
@@ -870,23 +866,6 @@ function _agov_default_variables() {
   );
   variable_set('crumbs_weights', $crumbs_weights);
   variable_set('crumbs_show_current_page', 1);
-}
-
-/**
- * Set default menu items.
- */
-function _agov_set_menu() {
-
-  // Create a Home link in the main menu.
-  $item = array(
-    'link_title' => st('Home'),
-    'link_path' => '<front>',
-    'menu_name' => 'main-menu',
-    'weight' => -50,
-  );
-  menu_link_save($item);
-
-  menu_rebuild();
 }
 
 /**

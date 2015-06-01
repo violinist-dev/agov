@@ -11,15 +11,95 @@
 function agov_menu_install() {
   $t = get_t();
 
-  $item = array(
-    'link_path' => 'sitemap',
-    'link_title' => $t('Sitemap and Feeds'),
-    'menu_name' => 'menu-footer-sub-menu',
-    'weight' => -39,
+  $items = array();
+
+  // Main Menu.
+  $items[] = array(
+    'link_title' => $t('Home'),
+    'link_path' => '<front>',
+    'menu_name' => 'main-menu',
+    'weight' => -50,
+  );
+  $items[] = array(
+    'link_title' => $t('About Us'),
+    'link_path' => 'about-us',
+    'menu_name' => 'main-menu',
   );
 
-  menu_link_save($item);
+  // Footer sub-menu.
+  $items[] = array(
+    'link_title' => $t('Disclaimer'),
+    'link_path' => 'disclaimer',
+    'menu_name' => 'menu-footer-sub-menu',
+  );
+  $items[] = array(
+    'link_title' => $t('Privacy'),
+    'link_path' => 'privacy',
+    'menu_name' => 'menu-footer-sub-menu',
+  );
+  $items[] = array(
+    'link_title' => $t('Accessibility Notice'),
+    'link_path' => 'accessibility-notice',
+    'menu_name' => 'menu-footer-sub-menu',
+  );
+  $items[] = array(
+    'link_title' => $t('Feedback'),
+    'link_path' => 'contact',
+    'menu_name' => 'menu-footer-sub-menu',
+  );
+  $items[] = array(
+    'link_title' => $t('Sitemap and Feeds'),
+    'link_path' => 'sitemap',
+    'menu_name' => 'menu-footer-sub-menu',
+  );
 
-  // Rebuild the menu's now that we have added links.
+  // User menu.
+  $items[] = array(
+    'link_title' => $t('Sitemap and Feeds'),
+    'link_path' => 'sitemap',
+    'menu_name' => 'user-menu',
+  );
+
+
+  // Quicklinks.
+  $items[] = array(
+    'link_title' => $t('Australia.gov.au'),
+    'link_path' => 'http://australia.gov.au/',
+    'menu_name' => 'menu-quick-links',
+  );
+  $items[] = array(
+    'link_title' => $t('Smartraveller'),
+    'link_path' => 'http://www.smartraveller.gov.au/',
+    'menu_name' => 'menu-quick-links',
+  );
+
+  // Footer Quicklinks.
+  $titles = array(
+    'A fortiori argument',
+    'Ceteris paribus',
+    'De dicto and de re',
+    'Eo ipso',
+    'Ignotum per ignotius',
+    'Modus ponendo tollens',
+    'Non causa pro causa',
+    'Per fas et nefas',
+    'Q.E.D.',
+    'Reductio ad absurdum',
+    'Salva congruitate',
+  );
+
+  foreach ($titles as $title) {
+    $items[] = array(
+      'link_title' => $t($title),
+      'link_path' => '<front>',
+      'menu_name' => 'menu-footer-quick-links',
+    );
+  }
+
+  foreach ($items as $item) {
+    menu_link_save($item);
+  }
+
   menu_rebuild();
+
 }

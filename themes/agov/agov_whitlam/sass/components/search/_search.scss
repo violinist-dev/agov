@@ -1,0 +1,123 @@
+// Search
+//
+// A simple search styling.
+//
+// Markup: search.hbs
+//
+// Style guide: components.search
+
+.search-form,
+%search-form {
+  border: 2px solid color(border);
+  padding: 10px 20px;
+  color: color(search-color);
+
+  @include respond-to('small') {
+    padding: 20px;
+  }
+
+  @include respond-to('medium') {
+    color: color(search-color-light);
+  }
+
+  &__wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 13px;
+    width: 100%;
+
+    @include respond-to('small') {
+      min-width: 320px;
+      width: auto;
+    }
+
+    @include respond-to('larger') {
+      min-width: 363px;
+      width: auto;
+    }
+  }
+
+  &__border {
+    border-bottom: 1px solid color(search-border);
+
+    @include respond-to('small') {
+      border-bottom: 2px solid color(search-border);
+    }
+  }
+
+  .form-submit {
+    background: none;
+    background-repeat: no-repeat;
+    background-image: inline-image('components/search/search-icon-blue.png');
+    @if support-legacy-browser(ie, '7') {
+      *background-image: image-url('components/search/search-icon-blue.png');
+    }
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0;
+    text-indent: -999em;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-color: none;
+    padding: 0;
+
+    @include respond-to('medium') {
+      background: none;
+      background-repeat: no-repeat;
+      background-image: inline-image('components/search/search-icon.png');
+      @if support-legacy-browser(ie, '7') {
+        *background-image: image-url('components/search/search-icon.png');
+      }
+    }
+  }
+
+  .form-item {
+    margin-bottom: 0;
+
+    .form-text {
+      @include box-shadow(none);
+      background: none;
+      border: 0;
+      padding: 0;
+      font-style: italic;
+      font-weight: bold;
+
+      &::-webkit-input-placeholder {
+        @include opacity(1);
+        color: color(search-color);
+
+        @include respond-to('medium') {
+          color: color(search-border-light);
+        }
+      }
+
+      &:-moz-placeholder {
+        @include opacity(1);
+        color: color(search-color);
+
+        @include respond-to('medium') {
+          color: color(search-border-light);
+        }
+      }
+
+      &::-moz-placeholder {
+        @include opacity(1);
+        color: color(search-color);
+
+        @include respond-to('medium') {
+          color: color(search-border-light);
+        }
+      }
+
+      &:-ms-input-placeholder {
+        color: color(search-color);
+
+        @include respond-to('medium') {
+          color: color(search-border-light);
+        }
+      }
+    }
+  }
+}

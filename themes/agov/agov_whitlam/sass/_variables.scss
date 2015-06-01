@@ -222,6 +222,12 @@ $chroma: add-colors('functional', (
 
   watermark:              'grey-extra-light',
 
+  search-color-light:     'white-smoke',
+  search-color:           'grey-dark',
+  search-border:          'grey-light',
+  search-border-light:    'white-smoke',
+
+  header-background:      'blue-steel',
   pager-bg:               'grey-extra-light',
   button-color:           'blue',
   button-color-hover:     'white',
@@ -264,6 +270,8 @@ $breakpoints: (
 //
 // Misc
 //
+
+$container: 1140px;
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 2 * $base-font-size;
