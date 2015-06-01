@@ -6,6 +6,8 @@
 //
 // .box--alternate - Alternate box styling.
 //
+// :hover  - Hover styling.
+//
 // Style guide: components.box
 
 .box,
@@ -13,12 +15,12 @@
   border: 2px solid color(border);
   padding: 20px;
 
-  &--alternate {
-    background-color: color(border);
-  }
-
   &__title {
     margin-bottom: 4px;
     margin-top: 0;
+  }
+
+  &:hover {
+    background-color: color(border);
   }
 }
