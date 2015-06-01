@@ -16,4 +16,9 @@
   &--alternate {
     background-color: color(border);
   }
+
+  &__title {
+    margin-bottom: 4px;
+    margin-top: 0;
+  }
 }

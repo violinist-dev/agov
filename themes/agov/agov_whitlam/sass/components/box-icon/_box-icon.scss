@@ -31,7 +31,7 @@
     @include respond-to('small') {
       float: left;
       text-align: center;
-      padding: 6px 0;
+      padding: 2px 0;
       width: 85px;
     }
 
@@ -40,17 +40,11 @@
     }
   }
 
-  &-right { 
+  &-right {
     padding-left: 0;
 
     @include respond-to('small') {
       padding-left: 85px;
     }
-  }
-
-  &__title {
-    font-size: 20px;
-    margin-bottom: 4px;
-    margin-top: 4px;
   }
 }
