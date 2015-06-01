@@ -12,7 +12,7 @@
 
 ?>
 
-<div class="gov-home-layout layout-3col clearfix" <?php if (!empty($css_id)) : print "id=\"$css_id\""; endif; ?>>
+<div class="layout-3col clearfix" <?php if (!empty($css_id)) : print "id=\"$css_id\""; endif; ?>>
 
   <?php if (!empty($content['header'])) : ?>
     <div class="layout-3col__full">
@@ -20,18 +20,16 @@
     </div>
   <?php endif; ?>
 
-  <?php if(!empty($content['main']) || !empty($content['right-sidebar'])) : ?>
-    <?php if(!empty($content['main'])) : ?>
-      <div class="layout-3col__left-content">
-        <?php print $content['main'];?>
-      </div>
-    <?php endif; ?>
+  <?php if(!empty($content['main'])) : ?>
+    <div class="layout-3col__left-content">
+      <?php print $content['main'];?>
+    </div>
+  <?php endif; ?>
 
-    <?php if(!empty($content['right-sidebar'])) : ?>
-      <div class="layout-3col__right-sidebar">
-        <?php print $content['right-sidebar'];?>
-      </div>
-    <?php endif; ?>
+  <?php if(!empty($content['right-sidebar'])) : ?>
+    <div class="layout-3col__right-sidebar">
+      <?php print $content['right-sidebar'];?>
+    </div>
   <?php endif; ?>
 
   <?php if (!empty($content['footer-1'])) : ?>
