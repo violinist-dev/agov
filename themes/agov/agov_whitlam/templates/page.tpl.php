@@ -113,4 +113,6 @@
 
 <?php print render($page['footer']); ?>
 
+<?php print render($page['footer_bottom']); ?>
+
 <?php print render($page['bottom']); ?>
