@@ -176,9 +176,7 @@ function agov_social_links_block_view($delta = '') {
 
           $items[$service] = array(
             'data' => drupal_render($link),
-            'attributes' => array(
-              'class' => array('social__item'),
-            ),
+            'class' => array('social__item'),
           );
         }
       }
