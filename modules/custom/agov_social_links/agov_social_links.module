@@ -82,7 +82,7 @@ function agov_social_links_block_info() {
 
   $blocks['services'] = array(
     'info' => t('Social links'),
-//    'cache' => DRUPAL_CACHE_GLOBAL,
+    'cache' => DRUPAL_CACHE_GLOBAL,
   );
 
   return $blocks;
