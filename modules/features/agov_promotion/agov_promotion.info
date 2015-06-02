@@ -25,6 +25,7 @@ features[field_instance][] = node-footer_teaser-field_description
 features[field_instance][] = node-footer_teaser-field_image
 features[field_instance][] = node-footer_teaser-field_reference
 features[field_instance][] = node-footer_teaser-field_tags
+features[image][] = teaser_medium
 features[node][] = footer_teaser
 features[variable][] = comment_anonymous_footer_teaser
 features[variable][] = comment_default_mode_footer_teaser
