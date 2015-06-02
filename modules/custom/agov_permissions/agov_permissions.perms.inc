@@ -434,6 +434,15 @@ function agov_permissions_base_permissions() {
           4 => 'authenticated user',
         ),
       ),
+      'view any icon_block bean' => array(
+        'roles' => array(
+          0 => 'administrator',
+          1 => 'Site editor',
+          2 => 'anonymous user',
+          3 => 'Site builder',
+          4 => 'authenticated user',
+        ),
+      ),
       'view bean page' => array(
         'roles' => array(
           0 => 'administrator',
