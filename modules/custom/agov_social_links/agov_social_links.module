@@ -82,7 +82,7 @@ function agov_social_links_block_info() {
 
   $blocks['services'] = array(
     'info' => t('Social links'),
-    'cache' => DRUPAL_CACHE_GLOBAL,
+//    'cache' => DRUPAL_CACHE_GLOBAL,
   );
 
   return $blocks;
@@ -166,15 +166,19 @@ function agov_social_links_block_view($delta = '') {
 
           // Get font awesome for service.
           $icon = agov_social_links_get_fontawesome($service);
-          $service_link = l(
-            '<i class="fa ' . $icon . '"> </i>',
-            $service_url,
-            array('html' => TRUE)
+
+          $link = array(
+            '#type' => 'link',
+            '#href' => $service_url,
+            '#title' => $service_title,
+            '#prefix' => '<span class="fa ' . $icon . '"></span>',
           );
 
           $items[$service] = array(
-            'data' => $service_link,
-            'class' => array('social__item'),
+            'data' => drupal_render($link),
+            'attributes' => array(
+              'class' => array('social__item'),
+            ),
           );
         }
       }
@@ -192,37 +196,4 @@ function agov_social_links_block_view($delta = '') {
   }
 
   return $block;
-}
-
-/**
- * Implements hook_theme().
- */
-function agov_social_links_theme($existing, $type, $theme, $path) {
-  return array(
-    'agov_social_link' => array(
-      'variables' => array(
-        'title' => NULL,
-        'icon' => NULL,
-        'url' => NULL,
-      ),
-    ),
-  );
-}
-
-/**
- * Default theme implementation for agov_social_link.
- */
-function theme_agov_social_link($variables) {
-  $service_icon = '<i class="fa ' . $variables['icon'] . '"> </i>';
-
-  return theme('link', array(
-    'text' => $service_icon,
-    'path' => $variables['url'],
-    'options' => array(
-      'html' => TRUE,
-      'attributes' => array(
-        'title' => $variables['title'],
-      ),
-    ),
-  ));
 }
