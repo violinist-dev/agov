@@ -4,7 +4,7 @@
 //
 // Markup: list-links.hbs
 //
-// Style guide: components.list-links
+// Style guide: components.navigation.list-links
 
 .list-links,
 %list-links {
@@ -19,11 +19,6 @@
     padding: 0;
     margin-bottom: 9px;
     list-style: none;
-
-    &.is-expanded,
-    &.is-collapsed {
-      list-style: none;
-    }
   }
 
   a {
