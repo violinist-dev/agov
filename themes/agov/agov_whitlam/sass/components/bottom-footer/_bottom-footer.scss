@@ -4,37 +4,36 @@
 //
 // Markup: bottom-footer.hbs
 //
-// Style guide: components.footer.bottom-footer
+// Style guide: components.bottom-footer
 
-.page-bottom-wrapper {
+.region-bottom {
   background-color: color(grey-extra-dark);
   color: color(white);
 }
 
-.region-bottom {
-  @extend %layout-center;
+.footer-bottom {
   padding: 30px 15px;
 
-  a {
+  .footer-bottom__link {
     color: color(white);
+
+    &:hover {
+      color: color(grey-light);
+    }
   }
 
-  &:after {
-    content: '';
-    clear: both;
-    display: table;
-  }
-
-  .copyright {
+  .footer-bottom__legal {
     margin-top: 0;
+    margin-bottom: 1.5625rem;
   }
+
   @include respond-to(medium) {
-    .copyright {
+    .footer-bottom__legal {
       float: left;
       margin: 0;
   	}
 
-    .to-top {
+    .footer-bottom__to-top {
       float: right;
     }
   }
