@@ -11,27 +11,21 @@
   padding: 0;
   text-indent: 0;
 
-  &__item,
+  ul {
+    padding-left: 28px;
+  }
+
   li {
-    list-style-type: none;
     padding: 0;
     margin-bottom: 9px;
     list-style: none;
 
-    &.is-expanded {
-      list-style: none;
-
-      ul {
-        padding-left: 28px;
-      }
-    }
-
+    &.is-expanded,
     &.is-collapsed {
       list-style: none;
     }
   }
 
-  &__link,
   a {
     &.is-active {
       text-decoration: none;
