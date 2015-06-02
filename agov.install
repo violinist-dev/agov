@@ -861,14 +861,67 @@ function _agov_default_beans() {
   if (function_exists('agov_core_save_bean')) {
     // Create the front page block.
     $fields = array(
-      'field_bean_body' => array(
+      'field_link_to' => array(
         '0' => array(
-          'value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non faucibus massa. Maecenas ac dui turpis. Vivamus eu arcu tellus. Nunc sit amet tellus nunc. Quisque ac lacus nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer consectetur, urna vitae posuere varius, sem enim blandit augue, non condimentum dolor tortor id quam. Quisque venenatis dolor neque. Nunc suscipit sem id neque lobortis ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.<br/><a href="about-us">Learn more about us &raquo;</a>',
+          'url' => '<front>',
+          'title' => 'Cras accumsan fringilla',
+        ),
+      ),
+      'field_icon' => array(
+        '0' => array(
+          'value' => 'fa-book',
+        ),
+      ),
+      'field_bean_text' => array(
+        '0' => array(
+          'value' => 'Nulla facilisi. Donec eu scelerisque nisi. Donec vel semper ante, eu efficitur urna.',
           'format' => 'rich_text',
         ),
       ),
     );
-    agov_core_save_bean('basic_content', 'About Us', 'Provides "About Us" block for the from page.', 'About Us', $fields);
+    agov_core_save_bean('icon_block', 'book icon', '', '', $fields);
+
+    $fields = array(
+      'field_link_to' => array(
+        '0' => array(
+          'url' => '<front>',
+          'title' => 'Duis id consequat ipsum',
+        ),
+      ),
+      'field_icon' => array(
+        '0' => array(
+          'value' => 'fa-bus',
+        ),
+      ),
+      'field_bean_text' => array(
+        '0' => array(
+          'value' => 'Pellentesque dapibus quam non augue ullamcorper congue. Nulla at vestibulum nisl.',
+          'format' => 'rich_text',
+        ),
+      ),
+    );
+    agov_core_save_bean('icon_block', 'bus icon', '', '', $fields);
+
+    $fields = array(
+      'field_link_to' => array(
+        '0' => array(
+          'url' => '<front>',
+          'title' => 'Nunc pulvinar venenatis',
+        ),
+      ),
+      'field_icon' => array(
+        '0' => array(
+          'value' => 'fa-calendar-o',
+        ),
+      ),
+      'field_bean_text' => array(
+        '0' => array(
+          'value' => 'Suspendisse sapien lorem, tempus at consectetur id, ultricies ac nibh! Nullam a metus ex.',
+          'format' => 'rich_text',
+        ),
+      ),
+    );
+    agov_core_save_bean('icon_block', 'calendar icon', '', '', $fields);
 
     // Create the footer block.
     $this_year = date('Y');
