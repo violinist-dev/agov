@@ -8,40 +8,29 @@
 
 .search-form,
 %search-form {
-  border: 2px solid color(border);
-  padding: 10px 20px;
+  padding: 15px 20px;
   color: color(search-color);
-
-  @include respond-to('small') {
-    padding: 20px;
-  }
 
   @include respond-to('medium') {
     color: color(search-color-light);
   }
 
-  &__wrap {
+  > div {
     position: relative;
     display: inline-block;
     padding-bottom: 13px;
     width: 100%;
+    border-bottom: 1px solid color(search-border);
 
     @include respond-to('small') {
       min-width: 320px;
       width: auto;
+      border-bottom: 2px solid color(search-border);
     }
 
     @include respond-to('larger') {
       min-width: 363px;
       width: auto;
-    }
-  }
-
-  &__border {
-    border-bottom: 1px solid color(search-border);
-
-    @include respond-to('small') {
-      border-bottom: 2px solid color(search-border);
     }
   }
 
@@ -87,7 +76,44 @@
       @include input-placeholder() {
         @include opacity(1);
         color: color(search-color);
-     }
+      }
+
+      @include respond-to('medium') {
+        @include input-placeholder() {
+          color: color(search-color-light);
+        }
+      }
     }
   }
 }
+
+
+.block-search,
+.block-search-api-page {
+  bottom: -70px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+
+  @include respond-to('medium') {
+    position: relative;
+    bottom: 0;
+  }
+
+  form {
+    @extend %search-form;
+  }
+}
+
+.header,
+%header {
+  background: color(header-background);
+  position: relative;
+  margin-bottom: 80px;
+
+  @include respond-to('medium') {
+    margin-bottom: 0;
+  }
+}
+
