@@ -29,6 +29,18 @@
   position: absolute;
   top: 0;
   right: 0;
+
+  .links.inline {
+    margin: 10px 0;
+  }
+
+  a {
+    color: color(secondary-menu);
+
+    &:hover {
+      color: color(secondary-menu-hover);
+    }
+  }
 }
 
 @include respond-to(medium) {
