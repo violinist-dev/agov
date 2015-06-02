@@ -130,7 +130,6 @@ $chroma: add-colors((
   grayfa:                 #fafafb,
 
   blue:                   #0072b9,
-  steelblue:              #466bc8,
   royalblue:              #3a59a5,
   blue-steel:             #466bc8,
   blue-pale:              #3a59a5,
@@ -237,7 +236,7 @@ $chroma: add-colors('functional', (
   button-color:           'blue',
   button-color-hover:     'white',
   button-bg:              'white-smoke',
-  button-bg-hover:        'steelblue',
+  button-bg-hover:        'blue-steel',
 
   form-element-border:        'grey-extra-light',
   form-element-border-bottom: 'grey-medium-light',
@@ -249,7 +248,7 @@ $chroma: add-colors('functional', (
 
   social-bg:              'white-smoke',
   social-bg-hover:        'grey-extra-light',
-  social-icon:            'steelblue',
+  social-icon:            'blue-steel',
 ));
 
 $chroma-active-scheme: 'functional';
