@@ -41,6 +41,21 @@ function agov_blog_image_default_styles() {
     'label' => 'blog_teaser_thumbnail',
   );
 
+  // Exported image style: teaser_thumbnail.
+  $styles['teaser_thumbnail'] = array(
+    'label' => 'teaser thumbnail (205x115)',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 205,
+          'height' => 115,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
