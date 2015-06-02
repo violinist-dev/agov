@@ -16,7 +16,8 @@
   @extend %bg-navbar;
 }
 
-.block-superfish {
+.block-superfish,
+.main-menu {
   @extend %navbar;
 
   .sf-menu {
