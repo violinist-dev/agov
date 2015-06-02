@@ -8,9 +8,35 @@
 
 .teaser,
 %teaser {
+  &--wide {
+    display: inline-block;
+    width: 100%;
+  }
+
   &__title {
-    margin-top: 0;
+    margin-top: 5px;
     margin-bottom: 5px;
+  }
+
+  &__image {
+    img {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__image-wide {
+    @include respond-to('medium') {
+      float: left;
+    }
+
+    img {
+      width: 100%;
+
+      @include respond-to('medium') {
+        padding-right: 30px;
+        width: auto;
+      }
+    }
   }
 }
 
@@ -24,24 +50,11 @@
 //
 // Style guide: components.teaser.teaser-image
 
-.teaser--image {
-  .teaser--wrap__image {
-    margin-bottom: 10px;
-  }
-}
-
-// Teaser wide
-
 .teaser--wide {
-  display: inline-block;
-  width: 100%;
+  @extend %teaser--wide;
 
-  .teaser--wrap__image {
-    float: left;
-    padding-right: 30px;
-  }
-
-  .teaser--wrap__content {
-    margin-top: 5px;
+  .teaser__image {
+    @extend %teaser__image-wide;
   }
 }
+
