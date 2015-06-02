@@ -84,10 +84,22 @@
     $sidebar_first  = render($page['sidebar_first']);
     $sidebar_second = render($page['sidebar_second']);
     // Decide on layout classes by checking if sidebars have content.
-    // @TODO: Implement the logic.
-    $content_class = 'layout-3col__left-content';
-    $sidebar_first_class = 'layout-3col__right-sidebar';
-    $sidebar_second_class = 'layout-3col__right-sidebar';
+    if ($sidebar_first && $sidebar_second) {
+      $content_class = 'layout-3col__col-1';
+      $sidebar_first_class = 'layout-3col__col-2';
+      $sidebar_second_class = 'layout-3col__col-3';
+    }
+    else if($sidebar_second) {
+      $content_class = 'layout-3col__left-content';
+      $sidebar_second_class = 'layout-3col__right-sidebar';
+    }
+    else if($sidebar_first) {
+      $content_class = 'layout-3col__right-content';
+      $sidebar_first_class = 'layout-3col__left-sidebar';
+    }
+    else {
+      $content_class = 'layout-3col__full';
+    }
   ?>
 
   <div class="<?php print $content_class; ?>">
