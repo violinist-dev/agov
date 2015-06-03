@@ -1,0 +1,20 @@
+// Footer Top
+//
+// The footer top region of page
+//
+// Markup: footer-top.hbs
+//
+// Style guide: components.footer-top
+
+.region-footer-top {
+  background-color: color(white-smoke);
+}
+
+.footer-top {
+  padding: 30px 15px 20px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
