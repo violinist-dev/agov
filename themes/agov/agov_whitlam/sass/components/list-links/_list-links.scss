@@ -1,0 +1,32 @@
+// List links
+//
+// A list of links that are list with each other.
+//
+// Markup: list-links.hbs
+//
+// Style guide: components.navigation.list-links
+
+.list-links,
+%list-links {
+  padding: 0;
+  text-indent: 0;
+
+  ul {
+    padding-left: 28px;
+  }
+
+  li {
+    padding: 0;
+    margin-bottom: 9px;
+    list-style: none;
+  }
+
+  a {
+    &.is-active {
+      text-decoration: none;
+      font-family: $font-bold;
+      color: color(list-links-active);
+    }
+  }
+}
+
