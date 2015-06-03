@@ -86,34 +86,3 @@
     }
   }
 }
-
-
-.block-search,
-.block-search-api-page {
-  bottom: -70px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  width: 100%;
-
-  @include respond-to('medium') {
-    position: relative;
-    bottom: 0;
-  }
-
-  form {
-    @extend %search-form;
-  }
-}
-
-.header,
-%header {
-  background: color(header-background);
-  position: relative;
-  margin-bottom: 80px;
-
-  @include respond-to('medium') {
-    margin-bottom: 0;
-  }
-}
-
