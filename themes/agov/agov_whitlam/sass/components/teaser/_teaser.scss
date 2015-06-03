@@ -38,6 +38,12 @@
       }
     }
   }
+
+  &__content {
+    p {
+      margin-top: 0;
+    }
+  }
 }
 
 // Teaser has image
