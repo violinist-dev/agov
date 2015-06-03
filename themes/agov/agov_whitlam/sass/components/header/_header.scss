@@ -1,0 +1,32 @@
+// Header
+//
+// The header of page.
+//
+// Markup: header.hbs
+//
+// Style guide: components.header
+
+.header,
+%header {
+  background: color(header-background);
+}
+
+.header__inner {
+  padding: 30px 35px 20px;
+
+  @include respond-to(medium) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
+@include respond-to(medium) {
+  .header__logo {
+    float: left;
+  }
+
+  .header__region {
+    float: right;
+  }
+}

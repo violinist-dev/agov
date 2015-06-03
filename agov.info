@@ -153,7 +153,6 @@ dependencies[] = module_whitelist
 
 ; aGov
 
-dependencies[] = agov_appearance
 dependencies[] = agov_core
 dependencies[] = agov_common_fields
 dependencies[] = agov_beans
@@ -165,7 +164,6 @@ dependencies[] = agov_chosen
 dependencies[] = agov_contact
 dependencies[] = agov_front
 dependencies[] = agov_menu_block
-dependencies[] = agov_mini_site
 dependencies[] = agov_register
 dependencies[] = agov_rss
 dependencies[] = agov_slideshow
