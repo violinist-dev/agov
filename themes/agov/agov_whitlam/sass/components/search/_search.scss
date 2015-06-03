@@ -8,7 +8,6 @@
 
 .search-form,
 %search-form {
-  padding: 15px 20px;
   color: color(search-color);
 
   @include respond-to('medium') {
@@ -22,15 +21,10 @@
     width: 100%;
     border-bottom: 1px solid color(search-border);
 
-    @include respond-to('small') {
-      min-width: 320px;
-      width: auto;
-      border-bottom: 2px solid color(search-border);
-    }
-
-    @include respond-to('larger') {
+    @include respond-to('medium') {
       min-width: 363px;
       width: auto;
+      border-bottom: 2px solid color(search-border);
     }
   }
 

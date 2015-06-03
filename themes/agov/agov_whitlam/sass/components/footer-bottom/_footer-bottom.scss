@@ -8,14 +8,25 @@
 
 .region-footer-bottom {
   background-color: color(grey-extra-dark);
-  color: color(white);
+  color: color(text-bg);
 }
 
 .footer-bottom {
   padding: 30px 15px;
 
+  @include respond-to(medium) {
+    .footer-bottom__legal {
+      float: left;
+      margin: 0;
+    }
+
+    .footer-bottom__to-top {
+      float: right;
+    }
+  }
+
   .footer-bottom__link {
-    color: color(white);
+    color: color(text-bg);
 
     &:hover {
       color: color(grey-light);
@@ -25,16 +36,5 @@
   .footer-bottom__legal {
     margin-top: 0;
     margin-bottom: 1.5625rem;
-  }
-
-  @include respond-to(medium) {
-    .footer-bottom__legal {
-      float: left;
-      margin: 0;
-  	}
-
-    .footer-bottom__to-top {
-      float: right;
-    }
   }
 }
