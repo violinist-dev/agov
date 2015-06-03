@@ -138,8 +138,11 @@ function agov_whitlam_preprocess_block(&$variables, $hook) {
 }
 // */
 
-/*
- * Implement template_preprocess_entity()
+/**
+ * Override variables into the icon_block bean templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
  */
 function agov_whitlam_preprocess_entity(&$variables) {
   $entity_type = $variables['elements']['#entity_type'];
@@ -156,7 +159,8 @@ function agov_whitlam_preprocess_entity(&$variables) {
         '#href' => $link_to[0]['url'],
         '#title' => isset($link_to[0]['title']) ? $link_to[0]['title'] : $link_to[0]['url'],
       );
-    }else {
+    }
+    else {
       $variables['box_link_to'] = NULL;
     }
 
