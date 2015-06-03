@@ -19,6 +19,7 @@
 
 .header__inner {
   padding: 30px 35px 20px;
+  position: relative;
 
   @include respond-to(medium) {
     padding-left: 10px;
@@ -26,6 +27,28 @@
   }
 }
 
+.navigation {
+  background: color(nav-bg);
+}
+
+.header__secondary-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: .8rem;
+
+  .links.inline {
+    margin: 10px 0;
+  }
+
+  a {
+    color: color(secondary-menu);
+
+    &:hover {
+      color: color(secondary-menu-hover);
+    }
+  }
+}
 
 @include respond-to(medium) {
   .header__logo {
