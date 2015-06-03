@@ -16,8 +16,7 @@
   @extend %bg-navbar;
 }
 
-.block-superfish,
-.main-menu {
+.block-superfish {
   @extend %navbar;
 
   .sf-menu,
@@ -40,7 +39,6 @@
 }
 
 // Menu icon
-
 .menu-icon {
   color: color(text-bg);
   text-transform: uppercase;
@@ -108,7 +106,6 @@
   }
 }
 
-
 .navbar,
 %navbar {
   width: 100%;
@@ -143,7 +140,6 @@
   }
 }
 
-.menu__item,
 %menu__item {
   padding: 0;
   float: left;
@@ -241,7 +237,6 @@
   }
 }
 
-.sub-menu,
 %sub-menu {
   @include respond-to('medium') {
     background: color(navbar-bg-hover);
