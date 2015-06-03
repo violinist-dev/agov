@@ -85,14 +85,7 @@ $rem-with-px-fallback:  true;
 // find any of the fonts in the list.
 
 // Sans-serif font stacks.
-$verdana:         Verdana, Tahoma, 'DejaVu Sans', sans-serif;
-$tahoma:          Tahoma, Verdana, 'DejaVu Sans', sans-serif;
-$helvetica:       Helvetica, Arial, 'Nimbus Sans L', sans-serif;
-$arial:           Arial, Helvetica, 'Nimbus Sans L', sans-serif;
-$impact:          Impact, 'Arial Narrow', Helvetica, sans-serif;
-$opensansitalic:          OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
-$opensansbolditalic:          OpenSansBoldItalic, 'Arial Narrow', Helvetica, sans-serif;
-$opensanssemibolditalic:          OpenSansSemiboldItalic, 'Arial Narrow', Helvetica, sans-serif;
+// Sans-serif font stacks.
 $opensans:        OpenSansRegular, 'Times New Roman', 'DejaVu Serif', sans-serif;
 $opensansbold:    OpenSansBold, 'Times New Roman', 'DejaVu Serif', sans-serif;
 $opensansitalic:  OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
@@ -104,10 +97,6 @@ $menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier Ne
 
 // Now create some variables using the font stacks we want on this site.
 $font-body:       $opensans;
-$font-heading:    $opensansbold;
-$font-monospace:  $menlo;
-$font-watermark:  $impact;
-$font-comment:    $opensanssemibolditalic;
 $font-bold:       $opensansbold;
 $font-italic:     $opensansitalic;
 $font-monospace:  $menlo;
@@ -134,7 +123,6 @@ $chroma: add-colors((
   grey-dark:              #666,
   grey-extra-dark:        #333,
   black:                  #000,
-  gray77:                 #777,
 
   blue:                   #0072b9,
   blue-steel:             #466bc8,
@@ -258,7 +246,7 @@ $chroma: add-colors('functional', (
   breadcrumb-color:       'grey-medium',
 
   comment-date:           'grey-dark',
-  comment-icon:           'gray77',
+  comment-icon:           'grey-dark',
 
   social-bg:              'white-smoke',
   social-bg-hover:        'grey-extra-light',
