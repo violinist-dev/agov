@@ -131,7 +131,7 @@ function agov_blog_views_default_views() {
   $handler->display->display_options['fields']['field_thumbnail']['field'] = 'field_thumbnail';
   $handler->display->display_options['fields']['field_thumbnail']['label'] = '';
   $handler->display->display_options['fields']['field_thumbnail']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_thumbnail']['element_class'] = 'teaser--wrap-image';
+  $handler->display->display_options['fields']['field_thumbnail']['element_class'] = 'teaser__image';
   $handler->display->display_options['fields']['field_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_thumbnail']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_thumbnail']['element_default_classes'] = FALSE;
