@@ -15,27 +15,27 @@
   "use strict";
 
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
-  Drupal.behaviors.my_custom_behavior = {
+  Drupal.behaviors.agov_whitlam = {
     attach: function(context, settings) {
 
-      // Place your code here.
       // Menu responsive
-      $(".block-superfish").prepend('<div class="menu-icon open active">menu<i class="fa fa fa-bars"></i></div>');
-      $(".block-superfish").prepend('<div class="menu-icon close">close<i class="fa fa-close"></i></div>');
+      $(".block-superfish").prepend('<div class="menu-icon open active">menu<i class="fa fa fa-bars"></i></div><div class="menu-icon close">close<i class="fa fa-close"></i></div>');
+
       $("a.menuparent").after('<div class="sub-menu-icon"><i class="fa fa-plus"></i></div>');
-      $(".menu-icon.open").click(function(){
+
+      $(".menu-icon.open").click(function() {
         $(this).removeClass("active");
         $(".menu-icon.close").addClass("active");
         $(".sf-menu").addClass("active");
       });
 
-      $(".menu-icon.close").click(function(){
+      $(".menu-icon.close").click(function() {
         $(this).removeClass("active");
         $(".menu-icon.open").addClass("active");
         $(".sf-menu").removeClass("active");
       });
 
-      $(".sub-menu-icon").click(function(){
+      $(".sub-menu-icon").click(function() {
         $(this).toggleClass("active");
         $(this).next().toggleClass("active");
       });
