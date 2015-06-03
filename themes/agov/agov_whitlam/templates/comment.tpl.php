@@ -9,7 +9,7 @@
 ?>
 <article class="<?php print $classes; ?> clearfix <?php $picture ? print ' with-picture' : ''; ?>"<?php print $attributes; ?>>
   <?php print $picture; ?>
-  <div class="comment-inner-wrapper">
+  <div class="comment--inner-wrapper">
     <header>
       <p class="submitted">
         <?php print $submitted; ?>

@@ -90,15 +90,6 @@ function agov_whitlam_preprocess_node(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("comment" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function agov_whitlam_preprocess_comment(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-}
-// */
-
-/**
- * Implements hook_preprocess_comment().
- */
 function agov_whitlam_preprocess_comment(&$variables, $hook) {
   $comment = $variables['comment'];
   $variables['submitted'] = t('<span class="field author">!username</span> - <span class="field date-month">!date</span>',
