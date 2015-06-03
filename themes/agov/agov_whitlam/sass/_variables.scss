@@ -85,10 +85,7 @@ $rem-with-px-fallback:  true;
 // find any of the fonts in the list.
 
 // Sans-serif font stacks.
-// Sans-serif font stacks.
-$opensans:        OpenSansRegular, 'Times New Roman', 'DejaVu Serif', sans-serif;
-$opensansbold:    OpenSansBold, 'Times New Roman', 'DejaVu Serif', sans-serif;
-$opensansitalic:  OpenSansItalic, 'Arial Narrow', Helvetica, sans-serif;
+$opensans:        'Open Sans', 'Arial Narrow', Helvetica, sans-serif;
 
 // Monospace font stacks.
 // For an explanation of why "sans-serif" is at the end of this list, see
@@ -97,8 +94,8 @@ $menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier Ne
 
 // Now create some variables using the font stacks we want on this site.
 $font-body:       $opensans;
-$font-bold:       $opensansbold;
-$font-italic:     $opensansitalic;
+$font-bold:       $opensans;
+$font-italic:     $opensans;
 $font-monospace:  $menlo;
 
 
@@ -252,6 +249,7 @@ $chroma: add-colors('functional', (
   form-element-border-hover:  'blue-royal',
   form-element-bg:            'body-bg',
   form-element-bg-hover:      'white-smoke',
+
   breadcrumb-color:       'grey-medium',
 
   comment-date:           'grey-dark',
