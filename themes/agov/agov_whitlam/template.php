@@ -54,11 +54,29 @@ function agov_whitlam_preprocess_html(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function agov_whitlam_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  $sidebar_first = $variables['page']['sidebar_first'];
+  $sidebar_second = $variables['page']['sidebar_second'];
+  // Decide on layout classes by checking if sidebars have content.
+  if ($sidebar_first && $sidebar_second) {
+    $content_class = 'layout-3col__col-1';
+    $variables['sidebar_first_class'] = 'layout-3col__col-2';
+    $variables['sidebar_second_class'] = 'layout-3col__col-3';
+  }
+  elseif ($sidebar_second) {
+    $content_class = 'layout-3col__left-content';
+    $variables['sidebar_second_class'] = 'layout-3col__right-sidebar';
+  }
+  elseif ($sidebar_first) {
+    $content_class = 'layout-3col__right-content';
+    $variables['sidebar_first_class'] = 'layout-3col__left-sidebar';
+  }
+  else {
+    $content_class = 'layout-3col__full';
+  }
+
+  $variables['content_class'] = $content_class;
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
