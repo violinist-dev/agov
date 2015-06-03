@@ -16,8 +16,6 @@ Feature: Home Page
     And I should see "View More News"
     And I should see "From the Blog"
     And I should see "View more blog articles"
-    And I should see "Twitter Feed"
     And I should see "Quick Links"
-    And I should see "Connect with us"
 #   Slide show titles
     And I should see "Macto Oppeto"
