@@ -1,0 +1,40 @@
+// Footer Bottom
+//
+// The footer bottom region of page
+//
+// Markup: footer-bottom.hbs
+//
+// Style guide: components.footer-bottom
+
+.region-footer-bottom {
+  background-color: color(grey-extra-dark);
+  color: color(white);
+}
+
+.footer-bottom {
+  padding: 30px 15px;
+
+  .footer-bottom__link {
+    color: color(white);
+
+    &:hover {
+      color: color(grey-light);
+    }
+  }
+
+  .footer-bottom__legal {
+    margin-top: 0;
+    margin-bottom: 1.5625rem;
+  }
+
+  @include respond-to(medium) {
+    .footer-bottom__legal {
+      float: left;
+      margin: 0;
+  	}
+
+    .footer-bottom__to-top {
+      float: right;
+    }
+  }
+}
