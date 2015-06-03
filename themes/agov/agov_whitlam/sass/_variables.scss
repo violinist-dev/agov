@@ -190,6 +190,8 @@ $chroma: add-colors('functional', (
   skip-link:              'white',
   skip-link-bg:           'grey-dark',
 
+  list-links-active:      'grey-extra-dark',       
+
   status:                 'green',
   status-bg:              'green-pale',
   status-border:          'green',
@@ -241,6 +243,10 @@ $chroma: add-colors('functional', (
   form-element-bg-hover:      'white-smoke',
 
   breadcrumb-color:       'grey-medium',
+
+  social-bg:              'white-smoke',
+  social-bg-hover:        'grey-extra-light',
+  social-icon:            'blue-steel',
 ));
 
 $chroma-active-scheme: 'functional';
