@@ -16,28 +16,6 @@
   @extend %bg-navbar;
 }
 
-.block-superfish {
-  @extend %navbar;
-
-  .sf-menu,
-  .links {
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: color(navbar-bg);
-    display: none;
-
-    @include respond-to('medium') {
-      position: relative;
-      display: block;
-    }
-
-    &.active {
-      display: block;
-    }
-  }
-}
-
 // Menu icon
 .menu-icon {
   color: color(text-bg);
@@ -106,6 +84,10 @@
   }
 }
 
+.block-superfish {
+  @extend %navbar;
+}
+
 .navbar,
 %navbar {
   width: 100%;
@@ -123,12 +105,23 @@
     float: none;
   }
 
-  .menu,
-  .links {
+  .menu {
     @extend .clearfix;
     text-indent: 0;
-    margin: 0;
-    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: color(navbar-bg);
+    display: none;
+
+    @include respond-to('medium') {
+      position: relative;
+      display: block;
+    }
+
+    &.active {
+      display: block;
+    }
 
     li {
       @extend %menu__item;
@@ -153,7 +146,7 @@
     width: auto;
   }
 
-  a {
+  > a {
     color: color(navbar);
     font-family: $font-body;
     padding: 11px 22px;
@@ -201,50 +194,41 @@
         background: color(navbar-bg-hover);
         top: 55px;
       }
-
-      ul {
-        @include respond-to('medium') {
-          margin: 0 -2px;
-          top: -2px;
-        }
-      }
     }
   }
 
   ul {
-    display: none !important;
-
-    @include respond-to('medium') {
-      display: block !important;
-    }
-
-    ul.active a {
-      padding-left: 40px;
-    }
-
-    &.active {
-      display: block !important;
-      margin: 0;
-      position: relative;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-
-      a {
-        padding-left: 30px;
-      }
-    }
+    @extend %sub-menu;
   }
 }
 
 %sub-menu {
+  display: none !important;
+
+  @include respond-to('medium') {
+    display: block !important;
+  }
+
   @include respond-to('medium') {
     background: color(navbar-bg-hover);
     left: -999em;
     position: absolute;
-    width: 200px;
+    min-width: 280px;
     z-index: 99;
     top: 56px;
+  }
+
+  &.active {
+    display: block !important;
+    margin: 0;
+    position: relative;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+
+    a {
+      padding-left: 30px;
+    }
   }
 
   li {
@@ -261,8 +245,10 @@
 
       ul {
         @include respond-to('medium') {
-          left: 200px;
+          left: 280px;
           display: block;
+          margin: 0 -4px;
+          top: -2px;
         }
       }
     }
@@ -290,6 +276,10 @@
       display: none;
       position: absolute;
       top: -2px;
+    }
+
+    &.active a {
+      padding-left: 40px;
     }
   }
 }
