@@ -17,5 +17,3 @@ Feature: Home Page
     And I should see "From the Blog"
     And I should see "View more blog articles"
     And I should see "Quick Links"
-#   Slide show titles
-    And I should see "Macto Oppeto"
