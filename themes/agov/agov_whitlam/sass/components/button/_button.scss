@@ -12,6 +12,7 @@
 // Markup: button.hbs
 //
 // :hover - Hover styling.
+// .button--large - Large button styling.
 //
 // Style guide: components.button
 
@@ -33,6 +34,12 @@
   @if support-legacy-browser(ie, '7') {
     // Remove inner spacing in IE 7 without affecting normal text inputs.
     *overflow: visible;
+  }
+
+  &--large {
+    padding: 25px 60px;
+    font-size: 32px;
+    font-family: $font-bold;
   }
 
   &:hover,
