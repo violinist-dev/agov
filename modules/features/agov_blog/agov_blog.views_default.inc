@@ -15,7 +15,7 @@ function agov_blog_views_default_views() {
   $view->description = 'Home page blog articles';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Latest Updates';
+  $view->human_name = 'Latest updates';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -96,7 +96,7 @@ function agov_blog_views_default_views() {
   /* Display: Blog Block */
   $handler = $view->new_display('block', 'Blog Block', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest Updates';
+  $handler->display->display_options['title'] = 'Latest updates';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -114,7 +114,7 @@ function agov_blog_views_default_views() {
   /* Display: Frontpage Blog Block */
   $handler = $view->new_display('block', 'Frontpage Blog Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest Updates';
+  $handler->display->display_options['title'] = 'Latest updates';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
