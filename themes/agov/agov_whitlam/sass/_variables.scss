@@ -127,6 +127,7 @@ $chroma: add-colors((
   blue-steel:             #466bc8,
   blue-royal:             #3a59a5,
   turquoise:              #52c2c7,
+  blue-pale:              #3a59a5,
 
   purple:                 #5a5f8d,
   violet:                 #6c6f8f,
@@ -154,6 +155,7 @@ $chroma: add-colors('functional', (
   text-bg:                'white',
 
   link:                   'blue-steel',
+  link-active:            'blue-pale',
   link-visited:           'purple',
   link-hover:             'blue-royal',
   link-border-focus:      'turquoise',
@@ -227,6 +229,10 @@ $chroma: add-colors('functional', (
   table-select:           'yellow-pale',
 
   watermark:              'grey-extra-light',
+  navbar-bg:              'grey-extra-dark',
+  navbar-active:          'grey-extra-dark',
+  navbar:                 'white',
+  navbar-bg-hover:        'white-smoke',
 
   search-color-light:     'white-smoke',
   search-color:           'grey-dark',
@@ -245,7 +251,6 @@ $chroma: add-colors('functional', (
   form-element-border-hover:  'blue-royal',
   form-element-bg:            'body-bg',
   form-element-bg-hover:      'white-smoke',
-
   breadcrumb-color:       'grey-medium',
 
   social-bg:              'white-smoke',
@@ -280,6 +285,7 @@ $breakpoints: (
 //
 // Misc
 //
+$container: 1140px;
 
 $container: 1140px;
 
