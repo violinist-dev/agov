@@ -23,7 +23,7 @@ $padding-left-no-picture: 42px;
 %comment {
   margin-bottom: 42px;
 
-  .comment--inner-wrapper {
+  &--inner-wrapper {
     padding-left: 50px;
     position: relative;
 
@@ -108,7 +108,7 @@ $padding-left-no-picture: 42px;
   &__section {
     @include output-rhythm(margin, rhythm(1) 0);
 
-    .comment__section-title {
+    &-title {
       @extend %divider;
       margin-bottom: 45px;
       padding-top: 25px;
@@ -174,7 +174,7 @@ $padding-left-no-picture: 42px;
         padding-left: $padding-left-with-picture;
       }
 
-      .comment-inner-wrapper {
+      .comment--inner-wrapper {
         padding-left: $padding-left;
       }
     }
