@@ -15,3 +15,14 @@
     background-color: color(link);
   }
 }
+
+.demo-bg {
+	padding-top: 60px;
+  background: color(link);
+  position: relative;
+
+	@include respond-to('medium') {
+    background: none;
+    padding: 0;
+  }
+}

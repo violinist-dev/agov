@@ -21,7 +21,7 @@
       // Menu responsive
       $(".block-superfish").prepend('<div class="menu-icon open active">menu<i class="fa fa fa-bars"></i></div><div class="menu-icon close">close<i class="fa fa-close"></i></div>');
 
-      $("a.menuparent").after('<div class="sub-menu-icon"><i class="fa fa-plus"></i></div>');
+      $(".block-superfish a.menuparent").after('<div class="sub-menu-icon"><i class="fa fa-plus"></i></div>');
 
       $(".menu-icon.open").click(function() {
         $(this).removeClass("active");

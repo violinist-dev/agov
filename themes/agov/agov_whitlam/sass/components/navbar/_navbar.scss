@@ -7,15 +7,6 @@
 //
 // Style guide: components.navbar
 
-.bg-navbar,
-%bg-navbar {
-  background: color(navbar-bg);
-}
-
-.region-navigation {
-  @extend %bg-navbar;
-}
-
 // Menu icon
 .menu-icon {
   color: color(text-bg);
@@ -73,6 +64,7 @@
   color: color(navbar-bg);
   z-index: 1;
   text-indent: 0;
+  line-height: 1;
 
   @include respond-to('medium') {
     display: none;
@@ -94,7 +86,6 @@
   position: relative;
 
   @include respond-to('small') {
-    width: $container;
     margin: 0 auto;
     max-width: 250px;
     float: right;
@@ -113,6 +104,8 @@
     top: 0;
     background: color(navbar-bg);
     display: none;
+    padding: 0;
+    margin: 0;
 
     @include respond-to('medium') {
       position: relative;
@@ -225,6 +218,7 @@
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
+    padding: 0;
 
     a {
       padding-left: 30px;
@@ -233,6 +227,14 @@
 
   li {
     width: 100%;
+
+    &.sfHover {
+      ul {
+        @include respond-to('medium') {
+          display: block !important;
+        }
+      }
+    }
 
     &:hover {
       > a {
@@ -273,7 +275,7 @@
 
   ul {
     @include respond-to('medium') {
-      display: none;
+      display: none !important;
       position: absolute;
       top: -2px;
     }

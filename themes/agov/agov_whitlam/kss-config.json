@@ -13,6 +13,9 @@
     "../../profiles/agov/themes/agov/agov_whitlam/css/style-guide/kss-only.css"
   ],
   "js": [
+    "../../profiles/agov/themes/agov/agov_whitlam/js/jquery.js",
+    "../../profiles/agov/themes/agov/agov_whitlam/js/superfish.min.js",
+    "../../profiles/agov/themes/agov/agov_whitlam/js/script-styleguide.js"
   ],
 
   "homepage": "homepage.md",
