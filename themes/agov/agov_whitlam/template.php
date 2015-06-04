@@ -54,11 +54,29 @@ function agov_whitlam_preprocess_html(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function agov_whitlam_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  $sidebar_first = $variables['page']['sidebar_first'];
+  $sidebar_second = $variables['page']['sidebar_second'];
+  // Decide on layout classes by checking if sidebars have content.
+  if ($sidebar_first && $sidebar_second) {
+    $content_class = 'layout-3col__col-1';
+    $variables['sidebar_first_class'] = 'layout-3col__col-2';
+    $variables['sidebar_second_class'] = 'layout-3col__col-3';
+  }
+  elseif ($sidebar_second) {
+    $content_class = 'layout-3col__left-content';
+    $variables['sidebar_second_class'] = 'layout-3col__right-sidebar';
+  }
+  elseif ($sidebar_first) {
+    $content_class = 'layout-3col__right-content';
+    $variables['sidebar_first_class'] = 'layout-3col__left-sidebar';
+  }
+  else {
+    $content_class = 'layout-3col__full';
+  }
+
+  $variables['content_class'] = $content_class;
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
@@ -137,3 +155,34 @@ function agov_whitlam_preprocess_block(&$variables, $hook) {
   }
 }
 // */
+
+/**
+ * Override variables into the icon_block bean templates.
+ *
+ * @param array $variables
+ *   Variables to pass to the theme template.
+ */
+function agov_whitlam_preprocess_entity(&$variables) {
+  $entity_type = $variables['elements']['#entity_type'];
+  $entity = $variables['elements']['#entity'];
+
+  if ($entity_type == 'bean' && $entity->type == 'icon_block') {
+    $icon = field_get_items($entity_type, $entity, 'field_icon');
+    $variables['box_icon'] = isset($icon[0]['value']) ? $icon[0]['value'] : NULL;
+
+    $link_to = field_get_items($entity_type, $entity, 'field_link_to');
+    if (isset($link_to[0]['url'])) {
+      $variables['box_link_to'] = array(
+        '#type' => 'link',
+        '#href' => $link_to[0]['url'],
+        '#title' => isset($link_to[0]['title']) ? $link_to[0]['title'] : $link_to[0]['url'],
+      );
+    }
+    else {
+      $variables['box_link_to'] = NULL;
+    }
+
+    $text = field_get_items($entity_type, $entity, 'field_bean_text');
+    $variables['box_text'] = isset($text[0]['value']) ? $text[0]['value'] : NULL;
+  }
+}

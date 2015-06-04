@@ -41,6 +41,21 @@ function agov_blog_image_default_styles() {
     'label' => 'blog_teaser_thumbnail',
   );
 
+  // Exported image style: teaser_thumbnail.
+  $styles['teaser_thumbnail'] = array(
+    'label' => 'teaser thumbnail (205x115)',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 205,
+          'height' => 115,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
@@ -52,7 +67,7 @@ function agov_blog_node_info() {
     'blog_article' => array(
       'name' => t('Blog Article'),
       'base' => 'node_content',
-      'description' => t('Use <em>Blog articles</em> to reach your target audience directly. The top <em>Blog articles</em> will be displayed in the "From the blog" section on the Front Page.'),
+      'description' => t('Use <em>Blog articles</em> to reach your target audience directly. The top <em>Blog articles</em> will be displayed in the "Latest updates" section on the Front Page.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

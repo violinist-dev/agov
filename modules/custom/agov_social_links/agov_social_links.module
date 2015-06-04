@@ -149,7 +149,7 @@ function agov_social_links_block_view($delta = '') {
   $block = array();
   switch ($delta) {
     case 'services':
-      $block['subject'] = t('Connect with us');
+      $block['subject'] = t('Stay up to date');
       $block['content'] = '';
       $items = array();
 
@@ -168,10 +168,13 @@ function agov_social_links_block_view($delta = '') {
           $icon = agov_social_links_get_fontawesome($service);
 
           $link = array(
-            '#type' => 'link',
+            '#theme' => 'link',
             '#href' => $service_url,
-            '#title' => $service_title,
-            '#prefix' => '<span class="fa ' . $icon . '"></span>',
+            '#text' => '<i class="fa ' . $icon . '"></i>',
+            '#options' => array(
+              'attributes' => array(),
+              'html' => TRUE,
+            ),
           );
 
           $items[$service] = array(

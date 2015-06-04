@@ -25,6 +25,7 @@ features[field_instance][] = node-blog_article-body
 features[field_instance][] = node-blog_article-field_tags
 features[field_instance][] = node-blog_article-field_thumbnail
 features[image][] = blog_teaser_thumbnail
+features[image][] = teaser_thumbnail
 features[node][] = blog_article
 features[variable][] = comment_anonymous_blog_article
 features[variable][] = comment_blog_article

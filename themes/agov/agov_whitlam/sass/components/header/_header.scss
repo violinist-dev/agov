@@ -9,10 +9,17 @@
 .header,
 %header {
   background: color(header-background);
+  position: relative;
+  margin-bottom: 80px;
+
+  @include respond-to('medium') {
+    margin-bottom: 0;
+  }
 }
 
 .header__inner {
-  padding: 30px 35px 20px;
+  padding: 30px 35px 25px;
+  position: relative;
 
   @include respond-to(medium) {
     padding-left: 10px;
@@ -20,6 +27,28 @@
   }
 }
 
+.navigation {
+  background: color(nav-bg);
+}
+
+.header__secondary-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: .8rem;
+
+  .links.inline {
+    margin: 0;
+  }
+
+  a {
+    color: color(secondary-menu);
+
+    &:hover {
+      color: color(secondary-menu-hover);
+    }
+  }
+}
 
 @include respond-to(medium) {
   .header__logo {
@@ -28,5 +57,30 @@
 
   .header__region {
     float: right;
+  }
+}
+
+.header__search,
+%header__search {
+  bottom: -70px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  padding: 15px 20px;
+
+  @include respond-to('medium') {
+    position: relative;
+    bottom: 0;
+    padding: 14px 5px 5px;
+  }
+}
+
+.block-search,
+.block-search-api-page {
+  @extend %header__search;
+
+  form {
+    @extend %search-form;
   }
 }
