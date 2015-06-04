@@ -1,0 +1,66 @@
+// Teaser
+//
+// Teaser of page
+//
+// Markup: teaser.hbs
+//
+// Style guide: components.teaser
+
+.teaser,
+%teaser {
+  &--wide {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &__title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  &__image {
+    img {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__image-wide {
+    @include respond-to('medium') {
+      float: left;
+    }
+
+    img {
+      width: 100%;
+
+      @include respond-to('medium') {
+        padding-right: 30px;
+        width: auto;
+      }
+    }
+  }
+
+  &__content {
+    p {
+      margin-top: 0;
+    }
+  }
+}
+
+// Teaser has image
+//
+// Teaser of page
+//
+// Markup: teaser-image.hbs
+//
+// .teaser--wide  - Teaser Wide.
+//
+// Style guide: components.teaser.teaser-image
+
+.teaser--wide {
+  @extend %teaser--wide;
+
+  .teaser__image {
+    @extend %teaser__image-wide;
+  }
+}
+

@@ -62,11 +62,6 @@
     // Render the sidebars to see if there's anything in them.
     $sidebar_first  = render($page['sidebar_first']);
     $sidebar_second = render($page['sidebar_second']);
-    // Decide on layout classes by checking if sidebars have content.
-    // @TODO: Implement the logic.
-    $content_class = 'layout-3col__left-content';
-    $sidebar_first_class = 'layout-3col__right-sidebar';
-    $sidebar_second_class = 'layout-3col__right-sidebar';
   ?>
 
   <div class="<?php print $content_class; ?>">
