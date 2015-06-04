@@ -12,6 +12,6 @@ Feature: Home Page
     And I should see "Resources"
     And I should see "Contact"
     And I should see "About Us"
-    And I should see "From the Blog"
+    And I should see "Latest updates"
     And I should see "View more blog articles"
     And I should see "Quick Links"

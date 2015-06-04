@@ -149,7 +149,7 @@ function agov_social_links_block_view($delta = '') {
   $block = array();
   switch ($delta) {
     case 'services':
-      $block['subject'] = t('Connect with us');
+      $block['subject'] = t('Stay up to date');
       $block['content'] = '';
       $items = array();
 
