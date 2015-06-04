@@ -67,7 +67,7 @@ function agov_blog_node_info() {
     'blog_article' => array(
       'name' => t('Blog Article'),
       'base' => 'node_content',
-      'description' => t('Use <em>Blog articles</em> to reach your target audience directly. The top <em>Blog articles</em> will be displayed in the "From the blog" section on the Front Page.'),
+      'description' => t('Use <em>Blog articles</em> to reach your target audience directly. The top <em>Blog articles</em> will be displayed in the "Latest Updates" section on the Front Page.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
