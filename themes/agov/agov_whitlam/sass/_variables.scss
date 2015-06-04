@@ -167,6 +167,7 @@ $chroma: add-colors('functional', (
   autocomplete-select-bg: 'blue',
 
   body-bg:                'text-bg',
+  nav-bg:                 'grey-extra-dark',
 
   fieldset-summary:       'grey-medium',
   form-error:             'red',
@@ -190,7 +191,10 @@ $chroma: add-colors('functional', (
   skip-link:              'white',
   skip-link-bg:           'grey-dark',
 
-  list-links-active:      'grey-extra-dark',       
+  list-links-active:      'grey-extra-dark',
+
+  secondary-menu:         'white',
+  secondary-menu-hover:   'grey-light',
 
   status:                 'green',
   status-bg:              'green-pale',

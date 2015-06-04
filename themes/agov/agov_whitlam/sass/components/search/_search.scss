@@ -8,39 +8,22 @@
 
 .search-form,
 %search-form {
-  border: 2px solid color(border);
-  padding: 10px 20px;
   color: color(search-color);
-
-  @include respond-to('small') {
-    padding: 20px;
-  }
 
   @include respond-to('medium') {
     color: color(search-color-light);
   }
 
-  &__wrap {
+  > div {
     position: relative;
     display: inline-block;
     padding-bottom: 13px;
     width: 100%;
-
-    @include respond-to('small') {
-      min-width: 320px;
-      width: auto;
-    }
-
-    @include respond-to('larger') {
-      min-width: 363px;
-      width: auto;
-    }
-  }
-
-  &__border {
     border-bottom: 1px solid color(search-border);
 
-    @include respond-to('small') {
+    @include respond-to('medium') {
+      min-width: 363px;
+      width: auto;
       border-bottom: 2px solid color(search-border);
     }
   }
@@ -87,7 +70,13 @@
       @include input-placeholder() {
         @include opacity(1);
         color: color(search-color);
-     }
+      }
+
+      @include respond-to('medium') {
+        @include input-placeholder() {
+          color: color(search-color-light);
+        }
+      }
     }
   }
 }
