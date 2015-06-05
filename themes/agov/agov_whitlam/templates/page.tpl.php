@@ -56,7 +56,7 @@
   </div>
 </div>
 
-<div class="layout-center layout-3col" role="main">
+<div class="main-content layout-center layout-3col" role="main">
 
   <?php
     // Render the sidebars to see if there's anything in them.

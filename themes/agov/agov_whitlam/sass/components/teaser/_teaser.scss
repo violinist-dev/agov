@@ -30,11 +30,8 @@
     }
 
     img {
-      width: 100%;
-
       @include respond-to('medium') {
         padding-right: 30px;
-        width: auto;
       }
     }
   }

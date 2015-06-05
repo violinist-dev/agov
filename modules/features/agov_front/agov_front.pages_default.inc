@@ -147,7 +147,7 @@ function agov_front_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Call to action',
       'title' => '',
-      'body' => '<div class="layout-3col"><div class="layout-3col__left-content"><h2>aGov is a free open source Drupal 7 distribution developed specifically for Australian government organisations.</h2></div><div class="layout-3col__right-sidebar"><a class="button button--large" href="https://agov.com.au/">Discover aGov 3</a></div></div>',
+      'body' => '<div class="layout-3col"><div class="layout-3col__left-content"><h2 class="intro__text">aGov is a free open source Drupal 7 distribution developed specifically for Australian government organisations.</h2></div><div class="layout-3col__right-sidebar"><a class="button button--large intro__button" href="https://agov.com.au/">Discover aGov 3</a></div></div>',
       'format' => 'rich_text',
       'substitute' => TRUE,
     );
@@ -255,7 +255,7 @@ function agov_front_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'divider',
+      'css_class' => 'list-links divider',
     );
     $pane->extras = array();
     $pane->position = 0;
