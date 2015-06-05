@@ -1,11 +1,8 @@
 // Custome Css
 
-// Fixe weird of heading font
-.heading, h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
-}
-
 // Custom front page
+
+// Home layout
 .main-content {
 	@include respond-to(medium) {
 	  padding: 25px 0;
@@ -15,6 +12,7 @@
 	}
 }
 
+// Intro block
 .intro__text {
 	margin-bottom: 1.5625rem;
 	margin-top: 0;
@@ -23,11 +21,13 @@
 		margin-bottom: 0;
 	}
 }
+
 .intro__button {
 	padding: 25px 50px;
 	word-wrap: nowrap;
 }
 
+// Add distance for latest updates block
 .pane-footer-teaser {
 	margin-top: 50px;
 
@@ -35,24 +35,3 @@
 		margin: 0 -10px;
 	}
 }
-
-.region-navigation{
-	margin-top: -80px;
-	@include respond-to(medium) {
-		margin-top: 0;
-	}
-}
-
-.footer-top {
-	.menu {
-		@extend %clearfix;
-	}
-
-	@include respond-to(medium) {
-	  .menu__item {
-		  width: 30%;
-		  float: left;
-	  }
-	}
-}
-

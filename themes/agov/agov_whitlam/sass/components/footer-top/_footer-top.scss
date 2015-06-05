@@ -12,9 +12,16 @@
 
 .footer-top {
   padding: 30px 15px 20px;
-
-  ul {
+	.menu {
+		@extend %clearfix;
     list-style: none;
     padding: 0;
-  }
+	}
+
+	@include respond-to(medium) {
+	  .menu__item {
+		  width: 30%;
+		  float: left;
+	  }
+	}
 }
