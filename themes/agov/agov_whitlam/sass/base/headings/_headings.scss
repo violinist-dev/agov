@@ -17,8 +17,7 @@
   // Set 1 unit of vertical rhythm on the top and bottom margins.
   @include leader(1);
   @include trailer(1);
-
-  font-family: $font-bold;
+  font-weight: bold;
 }
 
 // Address variable `h1` font-size and margin within `section` and `article`

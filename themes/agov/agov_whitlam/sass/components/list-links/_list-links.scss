@@ -24,7 +24,7 @@
   a {
     &.is-active {
       text-decoration: none;
-      font-family: $font-bold;
+      font-weight: bold;
       color: color(list-links-active);
     }
   }
