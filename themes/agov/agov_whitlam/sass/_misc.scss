@@ -4,34 +4,36 @@
 
 // Home layout
 .main-content {
-	@include respond-to(medium) {
-	  padding: 25px 0;
-	  .layout__home {
-	  	padding: 35px 0 10px;
-	  }
-	}
+  @include respond-to(medium) {
+    padding: 25px 0;
+
+    .layout__home {
+      padding: 35px 0 10px;
+    }
+  }
 }
 
 // Intro block
 .intro__text {
-	margin-bottom: 1.5625rem;
-	margin-top: 0;
-	line-height: 35px;
-	@include respond-to(medium) {
-		margin-bottom: 0;
-	}
+  margin-bottom: 1.5625rem;
+  margin-top: 0;
+  line-height: 35px;
+
+  @include respond-to(medium) {
+    margin-bottom: 0;
+  }
 }
 
 .intro__button {
-	padding: 25px 50px;
-	word-wrap: nowrap;
+  padding: 25px 50px;
+  word-wrap: nowrap;
 }
 
 // Add distance for latest updates block
 .pane-footer-teaser {
-	margin-top: 50px;
+  margin-top: 50px;
 
-	.view-content {
-		margin: 0 -10px;
-	}
+  .view-content {
+    margin: 0 -10px;
+  }
 }

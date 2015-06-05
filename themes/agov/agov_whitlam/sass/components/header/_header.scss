@@ -33,8 +33,9 @@
   }
 }
 
-.region-navigation{
+.region-navigation {
   margin-top: -80px;
+
   @include respond-to(medium) {
     margin-top: 0;
   }

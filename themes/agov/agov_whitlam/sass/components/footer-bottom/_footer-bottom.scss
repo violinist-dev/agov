@@ -16,15 +16,15 @@
 
   .footer-bottom__legal {
     margin: 0 0 1.5625rem;
-  }
 
-  @include respond-to(medium) {
-    .footer-bottom__legal {
+    @include respond-to(medium) {
       float: left;
       margin: 0;
     }
+  }
 
-    .footer-bottom__to-top {
+  .footer-bottom__to-top {
+    @include respond-to(medium) {
       float: right;
     }
   }
