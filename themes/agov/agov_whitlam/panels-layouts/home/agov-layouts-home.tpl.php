@@ -12,7 +12,7 @@
 
 ?>
 
-<div class="layout-3col clearfix" <?php if (!empty($css_id)) : print "id=\"$css_id\""; endif; ?>>
+<div class="layout-3col layout__home clearfix" <?php if (!empty($css_id)) : print "id=\"$css_id\""; endif; ?>>
 
   <?php if (!empty($content['header'])) : ?>
     <div class="layout-3col__full region-featured-top">

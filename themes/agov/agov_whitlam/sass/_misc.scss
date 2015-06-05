@@ -7,9 +7,11 @@
 
 // Custom front page
 .main-content {
-  padding-top: 0;
 	@include respond-to(medium) {
-	  padding: 60px 0 35px;
+	  padding: 25px 0;
+	  .layout__home {
+	  	padding: 35px 0 10px;
+	  }
 	}
 }
 

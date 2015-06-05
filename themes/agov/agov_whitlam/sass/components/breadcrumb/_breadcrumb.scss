@@ -38,11 +38,16 @@
         border: 0;
       }
     }
+  }
 
-    // add icon font-awesome
-    i {
+  &__separator {
+    @extend .fa;
+    @extend .fa-angle-right;
+    font-size: 0;
+    margin: 0 8px 0 11px;
+
+    &:before {
       font-size: 17px;
-      margin: 0 8px 0 11px;
     }
   }
 }
