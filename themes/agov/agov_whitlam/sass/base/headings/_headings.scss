@@ -17,8 +17,6 @@
   // Set 1 unit of vertical rhythm on the top and bottom margins.
   @include leader(1);
   @include trailer(1);
-
-  font-family: $font-body;
   font-weight: bold;
 }
 

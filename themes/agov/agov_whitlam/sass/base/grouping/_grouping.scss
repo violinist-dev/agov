@@ -26,7 +26,6 @@ blockquote {
   // Set 1 unit of vertical rhythm on the top and bottom margin.
   // Also indent the quote on both sides.
   @include output-rhythm(margin, rhythm(1) 0);
-  font-family: $font-body;
   font-style: italic;
   padding-left: 30px;
   border-left: 10px solid color(border);

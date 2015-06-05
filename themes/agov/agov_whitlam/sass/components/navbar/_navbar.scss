@@ -9,14 +9,13 @@
 
 // Menu icon
 .menu-icon {
-  color: color(text-bg);
-  text-transform: uppercase;
-  font-family: $font-body;
-  font-weight: bold;
   position: absolute;
   right: 20px;
   top: -50px;
   font-size: 15px;
+  font-weight: bold;
+  color: color(text-bg);
+  text-transform: uppercase;
 
   @include respond-to('medium') {
     position: relative;
