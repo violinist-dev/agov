@@ -19,7 +19,7 @@ function agov_menu_menu_default_menu_custom() {
   // Exported menu: menu-footer-quick-links.
   $menus['menu-footer-quick-links'] = array(
     'menu_name' => 'menu-footer-quick-links',
-    'title' => 'Footer Quick Links',
+    'title' => 'Quick Links',
     'description' => 'A list of links to be displayed in the footer.',
   );
   // Exported menu: menu-footer-sub-menu.
@@ -43,7 +43,7 @@ function agov_menu_menu_default_menu_custom() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A list of links to be displayed in the footer.');
-  t('Footer Quick Links');
+  t('Quick Links');
   t('Footer Sub Menu');
   t('Main menu');
   t('Quick Links');
