@@ -11,7 +11,8 @@
 .menu-icon {
   color: color(text-bg);
   text-transform: uppercase;
-  font-family: $font-bold;
+  font-family: $font-body;
+  font-weight: bold;
   position: absolute;
   right: 20px;
   top: -50px;

@@ -37,7 +37,8 @@
     @extend %pager__item;
     @extend %pager__link;
     background: color(pager-bg);
-    font-family: $font-bold;
+    font-family: $font-body;
+    font-weight: bold;
     color: color(link);
   }
 

@@ -18,7 +18,8 @@
   @include leader(1);
   @include trailer(1);
 
-  font-family: $font-bold;
+  font-family: $font-body;
+  font-weight: bold;
 }
 
 // Address variable `h1` font-size and margin within `section` and `article`

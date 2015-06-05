@@ -39,7 +39,8 @@
   &--large {
     padding: 25px 60px;
     font-size: 32px;
-    font-family: $font-bold;
+    font-family: $font-body;
+    font-weight: bold;
   }
 
   &:hover,
