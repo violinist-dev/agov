@@ -47,20 +47,20 @@
       $(".block-search-api-page").remove();
 
       function agov_resize (argument) {
-        var width =  $( window ).width();
-        if(width < 769) {
-          if(lock_small) {
+        var width = $(window).width();
+        if (width < 769) {
+          if (lock_small) {
             $(".header__region").find(".block-search-api-page").remove();
             block_search.appendTo(".region-navigation");
-            lock_small = false,
+            lock_small = false;
             lock_large = true;
           }
         }
         else {
-          if(lock_large) {
+          if (lock_large) {
             $(".region-navigation").find(".region-navigation").remove();
             block_search.appendTo(".header__region");
-            lock_small = true,
+            lock_small = true;
             lock_large = false;
           }
         }
@@ -68,11 +68,10 @@
 
       agov_resize();
 
-      $( window ).resize(function() {
+      $(window).resize(function() {
         agov_resize();
       });
     }
   };
 
 })(jQuery, Drupal, this, this.document);
-
