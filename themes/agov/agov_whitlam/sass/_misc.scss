@@ -1,0 +1,56 @@
+// Custome Css
+
+// Fixe weird of heading font
+.heading, h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+// Custom front page
+.main-content {
+  padding-top: 0;
+	@include respond-to(medium) {
+	  padding: 60px 0 35px;
+	}
+}
+
+.intro__text {
+	margin-bottom: 1.5625rem;
+	margin-top: 0;
+	line-height: 35px;
+	@include respond-to(medium) {
+		margin-bottom: 0;
+	}
+}
+.intro__button {
+	padding: 25px 50px;
+	word-wrap: nowrap;
+}
+
+.pane-footer-teaser {
+	margin-top: 50px;
+
+	.view-content {
+		margin: 0 -10px;
+	}
+}
+
+.region-navigation{
+	margin-top: -80px;
+	@include respond-to(medium) {
+		margin-top: 0;
+	}
+}
+
+.footer-top {
+	.menu {
+		@extend %clearfix;
+	}
+
+	@include respond-to(medium) {
+	  .menu__item {
+		  width: 30%;
+		  float: left;
+	  }
+	}
+}
+
