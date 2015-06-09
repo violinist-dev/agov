@@ -7,6 +7,15 @@
 //
 // Style guide: components.navbar
 
+.navbar__wrapper {
+  margin-top: -80px;
+
+  @include respond-to(medium) {
+    margin-top: 0;
+    background: color(nav-bg);
+  }
+}
+
 // Menu icon
 .menu-icon {
   position: absolute;

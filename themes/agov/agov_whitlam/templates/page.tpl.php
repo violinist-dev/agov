@@ -48,11 +48,9 @@
   </div>
 </header>
 
-<div class="navigation clearfix">
-  <div class="layout-center">
-
+<div class="navbar__wrapper">
+  <div class="layout-center clearfix">
     <?php print render($page['navigation']); ?>
-
   </div>
 </div>
 

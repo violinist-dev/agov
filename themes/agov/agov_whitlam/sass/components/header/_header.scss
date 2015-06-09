@@ -27,20 +27,6 @@
   }
 }
 
-.navigation {
-  @include respond-to(medium) {
-    background: color(nav-bg);
-  }
-}
-
-.region-navigation {
-  margin-top: -80px;
-
-  @include respond-to(medium) {
-    margin-top: 0;
-  }
-}
-
 .header__secondary-menu {
   position: absolute;
   top: 0;
