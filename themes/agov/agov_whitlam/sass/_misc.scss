@@ -13,17 +13,6 @@
   }
 }
 
-// Intro block
-.intro__text {
-  margin-bottom: 1.5625rem;
-  margin-top: 0;
-  line-height: 35px;
-
-  @include respond-to(medium) {
-    margin-bottom: 0;
-  }
-}
-
 // Add distance for latest updates block
 .pane-footer-teaser {
   margin-top: 50px;
