@@ -928,7 +928,7 @@ function _agov_default_beans() {
     $fields = array(
       'field_bean_body' => array(
         '0' => array(
-          'value' => '<p class="footer-bottom__legal">&#169; Copyright ' . $this_year . ' aGov</p>',
+          'value' => '<p>&copy; Copyright ' . $this_year . ' aGov</p>',
           'format' => 'rich_text',
         ),
       ),

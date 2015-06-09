@@ -8,11 +8,17 @@
  */
 ?>
 <?php if ($content): ?>
-  <div class="footer-bottom layout-center clearfix <?php print $classes; ?>">
-    <?php print $content; ?>
-    <div class="footer-bottom__to-top">
-      <i class="fa fa-chevron-circle-up fa-lg"></i>
-      <a class="footer-bottom__link" href="#top">Back to top</a>
+  <footer class="footer-bottom">
+    <div class="layout-center clearfix">
+      <div class="footer-bottom__left <?php print $classes; ?>">
+        <?php print $content; ?>
+      </div>
+      <div class="footer-bottom__right">
+        <p>
+          <i class="fa fa-chevron-circle-up fa-lg"></i>
+          <a class="footer-bottom__link" href="#skip-link">Back to top</a>
+        </p>
+      </div>
     </div>
-  </div>
+  </footer>
 <?php endif; ?>
