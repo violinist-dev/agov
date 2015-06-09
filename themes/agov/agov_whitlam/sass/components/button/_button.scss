@@ -36,12 +36,6 @@
     *overflow: visible;
   }
 
-  &--large {
-    padding: 25px;
-    font-size: 32px;
-    font-weight: bold;
-  }
-
   &:hover,
   &:focus {
     background: color(button-bg-hover);
@@ -61,5 +55,16 @@
       border-color: color(form-element-border);
       color: color(text);
     }
+  }
+
+  &--large {
+    padding: 25px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  &--wide {
+    display: block;
+    text-align: center;
   }
 }
