@@ -8,16 +8,9 @@
 
 .footer-top,
 %footer-top {
-  @include zen-apply-gutter-padding($gutters: 40px);
+  margin-top: 25px;
+  background-color: color(white-smoke);
+  padding-top: 1px;
+  padding-bottom: 25px;
 
-  @include respond-to(medium) {
-    @include zen-apply-gutter-padding($gutters: 25px);
-  }
-
-  &__wrapper {
-    margin-top: 25px;
-    background-color: color(white-smoke);
-    padding-top: 1px;
-    padding-bottom: 25px;
-  }
 }

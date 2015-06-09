@@ -14,18 +14,14 @@
   color: color(text-bg);
 
   &__left {
-    @include zen-apply-gutter-padding($gutters: 40px);
-
     @include respond-to(medium) {
-      @include zen-apply-gutter-padding($gutters: 25px);
       float: left;
     }
   }
 
   &__right {
-    @extend %footer-bottom__left;
-
     @include respond-to(medium) {
+      margin-left: 25px;
       float: right;
     }
   }
