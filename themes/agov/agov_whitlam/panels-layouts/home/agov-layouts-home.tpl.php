@@ -32,22 +32,30 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($content['footer-1']): ?>
-    <div class="layout-3col__col-1 divider">
-      <?php print $content['footer-1'];?>
-    </div>
-  <?php endif; ?>
+  <?php if ($content['footer-1'] || $content['footer-2'] || $content['footer-3']): ?>
+    <div class="layout-3col__full">
+      <hr>
+      <div class="layout-3col">
 
-  <?php if ($content['footer-2']) : ?>
-    <div class="layout-3col__col-2 divider">
-      <?php print $content['footer-2'];?>
-    </div>
-  <?php endif; ?>
+    <?php if ($content['footer-1']): ?>
+      <div class="layout-3col__col-1">
+        <?php print $content['footer-1'];?>
+      </div>
+    <?php endif; ?>
 
-  <?php if ($content['footer-3']): ?>
-    <div class="layout-3col__col-3 divider">
-      <?php print $content['footer-3'];?>
-    </div>
+    <?php if ($content['footer-2']) : ?>
+      <div class="layout-3col__col-2">
+        <?php print $content['footer-2'];?>
+      </div>
+    <?php endif; ?>
+
+    <?php if ($content['footer-3']): ?>
+      <div class="layout-3col__col-3">
+        <?php print $content['footer-3'];?>
+      </div>
+    <?php endif; ?>
+
+    </div></div>
   <?php endif; ?>
 
 </div>
