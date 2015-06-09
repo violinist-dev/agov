@@ -1,18 +1,5 @@
 // Custome Css
 
-// Custom front page
-
-// Home layout
-.main-content {
-  @include respond-to(medium) {
-    padding: 25px 0;
-
-    .layout__home {
-      padding: 35px 0 10px;
-    }
-  }
-}
-
 // Add distance for latest updates block
 .pane-footer-teaser {
   margin-top: 50px;
