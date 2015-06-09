@@ -45,14 +45,14 @@
 //
 // Style guide: layouts.layout-3column
 
+$zen-columns: 1;
+$zen-gutters: 40px;
+
 .layout-3col,
 %layout-3col {
+  // We set the context to flow, so that this container can be used in most
+  // places in the HTML
   @include zen-grid-container($context: flow);
-
-  $zen-columns: 1 !global;
-  $zen-gutters: 40px !global;
-  $zen-auto-include-grid-item-base: false !global;
-  $zen-box-sizing: universal-border-box !global;
 
   &__full,
   &__left-content,
@@ -83,8 +83,8 @@
     &__left-sidebar,
     &__right-sidebar {
       @include zen-grid-item(2, 1);
-      // Since we changed the gutter size, we need to re-apply the padding to
-      // every grid item.
+      // Since we changed the gutter size for this media query, we need to
+      // re-apply the padding to every grid item.
       @include zen-apply-gutter-padding();
     }
 

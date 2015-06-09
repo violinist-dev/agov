@@ -299,3 +299,11 @@ $nav-height: 2 * $base-line-height;
 // Drupal 8's standard [dir='rtl'] selector for RTL langauge support. You can
 // turn off all RTL CSS by setting the following variable to false.
 $include-rtl: false;
+
+//
+// Zen grids
+//
+
+// These are needed for all breakpoints on all layouts.
+$zen-auto-include-grid-item-base: false;
+$zen-box-sizing: universal-border-box;
