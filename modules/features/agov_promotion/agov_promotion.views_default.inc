@@ -22,7 +22,7 @@ function agov_promotion_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['css_class'] = 'layout-3col__full layout-3col__grid-item-container';
+  $handler->display->display_options['css_class'] = 'layout-3col';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';

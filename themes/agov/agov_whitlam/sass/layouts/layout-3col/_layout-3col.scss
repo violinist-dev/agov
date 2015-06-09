@@ -31,7 +31,7 @@
 //   column 2 on tablet screens.
 // - `.layout-3col__col-x` : 1-column wide grid item spanning column 1; when
 //   several of these are used inside a `.layout-3col__grid-item-container` or
-//   `.layout-3col__container`, the first one is positioned like `__col-1`, the
+//   `.layout-3col`, the first one is positioned like `__col-1`, the
 //   second like `__col-2`, etc.
 //
 // There are 2 ways to do a nested grid:
@@ -73,6 +73,10 @@
   $zen-gutters: 25px !global;
 
   @include respond-to(medium) {
+    // Since our container's context is "flow" and we changed the gutter size,
+    // we need to re-apply the container's negative left/right margins.
+    @include zen-grid-container($context: flow);
+
     &__full,
     &__left-content,
     &__right-content,
