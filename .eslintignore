@@ -5,7 +5,6 @@
 #
 # Ignore the following paths inside those directories.
 #
-themes/agov/agov_zen
 
 # If more than one line matches a path, the last one takes precendent, so we
 # put these last.

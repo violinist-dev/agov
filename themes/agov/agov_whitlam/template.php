@@ -27,24 +27,16 @@ function agov_whitlam_preprocess_maintenance_page(&$variables, $hook) {
 // */
 
 /**
- * Override or insert variables into the html templates.
- *
- * @param array $variables
- *   Variables to pass to the theme template.
- * @param string $hook
- *   The name of the template being rendered ("html" in this case.)
+ * Implements hook_preprocess_html().
  */
-/* -- Delete this line if you want to use this function
 function agov_whitlam_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-
-  // The body tag's classes are controlled by the $classes_array variable. To
-  // remove a class from $classes_array, use array_diff().
-  $variables['classes_array'] = array_diff($variables['classes_array'],
-    array('class-to-remove')
-  );
+  // Add google fonts.
+  drupal_add_html_head_link(array(
+    "href" => "//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700",
+    "rel" => "stylesheet",
+    "type" => "text/css",
+  ));
 }
-// */
 
 /**
  * Override or insert variables into the page templates.
@@ -54,29 +46,11 @@ function agov_whitlam_preprocess_html(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("page" in this case.)
  */
+/* -- Delete this line if you want to use this function
 function agov_whitlam_preprocess_page(&$variables, $hook) {
-  $sidebar_first = $variables['page']['sidebar_first'];
-  $sidebar_second = $variables['page']['sidebar_second'];
-  // Decide on layout classes by checking if sidebars have content.
-  if ($sidebar_first && $sidebar_second) {
-    $content_class = 'layout-3col__col-1';
-    $variables['sidebar_first_class'] = 'layout-3col__col-2';
-    $variables['sidebar_second_class'] = 'layout-3col__col-3';
-  }
-  elseif ($sidebar_second) {
-    $content_class = 'layout-3col__left-content';
-    $variables['sidebar_second_class'] = 'layout-3col__right-sidebar';
-  }
-  elseif ($sidebar_first) {
-    $content_class = 'layout-3col__right-content';
-    $variables['sidebar_first_class'] = 'layout-3col__left-sidebar';
-  }
-  else {
-    $content_class = 'layout-3col__full';
-  }
-
-  $variables['content_class'] = $content_class;
+  $variables['sample_variable'] = t('Lorem ipsum.');
 }
+// */
 
 /**
  * Override or insert variables into the node templates.
