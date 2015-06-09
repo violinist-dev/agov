@@ -8,7 +8,9 @@
  */
 ?>
 <?php if ($content): ?>
-  <div class="footer-top layout-center clearfix <?php print $classes; ?>">
-    <?php print $content; ?>
+  <div class="footer-top__wrapper <?php print $classes; ?>">
+    <div class="footer-top layout-center">
+      <?php print $content; ?>
+    </div>
   </div>
 <?php endif; ?>
