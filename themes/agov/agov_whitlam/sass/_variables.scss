@@ -189,7 +189,7 @@ $chroma: add-colors('functional', (
   skip-link:              'white',
   skip-link-bg:           'grey-dark',
 
-  list-links-active:      'grey-extra-dark',
+  nav-menu-active:        'grey-extra-dark',
 
   secondary-menu:         'white',
   secondary-menu-hover:   'grey-light',
@@ -270,7 +270,7 @@ $chroma-active-scheme: 'functional';
 // Style guide: sass.variables.breakpoints
 
 $small:  480px;
-$medium: 768px;
+$medium: 769px;
 $large:  960px;
 $larger: 1024px;
 

@@ -9,19 +9,20 @@
   outline: 1px dotted color(grey-medium);
 }
 
-// Show demo style in styleguide
-.wrap-demo .search-form {
+.wrap-demo {
+  padding: 20px;
+
   @include respond-to('medium') {
     background-color: color(link);
   }
 }
 
 .demo-bg {
-	padding-top: 60px;
+  padding-top: 60px;
   background: color(link);
   position: relative;
 
-	@include respond-to('medium') {
+  @include respond-to('medium') {
     background: none;
     padding: 0;
   }

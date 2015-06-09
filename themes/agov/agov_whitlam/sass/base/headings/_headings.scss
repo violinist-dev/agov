@@ -31,7 +31,7 @@ h1,
 h2,
 %h2 {
   @extend %heading;
-  @include adjust-font-size-to(1.5625 * $base-font-size, 1);
+  @include adjust-font-size-to(1.5625 * $base-font-size, 1.4);
 }
 
 h3,

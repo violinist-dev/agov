@@ -48,11 +48,9 @@
   </div>
 </header>
 
-<div class="navigation clearfix">
-  <div class="layout-center">
-
+<div class="navbar__wrapper">
+  <div class="layout-center clearfix">
     <?php print render($page['navigation']); ?>
-
   </div>
 </div>
 
@@ -110,8 +108,6 @@
   <?php endif; ?>
 
 </div>
-
-<?php print render($page['footer_top']); ?>
 
 <?php print render($page['footer']); ?>
 

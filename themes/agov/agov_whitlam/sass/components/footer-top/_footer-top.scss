@@ -6,15 +6,18 @@
 //
 // Style guide: components.footer-top
 
-.region-footer-top {
-  background-color: color(white-smoke);
-}
+.footer-top,
+%footer-top {
+  @include zen-apply-gutter-padding($gutters: 40px);
 
-.footer-top {
-  padding: 30px 15px 20px;
+  @include respond-to(medium) {
+    @include zen-apply-gutter-padding($gutters: 25px);
+  }
 
-  ul {
-    list-style: none;
-    padding: 0;
+  &__wrapper {
+    margin-top: 25px;
+    background-color: color(white-smoke);
+    padding-top: 1px;
+    padding-bottom: 25px;
   }
 }

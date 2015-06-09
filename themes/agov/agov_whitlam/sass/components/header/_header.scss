@@ -27,10 +27,6 @@
   }
 }
 
-.navigation {
-  background: color(nav-bg);
-}
-
 .header__secondary-menu {
   position: absolute;
   top: 0;
@@ -62,10 +58,6 @@
 
 .header__search,
 %header__search {
-  bottom: -70px;
-  left: 0;
-  position: absolute;
-  right: 0;
   width: 100%;
   padding: 15px 20px;
 

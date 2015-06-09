@@ -6,35 +6,38 @@
 //
 // Style guide: components.footer-bottom
 
-.region-footer-bottom {
+.footer-bottom,
+%footer-bottom {
+  padding-top: 1px;
+  padding-bottom: 1px;
   background-color: color(grey-extra-dark);
   color: color(text-bg);
-}
 
-.footer-bottom {
-  padding: 30px 15px;
+  &__left {
+    @include zen-apply-gutter-padding($gutters: 40px);
 
-  @include respond-to(medium) {
-    .footer-bottom__legal {
+    @include respond-to(medium) {
+      @include zen-apply-gutter-padding($gutters: 25px);
       float: left;
-      margin: 0;
     }
+  }
 
-    .footer-bottom__to-top {
+  &__right {
+    @extend %footer-bottom__left;
+
+    @include respond-to(medium) {
       float: right;
     }
   }
 
-  .footer-bottom__link {
+  :link,
+  :visited,
+  &__link {
     color: color(text-bg);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: color(grey-light);
     }
-  }
-
-  .footer-bottom__legal {
-    margin-top: 0;
-    margin-bottom: 1.5625rem;
   }
 }

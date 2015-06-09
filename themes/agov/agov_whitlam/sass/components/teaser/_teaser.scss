@@ -11,6 +11,7 @@
   &--wide {
     display: inline-block;
     width: 100%;
+    margin-bottom: 30px;
   }
 
   &__title {
@@ -19,6 +20,10 @@
   }
 
   &__image {
+    a:focus {
+      outline: none;
+    }
+
     img {
       margin-bottom: 5px;
     }
@@ -30,11 +35,8 @@
     }
 
     img {
-      width: 100%;
-
       @include respond-to('medium') {
         padding-right: 30px;
-        width: auto;
       }
     }
   }
