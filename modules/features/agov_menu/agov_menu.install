@@ -13,6 +13,9 @@ function agov_menu_install() {
 
   $items = array();
 
+  $news_media_item = menu_link_get_preferred('news-media');
+  $news_media_mlid = $news_media_item['mlid'];
+
   // Main Menu.
   $items[] = array(
     'link_title' => $t('Home'),
@@ -24,6 +27,35 @@ function agov_menu_install() {
     'link_title' => $t('About Us'),
     'link_path' => 'about-us',
     'menu_name' => 'main-menu',
+  );
+
+  $items[] = array(
+    'link_title' => $t('News'),
+    'link_path' => 'news-media/news',
+    'menu_name' => 'main-menu',
+    'plid' => $news_media_mlid,
+    'weight' => 0,
+  );
+  $items[] = array(
+    'link_title' => $t('Events'),
+    'link_path' => 'news-media/events',
+    'menu_name' => 'main-menu',
+    'plid' => $news_media_mlid,
+    'weight' => 1,
+  );
+  $items[] = array(
+    'link_title' => $t('Media Releases'),
+    'link_path' => 'news-media/media-releases',
+    'menu_name' => 'main-menu',
+    'plid' => $news_media_mlid,
+    'weight' => 2,
+  );
+  $items[] = array(
+    'link_title' => $t('Blog'),
+    'link_path' => 'news-media/blog',
+    'menu_name' => 'main-menu',
+    'plid' => $news_media_mlid,
+    'weight' => 3,
   );
 
   // Footer sub-menu.
