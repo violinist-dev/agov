@@ -944,13 +944,6 @@ function _agov_default_news_beans() {
     'text' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
   );
   $icon_beans[] = array(
-    'name' => 'media-releases',
-    'url' => 'news-media/media-releases',
-    'title' => 'Media Releases',
-    'icon' => 'fa-desktop',
-    'text' => 'Lundium enim vel dis nisi tincidunt platea auctor velit dapibus facilisis, arcu, aenean porttitor augue ac quis quis scelerisque, habitasse amet non nisi! Enim vut phasellus turpis adipiscing porttitor! Nisi! Ut velit magna aliquet tempor. In est scelerisque hac platea natoque ut odio nunc mauris ac natoque!',
-  );
-  $icon_beans[] = array(
     'name' => 'events',
     'url' => 'news-media/events',
     'title' => 'Events',
