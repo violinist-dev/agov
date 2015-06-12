@@ -135,16 +135,31 @@ function agov_news_strongarm() {
       'feature' => array(
         'custom_settings' => TRUE,
       ),
+      'compact' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '6',
+          'weight' => '5',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
+          'weight' => '6',
+        ),
+        'redirect' => array(
+          'weight' => '8',
+        ),
+        'xmlsitemap' => array(
           'weight' => '7',
         ),
       ),

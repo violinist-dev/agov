@@ -38,7 +38,7 @@ The <em>body</em> field is used for the main article content.',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'feature' => array(
         'label' => 'hidden',
@@ -63,7 +63,7 @@ The <em>body</em> field is used for the main article content.',
           'trim_length' => 200,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -90,7 +90,7 @@ The <em>body</em> field is used for the main article content.',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -130,7 +130,7 @@ The <em>body</em> field is used for the main article content.',
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'feature' => array(
         'label' => 'above',
@@ -162,7 +162,7 @@ The <em>body</em> field is used for the main article content.',
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -188,7 +188,7 @@ The <em>body</em> field is used for the main article content.',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_select',
+      'type' => 'date_popup',
       'weight' => 2,
     ),
   );
@@ -217,7 +217,7 @@ The <em>body</em> field is used for the main article content.',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'feature' => array(
         'label' => 'hidden',
@@ -236,7 +236,7 @@ The <em>body</em> field is used for the main article content.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -259,12 +259,103 @@ The <em>body</em> field is used for the main article content.',
     ),
   );
 
+  // Exported field_instance: 'node-news_article-field_thumbnail'
+  $field_instances['node-news_article-field_thumbnail'] = array(
+    'bundle' => 'news_article',
+    'deleted' => 0,
+    'description' => 'Provide an image to be displayed with this article.',
+    'display' => array(
+      'compact' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'thumbnail',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'article_page_620x349',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'article_page_620x349',
+        ),
+        'type' => 'image',
+        'weight' => -1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_thumbnail',
+    'label' => 'Feature Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'images/news',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Date');
   t('Date that this news content took place.');
   t('Enter a comma-separated list of words to describe your content.');
+  t('Feature Image');
+  t('Provide an image to be displayed with this article.');
   t('Tags');
   t('The <em>Summary</em> field above is included in any listings of this page as well as the initial paragraph of the page view.
 The <em>body</em> field is used for the main article content.');
