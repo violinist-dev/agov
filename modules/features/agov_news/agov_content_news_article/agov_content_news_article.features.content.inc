@@ -11,7 +11,7 @@ function agov_content_news_article_content_defaults() {
   $content = array();
 
   $content['agov_2_news_1'] = (object) array(
-    'exported_path' => 'node-49-news_article',
+    'exported_path' => 'news-media/news/commoveo-euismod-hos-ideo-probo-volutpat',
     'title' => 'Commoveo Euismod Hos Ideo Probo Volutpat',
     'status' => 1,
     'promote' => 1,
@@ -37,8 +37,8 @@ function agov_content_news_article_content_defaults() {
     'field_news_date' => array(
       'und' => array(
         0 => array(
-          'value' => '2011-08-08 03:30:00',
-          'timezone' => 'Europe/Berlin',
+          'value' => '2015-06-12 23:00:00',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -60,10 +60,36 @@ function agov_content_news_article_content_defaults() {
         ),
       ),
     ),
+    'field_thumbnail' => array(
+      'und' => array(
+        0 => array(
+          'filename' => 'imagefield_08lEQV.png',
+          'uri' => 'public://imagefield_08lEQV.png',
+          'filemime' => 'image/png',
+          'filesize' => 1562,
+          'status' => 1,
+          'type' => 'image',
+          'uuid' => '9e84b422-9aa0-4dc7-9bae-6b00f61fdbc6',
+          'field_file_image_alt_text' => array(),
+          'field_file_image_title_text' => array(),
+          'metatags' => array(),
+          'rdf_mapping' => array(),
+          'metadata' => array(
+            'height' => 406,
+            'width' => 279,
+          ),
+          'alt' => NULL,
+          'title' => NULL,
+          'width' => 279,
+          'height' => 406,
+          'image' => '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',
+        ),
+      ),
+    ),
   );
 
   $content['agov_2_news_2'] = (object) array(
-    'exported_path' => 'node-48-news_article',
+    'exported_path' => 'news-media/news/gemino',
     'title' => 'Gemino',
     'status' => 1,
     'promote' => 1,
@@ -89,8 +115,8 @@ function agov_content_news_article_content_defaults() {
     'field_news_date' => array(
       'und' => array(
         0 => array(
-          'value' => '2014-03-12 23:15:00',
-          'timezone' => 'Europe/Berlin',
+          'value' => '2015-06-12 23:00:00',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -106,10 +132,36 @@ function agov_content_news_article_content_defaults() {
         ),
       ),
     ),
+    'field_thumbnail' => array(
+      'und' => array(
+        0 => array(
+          'filename' => 'imagefield_08lEQV.png',
+          'uri' => 'public://imagefield_08lEQV.png',
+          'filemime' => 'image/png',
+          'filesize' => 1562,
+          'status' => 1,
+          'type' => 'image',
+          'uuid' => '9e84b422-9aa0-4dc7-9bae-6b00f61fdbc6',
+          'field_file_image_alt_text' => array(),
+          'field_file_image_title_text' => array(),
+          'metatags' => array(),
+          'rdf_mapping' => array(),
+          'metadata' => array(
+            'height' => 406,
+            'width' => 279,
+          ),
+          'alt' => NULL,
+          'title' => NULL,
+          'width' => 279,
+          'height' => 406,
+          'image' => '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',
+        ),
+      ),
+    ),
   );
 
   $content['agov_2_news_3'] = (object) array(
-    'exported_path' => 'node-62-news_article',
+    'exported_path' => 'news-media/news/esse-nostrud-premo',
     'title' => 'Esse Nostrud Premo',
     'status' => 1,
     'promote' => 1,
@@ -135,8 +187,8 @@ function agov_content_news_article_content_defaults() {
     'field_news_date' => array(
       'und' => array(
         0 => array(
-          'value' => '2011-05-13 15:00:00',
-          'timezone' => 'Europe/Berlin',
+          'value' => '2015-06-09 23:00:00',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -155,10 +207,36 @@ function agov_content_news_article_content_defaults() {
         ),
       ),
     ),
+    'field_thumbnail' => array(
+      'und' => array(
+        0 => array(
+          'filename' => 'imagefield_08lEQV.png',
+          'uri' => 'public://imagefield_08lEQV.png',
+          'filemime' => 'image/png',
+          'filesize' => 1562,
+          'status' => 1,
+          'type' => 'image',
+          'uuid' => '9e84b422-9aa0-4dc7-9bae-6b00f61fdbc6',
+          'field_file_image_alt_text' => array(),
+          'field_file_image_title_text' => array(),
+          'metatags' => array(),
+          'rdf_mapping' => array(),
+          'metadata' => array(
+            'height' => 406,
+            'width' => 279,
+          ),
+          'alt' => NULL,
+          'title' => NULL,
+          'width' => 279,
+          'height' => 406,
+          'image' => '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',
+        ),
+      ),
+    ),
   );
 
   $content['agov_2_news_4'] = (object) array(
-    'exported_path' => 'node-34-news_article',
+    'exported_path' => 'news-media/news/aptent-olim-usitas-vicis',
     'title' => 'Aptent At Olim Usitas Vicis',
     'status' => 1,
     'promote' => 0,
@@ -184,8 +262,8 @@ function agov_content_news_article_content_defaults() {
     'field_news_date' => array(
       'und' => array(
         0 => array(
-          'value' => '2012-02-17 11:45:00',
-          'timezone' => 'Europe/Berlin',
+          'value' => '2015-06-12 23:00:00',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -201,10 +279,36 @@ function agov_content_news_article_content_defaults() {
         ),
       ),
     ),
+    'field_thumbnail' => array(
+      'und' => array(
+        0 => array(
+          'filename' => 'imagefield_08lEQV.png',
+          'uri' => 'public://imagefield_08lEQV.png',
+          'filemime' => 'image/png',
+          'filesize' => 1562,
+          'status' => 1,
+          'type' => 'image',
+          'uuid' => '9e84b422-9aa0-4dc7-9bae-6b00f61fdbc6',
+          'field_file_image_alt_text' => array(),
+          'field_file_image_title_text' => array(),
+          'metatags' => array(),
+          'rdf_mapping' => array(),
+          'metadata' => array(
+            'height' => 406,
+            'width' => 279,
+          ),
+          'alt' => NULL,
+          'title' => NULL,
+          'width' => 279,
+          'height' => 406,
+          'image' => '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',
+        ),
+      ),
+    ),
   );
 
   $content['agov_2_news_5'] = (object) array(
-    'exported_path' => 'node-56-news_article',
+    'exported_path' => 'news-media/news/populus',
     'title' => 'Populus',
     'status' => 1,
     'promote' => 0,
@@ -230,8 +334,8 @@ function agov_content_news_article_content_defaults() {
     'field_news_date' => array(
       'und' => array(
         0 => array(
-          'value' => '2012-04-28 18:30:00',
-          'timezone' => 'Europe/Berlin',
+          'value' => '2015-06-09 23:00:00',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -250,10 +354,36 @@ function agov_content_news_article_content_defaults() {
         ),
       ),
     ),
+    'field_thumbnail' => array(
+      'und' => array(
+        0 => array(
+          'filename' => 'imagefield_08lEQV.png',
+          'uri' => 'public://imagefield_08lEQV.png',
+          'filemime' => 'image/png',
+          'filesize' => 1562,
+          'status' => 1,
+          'type' => 'image',
+          'uuid' => '9e84b422-9aa0-4dc7-9bae-6b00f61fdbc6',
+          'field_file_image_alt_text' => array(),
+          'field_file_image_title_text' => array(),
+          'metatags' => array(),
+          'rdf_mapping' => array(),
+          'metadata' => array(
+            'height' => 406,
+            'width' => 279,
+          ),
+          'alt' => NULL,
+          'title' => NULL,
+          'width' => 279,
+          'height' => 406,
+          'image' => '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',
+        ),
+      ),
+    ),
   );
 
   $content['agov_2_news_6'] = (object) array(
-    'exported_path' => 'node-59-news_article',
+    'exported_path' => 'news-media/news/cogo-commodo-erat-immitto-macto-usitas',
     'title' => 'Cogo Commodo Erat Immitto Macto Usitas',
     'status' => 1,
     'promote' => 0,
@@ -279,8 +409,8 @@ function agov_content_news_article_content_defaults() {
     'field_news_date' => array(
       'und' => array(
         0 => array(
-          'value' => '2015-04-12 01:45:00',
-          'timezone' => 'Europe/Berlin',
+          'value' => '2015-06-09 23:00:00',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -296,6 +426,32 @@ function agov_content_news_article_content_defaults() {
         ),
         2 => array(
           'tid' => 4,
+        ),
+      ),
+    ),
+    'field_thumbnail' => array(
+      'und' => array(
+        0 => array(
+          'filename' => 'imagefield_08lEQV.png',
+          'uri' => 'public://imagefield_08lEQV.png',
+          'filemime' => 'image/png',
+          'filesize' => 1562,
+          'status' => 1,
+          'type' => 'image',
+          'uuid' => '9e84b422-9aa0-4dc7-9bae-6b00f61fdbc6',
+          'field_file_image_alt_text' => array(),
+          'field_file_image_title_text' => array(),
+          'metatags' => array(),
+          'rdf_mapping' => array(),
+          'metadata' => array(
+            'height' => 406,
+            'width' => 279,
+          ),
+          'alt' => NULL,
+          'title' => NULL,
+          'width' => 279,
+          'height' => 406,
+          'image' => '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',
         ),
       ),
     ),
