@@ -1,4 +1,4 @@
-name = Menu
+name = aGov Menu
 description = Provides default menus.
 core = 7.x
 package = aGov
