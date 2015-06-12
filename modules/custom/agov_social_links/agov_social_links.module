@@ -18,17 +18,17 @@ define('AGOV_SOCIAL_LINKS_TWITTER_DEFAULT', 'http://www.twitter.com/PreviousNext
 /**
  * Define the youtube default.
  */
-define('AGOV_SOCIAL_LINKS_YOUTUBE_DEFAULT', 'http://www.youtube.com');
+define('AGOV_SOCIAL_LINKS_YOUTUBE_DEFAULT', '');
 
 /**
  * Define the Vimeo default.
  */
-define('AGOV_SOCIAL_LINKS_VIMEO_DEFAULT', 'http://www.vimeo.com');
+define('AGOV_SOCIAL_LINKS_VIMEO_DEFAULT', '');
 
 /**
  * Define the flickr default.
  */
-define('AGOV_SOCIAL_LINKS_FLICKR_DEFAULT', 'http://www.flickr.com');
+define('AGOV_SOCIAL_LINKS_FLICKR_DEFAULT', '');
 
 /**
  * Define the RSS default.
@@ -169,8 +169,8 @@ function agov_social_links_block_view($delta = '') {
 
           $link = array(
             '#theme' => 'link',
-            '#href' => $service_url,
-            '#text' => '<i class="fa ' . $icon . '"></i>',
+            '#path' => $service_url,
+            '#text' => '<i class="fa ' . $icon . '"></i><span class="element-invisible">' . $service_title . '</span>',
             '#options' => array(
               'attributes' => array(),
               'html' => TRUE,
