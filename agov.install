@@ -862,71 +862,38 @@ function _agov_default_variables() {
  * Setup beans.
  */
 function _agov_default_beans() {
+
   // If functionality available. Create some blocks.
   if (function_exists('agov_core_save_bean')) {
-    // Create the front page block.
-    $fields = array(
-      'field_link_to' => array(
-        '0' => array(
-          'url' => '<front>',
-          'title' => 'Cras accumsan fringilla',
-        ),
-      ),
-      'field_icon' => array(
-        '0' => array(
-          'value' => 'fa-book',
-        ),
-      ),
-      'field_bean_text' => array(
-        '0' => array(
-          'value' => 'Nulla facilisi. Donec eu scelerisque nisi. Donec vel semper ante, eu efficitur urna.',
-          'format' => 'rich_text',
-        ),
-      ),
-    );
-    agov_core_save_bean('icon_block', 'book icon', '', '', $fields);
 
-    $fields = array(
-      'field_link_to' => array(
-        '0' => array(
-          'url' => '<front>',
-          'title' => 'Duis id consequat ipsum',
-        ),
-      ),
-      'field_icon' => array(
-        '0' => array(
-          'value' => 'fa-bus',
-        ),
-      ),
-      'field_bean_text' => array(
-        '0' => array(
-          'value' => 'Pellentesque dapibus quam non augue ullamcorper congue. Nulla at vestibulum nisl.',
-          'format' => 'rich_text',
-        ),
-      ),
-    );
-    agov_core_save_bean('icon_block', 'bus icon', '', '', $fields);
 
-    $fields = array(
-      'field_link_to' => array(
-        '0' => array(
-          'url' => '<front>',
-          'title' => 'Nunc pulvinar venenatis',
-        ),
-      ),
-      'field_icon' => array(
-        '0' => array(
-          'value' => 'fa-calendar-o',
-        ),
-      ),
-      'field_bean_text' => array(
-        '0' => array(
-          'value' => 'Suspendisse sapien lorem, tempus at consectetur id, ultricies ac nibh! Nullam a metus ex.',
-          'format' => 'rich_text',
-        ),
-      ),
+    // Create icon beans.
+    $icon_beans = array();
+    $icon_beans[] = array(
+      'name' => 'book icon',
+      'url' => '<front>',
+      'title' => 'Cras accumsan fringilla',
+      'icon' => 'fa-book',
+      'text' => 'Nulla facilisi. Donec eu scelerisque nisi. Donec vel semper ante, eu efficitur urna.',
     );
-    agov_core_save_bean('icon_block', 'calendar icon', '', '', $fields);
+    $icon_beans[] = array(
+      'name' => 'bus icon',
+      'url' => '<front>',
+      'title' => 'Duis id consequat ipsum',
+      'icon' => 'fa-bus',
+      'text' => 'Pellentesque dapibus quam non augue ullamcorper congue. Nulla at vestibulum nisl.',
+    );
+    $icon_beans[] = array(
+      'name' => 'calendar icon',
+      'url' => '<front>',
+      'title' => 'Nunc pulvinar venenatis',
+      'icon' => 'fa-calendar-o',
+      'text' => 'Suspendisse sapien lorem, tempus at consectetur id, ultricies ac nibh! Nullam a metus ex.',
+    );
+
+    foreach ($icon_beans as $icon_bean) {
+      _agov_save_icon_bean($icon_bean);
+    }
 
     // Create the footer block.
     $this_year = date('Y');
@@ -966,23 +933,6 @@ function _agov_default_news_beans() {
     'events' => 'news-media/events',
     'blog' => 'news-media/blog',
   );
-
-  // Save the images required for these block.
-  $files = array();
-  $images = array(
-    'news-media-intro' => 'news-media.jpg',
-    'current-news' => 'news-archives.jpg',
-    'media-releases' => 'media-releases.jpg',
-    'events' => 'events.jpg',
-    'blog' => 'news-media.jpg',
-  );
-  foreach ($images as $delta => $image) {
-    // Load the files contents.
-    $handle = fopen(dirname(__FILE__) . '/images/' . $image, 'r');
-    // Returns the new file object.
-    $files[$delta] = file_save_data($handle, 'public://' . $image, FILE_EXISTS_RENAME);
-    fclose($handle);
-  }
 
   // Install the required blocks.
   // Beans to be installed.
@@ -1630,4 +1580,39 @@ function _agov_install_full_image_display() {
       ),
     ),
   ));
+}
+
+/**
+ * Save an icon bean.
+ *
+ * @param array $bean
+ *   An associative array containing:
+ *   - name: The machine name of the block.
+ *   - description: The description of the block.
+ *   - title: The title of the block.
+ *   - url: The URL to link to.
+ *   - icon: The icon text.
+ *   - text: The text body.
+ */
+function _agov_save_icon_bean(array $bean) {
+  $fields = array(
+    'field_link_to' => array(
+      '0' => array(
+        'url' => $bean['url'],
+        'title' => $bean['title'],
+      ),
+    ),
+    'field_icon' => array(
+      '0' => array(
+        'value' => $bean['icon'],
+      ),
+    ),
+    'field_bean_text' => array(
+      '0' => array(
+        'value' => $bean['text'],
+        'format' => 'rich_text',
+      ),
+    ),
+  );
+  agov_core_save_bean('icon_block', $bean['name'], $bean['description'], $bean['title'], $fields);
 }
