@@ -614,8 +614,8 @@ function _agov_default_blocks() {
 
   // Set second sidebar blocks.
   agov_core_insert_block('menu_block', 'agov_menu_block-sidebar', $themes, 'sidebar_second', -2, BLOCK_VISIBILITY_NOTLISTED, "<front>\nnews-media", 'In this section');
-  agov_core_insert_block('twitter_block', '1', $themes, 'sidebar_second', 0, BLOCK_VISIBILITY_NOTLISTED, '<front>', 'Twitter');
   agov_core_insert_block('menu', 'menu-quick-links', $themes, 'sidebar_second', 0, BLOCK_VISIBILITY_NOTLISTED, '<front>', 'Quicklinks');
+  agov_core_insert_block('agov_social_links', 'services', $themes, 'sidebar_second', 1, BLOCK_VISIBILITY_NOTLISTED, '<front>', 'Stay up to date');
 
   // Set footer blocks.
   agov_core_insert_block('htmlcs', 'htmlcs', $themes, 'footer', -46);
