@@ -926,16 +926,62 @@ function _agov_default_news_beans() {
     return;
   }
 
-  // Add menu links to main menu.
-  $menus = array(
-    'current-news' => 'news-media/news',
-    'media-releases' => 'news-media/media-releases',
-    'events' => 'news-media/events',
-    'blog' => 'news-media/blog',
+
+  // Create icon beans.
+  $icon_beans = array();
+  $icon_beans[] = array(
+    'name' => 'current-news',
+    'url' => 'news-media/news',
+    'title' => 'News',
+    'icon' => 'fa-newspaper-o',
+    'text' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet.',
+  );
+  $icon_beans[] = array(
+    'name' => 'media-releases',
+    'url' => 'news-media/media-releases',
+    'title' => 'Media Releases',
+    'icon' => 'fa-desktop',
+    'text' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
+  );
+  $icon_beans[] = array(
+    'name' => 'media-releases',
+    'url' => 'news-media/media-releases',
+    'title' => 'Media Releases',
+    'icon' => 'fa-desktop',
+    'text' => 'Lundium enim vel dis nisi tincidunt platea auctor velit dapibus facilisis, arcu, aenean porttitor augue ac quis quis scelerisque, habitasse amet non nisi! Enim vut phasellus turpis adipiscing porttitor! Nisi! Ut velit magna aliquet tempor. In est scelerisque hac platea natoque ut odio nunc mauris ac natoque!',
+  );
+  $icon_beans[] = array(
+    'name' => 'events',
+    'url' => 'news-media/events',
+    'title' => 'Events',
+    'icon' => 'fa-calendar-o',
+    'text' => 'Aliquam velit massa elementum auctor! In egestas ridiculus sit elit dictumst, magnis! Porttitor habitasse sit porttitor platea, adipiscing etiam, augue vel, duis, ac diam nec tincidunt? Porttitor mid lectus vut, sagittis lorem rhoncus, mattis sed, elit in, mus augue ridiculus vel egestas.',
+  );
+  $icon_beans[] = array(
+    'name' => 'blog',
+    'url' => 'news-media/blog',
+    'title' => 'Blog',
+    'icon' => 'fa-pencil',
+    'text' => 'Turpis placerat sed sit duis nisi mid! Nisi? Integer aenean mid nunc cum ac dictumst, a habitasse lacus risus hac mus ut nascetur facilisis lectus cras augue dolor augue!',
   );
 
-  // Install the required blocks.
-  // Beans to be installed.
+  foreach ($icon_beans as $icon_bean) {
+    _agov_save_icon_bean($icon_bean);
+  }
+
+  $files = array();
+  $images = array(
+    'news-media-intro' => 'news-media.jpg',
+  );
+  foreach ($images as $delta => $image) {
+    // Load the files contents.
+    $handle = fopen(dirname(__FILE__) . '/images/' . $image, 'r');
+    // Returns the new file object.
+    $files[$delta] = file_save_data($handle, 'public://' . $image, FILE_EXISTS_RENAME);
+    fclose($handle);
+  }
+
+  // Create miscellaneous beans.
   $beans = array(
     // News and Media Intro block for the News & Media page.
     'news-media-intro' => array(
@@ -962,145 +1008,8 @@ function _agov_default_news_beans() {
         ),
       ),
     ),
-
-    // Current News block.
-    'current-news' => array(
-      'label' => $t('News'),
-      'title' => $t('News'),
-      'description' => $t('Provides a "Current News" bean for the News & Media page.'),
-      'type' => 'image_and_text',
-      'view_mode' => 'default',
-      'fields' => array(
-        // Image field.
-        'field_bean_image' => array(
-          '0' => array(
-            'fid' => $files['current-news']->fid,
-            'alt' => t('Current News'),
-            'title' => t('Current News'),
-          ),
-        ),
-        // Text field.
-        'field_bean_text' => array(
-          '0' => array(
-            'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
-            'format' => 'rich_text',
-          ),
-        ),
-        // Link to field.
-        'field_link_to' => array(
-          '0' => array(
-            'url' => $menus['current-news'],
-            'title' => '',
-            'attributes' => '',
-          ),
-        ),
-      ),
-    ),
-
-    // Media releases.
-    'media-releases' => array(
-      'label' => $t('Media Releases'),
-      'title' => $t('Media Releases'),
-      'description' => $t('Provides a "Media Releases" bean for the News & Media page.'),
-      'type' => 'image_and_text',
-      'view_mode' => 'default',
-      'fields' => array(
-        // Image field.
-        'field_bean_image' => array(
-          '0' => array(
-            'fid' => $files['media-releases']->fid,
-            'alt' => t('Media Releases'),
-            'title' => t('Media Releases'),
-          ),
-        ),
-        // Text field.
-        'field_bean_text' => array(
-          '0' => array(
-            'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
-            'format' => 'rich_text',
-          ),
-        ),
-        // Link to field.
-        'field_link_to' => array(
-          '0' => array(
-            'url' => $menus['media-releases'],
-            'title' => '',
-            'attributes' => '',
-          ),
-        ),
-      ),
-    ),
-
-    // Events.
-    'events' => array(
-      'label' => $t('Events'),
-      'title' => $t('Events'),
-      'description' => $t('Provides a "Events" bean for the News & Media page.'),
-      'type' => 'image_and_text',
-      'view_mode' => 'default',
-      'fields' => array(
-        // Image field.
-        'field_bean_image' => array(
-          '0' => array(
-            'fid' => $files['events']->fid,
-            'alt' => t('Events'),
-            'title' => t('Events'),
-          ),
-        ),
-        // Text field.
-        'field_bean_text' => array(
-          '0' => array(
-            'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
-            'format' => 'rich_text',
-          ),
-        ),
-        // Link to field.
-        'field_link_to' => array(
-          '0' => array(
-            'url' => $menus['events'],
-            'title' => '',
-            'attributes' => '',
-          ),
-        ),
-      ),
-    ),
-
-    // Blog.
-    'blog' => array(
-      'label' => $t('Blog'),
-      'title' => $t('Blog'),
-      'description' => $t('Provides a "Blog" bean for the News & Media page.'),
-      'type' => 'image_and_text',
-      'view_mode' => 'default',
-      'fields' => array(
-        // Image field.
-        'field_bean_image' => array(
-          '0' => array(
-            'fid' => $files['blog']->fid,
-            'alt' => t('Blog'),
-            'title' => t('Blog'),
-          ),
-        ),
-        // Text field.
-        'field_bean_text' => array(
-          '0' => array(
-            'value' => 'Vel quis etiam enim pulvinar, tincidunt porttitor dignissim cum, dignissim sociis natoque, elementum nec scelerisque pulvinar, nascetur mauris mauris, a? Rhoncus augue et nunc, adipiscing tincidunt, sagittis, amet!',
-            'format' => 'rich_text',
-          ),
-        ),
-        // Link to field.
-        'field_link_to' => array(
-          '0' => array(
-            'url' => $menus['blog'],
-            'title' => '',
-            'attributes' => '',
-          ),
-        ),
-      ),
-    ),
   );
 
-  // Programattically create the beans using core aGov functionality.
   foreach ($beans as $bean) {
     agov_core_save_bean($bean['type'], $bean['label'], $bean['description'], $bean['title'], $bean['fields'], $bean['view_mode']);
   }
