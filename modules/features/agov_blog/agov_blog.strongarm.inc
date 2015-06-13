@@ -95,6 +95,9 @@ function agov_blog_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'compact' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
