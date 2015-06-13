@@ -82,6 +82,12 @@ function agov_zen_preprocess_node(&$variables, $hook) {
  * Implements hook_process_node().
  */
 function agov_zen_process_node(&$variables) {
+
+  // Add a theme hook suggestion for type and view mode.
+  // (e.g. node__article__teaser.tlp.php)
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
+
   // The aGov node template includes a dynamic title tag. This defaults to
   // h2, if not set elsewhere.
   if (!isset($variables['title_tag']) || empty($variables['title_tag'])) {
@@ -151,4 +157,17 @@ function agov_zen_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'funnelback_search_block_form') {
     $form['funnelback_search_field']['#attributes']['placeholder'] = 'Enter keywords…';
   }
+}
+
+
+/**
+ * Implements template_preprocess_field().
+ */
+function agov_zen_preprocess_field(&$variables, $hook) {
+  // Add theme hook suggestions for bundles and view modes
+  // (e.g. field__article__teaser__body.tpl.php).
+  $element =& $variables['element'];
+  $variables['theme_hook_suggestions'][] = 'field__' . $element['#field_name'] . '__' . $element['#view_mode'];
+  $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#view_mode'];
+  $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#view_mode'] . '__' . $element['#field_name'];
 }
