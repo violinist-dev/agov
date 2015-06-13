@@ -201,16 +201,16 @@ function agov_front_default_page_manager_pages() {
     $display->content['new-4c286249-ef9c-4d76-b07f-41fabe390b5c'] = $pane;
     $display->panels['header'][1] = 'new-4c286249-ef9c-4d76-b07f-41fabe390b5c';
     $pane = new stdClass();
-    $pane->pid = 'new-a4d4f6b5-625e-4ec5-bd87-c84d5546a9ac';
+    $pane->pid = 'new-6502df14-5504-4047-bb0a-23f054ef1bf5';
     $pane->panel = 'main';
     $pane->type = 'views';
-    $pane->subtype = 'home_page_blog_articles';
+    $pane->subtype = 'latest_updates';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
       'use_pager' => 0,
-      'nodes_per_page' => '5',
+      'nodes_per_page' => '6',
       'pager_id' => '0',
       'offset' => '0',
       'more_link' => 0,
@@ -219,9 +219,10 @@ function agov_front_default_page_manager_pages() {
       'link_to_view' => 0,
       'args' => '',
       'url' => '',
-      'display' => 'block_1',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'display' => 'default',
+      'override_title' => 1,
+      'override_title_text' => 'Latest Updates',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -234,9 +235,35 @@ function agov_front_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'a4d4f6b5-625e-4ec5-bd87-c84d5546a9ac';
-    $display->content['new-a4d4f6b5-625e-4ec5-bd87-c84d5546a9ac'] = $pane;
-    $display->panels['main'][0] = 'new-a4d4f6b5-625e-4ec5-bd87-c84d5546a9ac';
+    $pane->uuid = '6502df14-5504-4047-bb0a-23f054ef1bf5';
+    $display->content['new-6502df14-5504-4047-bb0a-23f054ef1bf5'] = $pane;
+    $display->panels['main'][0] = 'new-6502df14-5504-4047-bb0a-23f054ef1bf5';
+    $pane = new stdClass();
+    $pane->pid = 'new-aaf8dc56-6a54-45ce-85ba-c50091a540b8';
+    $pane->panel = 'right-sidebar';
+    $pane->type = 'block';
+    $pane->subtype = 'twitter_block-1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Twitter feed',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'divider',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'aaf8dc56-6a54-45ce-85ba-c50091a540b8';
+    $display->content['new-aaf8dc56-6a54-45ce-85ba-c50091a540b8'] = $pane;
+    $display->panels['right-sidebar'][0] = 'new-aaf8dc56-6a54-45ce-85ba-c50091a540b8';
     $pane = new stdClass();
     $pane->pid = 'new-b4fc4d0c-e043-4153-8196-83f6353044d7';
     $pane->panel = 'right-sidebar';
@@ -258,11 +285,11 @@ function agov_front_default_page_manager_pages() {
       'css_class' => 'nav-menu__wrapper divider',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'b4fc4d0c-e043-4153-8196-83f6353044d7';
     $display->content['new-b4fc4d0c-e043-4153-8196-83f6353044d7'] = $pane;
-    $display->panels['right-sidebar'][0] = 'new-b4fc4d0c-e043-4153-8196-83f6353044d7';
+    $display->panels['right-sidebar'][1] = 'new-b4fc4d0c-e043-4153-8196-83f6353044d7';
     $pane = new stdClass();
     $pane->pid = 'new-3c15c097-2765-4fb9-9f38-daf703d4b902';
     $pane->panel = 'right-sidebar';
@@ -284,11 +311,11 @@ function agov_front_default_page_manager_pages() {
       'css_class' => 'divider',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '3c15c097-2765-4fb9-9f38-daf703d4b902';
     $display->content['new-3c15c097-2765-4fb9-9f38-daf703d4b902'] = $pane;
-    $display->panels['right-sidebar'][1] = 'new-3c15c097-2765-4fb9-9f38-daf703d4b902';
+    $display->panels['right-sidebar'][2] = 'new-3c15c097-2765-4fb9-9f38-daf703d4b902';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

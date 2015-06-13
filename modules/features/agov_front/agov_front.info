@@ -1,5 +1,5 @@
 name = Front
-description = Provides default front page panels layout configuration.
+description = Provides default front page views and panels configuration.
 core = 7.x
 package = aGov
 project = agov_front
@@ -9,7 +9,9 @@ dependencies[] = bean_panels
 dependencies[] = ctools
 dependencies[] = page_manager
 dependencies[] = panels_ipe
+dependencies[] = views
 features[ctools][] = page_manager:pages_default:1
+features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[page_manager_pages][] = front_page
-mtime = 1416882071
+features[views_view][] = latest_updates
