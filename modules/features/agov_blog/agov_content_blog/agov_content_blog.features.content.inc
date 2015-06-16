@@ -11,7 +11,7 @@ function agov_content_blog_content_defaults() {
   $content = array();
 
   $content['agov_2_blog_1'] = (object) array(
-    'exported_path' => 'node-37-blog_article',
+    'exported_path' => 'news-media/blog/bene-metuo-typicus-vulpes',
     'title' => 'Bene Metuo Typicus Vulpes',
     'status' => 1,
     'promote' => 1,
@@ -79,7 +79,7 @@ Gravis hendrerit ludus. Aliquam gilvus proprius roto valde. Causa esca luctus ni
           'filesize' => 9052,
           'status' => 1,
           'type' => 'image',
-          'uuid' => 'ca421600-4786-4233-acfe-3a6d39d3607f',
+          'uuid' => '83d279dc-be3f-49db-9573-321804406e4d',
           'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
@@ -99,7 +99,7 @@ Gravis hendrerit ludus. Aliquam gilvus proprius roto valde. Causa esca luctus ni
   );
 
   $content['agov_2_blog_2'] = (object) array(
-    'exported_path' => 'node-50-blog_article',
+    'exported_path' => 'news-media/blog/iusto-jugis-ludus-praemitto-premo-zelus',
     'title' => 'Iusto Jugis Ludus Praemitto Premo Zelus',
     'status' => 1,
     'promote' => 1,
@@ -138,7 +138,7 @@ Gravis hendrerit ludus. Aliquam gilvus proprius roto valde. Causa esca luctus ni
           'filesize' => 1697,
           'status' => 1,
           'type' => 'image',
-          'uuid' => '943f372e-ad9b-4114-b4c1-d732b69e1318',
+          'uuid' => 'fc1da7e1-c5d1-4a2b-90c9-03284c33680e',
           'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
@@ -158,7 +158,7 @@ Gravis hendrerit ludus. Aliquam gilvus proprius roto valde. Causa esca luctus ni
   );
 
   $content['agov_2_blog_3'] = (object) array(
-    'exported_path' => 'node-67-blog_article',
+    'exported_path' => 'news-media/blog/blandit-tation-typicus',
     'title' => 'Blandit Tation Typicus',
     'status' => 1,
     'promote' => 1,
@@ -226,7 +226,7 @@ Caecus distineo magna molior neo quibus roto tego veniam. Aliquip appellatio apt
           'filesize' => 9052,
           'status' => 1,
           'type' => 'image',
-          'uuid' => 'ca421600-4786-4233-acfe-3a6d39d3607f',
+          'uuid' => '83d279dc-be3f-49db-9573-321804406e4d',
           'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
