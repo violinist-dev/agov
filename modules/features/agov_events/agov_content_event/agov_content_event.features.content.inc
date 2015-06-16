@@ -11,7 +11,7 @@ function agov_content_event_content_defaults() {
   $content = array();
 
   $content['agov_2_event_1'] = (object) array(
-    'exported_path' => 'node-36-event',
+    'exported_path' => 'news-media/events/ideo-singularis-tation',
     'title' => 'Ideo Singularis Tation',
     'status' => 1,
     'promote' => 0,
@@ -81,7 +81,7 @@ Acsi aptent augue iriure populus quia quidem tation wisi. Feugiat genitus pala p
         0 => array(
           'value' => '2012-01-03 18:15:00',
           'value2' => '2012-01-03 20:45:00',
-          'timezone' => 'Europe/Berlin',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -96,7 +96,7 @@ Acsi aptent augue iriure populus quia quidem tation wisi. Feugiat genitus pala p
           'filesize' => 9202,
           'status' => 1,
           'type' => 'image',
-          'uuid' => 'b5e9e1e7-7a26-4f09-8e8c-cf4893a96a7f',
+          'uuid' => 'a85c450f-e8af-4ce4-b0bf-232726619e25',
           'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
@@ -143,7 +143,7 @@ Abico et hendrerit incassum nutus si utrum. Comis praesent vel velit. Accumsan i
   );
 
   $content['agov_2_event_2'] = (object) array(
-    'exported_path' => 'node-47-event',
+    'exported_path' => 'news-media/events/dolus-jus-singularis-vel',
     'title' => 'Dolus Jus Singularis Vel',
     'status' => 1,
     'promote' => 1,
@@ -269,7 +269,7 @@ Immitto oppeto torqueo. Comis eligo gemino gravis lobortis molior probo vindico.
         0 => array(
           'value' => '2014-02-27 13:45:00',
           'value2' => '2014-02-27 16:30:00',
-          'timezone' => 'Europe/Berlin',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -284,7 +284,7 @@ Immitto oppeto torqueo. Comis eligo gemino gravis lobortis molior probo vindico.
           'filesize' => 3329,
           'status' => 1,
           'type' => 'image',
-          'uuid' => 'e030c968-134d-448a-b9c1-ae0f1eb09c1e',
+          'uuid' => '3ccbeeab-503d-4d24-af21-91115c37e6a5',
           'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
@@ -327,7 +327,7 @@ Immitto oppeto torqueo. Comis eligo gemino gravis lobortis molior probo vindico.
   );
 
   $content['agov_2_event_3'] = (object) array(
-    'exported_path' => 'node-60-event',
+    'exported_path' => 'news-media/events/diam-jugis-ludus-suscipere-validus-vulpes',
     'title' => 'Diam Jugis Ludus Suscipere Validus Vulpes',
     'status' => 1,
     'promote' => 1,
@@ -433,7 +433,7 @@ Ex interdico magna molior neo os pagus proprius quia suscipere. Erat in pertineo
         0 => array(
           'value' => '2011-04-30 07:45:00',
           'value2' => '2011-04-30 09:00:00',
-          'timezone' => 'Europe/Berlin',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -448,7 +448,7 @@ Ex interdico magna molior neo os pagus proprius quia suscipere. Erat in pertineo
           'filesize' => 901,
           'status' => 1,
           'type' => 'image',
-          'uuid' => '4e33f492-5314-491a-a64e-246bd51d593d',
+          'uuid' => '2dda6966-ef34-4bbf-b1a0-1d780b4fff58',
           'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
@@ -532,7 +532,7 @@ Commodo eligo jus paratus persto te. Cui distineo lobortis lucidus melior nutus 
   );
 
   $content['agov_2_event_4'] = (object) array(
-    'exported_path' => 'node-61-event',
+    'exported_path' => 'news-media/events/ex',
     'title' => 'Ex',
     'status' => 1,
     'promote' => 1,
@@ -659,7 +659,7 @@ Conventio ibidem jumentum pecus tum velit. Accumsan aliquip genitus hos ideo len
         0 => array(
           'value' => '2011-07-08 00:30:00',
           'value2' => '2011-07-08 02:30:00',
-          'timezone' => 'Europe/Berlin',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -674,7 +674,7 @@ Conventio ibidem jumentum pecus tum velit. Accumsan aliquip genitus hos ideo len
           'filesize' => 4643,
           'status' => 1,
           'type' => 'image',
-          'uuid' => '64096f81-c4ef-49bb-9fc1-8e1e67c3451e',
+          'uuid' => '368f465f-213c-4eb7-8217-0e98caec8d2b',
           'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
@@ -756,7 +756,7 @@ Paratus saluto utinam velit. Appellatio aptent cogo ludus. Camur defui duis elit
   );
 
   $content['agov_2_event_5'] = (object) array(
-    'exported_path' => 'node-65-event',
+    'exported_path' => 'news-media/events/ibidem',
     'title' => 'Ibidem',
     'status' => 1,
     'promote' => 1,
@@ -852,7 +852,7 @@ Nimis nisl os plaga pneum tincidunt venio. Gilvus interdico loquor neo praesent 
         0 => array(
           'value' => '2016-06-29 20:30:00',
           'value2' => '2016-06-29 22:45:00',
-          'timezone' => 'Europe/Berlin',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -867,7 +867,7 @@ Nimis nisl os plaga pneum tincidunt venio. Gilvus interdico loquor neo praesent 
           'filesize' => 1562,
           'status' => 1,
           'type' => 'image',
-          'uuid' => 'ba6fb179-58c7-4105-bfc2-8e71bfa36d97',
+          'uuid' => 'a91373b7-87cb-4f3a-98b4-68e17ebdf521',
           'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
@@ -947,7 +947,7 @@ Causa dolus eligo inhibeo minim pala scisco tamen. Duis et jugis ratis torqueo v
   );
 
   $content['agov_2_event_6'] = (object) array(
-    'exported_path' => 'node-66-event',
+    'exported_path' => 'news-media/events/vindico-ymo',
     'title' => 'Vindico Ymo',
     'status' => 1,
     'promote' => 0,
@@ -1049,7 +1049,7 @@ Aliquip camur dolor probo quidne quis sagaciter velit. Autem lucidus natu. Esse 
         0 => array(
           'value' => '2014-12-21 03:45:00',
           'value2' => '2014-12-21 06:30:00',
-          'timezone' => 'Europe/Berlin',
+          'timezone' => 'Australia/Sydney',
           'timezone_db' => 'UTC',
           'date_type' => 'datetime',
         ),
@@ -1064,7 +1064,7 @@ Aliquip camur dolor probo quidne quis sagaciter velit. Autem lucidus natu. Esse 
           'filesize' => 7169,
           'status' => 1,
           'type' => 'image',
-          'uuid' => '04714913-da33-415e-b6c2-bf68abc6c825',
+          'uuid' => '3097e76c-bb55-4817-ad73-17a65f7c598a',
           'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
