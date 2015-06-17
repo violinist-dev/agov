@@ -78,12 +78,21 @@ function agov_events_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
       'feature' => array(
+        'custom_settings' => FALSE,
+      ),
+      'compact' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
         'custom_settings' => FALSE,
       ),
     ),

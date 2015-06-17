@@ -36,6 +36,15 @@ function agov_publications_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 200,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -98,6 +107,12 @@ function agov_publications_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 1,
       ),
+      'search_result' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -156,6 +171,12 @@ function agov_publications_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
+        'weight' => 3,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -225,6 +246,12 @@ function agov_publications_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
+        'weight' => 5,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -306,6 +333,12 @@ function agov_publications_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -358,6 +391,12 @@ function agov_publications_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'teaser' => array(

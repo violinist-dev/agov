@@ -78,7 +78,7 @@ function agov_publications_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
@@ -90,6 +90,9 @@ function agov_publications_strongarm() {
         'custom_settings' => TRUE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),

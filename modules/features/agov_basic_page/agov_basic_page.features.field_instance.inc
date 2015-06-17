@@ -45,6 +45,15 @@ The <em>body</em> field is used for the main article content.
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 200,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -106,6 +115,12 @@ The <em>body</em> field is used for the main article content.
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
+        'weight' => 2,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -183,6 +198,12 @@ The <em>body</em> field is used for the main article content.
           'image_style' => 'article_page_620x349',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
