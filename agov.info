@@ -165,7 +165,6 @@ dependencies[] = agov_front
 dependencies[] = agov_menu_block
 dependencies[] = agov_register
 dependencies[] = agov_rss
-dependencies[] = agov_slideshow
 dependencies[] = agov_superfish_configuration
 dependencies[] = agov_sitemap
 dependencies[] = agov_social_links
