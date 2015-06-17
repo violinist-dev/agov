@@ -117,7 +117,7 @@
           logoutput="true"
           passthru="true" />
     <exec dir="${app.dir}"
-          command="${drush.cmd} make -y ${app.profile.dir}/drupal-org-core.make --prepare-install"
+          command="${drush.cmd} make -y ${app.profile.dir}/drupal-org-core.make --no-cache --prepare-install"
           checkreturn="true"
           logoutput="true"
           passthru="true" />
