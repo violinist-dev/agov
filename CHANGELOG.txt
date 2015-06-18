@@ -1,6 +1,17 @@
 
 aGov Changelog
 
+7.x-1.8
+=======
+
+* dc26594: [#28481] Security update for context - Kim Pepper
+* cb020e3: [security] Updates drupal core to 7.38 - Kim Pepper
+
+7.x-1.7
+=======
+
+* bd14fde: Drupal 7.35 core and contrib security updates - Kim Pepper
+
 7.x-1.6
 =======
 - SA-CONTRIB-2014-119 - Google Analytics - Information disclosure
