@@ -1,5 +1,12 @@
 aGov Changelog
 
+7.x-2.0-beta4
+=============
+
+* 9f3c973: Removes agov_dynamic_content - Kim Pepper
+* 832f3f0: Drupal core security update 7.38 - Kim Pepper
+* 863c789: Fixes 2.x env pass. - Nick Schuch
+* cb4fd50: [#32483] Updates accessible_form, paranoia, and honeypot - Kim Pepper
 
 7.x-2.0-beta3
 ==============
