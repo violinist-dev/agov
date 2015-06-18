@@ -10,6 +10,7 @@
 %unstyled-list {
   margin-top: 0;
   margin-bottom: 0;
+  padding: 0;
   list-style-type: none;
   list-style-image: none;
   text-indent: 0;
@@ -20,20 +21,5 @@
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0;
-  }
-}
-
-//
-// Drupal selectors.
-//
-
-// scss-lint:disable SelectorDepth
-
-.footer-top {
-  .block-menu,
-  .menu-block-wrapper {
-    > ul {
-      @extend %unstyled-list;
-    }
   }
 }

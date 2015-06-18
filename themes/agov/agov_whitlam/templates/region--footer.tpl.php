@@ -8,8 +8,8 @@
  */
 ?>
 <?php if ($content): ?>
-  <div class="footer-top__wrapper <?php print $classes; ?>">
-    <div class="footer-top layout-center">
+  <div class="footer-top <?php print $classes; ?>">
+    <div class="layout-center">
       <?php print $content; ?>
     </div>
   </div>
