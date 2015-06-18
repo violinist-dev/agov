@@ -159,22 +159,3 @@ $zen-gutters: $zen-gutters--small;
     @include zen-grid-container($context: grid-item);
   }
 }
-
-//
-// Drupal selectors.
-//
-
-// scss-lint:disable SelectorDepth
-
-.footer-top {
-  .block-menu,
-  .menu-block-wrapper {
-    > ul {
-      @extend %layout-3col;
-
-      > li {
-        @extend %layout-3col__col-x;
-      }
-    }
-  }
-}

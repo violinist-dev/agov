@@ -1,3 +1,7 @@
+// Dependencies.
+@import 'layouts/layout-3col/layout-3col';
+@import 'components/unstyled-list/unstyled-list';
+
 // Footer Top
 //
 // The footer top region of page
@@ -13,4 +17,32 @@
   padding-top: 1px;
   padding-bottom: 25px;
 
+  // @TODO: Fix this bug in Chroma.
+  // scss-lint:disable ColorKeyword, ColorVariable
+  &__menu {
+    border-top: 2px solid color(white);
+    margin-top: 25px;
+
+    &:first-child {
+      border-top: 0;
+      margin-top: 0;
+    }
+
+    > ul {
+      @extend %layout-3col;
+      @extend %unstyled-list;
+
+      > li {
+        @extend %layout-3col__col-x;
+      }
+    }
+  }
+}
+
+//
+// Drupal selectors.
+//
+
+.footer-top .block {
+  @extend %footer-top__menu;
 }
