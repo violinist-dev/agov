@@ -46,7 +46,7 @@
 // Style guide: layouts.layout-3column
 
 $zen-columns: 1;
-$zen-gutters: 40px;
+$zen-gutters: $zen-gutters--small;
 
 .layout-3col,
 %layout-3col {
@@ -70,7 +70,7 @@ $zen-gutters: 40px;
   }
 
   $zen-columns: 2 !global;
-  $zen-gutters: 25px !global;
+  $zen-gutters: $zen-gutters--medium !global;
 
   @include respond-to(medium) {
     // Since our container's context is "flow" and we changed the gutter size,

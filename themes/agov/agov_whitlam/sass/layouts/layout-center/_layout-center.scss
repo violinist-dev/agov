@@ -8,6 +8,7 @@
 
 .layout-center,
 %layout-center {
-  max-width: 1165px;
+  // The max content width is 1140px (the container width minus the gutters.)
+  max-width: 1140px + $zen-gutters--medium;
   margin: 0 auto;
 }
