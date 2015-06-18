@@ -20,13 +20,13 @@
     </div>
   <?php endif; ?>
 
-  <?php if($content['main']): ?>
+  <?php if ($content['main'] || $content['right-sidebar']): ?>
     <div class="layout-3col__left-content">
       <?php print $content['main'];?>
     </div>
   <?php endif; ?>
 
-  <?php if($content['right-sidebar']): ?>
+  <?php if ($content['right-sidebar']): ?>
     <div class="layout-3col__right-sidebar">
       <?php print $content['right-sidebar'];?>
     </div>
@@ -37,25 +37,26 @@
       <hr>
       <div class="layout-3col">
 
-    <?php if ($content['footer-1']): ?>
-      <div class="layout-3col__col-1">
-        <?php print $content['footer-1'];?>
-      </div>
-    <?php endif; ?>
+        <?php if ($content['footer-1']): ?>
+          <div class="layout-3col__col-1">
+            <?php print $content['footer-1'];?>
+          </div>
+        <?php endif; ?>
 
-    <?php if ($content['footer-2']) : ?>
-      <div class="layout-3col__col-2">
-        <?php print $content['footer-2'];?>
-      </div>
-    <?php endif; ?>
+        <?php if ($content['footer-2']) : ?>
+          <div class="layout-3col__col-2">
+            <?php print $content['footer-2'];?>
+          </div>
+        <?php endif; ?>
 
-    <?php if ($content['footer-3']): ?>
-      <div class="layout-3col__col-3">
-        <?php print $content['footer-3'];?>
-      </div>
-    <?php endif; ?>
+        <?php if ($content['footer-3']): ?>
+          <div class="layout-3col__col-3">
+            <?php print $content['footer-3'];?>
+          </div>
+        <?php endif; ?>
 
-    </div></div>
+      </div>
+    </div>
   <?php endif; ?>
 
 </div>
