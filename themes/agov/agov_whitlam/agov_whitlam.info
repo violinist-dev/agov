@@ -119,7 +119,8 @@ features[] = slogan
 features[] = node_user_picture
 features[] = comment_user_picture
 features[] = favicon
-features[] = main_menu
+; We turn off the main_menu feature since aGov uses a menu block for its navbar.
+;features[] = main_menu
 features[] = secondary_menu
 
 
