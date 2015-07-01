@@ -12,7 +12,7 @@
     </div>
   <?php endif; ?>
   <h3 class="teaser__title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-  <span class="teaser__date"><?php print $date; ?></span>
+  <span class="teaser__submitted"><?php print $submitted; ?></span>
   <div class="teaser__content">
     <?php hide($content['field_thumbnail']); ?>
     <?php hide($content['links']); ?>

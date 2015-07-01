@@ -10,4 +10,3 @@ features[features_api][] = api:2
 features[variable][] = xmlsitemap_minimum_lifetime
 features[variable][] = xmlsitemap_settings_menu_link_main-menu
 features[variable][] = xmlsitemap_settings_menu_link_menu-footer-sub-menu
-mtime = 1420666867

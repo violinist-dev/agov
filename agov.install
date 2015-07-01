@@ -560,7 +560,7 @@ function _agov_date_formats() {
     'agov_month_year' => array(
       'format' => array(
         'type' => 'agov_month_year',
-        'format' => 'F Y',
+        'format' => 'M Y',
         'locked' => TRUE,
         'is_new' => TRUE,
       ),
@@ -574,7 +574,7 @@ function _agov_date_formats() {
     'agov_month_day_year' => array(
       'format' => array(
         'type' => 'agov_month_day_year',
-        'format' => 'j F Y',
+        'format' => 'j M Y',
         'locked' => TRUE,
         'is_new' => TRUE,
       ),

@@ -60,9 +60,10 @@ function agov_whitlam_preprocess_page(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function agov_whitlam_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  $node = $variables['node'];
+  $variables['date'] = format_date($node->created, 'custom', 'j M Y');
+  $variables['submitted'] = t('By !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['date']));
 
   // Optionally, run node-type-specific preprocess functions, like
   // agov_whitlam_preprocess_node_page() or
@@ -72,7 +73,6 @@ function agov_whitlam_preprocess_node(&$variables, $hook) {
     $function($variables, $hook);
   }
 }
-// */
 
 /**
  * Override or insert variables into the comment templates.
@@ -134,20 +134,12 @@ function agov_whitlam_preprocess_region(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function agov_whitlam_preprocess_block(&$variables, $hook) {
-  // Add a count to all the blocks in the region.
-  // $variables['classes_array'][] = 'count-' . $variables['block_id'];
-
-  // By default, Zen will use the block--no-wrapper.tpl.php for the main
-  // content. This optional bit of code undoes that:
-  if ($variables['block_html_id'] == 'block-system-main') {
-    $variables['theme_hook_suggestions'] = array_diff(
-      $variables['theme_hook_suggestions'], array('block__no_wrapper')
-    );
+  // Add a border to all the blocks in the sidebar_second region.
+  if ($variables['elements']['#block']->region === 'sidebar_second') {
+    $variables['classes_array'][] = 'divider';
   }
 }
-// */
 
 /**
  * Override variables into the icon_block bean templates.
