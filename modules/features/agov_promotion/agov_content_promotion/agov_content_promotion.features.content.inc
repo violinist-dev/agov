@@ -11,6 +11,7 @@ function agov_content_promotion_content_defaults() {
   $content = array();
 
   $content['agov_promotion_1'] = (object) array(
+    'exported_path' => 'promotions/nam-eget-placerat-sapien',
     'title' => 'Nam eget placerat sapien',
     'status' => 1,
     'promote' => 1,
@@ -40,16 +41,8 @@ function agov_content_promotion_content_defaults() {
           'filesize' => 662642,
           'status' => 1,
           'type' => 'image',
-          'uuid' => '64f0908b-243d-483b-9bd0-4388a349e540',
-          'field_file_image_alt_text' => array(
-            'und' => array(
-              0 => array(
-                'value' => 'Koala',
-                'format' => NULL,
-                'safe_value' => 'Koala',
-              ),
-            ),
-          ),
+          'uuid' => '17b4fd37-d771-402d-aea0-56f0bdd1dcef',
+          'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
           'rdf_mapping' => array(),
@@ -85,6 +78,7 @@ function agov_content_promotion_content_defaults() {
   );
 
   $content['agov_promotion_2'] = (object) array(
+    'exported_path' => 'promotions/suspendisse-id-elit-arcu',
     'title' => 'Suspendisse id elit arcu.',
     'status' => 1,
     'promote' => 1,
@@ -114,16 +108,8 @@ function agov_content_promotion_content_defaults() {
           'filesize' => 887034,
           'status' => 1,
           'type' => 'image',
-          'uuid' => 'f9effc0e-5be3-4e6d-8657-3cfcc191c5fb',
-          'field_file_image_alt_text' => array(
-            'und' => array(
-              0 => array(
-                'value' => 'Peak hour traffic in Melbourne',
-                'format' => NULL,
-                'safe_value' => 'Peak hour traffic in Melbourne',
-              ),
-            ),
-          ),
+          'uuid' => 'cd116ada-87e0-4f38-9ae8-5afb2df876ff',
+          'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
           'rdf_mapping' => array(),
@@ -156,6 +142,7 @@ function agov_content_promotion_content_defaults() {
   );
 
   $content['agov_promotion_3'] = (object) array(
+    'exported_path' => 'promotions/integer-lacinia-ullamcorper-tempor',
     'title' => 'Integer lacinia ullamcorper tempor',
     'status' => 1,
     'promote' => 1,
@@ -185,16 +172,8 @@ function agov_content_promotion_content_defaults() {
           'filesize' => 715954,
           'status' => 1,
           'type' => 'image',
-          'uuid' => '4fd566f3-baf6-44fd-a7d4-5beafc8a1037',
-          'field_file_image_alt_text' => array(
-            'und' => array(
-              0 => array(
-                'value' => 'Canberra',
-                'format' => NULL,
-                'safe_value' => 'Canberra',
-              ),
-            ),
-          ),
+          'uuid' => 'cf825112-ff2f-40bc-8d7a-e29db12df248',
+          'field_file_image_alt_text' => array(),
           'field_file_image_title_text' => array(),
           'metatags' => array(),
           'rdf_mapping' => array(),

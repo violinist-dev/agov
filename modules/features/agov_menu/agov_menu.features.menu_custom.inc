@@ -43,7 +43,6 @@ function agov_menu_menu_default_menu_custom() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A list of links to be displayed in the footer.');
-  t('Quick Links');
   t('Footer Sub Menu');
   t('Main menu');
   t('Quick Links');

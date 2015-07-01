@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * inactive_account.rules_defaults.inc
+ * agov_inactive_account.rules_defaults.inc
  */
 
 /**

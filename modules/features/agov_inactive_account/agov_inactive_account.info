@@ -1,5 +1,5 @@
 name = Inactive Account
-description = "Suspend inactive accounts after a specified number of days."
+description = Suspend inactive accounts after a specified number of days.
 core = 7.x
 package = aGov
 version = 7.x-1.0

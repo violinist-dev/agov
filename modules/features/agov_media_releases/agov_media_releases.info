@@ -4,6 +4,7 @@ core = 7.x
 package = aGov
 project = agov_media_releases
 dependencies[] = agov_common_fields
+dependencies[] = agov_events
 dependencies[] = agov_publications
 dependencies[] = agov_tags
 dependencies[] = ctools
