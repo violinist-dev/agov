@@ -24,17 +24,20 @@ function agov_publications_field_default_field_instances() {
         'weight' => 0,
       ),
       'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 200,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -89,10 +92,17 @@ function agov_publications_field_default_field_instances() {
         'weight' => 0,
       ),
       'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'agov_month_day_year',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'inline',
@@ -105,7 +115,7 @@ function agov_publications_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -164,14 +174,14 @@ function agov_publications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
       'default' => array(
         'label' => 'above',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -233,20 +243,24 @@ function agov_publications_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'teaser_thumbnail',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'full_page_wide',
         ),
         'type' => 'image',
-        'weight' => 5,
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -324,14 +338,14 @@ function agov_publications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -384,14 +398,14 @@ function agov_publications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'search_result' => array(
         'label' => 'above',
