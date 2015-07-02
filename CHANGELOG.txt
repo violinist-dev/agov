@@ -1,5 +1,19 @@
 aGov Changelog
 
+7.x-2.0-rc1
+===========
+
+* 92b312b: [#27820] Fix code indentation. - JohnAlbin
+* 5943f90: [#27820] Add accessible, but visually-hidden site name and slogan. - JohnAlbin
+* 8936515: [#32818] Remove Fields marked * are required. from contact form - David Forbes
+* ad5096e: [#32819] Remove read more link from publications - David Forbes
+* 2c8d9bd: [#32876] security update: Views Bulk Operations (VBO): 7.x-3.2 > 7.x-3.3 - David Forbes
+* 83bd5cc: Revert "[#32876] security update: Views Bulk Operations (VBO): 7.x-3.2 > 7.x-3.3" - David Forbes
+* eca6582: [#32876] Revert adding views_bulk_operation to repo and change projects[views_bulk_operations][version] = 3.3 in make file - David Forbes
+* fe34498: 32816 Fix colour contrast ratio in blocks - Kim Pepper
+* 2fd1892: 32816 Fix placeholder colour contrast ratio - Kim Pepper
+* 0073f22: 32911 remove unused modules - Kim Pepper
+
 7.x-2.0-beta4
 =============
 
