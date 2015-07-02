@@ -66,6 +66,7 @@ dependencies[] = features
 dependencies[] = field_redirection
 dependencies[] = file_entity
 dependencies[] = file_lock
+dependencies[] = flood_control
 dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = honeypot
