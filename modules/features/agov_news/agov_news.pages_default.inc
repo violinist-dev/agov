@@ -57,12 +57,18 @@ function agov_news_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'home';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'header' => NULL,
+      'main' => NULL,
+      'right-sidebar' => NULL,
+      'footer-1' => NULL,
+      'footer-2' => NULL,
+      'footer-3' => NULL,
     ),
   );
   $display->cache = array();
@@ -71,14 +77,26 @@ function agov_news_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-42b225e5-0d7e-4006-8fd5-3d41de8ecf26';
-    $pane->panel = 'middle';
-    $pane->type = 'block';
-    $pane->subtype = 'bean-news-and-media-intro';
+    $pane->pid = 'new-5f250f51-e174-4b72-846b-8628dd3fa5bb';
+    $pane->panel = 'header';
+    $pane->type = 'views';
+    $pane->subtype = 'footer_teaser';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '3',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -90,12 +108,12 @@ function agov_news_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '42b225e5-0d7e-4006-8fd5-3d41de8ecf26';
-    $display->content['new-42b225e5-0d7e-4006-8fd5-3d41de8ecf26'] = $pane;
-    $display->panels['middle'][0] = 'new-42b225e5-0d7e-4006-8fd5-3d41de8ecf26';
+    $pane->uuid = '5f250f51-e174-4b72-846b-8628dd3fa5bb';
+    $display->content['new-5f250f51-e174-4b72-846b-8628dd3fa5bb'] = $pane;
+    $display->panels['header'][0] = 'new-5f250f51-e174-4b72-846b-8628dd3fa5bb';
     $pane = new stdClass();
     $pane->pid = 'new-99a19956-e825-438a-afca-885c9bd6205c';
-    $pane->panel = 'middle';
+    $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'bean-current-news';
     $pane->shown = TRUE;
@@ -111,14 +129,14 @@ function agov_news_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '99a19956-e825-438a-afca-885c9bd6205c';
     $display->content['new-99a19956-e825-438a-afca-885c9bd6205c'] = $pane;
-    $display->panels['middle'][1] = 'new-99a19956-e825-438a-afca-885c9bd6205c';
+    $display->panels['main'][0] = 'new-99a19956-e825-438a-afca-885c9bd6205c';
     $pane = new stdClass();
     $pane->pid = 'new-8dc2e141-ffe4-407b-986c-5d2f4699665c';
-    $pane->panel = 'middle';
+    $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'bean-events';
     $pane->shown = TRUE;
@@ -134,14 +152,14 @@ function agov_news_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '8dc2e141-ffe4-407b-986c-5d2f4699665c';
     $display->content['new-8dc2e141-ffe4-407b-986c-5d2f4699665c'] = $pane;
-    $display->panels['middle'][2] = 'new-8dc2e141-ffe4-407b-986c-5d2f4699665c';
+    $display->panels['main'][1] = 'new-8dc2e141-ffe4-407b-986c-5d2f4699665c';
     $pane = new stdClass();
     $pane->pid = 'new-0530795a-c287-49e8-8c67-6bb6aea1aaa8';
-    $pane->panel = 'middle';
+    $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'bean-media-releases';
     $pane->shown = TRUE;
@@ -157,14 +175,14 @@ function agov_news_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '0530795a-c287-49e8-8c67-6bb6aea1aaa8';
     $display->content['new-0530795a-c287-49e8-8c67-6bb6aea1aaa8'] = $pane;
-    $display->panels['middle'][3] = 'new-0530795a-c287-49e8-8c67-6bb6aea1aaa8';
+    $display->panels['main'][2] = 'new-0530795a-c287-49e8-8c67-6bb6aea1aaa8';
     $pane = new stdClass();
     $pane->pid = 'new-19cb3817-4d87-4318-8ed6-bc351f46bb89';
-    $pane->panel = 'middle';
+    $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'bean-blog';
     $pane->shown = TRUE;
@@ -180,11 +198,57 @@ function agov_news_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '19cb3817-4d87-4318-8ed6-bc351f46bb89';
     $display->content['new-19cb3817-4d87-4318-8ed6-bc351f46bb89'] = $pane;
-    $display->panels['middle'][4] = 'new-19cb3817-4d87-4318-8ed6-bc351f46bb89';
+    $display->panels['main'][3] = 'new-19cb3817-4d87-4318-8ed6-bc351f46bb89';
+    $pane = new stdClass();
+    $pane->pid = 'new-c7008297-f3d3-43a7-a7e7-b004201121ce';
+    $pane->panel = 'right-sidebar';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-quick-links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c7008297-f3d3-43a7-a7e7-b004201121ce';
+    $display->content['new-c7008297-f3d3-43a7-a7e7-b004201121ce'] = $pane;
+    $display->panels['right-sidebar'][0] = 'new-c7008297-f3d3-43a7-a7e7-b004201121ce';
+    $pane = new stdClass();
+    $pane->pid = 'new-23c5291b-8a89-4c42-ace2-4c632d6d5d3d';
+    $pane->panel = 'right-sidebar';
+    $pane->type = 'block';
+    $pane->subtype = 'agov_social_links-services';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '23c5291b-8a89-4c42-ace2-4c632d6d5d3d';
+    $display->content['new-23c5291b-8a89-4c42-ace2-4c632d6d5d3d'] = $pane;
+    $display->panels['right-sidebar'][1] = 'new-23c5291b-8a89-4c42-ace2-4c632d6d5d3d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
