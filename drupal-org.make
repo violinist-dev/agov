@@ -142,7 +142,6 @@ projects[wysiwyg_filter][version] = "1.6-rc2"
 projects[xmlsitemap][version] = "2.2"
 
 ; aGov
-projects[agov_ips][version] = "1.0-beta1"
 projects[agov_password_policy][version] = "1.0-beta1"
 projects[agov_register][version] = "1.0-alpha1"
 projects[agov_text_resize][version] = "1.0-beta1"
