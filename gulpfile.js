@@ -17,6 +17,7 @@ var options = {},
 // accordingly.
 options.rootPath = {
   project     : __dirname + '/',
+  web         : __dirname + '/app/',
   styleGuide  : __dirname + '/styleguide/agov_whitlam/',
   theme       : __dirname + '/themes/agov/agov_whitlam/'
 };
@@ -41,7 +42,8 @@ options.styleGuide = {
   ],
   destination: options.rootPath.styleGuide,
 
-  // The css and js paths are URLs relative to the generated style guide.
+  // The css and js paths are URLs, like '/misc/jquery.js'.
+  // The following paths are relative to the generated style guide.
   css: [
     path.relative(options.rootPath.styleGuide, options.theme.css + 'styles.css'),
     path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/chroma-kss-styles.css'),
