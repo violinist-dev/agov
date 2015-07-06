@@ -8,7 +8,10 @@ test: &test
     - bin/phing build -Dapp.password=$PASSWORD
     - bin/phing gulp:build
     - bin/phing styleguide:link
-    - bin/phing test 
+    - bin/phing test
+    # @TODO Enable these once linting errors are fixed.
+    # - node_modules/.bin/gulp lint:js-with-fail
+    # - node_modules/.bin/gulp lint:sass-with-fail
     - mkdir -p app/sites/default/files/tmp
     - mkdir -p app/sites/default/private
     - chown -R www-data:www-data app/sites/default/files
