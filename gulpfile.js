@@ -65,7 +65,8 @@ options.scssLint = {
 // Define the paths to the JS files to lint.
 options.eslint = {
   files  : [
-    'themes/agov/**/*.js',
+    'themes/agov/js/script.js',
+    // 'themes/agov/**/*.js',
     'modules/custom/**/*.js',
     'modules/features/**/*.js'
   ]
