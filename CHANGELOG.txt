@@ -14,6 +14,29 @@ aGov Changelog
 * 2fd1892: 32816 Fix placeholder colour contrast ratio - Kim Pepper
 * 0073f22: 32911 remove unused modules - Kim Pepper
 
+7.x-2.0-rc2
+===========
+* e45cf1c: [#33088] Added an accessible alt tag for logo - vagrant
+* 77ca380: 33120 Update admin views to 7.x-1.5 - Kim Pepper
+* 75c6b85: 28175 Update ckeditor to 4.5.1 - Kim Pepper
+* c11c05e: 28175 Update wysiwyg - Kim Pepper
+
+7.x-2.0-rc1
+===========
+
+* 92b312b: [#27820] Fix code indentation. - JohnAlbin
+* 5943f90: [#27820] Add accessible, but visually-hidden site name and slogan. - JohnAlbin
+* 8936515: [#32818] Remove Fields marked * are required. from contact form - David Forbes
+* ad5096e: [#32819] Remove read more link from publications - David Forbes
+* 2c8d9bd: [#32876] security update: Views Bulk Operations (VBO): 7.x-3.2 > 7.x-3.3 - David Forbes
+* 83bd5cc: Revert "[#32876] security update: Views Bulk Operations (VBO): 7.x-3.2 > 7.x-3.3" - David Forbes
+* eca6582: [#32876] Revert adding views_bulk_operation to repo and change projects[views_bulk_operations][version] = 3.3 in make file - David Forbes
+* fe34498: 32816 Fix colour contrast ratio in blocks - Kim Pepper
+* 2fd1892: 32816 Fix placeholder colour contrast ratio - Kim Pepper
+* 0073f22: 32911 remove unused modules - Kim Pepper
+* 5a11a56: Update changelog for 7.x-2.0-rc1 release - Kim Pepper
+
+
 7.x-2.0-beta4
 =============
 
