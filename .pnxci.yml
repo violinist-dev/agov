@@ -4,10 +4,7 @@ test: &test
   steps:
     - composer install --prefer-dist --dev
     - bin/phing build -Dapp.password=$PASSWORD
-    - mkdir -p app/sites/default/files/tmp
-    - mkdir -p app/sites/default/private
-    - chown -R www-data:www-data app/sites/default/files
-    - chown -R www-data:www-data app/sites/default/private
+    - mkdir -p app/sites/default/files/tmp app/sites/default/private
     - bin/phing test 
 
 test_pr:
