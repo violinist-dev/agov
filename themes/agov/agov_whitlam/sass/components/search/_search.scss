@@ -6,35 +6,61 @@
 //
 // Style guide: components.search
 
-.search-form,
-%search-form {
+
+.search,
+%search {
   color: color(search-color);
 
-  @include respond-to('medium') {
+  &--light {
     color: color(search-color-light);
   }
 
-  > div {
+  &__wrapper {
     position: relative;
     display: inline-block;
     padding-bottom: 13px;
     width: 100%;
     border-bottom: 1px solid color(search-border);
 
-    @include respond-to('medium') {
-      min-width: 363px;
-      width: auto;
-      border-bottom: 2px solid color(search-border);
+    &--light {
+      @include respond-to('medium') {
+        border-bottom: 2px solid color(search-border);
+        min-width: 363px;
+        width: auto;
+      }
     }
   }
 
-  .form-submit {
+  &__input-wrapper {
+    margin-bottom: 0;
+  }
+
+  &__input {
+    @include box-shadow(none);
+    background: none;
+    border: 0;
+    padding: 0;
+    font-style: italic;
+    font-weight: bold;
+
+    @include input-placeholder() {
+      @include opacity(1);
+      color: color(search-color);
+    }
+
+    &--light {
+      @include respond-to('medium') {
+        @include input-placeholder() {
+          color: color(search-color-light);
+        }
+      }
+    }
+  }
+
+  &__button {
     background: none;
     background-repeat: no-repeat;
     background-image: inline-image('components/search/search-icon-blue.png');
-    @if support-legacy-browser(ie, '7') {
-      *background-image: image-url('components/search/search-icon-blue.png');
-    }
     position: absolute;
     right: 0;
     top: 0;
@@ -46,37 +72,50 @@
     background-color: none;
     padding: 0;
 
-    @include respond-to('medium') {
-      background: none;
-      background-repeat: no-repeat;
-      background-image: inline-image('components/search/search-icon.png');
-      @if support-legacy-browser(ie, '7') {
-        *background-image: image-url('components/search/search-icon.png');
-      }
+    &--light {
+      @include respond-to('medium') {
+        background: none;
+        background-repeat: no-repeat;
+        background-image: inline-image('components/search/search-icon.png');
+       }
     }
+  }
+}
+
+//Fugly selectors.
+
+.search-form, #search-api-page-search-form-default-search {
+  @extend %search;
+
+  > div {
+    @extend %search__wrapper;
   }
 
   .form-item {
-    margin-bottom: 0;
+     @extend %search__input-wrapper;
+  }
 
-    .form-text {
-      @include box-shadow(none);
-      background: none;
-      border: 0;
-      padding: 0;
-      font-style: italic;
-      font-weight: bold;
+  .form-text {
+    @extend %search__input;
+  }
 
-      @include input-placeholder() {
-        @include opacity(1);
-        color: color(search-color);
-      }
+  .form-submit {
+    @extend %search__button;
+  }
+}
 
-      @include respond-to('medium') {
-        @include input-placeholder() {
-          color: color(search-color-light);
-        }
-      }
-    }
+#search-api-page-search-form-default-search {
+  @extend %search--light;
+
+  > div {
+    @extend %search__wrapper--light;
+  }
+
+  .form-text {
+    @extend %search__input--light;
+  }
+
+  .form-submit {
+    @extend %search__button--light;
   }
 }
