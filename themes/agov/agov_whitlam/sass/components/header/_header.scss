@@ -71,8 +71,4 @@
 .block-search,
 .block-search-api-page {
   @extend %header__search;
-
-  form {
-    @extend %search-form;
-  }
 }

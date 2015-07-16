@@ -171,3 +171,13 @@ function agov_whitlam_preprocess_entity(&$variables) {
     $variables['box_text'] = isset($text[0]['value']) ? $text[0]['value'] : NULL;
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function agov_whitlam_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'search_api_page_search_form') {
+    $form['form']['keys_1']['#placeholder'] = t('Enter your keywords');
+    unset($form['form']['keys_1']['#title']);
+  }
+}
