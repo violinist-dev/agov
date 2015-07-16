@@ -10,15 +10,17 @@
 .search,
 %search {
   color: color(search-color);
+  background: color(search-bg);
 
   &--light {
     color: color(search-color-light);
+    background: transparent;
   }
 
   &__wrapper {
     position: relative;
     display: inline-block;
-    padding-bottom: 13px;
+    padding: 13px;
     width: 100%;
     border-bottom: 1px solid color(search-border);
 
@@ -27,6 +29,7 @@
         border-bottom: 2px solid color(search-border);
         min-width: 363px;
         width: auto;
+        padding: 0 0 13px 0;
       }
     }
   }
@@ -63,20 +66,22 @@
     background-image: inline-image('components/search/search-icon-blue.png');
     position: absolute;
     right: 0;
-    top: 0;
+    top: 1em;
     border: 0;
     text-indent: -999em;
     display: inline-block;
     width: 23px;
     height: 23px;
     background-color: none;
-    padding: 0;
+    padding-left: 13px;
 
     &--light {
       @include respond-to('medium') {
         background: none;
         background-repeat: no-repeat;
         background-image: inline-image('components/search/search-icon.png');
+        top: 0;
+        padding: 0;
        }
     }
   }
