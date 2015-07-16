@@ -163,7 +163,8 @@
       color: color(navbar-active);
     }
   }
-
+  &.sfHover,
+  &:focus,
   &:hover {
     a {
       @include respond-to('medium') {
@@ -221,6 +222,8 @@
   li {
     width: 100%;
 
+    &:focus,
+    &:hover,
     &.sfHover {
       ul {
         @include respond-to('medium') {
@@ -229,6 +232,7 @@
       }
     }
 
+    &:focus,
     &:hover {
       > a {
         @include respond-to('medium') {
@@ -251,11 +255,13 @@
     a {
       width: 100% !important;
       padding-left: 30px;
+      color: color(navbar-active);
 
       @include respond-to('medium') {
         padding: 11px 20px;
       }
 
+      &:focus,
       &:hover {
         @include respond-to('medium') {
           background: color(navbar);
@@ -278,4 +284,3 @@
     }
   }
 }
-
