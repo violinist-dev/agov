@@ -20,8 +20,7 @@
   }
 
   &__date {
-    font-size: 14px;
-    color: color(teaser-date);
+    @extend %date--without-label;
   }
 
   &__image {
