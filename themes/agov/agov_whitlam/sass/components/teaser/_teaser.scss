@@ -19,6 +19,11 @@
     margin-bottom: 5px;
   }
 
+  &__date {
+    font-size: 14px;
+    color: color(teaser-date);
+  }
+
   &__image {
     a:focus {
       outline: none;
