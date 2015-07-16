@@ -13,8 +13,10 @@
   background: color(search-bg);
 
   &--light {
-    color: color(search-color-light);
-    background: transparent;
+    @include respond-to('medium') {
+      color: color(search-color-light);
+      background: transparent;
+    }
   }
 
   &__wrapper {
@@ -29,7 +31,7 @@
         border-bottom: 2px solid color(search-border);
         min-width: 363px;
         width: auto;
-        padding: 0 0 13px 0;
+        padding: 0 0 13px;
       }
     }
   }
@@ -89,7 +91,8 @@
 
 //Fugly selectors.
 
-.search-form, #search-api-page-search-form-default-search {
+.search-form,
+#search-api-page-search-form-default-search {
   @extend %search;
 
   > div {
@@ -97,7 +100,7 @@
   }
 
   .form-item {
-     @extend %search__input-wrapper;
+    @extend %search__input-wrapper;
   }
 
   .form-text {
