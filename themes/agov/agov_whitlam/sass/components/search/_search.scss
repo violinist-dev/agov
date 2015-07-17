@@ -12,6 +12,7 @@
   color: color(search-color);
   background: color(search-bg);
 
+
   &--light {
     @include respond-to('medium') {
       color: color(search-color-light);
@@ -19,7 +20,19 @@
     }
   }
 
+
   &__wrapper {
+    width: 100%;
+    padding: 15px 20px;
+
+    @include respond-to('medium') {
+      position: relative;
+      bottom: 0;
+      padding: 14px 5px 5px;
+    }
+  }
+
+  &__inner-wrapper {
     position: relative;
     display: inline-block;
     padding: 13px;
@@ -30,7 +43,6 @@
       @include respond-to('medium') {
         border-bottom: 2px solid color(search-border);
         min-width: 363px;
-        width: auto;
         padding: 0 0 13px;
       }
     }
@@ -91,12 +103,17 @@
 
 //Fugly selectors.
 
+.block-search,
+.block-search-api-page {
+  @extend %search__wrapper;
+}
+
 .search-form,
 #search-api-page-search-form-default-search {
   @extend %search;
 
   > div {
-    @extend %search__wrapper;
+    @extend %search__inner-wrapper;
   }
 
   .form-item {
@@ -116,7 +133,7 @@
   @extend %search--light;
 
   > div {
-    @extend %search__wrapper--light;
+    @extend %search__inner-wrapper--light;
   }
 
   .form-text {
