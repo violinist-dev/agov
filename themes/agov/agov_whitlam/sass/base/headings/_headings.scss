@@ -18,6 +18,10 @@
   @include leader(1);
   @include trailer(1);
   font-weight: bold;
+
+  &--twitter {
+    @include trailer(.3);
+  }
 }
 
 // Address variable `h1` font-size and margin within `section` and `article`
@@ -56,4 +60,10 @@ h6,
 %h6 {
   @extend %heading;
   @include adjust-font-size-to(.67 * $base-font-size);
+}
+
+
+// Fugly selectors.
+.pane-twitter-block-1 h2 {
+  @extend %heading--twitter;
 }
