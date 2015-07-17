@@ -21,7 +21,7 @@
 .menu-icon {
   position: absolute;
   right: 20px;
-  top: -50px;
+  top: -60px;
   font-size: 15px;
   font-weight: bold;
   color: color(text-bg);
@@ -163,6 +163,7 @@
       color: color(navbar-active);
     }
   }
+
   &.sfHover,
   &:focus,
   &:hover {
