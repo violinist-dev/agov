@@ -178,6 +178,8 @@ function agov_whitlam_preprocess_entity(&$variables) {
 function agov_whitlam_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_api_page_search_form') {
     $form['form']['keys_1']['#placeholder'] = t('Enter your keywords');
+    $form['#prefix'] = '<div class="search__wrapper">';
+    $form['#suffix'] = '</div>';
     unset($form['form']['keys_1']['#title']);
   }
 }
