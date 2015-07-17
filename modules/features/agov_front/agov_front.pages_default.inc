@@ -192,7 +192,7 @@ function agov_front_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'divider',
+      'css_class' => 'divider divider--reduced-bottom-spacing',
     );
     $pane->extras = array();
     $pane->position = 1;
