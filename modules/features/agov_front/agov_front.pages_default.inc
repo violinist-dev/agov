@@ -216,7 +216,7 @@ function agov_front_default_page_manager_pages() {
     $pane->configuration = array(
       'nid' => '4',
       'links' => 0,
-      'leave_node_title' => 0,
+      'leave_node_title' => 1,
       'identifier' => '',
       'build_mode' => 'teaser',
       'link_node_title' => 0,
@@ -245,7 +245,7 @@ function agov_front_default_page_manager_pages() {
     $pane->configuration = array(
       'nid' => '5',
       'links' => 0,
-      'leave_node_title' => 0,
+      'leave_node_title' => 1,
       'identifier' => '',
       'build_mode' => 'teaser',
       'link_node_title' => 0,
@@ -274,7 +274,7 @@ function agov_front_default_page_manager_pages() {
     $pane->configuration = array(
       'nid' => '8',
       'links' => 0,
-      'leave_node_title' => 0,
+      'leave_node_title' => 1,
       'identifier' => '',
       'build_mode' => 'teaser',
       'link_node_title' => 0,
