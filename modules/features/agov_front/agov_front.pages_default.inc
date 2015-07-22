@@ -61,6 +61,9 @@ function agov_front_default_page_manager_pages() {
       'footer-1' => NULL,
       'footer-2' => NULL,
       'footer-3' => NULL,
+      'promo-1' => NULL,
+      'promo-2' => NULL,
+      'promo-3' => NULL,
     ),
   );
   $display->cache = array();
@@ -155,51 +158,16 @@ function agov_front_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'divider divider--bottom',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '8785a12b-42ae-4e3b-ac04-ac8cede1905c';
     $display->content['new-8785a12b-42ae-4e3b-ac04-ac8cede1905c'] = $pane;
     $display->panels['header'][0] = 'new-8785a12b-42ae-4e3b-ac04-ac8cede1905c';
-    $pane = new stdClass();
-    $pane->pid = 'new-4c286249-ef9c-4d76-b07f-41fabe390b5c';
-    $pane->panel = 'header';
-    $pane->type = 'views';
-    $pane->subtype = 'footer_teaser';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '3',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'block',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'divider divider--reduced-bottom-spacing',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '4c286249-ef9c-4d76-b07f-41fabe390b5c';
-    $display->content['new-4c286249-ef9c-4d76-b07f-41fabe390b5c'] = $pane;
-    $display->panels['header'][1] = 'new-4c286249-ef9c-4d76-b07f-41fabe390b5c';
     $pane = new stdClass();
     $pane->pid = 'new-6502df14-5504-4047-bb0a-23f054ef1bf5';
     $pane->panel = 'main';
@@ -238,6 +206,93 @@ function agov_front_default_page_manager_pages() {
     $pane->uuid = '6502df14-5504-4047-bb0a-23f054ef1bf5';
     $display->content['new-6502df14-5504-4047-bb0a-23f054ef1bf5'] = $pane;
     $display->panels['main'][0] = 'new-6502df14-5504-4047-bb0a-23f054ef1bf5';
+    $pane = new stdClass();
+    $pane->pid = 'new-c88ee9c7-05b6-4fea-ae5f-81cf7a1e0fb7';
+    $pane->panel = 'promo-1';
+    $pane->type = 'node';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'nid' => '4',
+      'links' => 0,
+      'leave_node_title' => 0,
+      'identifier' => '',
+      'build_mode' => 'teaser',
+      'link_node_title' => 0,
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c88ee9c7-05b6-4fea-ae5f-81cf7a1e0fb7';
+    $display->content['new-c88ee9c7-05b6-4fea-ae5f-81cf7a1e0fb7'] = $pane;
+    $display->panels['promo-1'][0] = 'new-c88ee9c7-05b6-4fea-ae5f-81cf7a1e0fb7';
+    $pane = new stdClass();
+    $pane->pid = 'new-65ccb7cf-b616-4bcb-a878-37aa5d63ad36';
+    $pane->panel = 'promo-2';
+    $pane->type = 'node';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'nid' => '5',
+      'links' => 0,
+      'leave_node_title' => 0,
+      'identifier' => '',
+      'build_mode' => 'teaser',
+      'link_node_title' => 0,
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '65ccb7cf-b616-4bcb-a878-37aa5d63ad36';
+    $display->content['new-65ccb7cf-b616-4bcb-a878-37aa5d63ad36'] = $pane;
+    $display->panels['promo-2'][0] = 'new-65ccb7cf-b616-4bcb-a878-37aa5d63ad36';
+    $pane = new stdClass();
+    $pane->pid = 'new-093a7ab6-7f30-48e4-b65f-2f8e5e852c98';
+    $pane->panel = 'promo-3';
+    $pane->type = 'node';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'nid' => '8',
+      'links' => 0,
+      'leave_node_title' => 0,
+      'identifier' => '',
+      'build_mode' => 'teaser',
+      'link_node_title' => 0,
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '093a7ab6-7f30-48e4-b65f-2f8e5e852c98';
+    $display->content['new-093a7ab6-7f30-48e4-b65f-2f8e5e852c98'] = $pane;
+    $display->panels['promo-3'][0] = 'new-093a7ab6-7f30-48e4-b65f-2f8e5e852c98';
     $pane = new stdClass();
     $pane->pid = 'new-aaf8dc56-6a54-45ce-85ba-c50091a540b8';
     $pane->panel = 'right-sidebar';
