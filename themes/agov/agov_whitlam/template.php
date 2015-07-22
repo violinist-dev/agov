@@ -72,6 +72,15 @@ function agov_whitlam_preprocess_node(&$variables, $hook) {
   if (function_exists($function)) {
     $function($variables, $hook);
   }
+
+  if ($variables['type'] == 'footer_teaser' &&  $variables['teaser'] == TRUE) {
+    $field_reference_path = $variables['field_reference'][0]['entity']->path['alias'];
+
+    if (isset($field_reference_path)) {
+      $variables['node_url'] = check_url($field_reference_path);
+      unset($variables['content']['field_reference']);
+    }
+  }
 }
 
 /**
@@ -169,6 +178,11 @@ function agov_whitlam_preprocess_entity(&$variables) {
 
     $text = field_get_items($entity_type, $entity, 'field_bean_text');
     $variables['box_text'] = isset($text[0]['value']) ? $text[0]['value'] : NULL;
+
+    // Create a custom theme hook suggestion for beans on the front page.
+    if ($variables['is_front'] == TRUE) {
+      $variables['theme_hook_suggestions'][] = 'bean__icon_block__front';
+    }
   }
 }
 
