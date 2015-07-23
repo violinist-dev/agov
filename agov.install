@@ -891,10 +891,7 @@ function _agov_default_beans() {
       ),
     );
 
-
-
-
-    // Get all the aGov supported themes.
+   // Get all the aGov supported themes.
     $themes = agov_supported_themes();
     agov_core_save_bean('basic_content', 'Footer copyright', 'The copyright message', '', $fields);
   }
