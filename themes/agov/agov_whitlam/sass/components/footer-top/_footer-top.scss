@@ -28,13 +28,22 @@
       margin-top: 0;
     }
 
+    ul {
+      @extend %unstyled-list;
+    }
+
     > ul {
       @extend %layout-3col;
-      @extend %unstyled-list;
 
       > li {
         @extend %layout-3col__col-x;
       }
+    }
+
+    &--nested {
+      padding-left: .3rem;
+      padding-top: .3rem;
+      font-size: 145px;
     }
   }
 }
@@ -45,4 +54,8 @@
 
 .footer-top .block {
   @extend %footer-top__menu;
+
+  ul ul {
+    @extend %footer-top__menu--nested;
+  }
 }
