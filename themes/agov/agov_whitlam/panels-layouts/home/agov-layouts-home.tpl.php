@@ -22,7 +22,8 @@
 
   <?php if ($content['promo-1'] || $content['promo-2'] || $content['promo-3']): ?>
     <div class="layout-3col__full">
-      <div class="layout-3col">
+      <hr>
+     <div class="layout-3col">
 
         <?php if ($content['promo-1']): ?>
           <div class="layout-3col__col-1">
