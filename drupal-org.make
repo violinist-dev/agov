@@ -7,7 +7,7 @@ defaults[projects][subdir] = "contrib"
 
 ; Contrib modules
 
-projects[admin_views][version] = "1.2"
+projects[admin_views][version] = "1.5"
 
 projects[bean][version] = "1.5"
 
