@@ -20,14 +20,44 @@
     </div>
   <?php endif; ?>
 
+  <?php if ($content['promo-1'] || $content['promo-2'] || $content['promo-3']): ?>
+    <div class="layout-3col__full">
+      <hr>
+     <div class="layout-3col">
+
+        <?php if ($content['promo-1']): ?>
+          <div class="layout-3col__col-1">
+            <?php print $content['promo-1'];?>
+          </div>
+        <?php endif; ?>
+
+        <?php if ($content['promo-2']) : ?>
+          <div class="layout-3col__col-2">
+            <?php print $content['promo-2'];?>
+          </div>
+        <?php endif; ?>
+
+        <?php if ($content['promo-3']): ?>
+          <div class="layout-3col__col-3">
+            <?php print $content['promo-3'];?>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+  <?php endif; ?>
+
+
+
   <?php if ($content['main'] || $content['right-sidebar']): ?>
     <div class="layout-3col__left-content">
+      <hr>
       <?php print $content['main'];?>
     </div>
   <?php endif; ?>
 
   <?php if ($content['right-sidebar']): ?>
     <div class="layout-3col__right-sidebar">
+      <hr>
       <?php print $content['right-sidebar'];?>
     </div>
   <?php endif; ?>

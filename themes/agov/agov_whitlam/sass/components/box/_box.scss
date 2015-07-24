@@ -10,18 +10,26 @@
 
 // Icon box
 //
-// .box--icon A variation of the default box icon styling.
-//
 // Markup: box--icon.hbs
 //
-// :hover  - Hover styling.
-//
 // Style guide: components.box.box--icon
+
+// Icon box - with hover
+//
+// Markup: box--icon-with-hover.hbs
+//
+// Style guide: components.box.box--icon-with-hover.hbs
+
+// Icon box - with border
+//
+// Markup: box--icon-with-border.hbs
+//
+// Style guide: components.box.box--icon-with-border.hbs
+
 
 
 .box,
 %box {
-  border: 2px solid color(border);
   padding: 10px;
 
   @include respond-to('small') {
@@ -33,14 +41,27 @@
     margin-top: 0;
   }
 
-  &:hover,
-  &:focus {
-    background-color: color(border);
+  &--with-border {
+    border: 2px solid color(border);
   }
+
+  &--with-hover {
+    &:hover,
+    &:focus {
+      background-color: color(border);
+    }
+  }
+
+
 
   &--icon {
     @extend %box;
     padding: 20px 0;
+
+    &--reduced-top-spacing {
+      padding-top: 2px;
+
+    }
 
     &__left {
       float: left;
@@ -58,3 +79,12 @@
     }
   }
 }
+
+.pane-bean-current-news {
+  .box--icon {
+    &:first-child {
+      @extend %box--icon--reduced-top-spacing;
+    }
+  }
+}
+

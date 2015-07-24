@@ -14,10 +14,6 @@
 
   // If used as a container, add a top margin to the first child.
   > :first-child {
-    @include output-rhythm(margin-top, rhythm(1.6));
-  }
-
-  &--reduced-bottom-spacing {
-    @include output-rhythm(margin-bottom, rhythm(.1));
+    @include output-rhythm(margin-bottom, rhythm(1.6));
   }
 }
