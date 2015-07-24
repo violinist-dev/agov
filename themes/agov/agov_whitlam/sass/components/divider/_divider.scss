@@ -16,14 +16,4 @@
   > :first-child {
     @include output-rhythm(margin-bottom, rhythm(1.6));
   }
-
-  &--bottom {
-    margin-top: 0;
-    border-top: 0;
-    border-bottom: 10px solid color(border);
-  }
-
-  &--reduced-bottom-spacing {
-    @include output-rhythm(margin-bottom, rhythm(.1));
-  }
 }

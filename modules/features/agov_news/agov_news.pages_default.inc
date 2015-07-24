@@ -125,7 +125,7 @@ function agov_news_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'divider',
+      'css_class' => 'box--no-top-spacing',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -307,7 +307,7 @@ function agov_news_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'divider',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 0;

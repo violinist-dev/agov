@@ -52,9 +52,16 @@
     }
   }
 
+
+
   &--icon {
     @extend %box;
     padding: 20px 0;
+
+    &--reduced-top-spacing {
+      padding-top: 2px;
+
+    }
 
     &__left {
       float: left;
@@ -72,3 +79,12 @@
     }
   }
 }
+
+.pane-bean-current-news {
+  .box--icon {
+    &:first-child {
+      @extend %box--icon--reduced-top-spacing;
+    }
+  }
+}
+

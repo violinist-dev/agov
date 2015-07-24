@@ -50,12 +50,14 @@
 
   <?php if ($content['main'] || $content['right-sidebar']): ?>
     <div class="layout-3col__left-content">
+      <hr>
       <?php print $content['main'];?>
     </div>
   <?php endif; ?>
 
   <?php if ($content['right-sidebar']): ?>
     <div class="layout-3col__right-sidebar">
+      <hr>
       <?php print $content['right-sidebar'];?>
     </div>
   <?php endif; ?>
