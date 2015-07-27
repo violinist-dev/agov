@@ -36,6 +36,7 @@
   &__image-wide {
     @include respond-to('medium') {
       float: left;
+      width: 30%;
     }
 
     img {
