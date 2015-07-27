@@ -247,7 +247,7 @@ function agov_publications_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'teaser_thumbnail',
+          'image_style' => 'teaser_medium',
         ),
         'type' => 'image',
         'weight' => 0,
