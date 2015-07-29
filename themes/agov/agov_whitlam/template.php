@@ -144,9 +144,15 @@ function agov_whitlam_preprocess_region(&$variables, $hook) {
  *   The name of the template being rendered ("block" in this case.)
  */
 function agov_whitlam_preprocess_block(&$variables, $hook) {
+  $block = $variables['elements']['#block'];
+
   // Add a border to all the blocks in the sidebar_second region.
-  if ($variables['elements']['#block']->region === 'sidebar_second') {
+  if ($block->region === 'sidebar_second') {
     $variables['classes_array'][] = 'divider';
+  }
+
+  if ($block->delta === 'menu-quick-links') {
+    $variables['classes_array'][] = 'nav-menu__wrapper';
   }
 }
 
