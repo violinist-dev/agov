@@ -19,21 +19,6 @@ function agov_image_styles_ctools_plugin_api($module = NULL, $api = NULL) {
 function agov_image_styles_image_default_styles() {
   $styles = array();
 
-  // Exported image style: article_page_620x349.
-  $styles['article_page_620x349'] = array(
-    'effects' => array(
-      1 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 620,
-          'height' => 349,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'article_page_620x349',
-  );
-
   // Exported image style: full_page_wide.
   $styles['full_page_wide'] = array(
     'label' => 'Full page wide',

@@ -10,5 +10,4 @@ features[ctools][] = file_entity:file_default_displays:1
 features[features_api][] = api:2
 features[file_display][] = image__default__file_image
 features[file_display][] = image__media_small__file_image
-features[image][] = article_page_620x349
 features[image][] = full_page_wide
