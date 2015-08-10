@@ -21,45 +21,6 @@ function agov_blog_views_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_image_default_styles().
- */
-function agov_blog_image_default_styles() {
-  $styles = array();
-
-  // Exported image style: blog_teaser_thumbnail.
-  $styles['blog_teaser_thumbnail'] = array(
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 64,
-          'height' => 64,
-        ),
-        'weight' => 2,
-      ),
-    ),
-    'label' => 'blog_teaser_thumbnail',
-  );
-
-  // Exported image style: teaser_thumbnail.
-  $styles['teaser_thumbnail'] = array(
-    'label' => 'teaser thumbnail (205x115)',
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 205,
-          'height' => 115,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  return $styles;
-}
-
-/**
  * Implements hook_node_info().
  */
 function agov_blog_node_info() {

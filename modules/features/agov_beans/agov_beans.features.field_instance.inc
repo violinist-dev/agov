@@ -209,7 +209,7 @@ function agov_beans_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'image_and_text_bean_small',
+          'image_style' => 'thumbnail',
         ),
         'type' => 'image',
         'weight' => 0,

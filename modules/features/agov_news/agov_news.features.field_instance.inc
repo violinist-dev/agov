@@ -320,7 +320,7 @@ The <em>body</em> field is used for the main article content.',
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'large',
+          'image_style' => 'teaser_medium',
         ),
         'type' => 'image',
         'weight' => 0,

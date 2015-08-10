@@ -88,7 +88,7 @@ function agov_promotion_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'large',
+          'image_style' => 'full_page_wide',
         ),
         'type' => 'image',
         'weight' => 1,
