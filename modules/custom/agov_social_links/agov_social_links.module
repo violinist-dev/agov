@@ -21,6 +21,11 @@ define('AGOV_SOCIAL_LINKS_TWITTER_DEFAULT', 'http://www.twitter.com/PreviousNext
 define('AGOV_SOCIAL_LINKS_YOUTUBE_DEFAULT', '');
 
 /**
+ * Define the linkedin default.
+ */
+define('AGOV_SOCIAL_LINKS_LINKEDIN_DEFAULT', '');
+
+/**
  * Define the Vimeo default.
  */
 define('AGOV_SOCIAL_LINKS_VIMEO_DEFAULT', '');
@@ -48,6 +53,7 @@ function agov_social_links_services_list() {
     'facebook',
     'twitter',
     'youtube',
+    'linkedin',
     'vimeo',
     'flickr',
     'rss',
@@ -63,6 +69,7 @@ function agov_social_links_get_fontawesome($service) {
     'facebook' => 'fa-facebook',
     'twitter' => 'fa-twitter',
     'youtube' => 'fa-youtube',
+    'linkedin' => 'fa-linkedin',
     'vimeo' => 'fa-vimeo-square',
     'flickr' => 'fa-flickr',
     'rss' => 'fa-rss',
