@@ -19,7 +19,7 @@
   }
 
   &__link {
-    &.is-active,
+    &.active,
     &-is-active {
       text-decoration: none;
       font-weight: bold;
@@ -48,4 +48,10 @@
   ul {
     @extend %nav-menu__nested-list;
   }
+}
+
+//Drupal selectors.
+
+#block-menu-block-agov-menu-block-sidebar > .menu {
+  @extend %nav-menu;
 }
