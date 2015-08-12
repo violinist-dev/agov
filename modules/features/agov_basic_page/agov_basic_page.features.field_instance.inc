@@ -125,9 +125,8 @@ The <em>body</em> field is used for the main article content.
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
+        'type' => 'hidden',
         'weight' => 2,
       ),
     ),
