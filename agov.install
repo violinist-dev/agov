@@ -617,7 +617,7 @@ function _agov_default_blocks() {
     '<front>',
     'news-media',
   ));
-  agov_core_insert_block('menu_block', 'agov_menu_block-sidebar', $themes, 'sidebar_second', -2, BLOCK_VISIBILITY_NOTLISTED, $exclude_paths, 'In this section');
+  agov_core_insert_block('menu_block', 'agov_menu_block-sidebar', $themes, 'sidebar_second', -2, BLOCK_VISIBILITY_NOTLISTED, $exclude_paths, '<none>');
   agov_core_insert_block('menu', 'menu-quick-links', $themes, 'sidebar_second', 0, BLOCK_VISIBILITY_NOTLISTED, $exclude_paths, 'Quicklinks');
   agov_core_insert_block('agov_social_links', 'services', $themes, 'sidebar_second', 1, BLOCK_VISIBILITY_NOTLISTED, $exclude_paths, 'Stay up to date');
 

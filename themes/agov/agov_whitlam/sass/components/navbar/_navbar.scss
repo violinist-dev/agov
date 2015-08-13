@@ -86,10 +86,6 @@
   }
 }
 
-.block-superfish {
-  @extend %navbar;
-}
-
 .navbar,
 %navbar {
   width: 100%;
@@ -132,6 +128,14 @@
     width: auto;
   }
 
+  &-is-active {
+    background: color(navbar);
+  }
+
+  &-active-trail {
+    color: color(navbar-active) !important;
+  }
+
   > a {
     color: color(navbar);
     font-family: $font-body;
@@ -159,8 +163,7 @@
     &.active,
     &:hover,
     &:focus {
-      background: color(navbar);
-      color: color(navbar-active);
+      @extend %menu__item-is-active;
     }
   }
 
@@ -284,4 +287,18 @@
       padding-left: 40px;
     }
   }
+}
+
+// Drupal selectors.
+
+.block-superfish {
+  @extend %navbar;
+}
+
+.sf-main-menu > li.active-trail {
+  @extend %menu__item-is-active;
+
+    a {
+      @extend %menu__item-active-trail;
+    }
 }
