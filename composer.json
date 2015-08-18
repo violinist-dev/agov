@@ -46,7 +46,7 @@
     "composer/installers": "~1.0"
   },
   "require-dev": {
-    "drush/drush": "6.5.0",
+    "drush/drush": "dev-master",
     "phing/phing": "~2.11@dev",
     "previousnext/phing-phpqatools": "dev-master",
     "previousnext/phing-behat": "0.0.4"
@@ -58,6 +58,7 @@
   },
   "extra": {
     "branch-alias": {
+      "dev-8.x-1.x": "8.1.x-dev",
       "dev-7.x-3.x": "7.3.x-dev",
       "dev-7.x-2.x": "7.2.x-dev",
       "dev-7.x-1.x": "7.1.x-dev"
