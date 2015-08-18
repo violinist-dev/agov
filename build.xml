@@ -33,7 +33,7 @@
   <!-- Database -->
   <property name="db.querystring" value="mysql://drupal:drupal@localhost/local" override="true" />
 
-  <!-- These allow developers to override configuration on
+  <!-- These allow de`elopers to override configuration on
        a per environment basis -->
   <property file="build.properties" override="true"/>
 
@@ -97,12 +97,12 @@
          Otherwise we will end up with a recursive loop. -->
     <symlink link="${app.dir}/${app.profile.dir}">
       <fileset dir="${project.basedir}">
-        <include name="agov.info" />
+        <include name="agov.info.yml" />
         <include name="agov.install" />
         <include name="agov.profile" />
         <include name="modules" />
         <include name="themes" />
-        <include name="images" />
+        <include name="config" />
         <include name="drupal-org.make" />
         <include name="drupal-org-core.make" />
       </fileset>
@@ -128,20 +128,6 @@
     <!-- Install the site -->
     <exec dir="${app.dir}"
           command="${drush.cmd} site-install ${app.profile.name} -y --site-name=${app.name} --account-pass='${app.password}' --db-url=${db.querystring} ${app.profile.options}"
-          logoutput="true"
-          passthru="true" />
-
-    <!-- Standard configuration -->
-    <exec dir="${app.dir}"
-          command="${drush.cmd} vset -y file_public_path '${app.files.public}'"
-          logoutput="true"
-          passthru="true" />
-    <exec dir="${app.dir}"
-          command="${drush.cmd} vset -y file_temporary_path '${app.files.tmp}'"
-          logoutput="true"
-          passthru="true" />
-    <exec dir="${app.dir}"
-          command="${drush.cmd} vset -y file_private_path '${app.files.private}'"
           logoutput="true"
           passthru="true" />
   </target>
