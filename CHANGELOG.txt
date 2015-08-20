@@ -1,4 +1,13 @@
 aGov Changelog
+==============
+
+7.x-2.1
+=======
+
+* 39adf51: Update .pnxci.yml - Nick Schuch
+* 1241e64: Module updates - Kim Pepper
+* e0f64cf: Removes redirect patch - Kim Pepper
+* ce6261a: [security] Drupal core 7.39 and ctools 1.9 - Kim Pepper
 
 7.x-2.0
 =======
