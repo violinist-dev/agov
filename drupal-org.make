@@ -20,7 +20,7 @@ projects[chosen][patch][] = http://drupal.org/files/2021639-pin-chosen-26.patch
 
 projects[context][version] = "3.6"
 
-projects[ctools][version] = "1.4"
+projects[ctools][version] = "1.9"
 
 projects[date][version] = "2.8"
 
