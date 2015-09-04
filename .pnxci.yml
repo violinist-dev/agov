@@ -31,10 +31,10 @@ deploy_setup: &deploy_setup
   - npm install --loglevel silent
   - mkdir -p app/sites/default/files/tmp
   - mkdir -p app/sites/default/private
-  - bin/phing build -Dapp.password=$PASSWORD
+  # Generate assets.
   - bin/phing gulp:build
   # Setup the remote repository.
-  - git remote add drupal git remote add other pnx-bot@git.drupal.org:project/agov.git && git fetch drupal
+  - git remote add drupal pnx-bot@git.drupal.org:project/agov.git && git fetch drupal
   - git config --global user.email "admin@previousnext.com.au" && git config --global user.name "PreviousNext"
   # Add and commit the compiled assets.
   - git add -f themes/agov styleguide
