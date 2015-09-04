@@ -37,7 +37,7 @@ deploy_setup: &deploy_setup
   - git remote add drupal pnx-bot@git.drupal.org:project/agov.git && git fetch drupal
   - git config --global user.email "admin@previousnext.com.au" && git config --global user.name "PreviousNext"
   # Add and commit the compiled assets.
-  - git add -f themes/agov styleguide
+  - git add themes/agov styleguide
   - git commit -m "Committing compiled assets and styleguide for Drupal.org"
 
 deploy_teardown: &deploy_teardown
