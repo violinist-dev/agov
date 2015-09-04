@@ -60,11 +60,11 @@
     <if>
       <available file="${app.dir}" type='dir' />
       <then>
-        <exec command="sudo chmod -R 2775 ${app.dir}"
+        <exec command="chmod -R 2775 ${app.dir}"
               logoutput="true"
               passthru="true"
               checkreturn="true" />
-        <exec command="sudo rm -fR ${app.dir}"
+        <exec command="rm -fR ${app.dir}"
               logoutput="true"
               passthru="true"
               checkreturn="true" />

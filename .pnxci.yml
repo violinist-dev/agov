@@ -1,23 +1,58 @@
 application: previousnext/lamp
 
+prepare: &prepare
+  - composer install --prefer-dist --dev
+  - bundle install --path vendor/bundle
+  - npm install
+  - mkdir -p app/sites/default/files/tmp
+  - mkdir -p app/sites/default/private
+  - bin/phing build -Dapp.password=$PASSWORD
+  - bin/phing gulp:build
+  - bin/phing styleguide:link
+
 test: &test
-  steps:
-    - composer install --prefer-dist --dev
-    - bundle install --path vendor/bundle
-    - npm install
-    - bin/phing build -Dapp.password=$PASSWORD
-    - bin/phing gulp:build
-    - bin/phing styleguide:link
-    - bin/phing test
-    # @TODO Enable these once linting errors are fixed.
-    # - node_modules/.bin/gulp lint:js-with-fail
-    # - node_modules/.bin/gulp lint:sass-with-fail
-    - mkdir -p app/sites/default/files/tmp
-    - mkdir -p app/sites/default/private
+  - bin/phing test
+  # @TODO Enable these once linting errors are fixed.
+  # - node_modules/.bin/gulp lint:js-with-fail
+  # - node_modules/.bin/gulp lint:sass-with-fail
 
 test_pr:
-  <<: *test
+  setup: *prepare
+  steps: *test
 
 test_head:
-  <<: *test
+  setup: *prepare
+  steps: *test
 
+deploy_setup: &deploy_setup
+  # Build the dependencies.
+  - composer install --prefer-dist --no-progress
+  - bundle install --path vendor/bundle
+  - npm install --loglevel silent
+  - mkdir -p app/sites/default/files/tmp
+  - mkdir -p app/sites/default/private
+  - bin/phing build -Dapp.password=$PASSWORD
+  - bin/phing gulp:build
+  # Setup the remote repository.
+  - git remote add drupal git remote add other pnx-bot@git.drupal.org:project/agov.git && git fetch drupal
+  - git config --global user.email "admin@previousnext.com.au" && git config --global user.name "PreviousNext"
+  # Add and commit the compiled assets.
+  - git add -f themes/agov styleguide
+  - git commit -m "Committing compiled assets and styleguide for Drupal.org"
+
+deploy_teardown: &deploy_teardown
+  - git remote remove drupal
+
+deploy_7_1:
+  steps:
+    # Ignore for now.
+
+deploy_7_2:
+  steps:
+    # Ignore for now.
+
+deploy_7_3:
+  setup: *deploy_setup
+  steps:
+    - git push -f drupal 7.x-3.x
+  teardown: *deploy_teardown
