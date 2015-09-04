@@ -29,6 +29,8 @@ deploy_setup: &deploy_setup
   - composer install --prefer-dist --no-progress
   - bundle install --path vendor/bundle
   - npm install --loglevel silent
+  # We need an app dir or gulp will be unhappy.
+  - mkdir app
   # Setup the remote repository.
   - git remote add drupal pnx-bot@git.drupal.org:project/agov.git && git fetch drupal
   - git config --global user.email "admin@previousnext.com.au" && git config --global user.name "PreviousNext"
