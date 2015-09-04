@@ -32,8 +32,10 @@ deploy_setup: &deploy_setup
   # We need an app dir or gulp will be unhappy.
   - mkdir app
   # Setup the remote repository.
-  - git remote add drupal pnx-bot@git.drupal.org:project/agov.git && git fetch drupal
-  - git config --global user.email "admin@previousnext.com.au" && git config --global user.name "PreviousNext"
+  - git remote add drupal pnx-bot@git.drupal.org:project/agov.git
+  - git fetch drupal
+  - git config --global user.email "admin@previousnext.com.au"
+  - git config --global user.name "PreviousNext"
 
 deploy_teardown: &deploy_teardown
   # Remove the remote repository.
