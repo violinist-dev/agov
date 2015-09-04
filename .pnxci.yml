@@ -29,18 +29,12 @@ deploy_setup: &deploy_setup
   - composer install --prefer-dist --no-progress
   - bundle install --path vendor/bundle
   - npm install --loglevel silent
-  - mkdir -p app/sites/default/files/tmp
-  - mkdir -p app/sites/default/private
-  # Generate assets.
-  - bin/phing gulp:build
   # Setup the remote repository.
   - git remote add drupal pnx-bot@git.drupal.org:project/agov.git && git fetch drupal
   - git config --global user.email "admin@previousnext.com.au" && git config --global user.name "PreviousNext"
-  # Add and commit the compiled assets.
-  - git add themes/agov styleguide
-  - git commit -m "Committing compiled assets and styleguide for Drupal.org"
 
 deploy_teardown: &deploy_teardown
+  # Remove the remote repository.
   - git remote remove drupal
 
 deploy_7_1:
@@ -54,5 +48,14 @@ deploy_7_2:
 deploy_7_3:
   setup: *deploy_setup
   steps:
-    - git push -f drupal 7.x-3.x
+    # Update local build before we do anything else.
+    - git rebase drupal/7.x-3.x
+    # Generate assets.
+    - bin/phing gulp:build
+    # Remove sass cache.
+    - find themes/agov -type d -name .sass-cache -exec rm -rf {} +
+    # Add and commit the compiled assets.
+    - git add -Af themes/agov styleguide
+    - git commit -m "Committing compiled assets and styleguide for Drupal.org"
+    - git push drupal 7.x-3.x
   teardown: *deploy_teardown
