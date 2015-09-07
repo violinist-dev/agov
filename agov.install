@@ -891,7 +891,7 @@ function _agov_default_beans() {
       ),
     );
 
-   // Get all the aGov supported themes.
+    // Get all the aGov supported themes.
     $themes = agov_supported_themes();
     agov_core_save_bean('basic_content', 'Footer copyright', 'The copyright message', '', $fields);
   }
@@ -899,17 +899,17 @@ function _agov_default_beans() {
     drupal_set_message('aGov Core was not available. Some of your blocks could not be created.', 'error');
   }
 
-    // Create News and Media intro text.
-    $fields = array(
-      'field_bean_body' => array(
-        '0' => array(
-          'value' => '<p>Intro text style praesent quis dolor justo vestibulum sit amet porta felis, proin interdum finibus ligula id tincidunt. Phasellus finibus pretium erat at alique natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>',
-           'format' => 'rich_text',
-         ),
+  // Create News and Media intro text.
+  $fields = array(
+    'field_bean_body' => array(
+      '0' => array(
+        'value' => '<p>Intro text style praesent quis dolor justo vestibulum sit amet porta felis, proin interdum finibus ligula id tincidunt. Phasellus finibus pretium erat at alique natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>',
+        'format' => 'rich_text',
       ),
-    );
+    ),
+  );
 
-   agov_core_save_bean('basic_content', 'news and media intro text', 'News and Media intro text', '', $fields);
+  agov_core_save_bean('basic_content', 'news and media intro text', 'News and Media intro text', '', $fields);
 }
 
 /**
@@ -1514,5 +1514,6 @@ function _agov_save_icon_bean(array $bean) {
       ),
     ),
   );
-  agov_core_save_bean('icon_block', $bean['name'], $bean['description'], $bean['title'], $fields);
+  $description = isset($bean['description']) ? $bean['description'] : '';
+  agov_core_save_bean('icon_block', $bean['name'], $description, $bean['title'], $fields);
 }
