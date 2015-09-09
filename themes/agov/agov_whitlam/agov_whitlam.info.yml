@@ -6,8 +6,7 @@ package: Core
 # core: 8.x
 
 libraries:
-  - classy/base
-  - core/normalize
+  - agov_whitlam/base
 
 # Information added by Drupal.org packaging script on 2015-08-03
 version: '8.0.0-beta14'
