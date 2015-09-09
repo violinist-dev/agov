@@ -1,0 +1,97 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+
+<div class="layout-container">
+
+  <header role="banner" class="header">
+    <div class="layout-center header__inner clearfix">
+      {% if logo %}
+        <a class="header__logo" href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
+          <img class="header__logo-image" src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+        </a>
+      {% endif %}
+
+      {% if site_name or site_slogan %}
+        <div class="header__name-and-slogan">
+
+        {% if title %}
+          <h1 class="header__site-name visually-hidden">
+            <a class="header__site-link" href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
+              <span>{{ site_name }}</span>
+            </a>
+          </h1>
+        {% endif %}
+
+        {% if site_slogan %}
+          <div class="header__site-slogan">{{ site_slogan }}</div>
+        {% endif %}
+
+        </div>{# ./name-and-slogan #}
+      {% endif %}
+
+      <div class="header__region region region-header">
+        {{ page.header }}
+      </div>
+
+    </div>
+  </header>
+
+
+  {{ page.primary_menu }}
+  {{ page.secondary_menu }}
+
+  {{ page.breadcrumb }}
+
+  {{ page.highlighted }}
+
+  {{ page.help }}
+
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    <div class="layout-content">
+      {{ page.highlighted }}
+
+      {{ title_prefix }}
+      {% if title %}
+        <h1>{{ title }}</h1>
+      {% endif %}
+      {{ title_suffix }}
+
+      {{ tabs }}
+
+      {% if action_links %}
+        <nav class="action-links">{{ action_links }}</nav>
+      {% endif %}
+
+      {{ page.content }}
+    </div>{# /.layout-content #}
+
+    {% if page.sidebar_first %}
+      <aside class="layout-sidebar-first" role="complementary">
+        {{ page.sidebar_first }}
+      </aside>
+    {% endif %}
+
+    {% if page.sidebar_second %}
+      <aside class="layout-sidebar-second" role="complementary">
+        {{ page.sidebar_second }}
+      </aside>
+    {% endif %}
+
+  </main>
+
+  {% if page.footer %}
+    <footer role="contentinfo">
+      {{ page.footer }}
+    </footer>
+  {% endif %}
+
+</div>{# /.layout-container #}
