@@ -1,4 +1,4 @@
-name: aGov Eight
+name: aGov Whitlam
 type: theme
 description: 'Drupal 8 aGov Theme.'
 package: Core
@@ -14,3 +14,4 @@ version: '8.0.0-beta14'
 core: '8.x'
 project: 'drupal'
 datestamp: 1438593763
+screenshot: screenshot.jpg
