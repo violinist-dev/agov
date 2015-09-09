@@ -1,5 +1,6 @@
 name: aGov Whitlam
 type: theme
+base theme: classy
 description: 'Drupal 8 aGov Theme.'
 package: Core
 # version: VERSION
