@@ -15,3 +15,5 @@ core: '8.x'
 project: 'drupal'
 datestamp: 1438593763
 screenshot: screenshot.jpg
+stylesheets-remove:
+  - '@system/css/system.theme.css'
