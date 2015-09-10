@@ -111,6 +111,7 @@ $font-monospace:  $menlo;
 $chroma: define-default-color-scheme('Descriptive color names for use in "functional" color names below.');
 $chroma: add-colors((
   white:                  #fff,
+  white-light:            #fff,
   white-smoke:            #f3f3f3,
   grey-extra-light:       #e8e8e8,
   grey-light:             #ccc,
