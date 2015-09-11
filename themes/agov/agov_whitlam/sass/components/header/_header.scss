@@ -6,6 +6,8 @@
 //
 // Style guide: components.header
 
+@import "components/inline-links/inline-links";
+
 .header,
 %header {
   background: color(header-background);
@@ -35,8 +37,13 @@
   right: 0;
   font-size: .8rem;
 
-  .links.inline {
+  ul {
+    @extend %inline-links;
     margin: 0;
+  }
+
+  li {
+    @extend %inline-links__item;
   }
 
   a {

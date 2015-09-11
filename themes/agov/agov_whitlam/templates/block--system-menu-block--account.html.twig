@@ -33,23 +33,18 @@
  * @see search_preprocess_block()
  */
 #}
+
 {%
-  set classes = [
-    'search__wrapper'
-  ]
+set classes = [
+'header__secondary-menu'
+]
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  <div class="search">
-    <div class="search__inner-wrapper">
-      {{ title_prefix }}
-      {% if label %}
+    {% if label %}
         <h2 class="visually-hidden">{{ label }}</h2>
-      {% endif %}
-      {{ title_suffix }}
-      {% block content %}
-        {{ content }}
-      {% endblock %}
-    </div>
-  </div>
+    {% endif %}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
 </div>

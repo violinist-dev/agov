@@ -9,14 +9,14 @@ dependencies:
 id: searchform
 theme: agov_whitlam
 region: header
-weight: -1
+weight: 0
 provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
   label: 'Search form'
   provider: search
-  label_display: '0'
+  label_display: visible
   cache:
     max_age: -1
 visibility: {  }
