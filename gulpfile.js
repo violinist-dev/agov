@@ -50,7 +50,7 @@ options.styleGuide = {
     path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css')
   ],
   js: [
-    '/misc/jquery.js',
+    '/core/assets/vendor/jquery/jquery.min.js',
     path.relative(options.rootPath.styleGuide, options.theme.js + 'superfish.min.js'),
     path.relative(options.rootPath.styleGuide, options.theme.js + 'script-styleguide.js')
   ],
