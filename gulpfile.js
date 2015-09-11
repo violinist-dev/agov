@@ -67,10 +67,12 @@ options.scssLint = {
 // Define the paths to the JS files to lint.
 options.eslint = {
   files  : [
-    'themes/agov/js/script.js',
-    // 'themes/agov/**/*.js',
-    'modules/custom/**/*.js',
-    'modules/features/**/*.js'
+    options.theme.js + '**/*.js',
+    'app/sites/all/modules/custom/**/*.js',
+    'app/sites/all/modules/features/**/*.js',
+    '!' + options.theme.js + '**/*.min.js',
+    '!app/sites/all/modules/custom/**/*.min.js',
+    '!app/sites/all/modules/features/**/*.min.js'
   ]
 };
 
@@ -148,6 +150,12 @@ gulp.task('styleguide:chroma-kss-markup', $.shell.task(
     'rm css/style-guide/chroma-kss-markup.hbs.tmp'
   ],
   {cwd: options.theme.root}
+));
+
+// Debug the generation of the style guide with the --verbose flag.
+gulp.task('styleguide:debug', ['clean:styleguide', 'styleguide:chroma-kss-markup'], $.shell.task(
+  ['kss-node <%= flags %>'],
+  {templateData: {flags: flags.join(' ') + ' --verbose'}}
 ));
 
 // #########################

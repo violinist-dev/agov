@@ -12,8 +12,8 @@ prepare: &prepare
 
 test: &test
   - bin/phing test
-  # @TODO Enable these once linting errors are fixed.
-  # - node_modules/.bin/gulp lint:js-with-fail
+  - node_modules/.bin/gulp lint:js-with-fail
+  # @TODO Enable once linting errors are fixed.
   # - node_modules/.bin/gulp lint:sass-with-fail
 
 test_pr:

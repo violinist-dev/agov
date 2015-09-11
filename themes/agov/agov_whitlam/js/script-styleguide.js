@@ -12,34 +12,34 @@
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, window, document) {
 
-  "use strict";
+  'use strict';
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     $('#demo').superfish({
       // Add options here if required.
       delay: 0
     });
 
     // Menu responsive
-    $(".navbar").prepend('<div class="menu-icon open active">menu<i class="fa fa fa-bars"></i></div><div class="menu-icon close">close<i class="fa fa-close"></i></div>');
+    $('.navbar').prepend('<div class="menu-icon open active">menu<i class="fa fa fa-bars"></i></div><div class="menu-icon close">close<i class="fa fa-close"></i></div>');
 
-    $(".navbar a.menuparent").after('<div class="sub-menu-icon"><i class="fa fa-plus"></i></div>');
+    $('.navbar a.menuparent').after('<div class="sub-menu-icon"><i class="fa fa-plus"></i></div>');
 
-    $(".menu-icon.open").click(function() {
-      $(this).removeClass("active");
-      $(".menu-icon.close").addClass("active");
-      $(".sf-menu").addClass("active");
+    $('.menu-icon.open').click(function () {
+      $(this).removeClass('active');
+      $('.menu-icon.close').addClass('active');
+      $('.sf-menu').addClass('active');
     });
 
-    $(".menu-icon.close").click(function() {
-      $(this).removeClass("active");
-      $(".menu-icon.open").addClass("active");
-      $(".sf-menu").removeClass("active");
+    $('.menu-icon.close').click(function () {
+      $(this).removeClass('active');
+      $('.menu-icon.open').addClass('active');
+      $('.sf-menu').removeClass('active');
     });
 
-    $(".sub-menu-icon").click(function() {
-      $(this).toggleClass("active");
-      $(this).next().toggleClass("active");
+    $('.sub-menu-icon').click(function () {
+      $(this).toggleClass('active');
+      $(this).next().toggleClass('active');
     });
   });
 
