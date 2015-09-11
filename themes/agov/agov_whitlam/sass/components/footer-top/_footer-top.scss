@@ -1,3 +1,6 @@
+// @TODO: Refactor to reduce the excessive nesting.
+// scss-lint:disable SelectorDepth
+
 // Dependencies.
 @import 'layouts/layout-3col/layout-3col';
 @import 'components/unstyled-list/unstyled-list';
@@ -17,10 +20,8 @@
   padding-top: 60px;
   padding-bottom: 25px;
 
-  // @TODO: Fix this bug in Chroma.
-  // scss-lint:disable ColorKeyword, ColorVariable
   &__menu {
-    border-top: 2px solid color(white);
+    border-top: 2px solid color('white');
     margin-top: 25px;
 
     &:first-child {

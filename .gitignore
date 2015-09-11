@@ -13,7 +13,7 @@ Gemfile.lock
 
 # Exclude build files created by gulp and kss-node.
 /themes/agov/agov_whitlam/css/
-/styleguide/*
+/styleguide
 
 # Exclude files added by drush make
 /libraries/*
