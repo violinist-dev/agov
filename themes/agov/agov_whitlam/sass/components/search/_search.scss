@@ -10,7 +10,7 @@
 %search__wrapper {
   @include box-sizing(content-box);
   width: 100%;
-  background: color(white-light);
+  background: color('white');
   margin: 20px -35px -25px;
   padding: 20px 35px;
 
@@ -50,7 +50,7 @@
 
     &:hover,
     &:focus {
-      border-color: color(white-light);
+      border-color: color('white');
     }
   }
 
