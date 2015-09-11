@@ -156,7 +156,7 @@
         <mkdir dir="${app.styleguide.dir}" />
       </then>
     </if>
-    <symlink link="${project.basedir}/styleguide" target="${app.styleguide.dir}" />
+    <symlink link="${project.basedir}/app/styleguide" target="${app.styleguide.dir}" />
   </target>
 
   <target name="login" description="Generate a one-time login link">
