@@ -147,7 +147,7 @@
   </target>
 
   <target name="styleguide:link" description="Link the styleguide to make it publicly available.">
-    <symlink link="${app.dir}/styleguide" target="${project.basedir}/styleguide" />
+    <symlink link="${app.dir}/${app.profile.dir}/styleguide" target="${project.basedir}/styleguide" />
   </target>
 
   <target name="login" description="Generate a one-time login link">
