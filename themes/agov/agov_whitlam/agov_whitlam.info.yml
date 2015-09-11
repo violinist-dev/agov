@@ -1,0 +1,12 @@
+name: aGov Whitlam
+description: 'Drupal 8 aGov Theme.'
+screenshot: logo.png
+
+type: theme
+package: aGov
+core: 8.x
+
+base theme: classy
+
+libraries:
+  - agov_whitlam/component-library
