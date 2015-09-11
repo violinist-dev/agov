@@ -17,3 +17,7 @@ datestamp: 1438593763
 screenshot: screenshot.jpg
 stylesheets-remove:
   - '@system/css/system.theme.css'
+regions:
+  header: Header
+  content: Content
+  footer: Footer
