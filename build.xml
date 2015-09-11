@@ -146,7 +146,7 @@
           passthru="true" />
   </target>
 
-  <target name="styleguide:link" description="Link the styleguide to make it publicly available.">
+  <target name="styleguide:link" description="Link the style guide to make it publicly available.">
     <symlink link="${app.dir}/${app.profile.dir}/styleguide" target="${project.basedir}/styleguide" />
   </target>
 
@@ -157,7 +157,7 @@
           passthru="true" />
   </target>
 
-  <target name="gulp:build" description="Generate all compiled SASS and styleguide resources.">
+  <target name="gulp:build" description="Generate all compiled Sass and style guide resources.">
     <exec dir="${app.dir}"
           command="${gulp.cmd} build"
           logoutput="true"
