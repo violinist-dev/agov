@@ -7,8 +7,8 @@ prepare: &prepare
   - mkdir -p app/sites/default/files/tmp
   - mkdir -p app/sites/default/private
   - bin/phing build -Dapp.password=$PASSWORD
-  - bin/phing styleguide:link
   - bin/phing gulp:build
+  - bin/phing styleguide:link
 
 test: &test
   - bin/phing test

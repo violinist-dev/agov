@@ -21,7 +21,6 @@
   <property name="app.files.public"    value="sites/default/files"                       override="true" />
   <property name="app.files.tmp"       value="sites/default/files/tmp"                   override="true" />
   <property name="app.files.private"   value="sites/default/private"                     override="true" />
-  <property name="app.styleguide.dir"  value="${project.basedir}/app/${app.profile.dir}/styleguide" override="true" />
   <!-- This should get overidden for secure builds. -->
   <property name="app.password"        value="password"                                  override="true" />
 
@@ -148,15 +147,7 @@
   </target>
 
   <target name="styleguide:link" description="Link the styleguide to make it publicly available.">
-    <if>
-      <not>
-        <available file='${app.styleguide.dir}' type='dir' property="styleguide.exists" />
-      </not>
-      <then>
-        <mkdir dir="${app.styleguide.dir}" />
-      </then>
-    </if>
-    <symlink link="${project.basedir}/app/styleguide" target="${app.styleguide.dir}" />
+    <symlink link="${app.dir}/${app.profile.dir}/styleguide" target="${project.basedir}/styleguide" />
   </target>
 
   <target name="login" description="Generate a one-time login link">
