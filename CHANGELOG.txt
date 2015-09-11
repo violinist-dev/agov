@@ -1,6 +1,6 @@
 aGov Changelog
 
-7.x-3.0-alpha1
+8.x-1.0-alpha1
 ==============
 
-* First release of new base theme agov_whitlam including styleguide
+* Port to Drupal 8
