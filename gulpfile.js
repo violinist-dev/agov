@@ -145,7 +145,7 @@ gulp.task('styleguide:chroma-kss-markup', $.shell.task(
   [
     // @TODO: mkdir and head are UNIX utils. Replace this after Chroma is refactored.
     'mkdir -p css/style-guide',
-    'bundle exec sass --compass --scss --sourcemap=none --style expanded sass/style-guide/chroma-kss-markup.scss css/style-guide/chroma-kss-markup.hbs.tmp',
+    'bundle exec sass --no-cache --compass --scss --sourcemap=none --style expanded sass/style-guide/chroma-kss-markup.scss css/style-guide/chroma-kss-markup.hbs.tmp',
     'head -n 2  css/style-guide/chroma-kss-markup.hbs.tmp | tail -n 1 > css/style-guide/chroma-kss-markup.hbs',
     'rm css/style-guide/chroma-kss-markup.hbs.tmp'
   ],
