@@ -34,7 +34,7 @@ GEM
       sass (>= 3.1)
     sassy-maps (0.4.0)
       sass (~> 3.3)
-    scss_lint (0.40.1)
+    scss_lint (0.41.0)
       rainbow (~> 2.0)
       sass (~> 3.4.1)
     zen-grids (2.0.0.beta.3)
@@ -45,15 +45,15 @@ PLATFORMS
 
 DEPENDENCIES
   breakpoint (~> 2.5.0)
-  chroma-sass (~> 1.0.0.beta.2)
+  chroma-sass (~> 1.0)
   compass (~> 1.0)
   compass-import-once (~> 1.0)
-  font-awesome-sass (~> 4.3.0)
+  font-awesome-sass (~> 4.4)
   oily_png (~> 1.1)
   sass (~> 3.4)
   sass-globbing (~> 1.1)
-  scss_lint (~> 0.39)
+  scss_lint (~> 0.41)
   zen-grids (~> 2.0.0.beta.3)
 
 BUNDLED WITH
-   1.10.5
+   1.10.6
