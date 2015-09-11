@@ -16,11 +16,10 @@ var options = {},
 // (and the package.json) in your project's root folder and edit the paths
 // accordingly.
 options.rootPath = {
-  project       : __dirname + '/',
-  web           : __dirname + '/app/',
-  styleGuide    : __dirname + '/styleguide/agov_whitlam/',
-  profileAssets : __dirname + '/profiles/agov/themes/agov/agov_whitlam/',
-  theme         : __dirname + '/themes/agov/agov_whitlam/'
+  project     : __dirname + '/',
+  web         : __dirname + '/app/',
+  styleGuide  : __dirname + '/styleguide/agov_whitlam/',
+  theme       : __dirname + '/themes/agov/agov_whitlam/'
 };
 
 // Define the paths in the Drupal theme by getting theme sub-directories from
@@ -35,13 +34,6 @@ options.theme = {
   js    : options.rootPath.theme + compass.js + '/'
 };
 
-options.styleGuideAssets = {
-  root  : options.rootPath.profileAssets,
-  css   : options.rootPath.profileAssets + compass.css + '/',
-  sass  : options.rootPath.profileAssets + compass.sass + '/',
-  js    : options.rootPath.profileAssets + compass.js + '/'
-};
-
 // Define the style guide paths and options.
 options.styleGuide = {
   source: [
@@ -53,14 +45,14 @@ options.styleGuide = {
   // The css and js paths are URLs, like '/misc/jquery.js'.
   // The following paths are relative to the generated style guide.
   css: [
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.css + 'styles.css'),
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.css + 'style-guide/chroma-kss-styles.css'),
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.css + 'style-guide/kss-only.css')
+    path.relative(options.rootPath.styleGuide, options.theme.css + 'styles.css'),
+    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/chroma-kss-styles.css'),
+    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css')
   ],
   js: [
-    '/core/assets/vendor/jquery/jquery.min.js',
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.js + 'superfish.min.js'),
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.js + 'script-styleguide.js')
+    '/misc/jquery.js',
+    path.relative(options.rootPath.styleGuide, options.theme.js + 'superfish.min.js'),
+    path.relative(options.rootPath.styleGuide, options.theme.js + 'script-styleguide.js')
   ],
 
   homepage: 'homepage.md',

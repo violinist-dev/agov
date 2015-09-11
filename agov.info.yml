@@ -39,5 +39,5 @@ dependencies:
   - tour
 
 themes:
-  - agov_whitlam
+  - bartik
   - seven
