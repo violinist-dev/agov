@@ -1,3 +1,6 @@
+// Dependencies.
+@import "components/inline-links/inline-links";
+
 // Header
 //
 // The header of page.
@@ -5,8 +8,6 @@
 // Markup: header.hbs
 //
 // Style guide: components.header
-
-@import "components/inline-links/inline-links";
 
 .header,
 %header {
