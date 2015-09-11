@@ -1,23 +1,12 @@
 name: aGov Whitlam
-type: theme
-base theme: classy
 description: 'Drupal 8 aGov Theme.'
-package: Core
-# version: VERSION
-# core: 8.x
+screenshot: screenshot.jpg
+
+type: theme
+package: aGov
+core: 8.x
+
+base theme: classy
 
 libraries:
-  - agov_whitlam/base
-
-# Information added by Drupal.org packaging script on 2015-08-03
-version: '8.0.0-beta14'
-core: '8.x'
-project: 'drupal'
-datestamp: 1438593763
-screenshot: screenshot.jpg
-stylesheets-remove:
-  - '@system/css/system.theme.css'
-regions:
-  header: Header
-  content: Content
-  footer: Footer
+  - agov_whitlam/component-library

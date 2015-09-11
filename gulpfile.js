@@ -16,11 +16,10 @@ var options = {},
 // (and the package.json) in your project's root folder and edit the paths
 // accordingly.
 options.rootPath = {
-  project       : __dirname + '/',
-  web           : __dirname + '/app/',
-  styleGuide    : __dirname + '/styleguide/agov_whitlam/',
-  profileAssets : __dirname + '/profiles/agov/themes/agov/agov_whitlam/',
-  theme         : __dirname + '/themes/agov/agov_whitlam/'
+  project     : __dirname + '/',
+  web         : __dirname + '/app/',
+  styleGuide  : __dirname + '/styleguide/agov_whitlam/',
+  theme       : __dirname + '/themes/agov/agov_whitlam/'
 };
 
 // Define the paths in the Drupal theme by getting theme sub-directories from
@@ -35,13 +34,6 @@ options.theme = {
   js    : options.rootPath.theme + compass.js + '/'
 };
 
-options.styleGuideAssets = {
-  root  : options.rootPath.profileAssets,
-  css   : options.rootPath.profileAssets + compass.css + '/',
-  sass  : options.rootPath.profileAssets + compass.sass + '/',
-  js    : options.rootPath.profileAssets + compass.js + '/'
-};
-
 // Define the style guide paths and options.
 options.styleGuide = {
   source: [
@@ -53,14 +45,14 @@ options.styleGuide = {
   // The css and js paths are URLs, like '/misc/jquery.js'.
   // The following paths are relative to the generated style guide.
   css: [
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.css + 'styles.css'),
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.css + 'style-guide/chroma-kss-styles.css'),
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.css + 'style-guide/kss-only.css')
+    path.relative(options.rootPath.styleGuide, options.theme.css + 'styles.css'),
+    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/chroma-kss-styles.css'),
+    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css')
   ],
   js: [
     '/core/assets/vendor/jquery/jquery.min.js',
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.js + 'superfish.min.js'),
-    path.relative(options.rootPath.styleGuide, options.styleGuideAssets.js + 'script-styleguide.js')
+    path.relative(options.rootPath.styleGuide, options.theme.js + 'superfish.min.js'),
+    path.relative(options.rootPath.styleGuide, options.theme.js + 'script-styleguide.js')
   ],
 
   homepage: 'homepage.md',
@@ -75,10 +67,12 @@ options.scssLint = {
 // Define the paths to the JS files to lint.
 options.eslint = {
   files  : [
-    'themes/agov/js/script.js',
-    // 'themes/agov/**/*.js',
-    'modules/custom/**/*.js',
-    'modules/features/**/*.js'
+    options.theme.js + '**/*.js',
+    'app/sites/all/modules/custom/**/*.js',
+    'app/sites/all/modules/features/**/*.js',
+    '!' + options.theme.js + '**/*.min.js',
+    '!app/sites/all/modules/custom/**/*.min.js',
+    '!app/sites/all/modules/features/**/*.min.js'
   ]
 };
 
@@ -151,11 +145,17 @@ gulp.task('styleguide:chroma-kss-markup', $.shell.task(
   [
     // @TODO: mkdir and head are UNIX utils. Replace this after Chroma is refactored.
     'mkdir -p css/style-guide',
-    'bundle exec sass --compass --scss --sourcemap=none --style expanded sass/style-guide/chroma-kss-markup.scss css/style-guide/chroma-kss-markup.hbs.tmp',
+    'bundle exec sass --no-cache --compass --scss --sourcemap=none --style expanded sass/style-guide/chroma-kss-markup.scss css/style-guide/chroma-kss-markup.hbs.tmp',
     'head -n 2  css/style-guide/chroma-kss-markup.hbs.tmp | tail -n 1 > css/style-guide/chroma-kss-markup.hbs',
     'rm css/style-guide/chroma-kss-markup.hbs.tmp'
   ],
   {cwd: options.theme.root}
+));
+
+// Debug the generation of the style guide with the --verbose flag.
+gulp.task('styleguide:debug', ['clean:styleguide', 'styleguide:chroma-kss-markup'], $.shell.task(
+  ['kss-node <%= flags %>'],
+  {templateData: {flags: flags.join(' ') + ' --verbose'}}
 ));
 
 // #########################
@@ -225,22 +225,22 @@ gulp.task('watch:js', ['lint:js'], function() {
 gulp.task('clean', ['clean:css', 'clean:styleguide']);
 
 // Clean style guide files.
-gulp.task('clean:styleguide', function(cb) {
+gulp.task('clean:styleguide', function() {
   // You can use multiple globbing patterns as you would with `gulp.src`
-  del([
+  return del([
       options.styleGuide.destination + '*.html',
       options.styleGuide.destination + 'public',
       options.theme.css + '**/*.hbs'
-    ], {force: true}, cb);
+    ], {force: true});
 });
 
 // Clean CSS files.
-gulp.task('clean:css', function(cb) {
-  del([
+gulp.task('clean:css', function() {
+  return del([
       options.theme.root + '**/.sass-cache',
       options.theme.css + '**/*.css',
       options.theme.css + '**/*.map'
-    ], {force: true}, cb);
+    ], {force: true});
 });
 
 
