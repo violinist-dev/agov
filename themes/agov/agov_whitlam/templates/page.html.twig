@@ -152,6 +152,20 @@
 
 {{ page.footer }}
 
-{{ page.footer_bottom }}
+<footer class="footer-bottom" role="contentinfo">
+  <div class="layout-center clearfix">
+    {% if page.footer %}
+      <div class="footer-bottom__left <?php print $classes; ?>">
+        {{ page.footer_bottom }}
+      </div>
+    {% endif %}
+    <div class="footer-bottom__right">
+      <p>
+        <i class="fa fa-chevron-circle-up fa-lg"></i>
+        <a class="footer-bottom__link" href="#skip-link">Back to top</a>
+      </p>
+    </div>
+  </div>
+</footer>
 
 {{ page.bottom }}
