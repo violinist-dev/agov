@@ -90,22 +90,30 @@
   </div>
 </div>
 
-<div class="layout-center layout-3col" role="main">
+<main class="layout-center layout-3col" role="main">
 
   {# Decide on layout classes by checking if sidebars have content. #}
-  {% set content_class =          'layout-3col__full' %}
-  {% set sidebar_first_class =    '' %}
-  {% set sidebar_second_class =   '' %}
+
+  {# No sidebars. #}
+  {% set content_class = 'layout-3col__full' %}
+  {% set sidebar_first_class = '' %}
+  {% set sidebar_second_class = '' %}
+
+  {# Two sidebars on the left. #}
   {% if page.sidebar_first and page.sidebar_second %}
-    {% set content_class =        'layout-3col__right-content' %}
-    {% set sidebar_first_class =  'layout-3col__left-sidebar' %}
+    {% set content_class = 'layout-3col__right-content' %}
+    {% set sidebar_first_class = 'layout-3col__left-sidebar' %}
     {% set sidebar_second_class = 'layout-3col__left-sidebar' %}
+
+  {# One sidebar on the right. #}
   {% elseif page.sidebar_second %}
-    {% set content_class =        'layout-3col__left-content' %}
+    {% set content_class = 'layout-3col__left-content' %}
     {% set sidebar_second_class = 'layout-3col__right-sidebar' %}
+
+  {# One sidebar on the left. #}
   {% elseif page.sidebar_first %}
-    {% set content_class =        'layout-3col__right-content' %}
-    {% set sidebar_first_class =  'layout-3col__left-sidebar' %}
+    {% set content_class = 'layout-3col__right-content' %}
+    {% set sidebar_first_class = 'layout-3col__left-sidebar' %}
   {% endif %}
 
   <div class="{{ content_class }}">
@@ -140,10 +148,24 @@
     </aside>
   {% endif %}
 
-</div>
+</main>
 
-{{ page.footer }}
+{{ page.footer_top }}
 
-{{ page.footer_bottom }}
+<footer class="footer-bottom" role="contentinfo">
+  <div class="layout-center clearfix">
+    {% if page.footer %}
+      <div class="footer-bottom__left <?php print $classes; ?>">
+        {{ page.footer }}
+      </div>
+    {% endif %}
+    <div class="footer-bottom__right">
+      <p>
+        <i class="fa fa-chevron-circle-up fa-lg"></i>
+        <a class="footer-bottom__link" href="#skip-link">Back to top</a>
+      </p>
+    </div>
+  </div>
+</footer>
 
 {{ page.bottom }}
