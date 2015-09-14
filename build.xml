@@ -60,11 +60,11 @@
     <if>
       <available file="${app.dir}" type='dir' />
       <then>
-        <exec command="sudo chmod -R 2775 ${app.dir}"
+        <exec command="chmod -R 2775 ${app.dir}"
               logoutput="true"
               passthru="true"
               checkreturn="true" />
-        <exec command="sudo rm -fR ${app.dir}"
+        <exec command="rm -fR ${app.dir}"
               logoutput="true"
               passthru="true"
               checkreturn="true" />
@@ -133,8 +133,8 @@
           passthru="true" />
   </target>
 
-  <target name="styleguide:link" description="Link the styleguide to make it publicly available.">
-    <symlink link="${app.dir}/styleguide" target="${project.basedir}/styleguide" />
+  <target name="styleguide:link" description="Link the style guide to make it publicly available.">
+    <symlink link="${app.dir}/${app.profile.dir}/styleguide" target="${project.basedir}/styleguide" />
   </target>
 
   <target name="login" description="Generate a one-time login link">
@@ -144,7 +144,7 @@
           passthru="true" />
   </target>
 
-  <target name="gulp:build" description="Generate all compiled SASS and styleguide resources.">
+  <target name="gulp:build" description="Generate all compiled Sass and style guide resources.">
     <exec dir="${app.dir}"
           command="${gulp.cmd} build"
           logoutput="true"
