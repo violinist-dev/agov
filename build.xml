@@ -82,7 +82,7 @@
           description="Setup the project">
 
     <!-- Create -->
-    <exec command="mkdir -p ${app.dir}/${app.files.public} ${app.dir}/${app.files.tmp} ${app.dir}/${app.files.private} ${app.dir}/${app.profile.dir}"
+    <exec command="mkdir -p ${app.dir}/${app.files.public} ${app.dir}/${app.files.tmp} ${app.dir}/${app.files.private} ${app.dir}/profiles"
           logoutput="true"
           passthru="true"
           checkreturn="true" />
@@ -93,21 +93,8 @@
           passthru="true"
           checkreturn="true" />
 
-    <!-- Symlink only the profile things we require.
-         Otherwise we will end up with a recursive loop. -->
-    <symlink link="${app.dir}/${app.profile.dir}">
-      <fileset dir="${project.basedir}">
-        <include name="agov.info.yml" />
-        <include name="agov.links.menu.yml" />
-        <include name="agov.install" />
-        <include name="agov.profile" />
-        <include name="modules" />
-        <include name="themes" />
-        <include name="config" />
-        <include name="drupal-org.make" />
-        <include name="drupal-org-core.make" />
-      </fileset>
-    </symlink>
+    <!-- Symlink the agov folder into the profiles folder. -->
+    <symlink target="${project.basedir}/agov" link="${app.dir}/${app.profile.dir}" />
   </target>
 
   <target name="make"
