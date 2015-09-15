@@ -98,6 +98,7 @@
     <symlink link="${app.dir}/${app.profile.dir}">
       <fileset dir="${project.basedir}">
         <include name="agov.info.yml" />
+        <include name="agov.links.menu.yml" />
         <include name="agov.install" />
         <include name="agov.profile" />
         <include name="modules" />
