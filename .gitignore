@@ -16,9 +16,10 @@ Gemfile.lock
 /styleguide
 
 # Exclude files added by drush make
-/libraries/*
-/modules/contrib
-/themes/contrib
+/agov/libraries/*
+/agov/modules/contrib
+/agov/modules/development
+/agov/themes/contrib
 /app
 .DS_Store
 /.idea
