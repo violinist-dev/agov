@@ -11,19 +11,21 @@
   <!-- Properties -->
   <!-- ========== -->
 
-  <!-- Application --> 
-  <property name="app.uri"             value="http://agov.dev"                           override="true" />
-  <property name="app.name"            value="aGov"                                      override="true" />
-  <property name="app.dir"             value="${project.basedir}/app"                    override="true" />
-  <property name="app.profile.name"    value="agov"                                      override="true" />
-  <property name="app.profile.dir"     value="profiles/agov"                             override="true" />
-  <property name="app.profile.options" value="agov_install_additional_options.install=1" override="true" />
-  <property name="app.dev.modules"     value="config_devel"                              override="true" />
-  <property name="app.files.public"    value="sites/default/files"                       override="true" />
-  <property name="app.files.tmp"       value="sites/default/files/tmp"                   override="true" />
-  <property name="app.files.private"   value="sites/default/private"                     override="true" />
+  <!-- Application -->
+  <property name="app.uri"                value="http://agov.dev"                           override="true" />
+  <property name="app.name"               value="aGov"                                      override="true" />
+  <property name="app.dir"                value="${project.basedir}/app"                    override="true" />
+  <property name="app.profile.name"       value="agov"                                      override="true" />
+  <property name="app.profile.dir"        value="profiles/agov"                             override="true" />
+  <property name="app.profile.options"    value="agov_install_additional_options.install=1" override="true" />
+  <property name="app.files.public"       value="sites/default/files"                       override="true" />
+  <property name="app.files.tmp"          value="sites/default/files/tmp"                   override="true" />
+  <property name="app.files.private"      value="sites/default/private"                     override="true" />
   <!-- This should get overidden for secure builds. -->
-  <property name="app.password"        value="password"                                  override="true" />
+  <property name="app.password"           value="password"                                  override="true" />
+  <!-- Development variables. -->
+  <property name="app.dev.modules"        value="config_devel"                              override="true" />
+  <property name="app.dev.config_modules" value="agov_standard_page"                        override="true" />
 
   <!-- Drush -->
   <property name="drush.cmd" value="${project.basedir}/bin/drush" override="true" />
@@ -126,14 +128,6 @@
           passthru="true" />
   </target>
 
-  <target name="dev:modules"
-         description="Install the development modules.">
-    <exec dir="${app.dir}"
-          command="${drush.cmd} en ${app.dev.modules} -y"
-          logoutput="true"
-          passthru="true" />
-  </target>
-
   <target name="styleguide:link" description="Link the style guide to make it publicly available.">
     <symlink link="${app.dir}/${app.profile.dir}/styleguide" target="${project.basedir}/styleguide" />
   </target>
@@ -148,6 +142,25 @@
   <target name="gulp:build" description="Generate all compiled Sass and style guide resources.">
     <exec dir="${app.dir}"
           command="${gulp.cmd} build"
+          logoutput="true"
+          passthru="true" />
+  </target>
+
+  <!--                    -->
+  <!-- Development tagets -->
+  <!-- ================   -->
+
+  <target name="dev:modules"
+          description="Install the development modules.">
+    <exec dir="${app.dir}"
+          command="${drush.cmd} en ${app.dev.modules} -y"
+          logoutput="true"
+          passthru="true" />
+  </target>
+
+  <target name="config:export" description="Export all of the configuration for the defined modules.">
+    <exec dir="${app.dir}"
+          command="${drush.cmd} config-devel-export-module ${app.dev.config_modules}"
           logoutput="true"
           passthru="true" />
   </target>
