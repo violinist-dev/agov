@@ -18,6 +18,7 @@
   <property name="app.profile.name"    value="agov"                                      override="true" />
   <property name="app.profile.dir"     value="profiles/agov"                             override="true" />
   <property name="app.profile.options" value="agov_install_additional_options.install=1" override="true" />
+  <property name="app.dev.modules"     value="config_devel"                              override="true" />
   <property name="app.files.public"    value="sites/default/files"                       override="true" />
   <property name="app.files.tmp"       value="sites/default/files/tmp"                   override="true" />
   <property name="app.files.private"   value="sites/default/private"                     override="true" />
@@ -44,6 +45,11 @@
   <target name="build"
           depends="clean, prepare, make, install"
           description="Build (or rebuild) the project.">
+  </target>
+
+  <target name="build:dev"
+          depends="build, dev:modules"
+          description="Build (or rebuild) the project with development dependencies.">
   </target>
 
   <target name="test"
@@ -116,6 +122,14 @@
     <!-- Install the site -->
     <exec dir="${app.dir}"
           command="${drush.cmd} site-install ${app.profile.name} -y --site-name=${app.name} --account-pass='${app.password}' --db-url=${db.querystring} ${app.profile.options}"
+          logoutput="true"
+          passthru="true" />
+  </target>
+
+  <target name="dev:modules"
+         description="Install the development modules.">
+    <exec dir="${app.dir}"
+          command="${drush.cmd} en ${app.dev.modules} -y"
           logoutput="true"
           passthru="true" />
   </target>
