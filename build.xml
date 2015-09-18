@@ -25,7 +25,7 @@
   <property name="app.password"           value="password"                                            override="true" />
   <!-- Development variables. -->
   <property name="app.dev.modules"        value="config_devel default_content agov_default_content"   override="true" />
-  <property name="app.dev.config_modules" value="agov_standard_page"                                  override="true" />
+  <property name="app.dev.config_modules" value="agov agov_standard_page"                                  override="true" />
 
   <!-- Drush -->
   <property name="drush.cmd" value="${project.basedir}/bin/drush" override="true" />
