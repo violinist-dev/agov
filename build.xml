@@ -72,12 +72,11 @@
 
   <target name="simpletest"
           depends="simpletest:init">
-      <!-- We have to use run-tests in core because drush removed test-run but core doesn't always fail correctly :/
-        @see -->
+
     <exec dir="${app.dir}"
           command="${php.bin.php} ./core/scripts/run-tests.sh --php ${php.bin.php} --module ${app.profile.name} --url ${app.uri}/"
           passthru="true"
-          checkreturn="true"/>
+          checkreturn="true" />
   </target>
 
   <!--                  -->
