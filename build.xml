@@ -27,6 +27,10 @@
   <property name="app.dev.modules"        value="config_devel"                              override="true" />
   <property name="app.dev.config_modules" value="agov_standard_page"                        override="true" />
 
+  <!-- Overrides -->
+  <property name="php.sniff.dirs"       value="agov/modules/custom agov/src" override="true" />
+  <exec command="which php" outputProperty="php.bin.php" />
+
   <!-- Drush -->
   <property name="drush.cmd" value="${project.basedir}/bin/drush" override="true" />
 
@@ -55,8 +59,25 @@
   </target>
 
   <target name="test"
-          depends="phpcs, behat"
+          depends="phpcs, simpletest"
           description="Run the test suite">
+  </target>
+
+  <target name="simpletest:init">
+    <exec dir="${app.dir}"
+          command="${drush.cmd} en simpletest -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="simpletest"
+          depends="simpletest:init">
+      <!-- We have to use run-tests in core because drush removed test-run but core doesn't always fail correctly :/
+        @see -->
+    <exec dir="${app.dir}"
+          command="${php.bin.php} ./core/scripts/run-tests.sh --php ${php.bin.php} --module ${app.profile.name} --url ${app.uri}/"
+          passthru="true"
+          checkreturn="true"/>
   </target>
 
   <!--                  -->
