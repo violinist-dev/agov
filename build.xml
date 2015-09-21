@@ -12,20 +12,20 @@
   <!-- ========== -->
 
   <!-- Application -->
-  <property name="app.uri"                value="http://agov.dev"                           override="true" />
-  <property name="app.name"               value="aGov"                                      override="true" />
-  <property name="app.dir"                value="${project.basedir}/app"                    override="true" />
-  <property name="app.profile.name"       value="agov"                                      override="true" />
-  <property name="app.profile.dir"        value="profiles/agov"                             override="true" />
-  <property name="app.profile.options"    value="agov_install_additional_options.install=1" override="true" />
-  <property name="app.files.public"       value="sites/default/files"                       override="true" />
-  <property name="app.files.tmp"          value="sites/default/files/tmp"                   override="true" />
-  <property name="app.files.private"      value="sites/default/private"                     override="true" />
+  <property name="app.uri"                value="http://agov.dev"                                     override="true" />
+  <property name="app.name"               value="aGov"                                                override="true" />
+  <property name="app.dir"                value="${project.basedir}/app"                              override="true" />
+  <property name="app.profile.name"       value="agov"                                                override="true" />
+  <property name="app.profile.dir"        value="profiles/agov"                                       override="true" />
+  <property name="app.profile.options"    value="agov_install_additional_options.install=1"           override="true" />
+  <property name="app.files.public"       value="sites/default/files"                                 override="true" />
+  <property name="app.files.tmp"          value="sites/default/files/tmp"                             override="true" />
+  <property name="app.files.private"      value="sites/default/private"                               override="true" />
   <!-- This should get overidden for secure builds. -->
-  <property name="app.password"           value="password"                                  override="true" />
+  <property name="app.password"           value="password"                                            override="true" />
   <!-- Development variables. -->
-  <property name="app.dev.modules"        value="config_devel"                              override="true" />
-  <property name="app.dev.config_modules" value="agov_standard_page"                        override="true" />
+  <property name="app.dev.modules"        value="config_devel default_content agov_default_content"   override="true" />
+  <property name="app.dev.config_modules" value="agov agov_standard_page"                                  override="true" />
 
   <!-- Overrides -->
   <property name="php.sniff.dirs"       value="agov/modules/custom agov/themes agov/src" override="true" />
