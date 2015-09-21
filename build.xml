@@ -28,7 +28,7 @@
   <property name="app.dev.config_modules" value="agov_standard_page"                        override="true" />
 
   <!-- Overrides -->
-  <property name="php.sniff.dirs"       value="agov/modules/custom agov/src" override="true" />
+  <property name="php.sniff.dirs"       value="agov/modules/custom agov/themes agov/src" override="true" />
   <exec command="which php" outputProperty="php.bin.php" />
 
   <!-- Drush -->
