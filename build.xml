@@ -52,11 +52,23 @@
   <target name="build:dev"
           depends="build, dev:modules"
           description="Build (or rebuild) the project with development dependencies.">
+
+      <exec command="cp ${app.dir}/sites/example.settings.local.php ${app.dir}/sites/default/settings.local.php;" />
+      <append text="if (file_exists(__DIR__ . '/settings.local.php')) { include __DIR__ . '/settings.local.php'; }"
+              destFile="${app.dir}/sites/default/settings.php" />
+      <phingcall target="cache:clear"/>
+
   </target>
 
   <target name="test"
           depends="phpcs, behat"
           description="Run the test suite">
+  </target>
+
+  <!-- Drush Targets -->
+  <target name="cache:clear">
+    <exec command="${drush.cmd} cr"
+          passthru="true"/>
   </target>
 
   <!--                  -->
