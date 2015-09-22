@@ -32,7 +32,7 @@
   <exec command="which php" outputProperty="php.bin.php" />
 
   <!-- Drush -->
-  <property name="drush.cmd" value="${project.basedir}/bin/drush" override="true" />
+  <property name="drush.cmd" value="${project.basedir}/bin/drush -r ${app.dir}" override="true" />
 
   <!-- Gulp -->
   <property name="gulp.cmd" value="${project.basedir}/node_modules/.bin/gulp" override="true" />
