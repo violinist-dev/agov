@@ -57,7 +57,12 @@
           depends="build, dev:modules"
           description="Build (or rebuild) the project with development dependencies.">
 
+      <!-- Fix up some permissions and then copy the local settings file into place. -->
+      <exec command="chmod 755 ${app.dir}/sites/default" />
+      <exec command="chmod 755 ${app.dir}/sites/default/settings.php;" />
       <exec command="cp ${app.dir}/sites/example.settings.local.php ${app.dir}/sites/default/settings.local.php;" />
+
+      <!-- Ensure the local settings file is included from the main setting file. -->
       <append text="if (file_exists(__DIR__ . '/settings.local.php')) { include __DIR__ . '/settings.local.php'; }"
               destFile="${app.dir}/sites/default/settings.php" />
       <phingcall target="cache:clear"/>
