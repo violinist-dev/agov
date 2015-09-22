@@ -18,8 +18,8 @@ var options = {},
 options.rootPath = {
   project     : __dirname + '/',
   web         : __dirname + '/app/',
-  styleGuide  : __dirname + '/styleguide/agov_whitlam/',
-  theme       : __dirname + '/themes/agov/agov_whitlam/'
+  styleGuide  : __dirname + '/agov/styleguide/agov_whitlam/',
+  theme       : __dirname + '/agov/themes/agov/agov_whitlam/'
 };
 
 // Define the paths in the Drupal theme by getting theme sub-directories from
