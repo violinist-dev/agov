@@ -32,7 +32,7 @@
   <exec command="which php" outputProperty="php.bin.php" />
 
   <!-- Drush -->
-  <property name="drush.cmd" value="${project.basedir}/bin/drush" override="true" />
+  <property name="drush.cmd" value="${project.basedir}/bin/drush -r ${app.dir}" override="true" />
 
   <!-- Gulp -->
   <property name="gulp.cmd" value="${project.basedir}/node_modules/.bin/gulp" override="true" />
@@ -56,11 +56,28 @@
   <target name="build:dev"
           depends="build, dev:modules"
           description="Build (or rebuild) the project with development dependencies.">
+
+      <!-- Fix up some permissions and then copy the local settings file into place. -->
+      <exec command="chmod 755 ${app.dir}/sites/default" />
+      <exec command="chmod 755 ${app.dir}/sites/default/settings.php;" />
+      <exec command="cp ${app.dir}/sites/example.settings.local.php ${app.dir}/sites/default/settings.local.php;" />
+
+      <!-- Ensure the local settings file is included from the main setting file. -->
+      <append text="if (file_exists(__DIR__ . '/settings.local.php')) { include __DIR__ . '/settings.local.php'; }"
+              destFile="${app.dir}/sites/default/settings.php" />
+      <phingcall target="cache:clear"/>
+
   </target>
 
   <target name="test"
           depends="phpcs, simpletest"
           description="Run the test suite">
+  </target>
+
+  <!-- Drush Targets -->
+  <target name="cache:clear">
+    <exec command="${drush.cmd} cr"
+          passthru="true"/>
   </target>
 
   <target name="simpletest:init">
