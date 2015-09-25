@@ -41,11 +41,15 @@ dependencies:
 
   # Contrib modules
   - file_entity
+  - twitter_block
+  - layout_plugin
+  - page_manager
   - fences
 
   # Custom modules
   - agov_standard_page
   - agov_social_icons
+  - agov_homepage
 
 configurable_dependencies:
   agov_default_content:
@@ -60,6 +64,8 @@ themes:
 config_devel:
   # Global config.
   - system.theme
+  - system.theme
+  - system.site
   - node.settings
   - core.date_format.publication_date
 
