@@ -16,15 +16,8 @@
 
 .date,
 %date {
-
   &--without-label {
     font-size: 14px;
     color: color(date);
   }
-}
-
-//Fugly selectors.
-
-.field-type-datetime.field-label-hidden {
-  @extend %date--without-label;
 }

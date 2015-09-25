@@ -39,15 +39,3 @@
     }
   }
 }
-
-//
-// Drupal selectors.
-//
-
-.footer-top .block {
-  @extend %footer-top__menu;
-
-  ul ul {
-    @extend %footer-top__menu--nested;
-  }
-}

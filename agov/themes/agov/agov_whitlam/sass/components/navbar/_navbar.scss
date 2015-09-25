@@ -295,20 +295,7 @@
   }
 }
 
-// Fugly selectors.
-
-.block-superfish {
-  @extend %navbar;
-}
-
-.sf-main-menu > li.active-trail {
-  @extend %menu__item-is-active;
-
-  a {
-    @extend %menu__item-active-trail;
-  }
-}
-
 .navigation {
   @extend %navbar;
 }
+
