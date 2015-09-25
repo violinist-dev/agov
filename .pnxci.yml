@@ -5,7 +5,7 @@ test: &test
     - composer install --prefer-dist --dev
     - bundle install --path vendor/bundle
     - npm install
-    - bin/phing build -Dapp.password=$PASSWORD
+    - bin/phing build:dev -Dapp.password=$PASSWORD
     - bin/phing gulp:build
     - bin/phing styleguide:link
     - bin/phing test
