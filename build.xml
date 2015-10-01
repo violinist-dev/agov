@@ -40,7 +40,7 @@
   <!-- Database -->
   <property name="db.querystring" value="mysql://drupal:drupal@localhost/local" override="true" />
 
-  <!-- These allow de`elopers to override configuration on
+  <!-- These allow developers to override configuration on
        a per environment basis -->
   <property file="build.properties" override="true"/>
 
@@ -208,20 +208,19 @@
     </target>
 
     <target name="content:export">
-        <foreach list="1,2,3,4,5,6,7,8" param="nid" target="node:export:single" delimiter="," />
-        <foreach list="1,2,3" param="mid" target="menu_link:export:single" delimiter="," />
+        <foreach list="1,2,3,4,5,6,7,8" param="id" target="content:export:single" delimiter=",">
+            <property name="type" value="node" />
+        </foreach>
+        <foreach list="1,2,3,4,5,6,7,8,9,10" param="id" target="content:export:single" delimiter=",">
+            <property name="type" value="file" />
+        </foreach>
     </target>
 
-    <target name="node:export:single">
+    <target name="content:export:single">
         <exec dir="${app.dir}"
-              command="${drush.cmd} dce node ${nid} > ${app.dir}/profiles/agov/modules/custom/agov_default_content/content/node/${nid}.json"
+              command="${drush.cmd} dce ${type} ${id} > ${app.dir}/profiles/agov/modules/custom/agov_default_content/content/${type}/${id}.json"
               logoutput="true"
               passthru="true" />
     </target>
-    <target name="menu_link:export:single">
-        <exec dir="${app.dir}"
-              command="${drush.cmd} dce menu_link_content ${mid} > ${app.dir}/profiles/agov/modules/custom/agov_default_content/content/menu_link_content/${mid}.json"
-              logoutput="true"
-              passthru="true" />
-    </target>
+
 </project>
