@@ -25,7 +25,7 @@
   <property name="app.password"           value="password"                                            override="true" />
   <!-- Development variables. -->
   <property name="app.dev.modules"        value="config_devel default_content agov_default_content agov_article"   override="true" />
-  <property name="app.dev.config_modules" value="agov agov_standard_page agov_homepage agov_article agov_publication"               override="true" />
+  <property name="app.dev.config_modules" value="agov agov_standard_page agov_article agov_publication agov_default_content"               override="true" />
 
   <!-- Overrides -->
   <property name="php.sniff.dirs"       value="agov/modules/custom agov/themes agov/src" override="true" />
