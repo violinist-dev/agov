@@ -24,8 +24,8 @@
   <!-- This should get overidden for secure builds. -->
   <property name="app.password"           value="password"                                            override="true" />
   <!-- Development variables. -->
-  <property name="app.dev.modules"        value="config_devel default_content agov_default_content"   override="true" />
-  <property name="app.dev.config_modules" value="agov agov_standard_page agov_homepage"               override="true" />
+  <property name="app.dev.modules"        value="config_devel default_content agov_default_content agov_article"   override="true" />
+  <property name="app.dev.config_modules" value="agov agov_standard_page agov_homepage agov_article agov_publication"               override="true" />
 
   <!-- Overrides -->
   <property name="php.sniff.dirs"       value="agov/modules/custom agov/themes agov/src" override="true" />
@@ -40,7 +40,7 @@
   <!-- Database -->
   <property name="db.querystring" value="mysql://drupal:drupal@localhost/local" override="true" />
 
-  <!-- These allow de`elopers to override configuration on
+  <!-- These allow developers to override configuration on
        a per environment basis -->
   <property file="build.properties" override="true"/>
 
@@ -197,10 +197,30 @@
   </target>
 
   <target name="config:export" description="Export all of the configuration for the defined modules.">
+    <foreach list="${app.dev.config_modules}" param="config_devel_module" target="config:export:single" delimiter=" " />
+  </target>
+
+  <target name="config:export:single">
     <exec dir="${app.dir}"
-          command="${drush.cmd} config-devel-export-module ${app.dev.config_modules}"
+          command="${drush.cmd} config-devel-export-module ${config_devel_module}"
           logoutput="true"
           passthru="true" />
-  </target>
+    </target>
+
+    <target name="content:export">
+        <foreach list="1,2,3,4,5,6,7,8" param="id" target="content:export:single" delimiter=",">
+            <property name="type" value="node" />
+        </foreach>
+        <foreach list="1,2,3,4,5,6,7,8,9,10" param="id" target="content:export:single" delimiter=",">
+            <property name="type" value="file" />
+        </foreach>
+    </target>
+
+    <target name="content:export:single">
+        <exec dir="${app.dir}"
+              command="${drush.cmd} dce ${type} ${id} > ${app.dir}/profiles/agov/modules/custom/agov_default_content/content/${type}/${id}.json"
+              logoutput="true"
+              passthru="true" />
+    </target>
 
 </project>

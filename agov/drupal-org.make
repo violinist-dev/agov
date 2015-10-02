@@ -9,6 +9,8 @@ projects[layout_plugin][version] = '1.0-alpha14'
 projects[layout_plugin][patch][] = https://www.drupal.org/files/issues/2573857-1-variant-schema.patch
 
 projects[page_manager][version] = '1.0-alpha14'
+; See https://www.drupal.org/node/2391925#comment-10390651
+projects[page_manager][patch][] = https://www.drupal.org/files/issues/2391925-18.patch
 
 projects[file_entity][type] = module
 projects[file_entity][download][type] = git
@@ -27,6 +29,9 @@ projects[linkicon][subdir] = 'contrib'
 projects[linkicon][version] = '1.0'
 projects[linkicon][patch][] = https://www.drupal.org/files/issues/linkicon-schema.patch
 
+projects[title][subdir] = 'contrib'
+projects[title][version] = '2.x'
+
 projects[fences][subdir] = 'contrib'
 projects[fences][version] = '2.x'
 
@@ -44,6 +49,6 @@ projects[config_devel][version] = '1.0-beta4'
 projects[config_devel][subdir] = 'development'
 projects[default_content][type] = module
 projects[default_content][download][type] = git
-projects[default_content][download][url] = https://github.com/larowlan/default_content.git
-projects[default_content][download][branch] = 8.x
+projects[default_content][download][url] = git@github.com:benjy/default_content.git
+projects[default_content][download][branch] = add-import-export-events
 projects[default_content][subdir] = 'development'

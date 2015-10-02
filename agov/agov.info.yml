@@ -45,9 +45,10 @@ dependencies:
   - layout_plugin
   - page_manager
   - fences
-  - title
 
   # Custom modules
+  - agov_article
+  - agov_homepage
   - agov_standard_page
   - agov_social_icons
   - agov_homepage
@@ -70,6 +71,8 @@ config_devel:
   - system.site
   - node.settings
   - core.date_format.publication_date
+  - image.style.teaser_medium
+  - editor.editor.basic_html
 
   # Permissions.
   - user.role.anonymous
@@ -79,17 +82,6 @@ config_devel:
   - filter.format.basic_html
   - filter.format.full_html
   - filter.format.restricted_html
-
-  # Article.
-  - node.type.article
-  - core.entity_form_display.node.article.default
-  - core.entity_view_display.node.article.default
-  - core.entity_view_display.node.article.teaser
-  - field.field.node.article.body
-  - field.field.node.article.field_article_image
-  - field.storage.node.field_article_image
-  - field.field.node.article.field_article_date
-  - field.storage.node.field_article_date
 
   # Blocks
   - block.block.mainnavigation
