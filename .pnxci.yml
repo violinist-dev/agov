@@ -19,3 +19,16 @@ test_pr:
 
 test_head:
   <<: *test
+
+deploy_8_1:
+  - git fetch && git checkout -b 8.x-1.x origin/8.x-1.x
+  - git filter-branch --prune-empty --subdirectory-filter agov 8.x-1.x
+  - git checkout 8.x-1.x
+  - git add .
+  - git reset --hard
+  - git status
+  - git log | head -n25
+  - ls -lah
+  - git remote add dorg git@github.com:previousnext/agov.git
+  - git checkout -b jenkins-test
+  - git push dorg jenkins-test
