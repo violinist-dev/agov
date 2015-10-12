@@ -1,5 +1,7 @@
 application: previousnext/lamp
 
+channel: "#agov-8"
+
 test: &test
   steps:
     - composer install --prefer-dist --dev
