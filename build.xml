@@ -211,7 +211,7 @@
         <foreach list="1,2,3,4,5,6,7,8" param="id" target="content:export:single" delimiter=",">
             <property name="type" value="node" />
         </foreach>
-        <foreach list="1,2,3,4,5,6,7,8,9,10,11,12,13" param="id" target="content:export:single" delimiter=",">
+        <foreach list="1,2,3,4,5,6,7,8,9,10,11,12,13,14" param="id" target="content:export:single" delimiter=",">
             <property name="type" value="file" />
         </foreach>
     </target>
