@@ -15,4 +15,14 @@
   &--none {
     margin: 0;
   }
+
+  &--top {
+    @include output-rhythm(margin-top, rhythm(1) 0);
+    margin: 0;
+  }
+
+  &--bottom {
+    @include output-rhythm(margin-bottom, rhythm(1) 0);
+    margin: 0;
+  }
 }
