@@ -24,6 +24,7 @@ test_head:
 
 deploy_8_1:
   steps:
+    - bundle install --path vendor/bundle
     - npm install
     # Compiled CSS.
     - node_modules/.bin/gulp
