@@ -26,7 +26,7 @@ deploy_8_1:
   steps:
     - npm install
     # Compiled CSS.
-    - gulp
+    - node_modules/.bin/gulp
     - git add -f agov/themes/agov/agov_whitlam/css
     - git add .
     - git commit -m 'Compiled CSS.'
