@@ -12,7 +12,7 @@ npm-shrinkwrap.json
 Gemfile.lock
 
 # Exclude build files created by gulp and kss-node.
-/agov/themes/agov/agov_whitlam/css/
+/agov/themes/agov/agov_base/css/
 /agov/styleguide
 
 # Exclude files added by drush make

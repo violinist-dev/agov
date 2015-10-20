@@ -30,7 +30,7 @@ deploy_8_1:
     - git config --global user.name "PreviousNext"
     # Compiled CSS.
     - node_modules/.bin/gulp
-    - git add -f agov/themes/agov/agov_whitlam/css
+    - git add -f agov/themes/agov/agov_base/css
     - git add .
     - git commit -m 'Compiled CSS.'
     # Filter out the commits only in the 'agov' folder.
