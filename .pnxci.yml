@@ -26,6 +26,8 @@ deploy_8_1:
   steps:
     - bundle install --path vendor/bundle
     - npm install
+    - git config --global user.email "admin@previousnext.com.au"
+    - git config --global user.name "PreviousNext"
     # Compiled CSS.
     - node_modules/.bin/gulp
     - git add -f agov/themes/agov/agov_whitlam/css
