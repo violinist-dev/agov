@@ -73,7 +73,7 @@
           description="Run the test suite">
   </target>
 
-  <target name="phpunit">
+  <target name="phpunit" depends="simpletest:init">
       <exec dir="${app.dir}"
             command="./vendor/bin/phpunit --verbose --debug -c core --group agov"
             passthru="true"
