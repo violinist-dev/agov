@@ -48,5 +48,6 @@ deploy_8_1:
     - git status
     - ls -lah
     - git log | head -n20
+    - git branch
     # Push the new commits and build commit to the remote.
     - git push dorg jenkins-test
