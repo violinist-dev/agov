@@ -43,6 +43,7 @@ deploy_8_1:
     - git remote add dorg git@github.com:previousnext/agov.git
     - git fetch dorg
     # Add the existing build commits into the current branch.
+    - rm -rf vendor
     - git rebase dorg/jenkins-test
     - git status
     - ls -lah
