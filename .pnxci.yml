@@ -49,5 +49,6 @@ deploy_8_1:
     - ls -lah
     - git log | head -n20
     - git branch
+    - git remote -v
     # Push the new commits and build commit to the remote.
     - git push dorg jenkins-test
