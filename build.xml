@@ -73,9 +73,9 @@
           description="Run the test suite">
   </target>
 
-  <target name="phpunit" depends="simpletest:init">
+  <target name="phpunit">
       <exec dir="${app.dir}"
-            command="./vendor/bin/phpunit --verbose --debug -c core --group agov"
+            command="export SIMPLETEST_DB='${db.querystring}' &amp;&amp; ./vendor/bin/phpunit --verbose --debug -c core --group agov"
             passthru="true"
             checkreturn="true" />
   </target>
