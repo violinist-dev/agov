@@ -44,5 +44,8 @@ deploy_8_1:
     - git fetch dorg
     # Add the existing build commits into the current branch.
     - git rebase dorg/jenkins-test
+    - git status
+    - ls -lah
+    - git log | head -n20
     # Push the new commits and build commit to the remote.
     - git push dorg jenkins-test
