@@ -24,6 +24,7 @@ test_head:
 
 deploy_8_1:
   steps:
+    - npm install
     # Compiled CSS.
     - gulp
     - git add -f agov/themes/agov/agov_whitlam/css
