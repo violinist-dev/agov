@@ -24,8 +24,12 @@ test_head:
 
 deploy_8_1:
   steps:
+    - bundle install --path vendor/bundle
+    - npm install
+    - git config --global user.email "admin@previousnext.com.au"
+    - git config --global user.name "PreviousNext"
     # Compiled CSS.
-    - gulp
+    - node_modules/.bin/gulp
     - git add -f agov/themes/agov/agov_base/css
     - git add .
     - git commit -m 'Compiled CSS.'
@@ -39,6 +43,12 @@ deploy_8_1:
     - git remote add dorg git@github.com:previousnext/agov.git
     - git fetch dorg
     # Add the existing build commits into the current branch.
+    - rm -rf vendor
     - git rebase dorg/jenkins-test
+    - git status
+    - ls -lah
+    - git log | head -n20
+    - git branch
+    - git remote -v
     # Push the new commits and build commit to the remote.
     - git push dorg jenkins-test
