@@ -51,4 +51,4 @@ deploy_8_1:
     - git branch
     - git remote -v
     # Push the new commits and build commit to the remote.
-    - git push dorg jenkins-test
+    - git push dorg 8.x-1.x:jenkins-test
