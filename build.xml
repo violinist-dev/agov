@@ -69,8 +69,15 @@
   </target>
 
   <target name="test"
-          depends="phpcs, simpletest"
+          depends="phpcs, phpunit, simpletest"
           description="Run the test suite">
+  </target>
+
+  <target name="phpunit">
+      <exec dir="${app.dir}"
+            command="./vendor/bin/phpunit --verbose --debug -c core --group agov"
+            passthru="true"
+            checkreturn="true" />
   </target>
 
   <!-- Drush Targets -->
