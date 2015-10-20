@@ -26,7 +26,7 @@ deploy_8_1:
   steps:
     # Compiled CSS.
     - gulp
-    - git add -f agov/themes/agov/agov_whitlam/css
+    - git add -f agov/themes/agov/agov_base/css
     - git add .
     - git commit -m 'Compiled CSS.'
     # Filter out the commits only in the 'agov' folder.
