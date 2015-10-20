@@ -5,7 +5,6 @@
   <!-- ======= -->
 
   <import file="vendor/previousnext/phing-phpqatools/build.xml" optional="true" />
-  <import file="vendor/previousnext/phing-behat/build.xml"      optional="true" />
 
   <!--            -->
   <!-- Properties -->
