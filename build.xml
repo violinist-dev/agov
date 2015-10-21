@@ -97,7 +97,7 @@
           depends="simpletest:init">
 
     <exec dir="${app.dir}"
-          command="${php.bin.php} ./core/scripts/run-tests.sh --php ${php.bin.php} --module ${app.profile.name} --url ${app.uri}/"
+          command="${php.bin.php} ./core/scripts/run-tests.sh --concurrency 4 --php ${php.bin.php} --module ${app.profile.name} --url ${app.uri}/"
           passthru="true"
           checkreturn="true" />
   </target>
