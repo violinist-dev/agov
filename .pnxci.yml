@@ -44,9 +44,7 @@ deploy_8_1:
     - git fetch dorg
     # Add the existing build commits into the current branch.
     - rm -rf vendor
-    - git merge dorg/jenkins-test
-    - git checkout --ours themes/agov/agov_base/css/styles.css
-    - git commit
+    - git merge -X ours --no-edit dorg/jenkins-test
     - git status
     - ls -lah
     - git log | head -n20
