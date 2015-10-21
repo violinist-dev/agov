@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\agov\Plugin\Field\FieldFormatter\TextIconFormatter.
+ * Contains \Drupal\text_icon\Plugin\Field\FieldFormatter\TextIconFormatter.
  */
 
-namespace Drupal\agov\Plugin\Field\FieldFormatter;
+namespace Drupal\text_icon\Plugin\Field\FieldFormatter;
 
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Utility\SafeMarkup;

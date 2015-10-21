@@ -1,6 +1,26 @@
 <?php
 
 /**
+ * Implements hook_install().
+ */
+function agov_install() {
+  // The system.site config entity must be configured during install.
+  \Drupal::configFactory()->getEditable('system.site')
+    ->set('mail', 'admin@agov.com.au')
+    ->set('name', 'aGov')
+    ->set('page.front', '/home')
+    ->save();
+
+  // @TODO, remove this once we can enable pathauto before file_entity. Also,
+  // @see https://github.com/md-systems/file_entity/pull/48
+  if (\Drupal::moduleHandler()->moduleExists('pathauto')) {
+    $path_storage_definition = \Drupal::entityManager()->getFieldStorageDefinitions('file')['path'];
+    \Drupal::entityManager()->getStorage('file')->onFieldStorageDefinitionCreate($path_storage_definition);
+    \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('path', 'file', 'file_entity', $path_storage_definition);
+  }
+}
+
+/**
  * Implements hook_install_tasks().
  */
 function agov_install_tasks(&$install_state) {

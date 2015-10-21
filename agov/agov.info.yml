@@ -38,15 +38,18 @@ dependencies:
   - views
   - views_ui
   - tour
+  - link
+  - filter
 
   # Contrib modules
   - file_entity
+  - pathauto
   - twitter_block
   - layout_plugin
   - page_manager
   - fences
-  - pathauto
   - token
+  - text_icon
 
   # Custom modules
   - agov_article
@@ -67,8 +70,6 @@ themes:
 config_devel:
   # Global config.
   - system.theme
-  - system.theme
-  - system.site
   - search.settings
   - node.settings
   - core.date_format.publication_date
@@ -91,7 +92,6 @@ config_devel:
   - block.block.mainnavigation
   - block.block.mainnavigation_2
   - block.block.searchform
-  - block.block.useraccountmenu
   - block.block.searchform
   - block.block.seven_breadcrumbs
   - block.block.seven_content
@@ -101,7 +101,6 @@ config_devel:
   - block.block.seven_messages
   - block.block.seven_primary_local_tasks
   - block.block.seven_secondary_local_tasks
-  - block.block.useraccountmenu
   - block.block.breadcrumbs
   - block.block.pagetitle
   - block.block.quicklinks
@@ -143,11 +142,9 @@ config_devel:
   - field.field.block_content.icon_block.field_icon_block_description
   - field.field.block_content.icon_block.field_icon_block_icon
   - field.field.block_content.icon_block.field_icon_block_title
-  - field.field.block_content.social_block.field_social_icon
   - field.storage.block_content.field_icon_block_description
   - field.storage.block_content.field_icon_block_icon
   - field.storage.block_content.field_icon_block_title
-  - field.storage.block_content.field_social_icon
 
   # Search
   - block.block.searchform
