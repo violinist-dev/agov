@@ -28,6 +28,7 @@
 
   <!-- Overrides -->
   <property name="php.sniff.dirs"       value="agov/modules/custom agov/themes agov/src" override="true" />
+  <property name="php.sniff.exclusions" value="*/custom/pathauto/,*/custom/file_entity/,*/libraries*/,*/contrib/*,*/*.features.*,*/*.field_group.inc,*/*.layout.*,*/*.pages_default.*,*/*.panels_default.*,*/*strongarm.inc,*/*.views_default.inc" override="true" />
   <exec command="which php" outputProperty="php.bin.php" />
 
   <!-- Drush -->
