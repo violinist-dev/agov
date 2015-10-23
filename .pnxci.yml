@@ -40,15 +40,15 @@ deploy_8_1:
     - git add .
     - git reset --hard
     # Add drupal.org as a remote.
-    - git remote add dorg git@github.com:previousnext/agov.git
+    - git remote add dorg pnx-bot@git.drupal.org:project/agov.git
     - git fetch dorg
     # Add the existing build commits into the current branch.
     - rm -rf vendor
-    - git merge -X ours --no-edit dorg/jenkins-test
+    - git merge -X ours --no-edit dorg/8.x-1.x
     - git status
     - ls -lah
     - git log | head -n20
     - git branch
     - git remote -v
     # Push the new commits and build commit to the remote.
-    - git push dorg 8.x-1.x:jenkins-test
+    - git push dorg 8.x-1.x
