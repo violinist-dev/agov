@@ -97,6 +97,8 @@ class DefaultConfigTest extends KernelTestBase {
     'agov_default_content',
     // @TODO, move to contrib.
     'text_icon',
+    'pathauto',
+    'file_entity',
   ];
 
   /**
