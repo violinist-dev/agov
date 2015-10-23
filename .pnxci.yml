@@ -41,12 +41,22 @@ deploy_teardown: &deploy_teardown
   - git remote remove drupal
 
 deploy_7_1:
+  setup: *deploy_setup
   steps:
-    # Ignore for now.
+    # Update local build before we do anything else.
+    - git rebase drupal/7.x-1.x
+    # Push changes to Drupal.org.
+    - git push drupal 7.x-1.x
+  teardown: *deploy_teardown
 
 deploy_7_2:
+  setup: *deploy_setup
   steps:
-    # Ignore for now.
+    # Update local build before we do anything else.
+    - git rebase drupal/7.x-2.x
+    # Push changes to Drupal.org.
+    - git push drupal 7.x-2.x
+  teardown: *deploy_teardown
 
 deploy_7_3:
   setup: *deploy_setup
