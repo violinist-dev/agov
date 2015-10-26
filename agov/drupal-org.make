@@ -20,6 +20,7 @@ projects[page_manager][download][revision] = 91f13f592f60d46177a0eeff56c1ae7c5bb
 projects[page_manager][subdir] = 'contrib'
 ; See https://www.drupal.org/node/2391925#comment-10390651
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/2391925-19.patch
+projects[page_manager][patch][] = page-manager-contextual-temp.patch
 
 projects[ctools][type] = module
 projects[ctools][download][type] = git
