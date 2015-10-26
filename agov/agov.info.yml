@@ -6,11 +6,8 @@ core: 8.x
 dependencies:
   # Core modules
   - node
-  - history
   - block
-  - breakpoint
   - ckeditor
-  - color
   - config
   - comment
   - contextual
@@ -28,7 +25,6 @@ dependencies:
   - path
   - page_cache
   - taxonomy
-  - dblog
   - search
   - shortcut
   - toolbar
@@ -37,9 +33,9 @@ dependencies:
   - rdf
   - views
   - views_ui
-  - tour
   - link
   - filter
+  - dynamic_page_cache
 
   # Contrib modules
   - file_entity
