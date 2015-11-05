@@ -15,7 +15,7 @@
     <?php if (!empty($box_link_to) || $box_text) : ?>
       <div class="box--icon__right">
         <?php if (!empty($box_link_to)) : ?>
-          <h3 class="box__title"><?php print render($box_link_to); ?></h3>
+          <h2 class="box__title"><?php print render($box_link_to); ?></h2>
         <?php endif; ?>
 
         <?php if ($box_text) : ?>
