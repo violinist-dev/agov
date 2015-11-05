@@ -24,11 +24,8 @@
   }
 
   &__image {
-    a:focus {
-      outline: none;
-    }
-
     img {
+      display: block;
       margin-bottom: 5px;
     }
   }
