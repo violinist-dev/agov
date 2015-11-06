@@ -115,8 +115,14 @@ function agov_social_links_block_configure($delta = '') {
 
       // Create a human readable service title.
       $service_title = ucfirst($service);
-      if ($service == 'rss') {
-        $service_title = 'RSS Feed';
+      switch ($service) {
+        case 'rss':
+          $service_title = 'RSS Feed';
+          break;
+
+        case 'email':
+          $service_title = 'Email address or Contact';
+          break;
       }
 
       // Create an input field for each service url.
@@ -166,9 +172,23 @@ function agov_social_links_block_view($delta = '') {
 
         if (!empty($service_url)) {
           // Create a human readable name for the service.
-          $service_title = ucfirst($service);
-          if ($service == 'rss') {
-            $service_title = 'RSS Feed';
+          $service_title = 'Connect with us on ' . ucfirst($service);
+          switch ($service) {
+            case 'facebook':
+              $service_title = 'Like us on Facebook';
+              break;
+
+            case 'twitter':
+              $service_title = 'Follow us on Twitter';
+              break;
+
+            case 'rss':
+              $service_title = 'Subscribe to our RSS Feed';
+              break;
+
+            case 'email':
+              $service_title = 'Send us a message';
+              break;
           }
 
           // Get font awesome for service.
