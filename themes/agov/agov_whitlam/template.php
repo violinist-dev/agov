@@ -46,11 +46,12 @@ function agov_whitlam_preprocess_html(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function agov_whitlam_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  // Search page title should tell you if there are results.
+  if (arg(0) === 'search' && arg(1) != '') {
+    $variables['title'] = t('Search Results');
+  }
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
@@ -219,9 +220,21 @@ function agov_whitlam_preprocess_entity(&$variables) {
  */
 function agov_whitlam_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_api_page_search_form') {
-    $form['form']['keys_1']['#placeholder'] = t('Enter your keywords');
     $form['#prefix'] = '<div class="search__wrapper">';
     $form['#suffix'] = '</div>';
-    unset($form['form']['keys_1']['#title']);
+
+    // Set placeholder and hide the label.
+    $form['form']['keys_1']['#placeholder'] = t('Enter your keywords');
+    $form['form']['keys_1']['#title_display'] = 'invisible';
+
+    // Add the search icon.
+    $form['form']['submit_1']['#prefix'] = '<div class="search__button-wrapper"><i class="fa fa-search search__icon" aria-hidden="true"></i>';
+    $form['form']['submit_1']['#suffix'] = '</div>';
+  }
+
+  if ($form_id == 'search_api_page_search_form_default_search') {
+    // Add the search icon.
+    $form['submit_1']['#prefix'] = '<div class="search__button-wrapper"><i class="fa fa-search search__icon" aria-hidden="true"></i>';
+    $form['submit_1']['#suffix'] = '</div>';
   }
 }
