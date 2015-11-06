@@ -84,6 +84,28 @@ function agov_whitlam_preprocess_node(&$variables, $hook) {
 }
 
 /**
+ * Implements hook_process_node().
+ */
+function agov_whitlam_process_node(&$variables) {
+  // Override agov_zen's dynamic title tag for compact view modes
+  // but only if Display Suite HASN'T already been used.
+  if (!isset($variables['rendered_by_ds']) || $variables['rendered_by_ds'] != TRUE) {
+    if (isset($variables['view_mode']) && $variables['view_mode'] === 'compact') {
+      // Most compact views don't have a h2 preceding them
+      // so we need to set the node title tag back to h2.
+      $variables['title_tag'] = 'h2';
+
+      // The following views DO have a h2 title preceding
+      // the compact node title.
+      $view_names = array('latest_updates');
+      if (isset($variables['view']) && in_array($variables['view']->name, $view_names)) {
+        $variables['title_tag'] = 'h3';
+      }
+    }
+  }
+}
+
+/**
  * Override or insert variables into the comment templates.
  *
  * @param array $variables
