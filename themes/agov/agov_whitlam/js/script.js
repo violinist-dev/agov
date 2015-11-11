@@ -19,9 +19,9 @@
     attach: function (context, settings) {
 
       // Menu responsive
-      $('.block-superfish').prepend('<div class="menu-icon open active">menu<i class="fa fa fa-bars"></i></div><div class="menu-icon close">close<i class="fa fa-close"></i></div>');
+      $('.block-superfish').prepend('<div class="menu-icon open active">menu<span class="fa fa fa-bars" aria-hidden="true"></span></div><div class="menu-icon close">close<span class="fa fa-close" aria-hidden="true"></span></div>');
 
-      $('.block-superfish a.menuparent').after('<div class="sub-menu-icon"><i class="fa fa-plus"></i></div>');
+      $('.block-superfish a.menuparent').after('<div class="sub-menu-icon"><span class="fa fa-plus" aria-hidden="true"></span><span class="visually-hidden">expand</span></div>');
 
       $('.menu-icon.open').click(function () {
         $(this).removeClass('active');
