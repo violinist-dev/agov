@@ -228,13 +228,13 @@ function agov_whitlam_form_alter(&$form, &$form_state, $form_id) {
     $form['form']['keys_1']['#title_display'] = 'invisible';
 
     // Add the search icon.
-    $form['form']['submit_1']['#prefix'] = '<div class="search__button-wrapper"><i class="fa fa-search search__icon" aria-hidden="true"></i>';
+    $form['form']['submit_1']['#prefix'] = '<div class="search__button-wrapper"><span class="fa fa-search search__icon" aria-hidden="true"></span>';
     $form['form']['submit_1']['#suffix'] = '</div>';
   }
 
   if ($form_id == 'search_api_page_search_form_default_search') {
     // Add the search icon.
-    $form['submit_1']['#prefix'] = '<div class="search__button-wrapper"><i class="fa fa-search search__icon" aria-hidden="true"></i>';
+    $form['submit_1']['#prefix'] = '<div class="search__button-wrapper"><span class="fa fa-search search__icon" aria-hidden="true"></span>';
     $form['submit_1']['#suffix'] = '</div>';
   }
 }

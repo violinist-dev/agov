@@ -197,7 +197,7 @@ function agov_social_links_block_view($delta = '') {
           $link = array(
             '#theme' => 'link',
             '#path' => $service_url,
-            '#text' => '<i class="fa ' . $icon . '"></i><span class="element-invisible">' . $service_title . '</span>',
+            '#text' => '<span class="fa ' . $icon . '" aria-hidden="true"></span><span class="element-invisible">' . $service_title . '</span>',
             '#options' => array(
               'attributes' => array(),
               'html' => TRUE,

@@ -15,7 +15,7 @@
       </div>
       <div class="footer-bottom__right">
         <p>
-          <i class="fa fa-chevron-circle-up fa-lg"></i>
+          <span class="fa fa-chevron-circle-up fa-lg" aria-hidden="true"></span>
           <a class="footer-bottom__link" href="#skip-link">Back to top</a>
         </p>
       </div>

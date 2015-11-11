@@ -8,7 +8,7 @@
   <div class="box--icon">
     <?php if ($box_icon) : ?>
       <div class="box--icon__left">
-        <i class="fa <?php print $box_icon; ?>"></i>
+        <span class="fa <?php print $box_icon; ?>" aria-hidden="true"></span>
       </div>
     <?php endif; ?>
 
