@@ -50,22 +50,22 @@
     "field_social_icon": [
         {
             "uri": "http:\/\/www.facebook.com\/pages\/PreviousNext\/170975076260877",
-            "title": "Facebook",
+            "title": "Like us on Facebook",
             "options": []
         },
         {
             "uri": "http:\/\/www.twitter.com\/PreviousNext",
-            "title": "Twitter",
+            "title": "Follow us on Twitter",
             "options": []
         },
         {
             "uri": "https:\/\/3.agov.com.au\/rss.xml",
-            "title": "RSS",
+            "title": "Subscribe to our RSS",
             "options": []
         },
         {
             "uri": "https:\/\/3.agov.com.au\/contact",
-            "title": "Envelope",
+            "title": "Contact us",
             "options": []
         }
     ]
