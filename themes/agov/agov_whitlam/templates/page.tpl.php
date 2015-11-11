@@ -37,7 +37,7 @@
           ),
           'heading' => array(
             'text' => $secondary_menu_heading,
-            'level' => 'h2',
+            'level' => 'p',
             'class' => array('visually-hidden'),
           ),
         )); ?>
