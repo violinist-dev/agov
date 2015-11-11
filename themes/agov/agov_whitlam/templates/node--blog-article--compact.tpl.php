@@ -2,6 +2,9 @@
 /**
  * @file
  * Template for article compact teasers.
+ *
+ * $title_tag defaults to h2.
+ * @see agov_whitlam_process_node();
  */
 ?>
 
@@ -11,7 +14,9 @@
       <?php print drupal_render($content['field_thumbnail'][0]) ?>
     </div>
   <?php endif; ?>
-  <h3 class="teaser__title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+  <<?php print $title_tag; ?> class="teaser__title">
+    <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
+  </<?php print $title_tag; ?>>
   <span class="teaser__submitted"><?php print $submitted; ?></span>
   <div class="teaser__content">
     <?php hide($content['field_thumbnail']); ?>

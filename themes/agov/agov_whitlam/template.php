@@ -46,11 +46,12 @@ function agov_whitlam_preprocess_html(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function agov_whitlam_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  // Search page title should tell you if there are results.
+  if (arg(0) === 'search' && arg(1) != '') {
+    $variables['title'] = t('Search Results');
+  }
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
@@ -79,6 +80,28 @@ function agov_whitlam_preprocess_node(&$variables, $hook) {
     if (isset($field_reference_path)) {
       $variables['node_url'] = check_url($field_reference_path);
       unset($variables['content']['field_reference']);
+    }
+  }
+}
+
+/**
+ * Implements hook_process_node().
+ */
+function agov_whitlam_process_node(&$variables) {
+  // Override agov_zen's dynamic title tag for compact view modes
+  // but only if Display Suite HASN'T already been used.
+  if (!isset($variables['rendered_by_ds']) || $variables['rendered_by_ds'] != TRUE) {
+    if (isset($variables['view_mode']) && $variables['view_mode'] === 'compact') {
+      // Most compact views don't have a h2 preceding them
+      // so we need to set the node title tag back to h2.
+      $variables['title_tag'] = 'h2';
+
+      // The following views DO have a h2 title preceding
+      // the compact node title.
+      $view_names = array('latest_updates');
+      if (isset($variables['view']) && in_array($variables['view']->name, $view_names)) {
+        $variables['title_tag'] = 'h3';
+      }
     }
   }
 }
@@ -197,9 +220,21 @@ function agov_whitlam_preprocess_entity(&$variables) {
  */
 function agov_whitlam_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_api_page_search_form') {
-    $form['form']['keys_1']['#placeholder'] = t('Enter your keywords');
     $form['#prefix'] = '<div class="search__wrapper">';
     $form['#suffix'] = '</div>';
-    unset($form['form']['keys_1']['#title']);
+
+    // Set placeholder and hide the label.
+    $form['form']['keys_1']['#placeholder'] = t('Enter your keywords');
+    $form['form']['keys_1']['#title_display'] = 'invisible';
+
+    // Add the search icon.
+    $form['form']['submit_1']['#prefix'] = '<div class="search__button-wrapper"><span class="fa fa-search search__icon" aria-hidden="true"></span>';
+    $form['form']['submit_1']['#suffix'] = '</div>';
+  }
+
+  if ($form_id == 'search_api_page_search_form_default_search') {
+    // Add the search icon.
+    $form['submit_1']['#prefix'] = '<div class="search__button-wrapper"><span class="fa fa-search search__icon" aria-hidden="true"></span>';
+    $form['submit_1']['#suffix'] = '</div>';
   }
 }

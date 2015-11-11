@@ -21,9 +21,9 @@
     });
 
     // Menu responsive
-    $('.navbar').prepend('<div class="menu-icon open active">menu<i class="fa fa fa-bars"></i></div><div class="menu-icon close">close<i class="fa fa-close"></i></div>');
+    $('.navbar').prepend('<div class="menu-icon open active">menu<span class="fa fa fa-bars" aria-hidden="true"></span></div><div class="menu-icon close">menu<span class="fa fa-close" aria-hidden="true"></span></div>');
 
-    $('.navbar a.menuparent').after('<div class="sub-menu-icon"><i class="fa fa-plus"></i></div>');
+    $('.navbar a.menuparent').after('<div class="sub-menu-icon"><span class="fa fa-plus" aria-hidden="true"></span><span class="element-invisible">expand</span></div>');
 
     $('.menu-icon.open').click(function () {
       $(this).removeClass('active');

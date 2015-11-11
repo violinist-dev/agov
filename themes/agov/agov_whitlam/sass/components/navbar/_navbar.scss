@@ -35,7 +35,7 @@
     display: none;
   }
 
-  i {
+  span {
     font-size: 24px;
     margin-left: 10px;
     position: relative;
@@ -83,7 +83,7 @@
     display: none;
   }
 
-  &.active i {
+  &.active span {
     @extend .fa;
     @extend .fa-minus;
   }
@@ -132,6 +132,7 @@
   }
 
   &-is-active {
+    color: color(navbar-active);
     background: color(navbar);
   }
 

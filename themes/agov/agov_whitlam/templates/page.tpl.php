@@ -17,9 +17,9 @@
     <?php if ($site_name || $site_slogan): ?>
       <div class="header__name-and-slogan">
         <?php if ($site_name): ?>
-          <h1 class="header__site-name visually-hidden">
+          <div class="header__site-name visually-hidden">
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header__site-link" rel="home"><span><?php print $site_name; ?></span></a>
-          </h1>
+          </div>
         <?php endif; ?>
 
         <?php if ($site_slogan): ?>
@@ -37,7 +37,7 @@
           ),
           'heading' => array(
             'text' => $secondary_menu_heading,
-            'level' => 'h2',
+            'level' => 'p',
             'class' => array('visually-hidden'),
           ),
         )); ?>
@@ -83,6 +83,8 @@
     <?php print render($title_prefix); ?>
     <?php if ($title): ?>
       <h1><?php print $title; ?></h1>
+    <?php elseif ($is_front): ?>
+      <h1 class="visually-hidden"><?php print t('Home'); ?></h1>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
     <?php print $messages; ?>

@@ -8,14 +8,14 @@
   <div class="box--icon box--with-border box--with-hover">
     <?php if ($box_icon) : ?>
       <div class="box--icon__left">
-        <i class="fa <?php print $box_icon; ?>"></i>
+        <span class="fa <?php print $box_icon; ?>" aria-hidden="true"></span>
       </div>
     <?php endif; ?>
 
     <?php if (!empty($box_link_to) || $box_text) : ?>
       <div class="box--icon__right">
         <?php if (!empty($box_link_to)) : ?>
-          <h3 class="box__title"><?php print render($box_link_to); ?></h3>
+          <h2 class="box__title"><?php print render($box_link_to); ?></h2>
         <?php endif; ?>
 
         <?php if ($box_text) : ?>

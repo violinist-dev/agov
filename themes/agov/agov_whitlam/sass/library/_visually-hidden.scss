@@ -15,6 +15,8 @@
     clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
   }
   clip: rect(1px, 1px, 1px, 1px);
+  background: color('white');
+  color: color('grey-extra-dark');
 }
 
 // visually-hidden--off()

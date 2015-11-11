@@ -8,12 +8,18 @@
 
 .header,
 %header {
-  background: color(header-background);
   position: relative;
   margin-bottom: 80px;
 
   @include respond-to('medium') {
     margin-bottom: 0;
+  }
+
+  // Header and links should have the same colour.
+  &,
+  a {
+    background: color(header-background);
+    color: color(header-color);
   }
 }
 
