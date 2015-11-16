@@ -63,6 +63,7 @@ projects[twitter_block][subdir] = 'contrib'
 
 projects[linkicon][subdir] = 'contrib'
 projects[linkicon][version] = '1.1'
+projects[linkicon][patch][] = https://www.drupal.org/files/issues/2613732-menu-items-fix_0.patch
 
 projects[title][type] = module
 projects[title][download][type] = git
