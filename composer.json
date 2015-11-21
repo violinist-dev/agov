@@ -48,7 +48,7 @@
   "require-dev": {
     "phing/phing": "~2.11",
     "previousnext/phing-phpqatools": "dev-master",
-    "drush/drush": "dev-master"
+    "drush/drush": "~8.0.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

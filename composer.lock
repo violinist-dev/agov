@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c6ff2980a5d6ed6db021b999d32a1aba",
+    "hash": "01d1d6307924af3d1c1bee91928e2169",
     "packages": [
         {
             "name": "composer/installers",
@@ -651,16 +651,16 @@
         },
         {
             "name": "drush/drush",
-            "version": "dev-master",
+            "version": "8.0.0-rc3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drush-ops/drush.git",
-                "reference": "83ba85237765941d6d56e6f17d60ea3ea51bc98d"
+                "reference": "620aa70d055cb8dbe2a3f8aebf8f53fa69832bf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/83ba85237765941d6d56e6f17d60ea3ea51bc98d",
-                "reference": "83ba85237765941d6d56e6f17d60ea3ea51bc98d",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/620aa70d055cb8dbe2a3f8aebf8f53fa69832bf3",
+                "reference": "620aa70d055cb8dbe2a3f8aebf8f53fa69832bf3",
                 "shasum": ""
             },
             "require": {
@@ -668,11 +668,11 @@
                 "php": ">=5.4.5",
                 "psy/psysh": "~0.5",
                 "symfony/var-dumper": "^2.6.3",
-                "symfony/yaml": "~2.2"
+                "symfony/yaml": "2.7.*"
             },
             "require-dev": {
                 "phpunit/phpunit": ">=3.5",
-                "symfony/process": "2.4.5"
+                "symfony/process": "2.7.*"
             },
             "suggest": {
                 "drush/config-extra": "Provides configuration workflow commands, such as config-merge.",
@@ -736,7 +736,7 @@
             ],
             "description": "Drush is a command line shell and scripting interface for Drupal, a veritable Swiss Army knife designed to make life easier for those of us who spend some of our working hours hacking away at the command prompt.",
             "homepage": "http://www.drush.org",
-            "time": "2015-10-03 18:18:56"
+            "time": "2015-11-04 21:26:14"
         },
         {
             "name": "fabpot/goutte",
@@ -2648,8 +2648,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "previousnext/phing-phpqatools": 20,
-        "drush/drush": 20
+        "previousnext/phing-phpqatools": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
