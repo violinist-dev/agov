@@ -1,0 +1,17 @@
+// Sidebar Menu
+//
+// Main Nav displaying for the sidebar.
+//
+// Markup: sidebar-menu.hbs
+//
+// style guide: components.sidebar-menu
+
+.sidebar-menu,
+%sidebar-menu {
+  .is-active,
+  &-is-active {
+    text-decoration: none;
+    font-weight: bold;
+    color: color(menu-active);
+  }
+}
