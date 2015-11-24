@@ -163,7 +163,7 @@ function agov_base_preprocess_menu__mainnavigation(&$vars) {
  */
 function agov_base_preprocess_block__mainnavigation_2(&$vars) {
   $vars['attributes']['class'][] = 'divider';
-  $vars['content']['#attributes']['class'] = ['unstyled-list'];
+  $vars['content']['#attributes']['class'] = ['unstyled-list sidebar-menu'];
 }
 
 /**
