@@ -93,5 +93,5 @@ projects[default_content][type] = module
 projects[default_content][download][type] = git
 projects[default_content][download][url] = http://git.drupal.org/project/default_content.git
 projects[default_content][download][branch] = 8.x-1.x
-projects[default_content][download][revision] = 80fb60de4d7adf28abf8efedc9bcbabd148dec1d
+projects[default_content][download][revision] = 471bf110e40e22b8a5ed10973825959aa33b2f21
 projects[default_content][subdir] = 'development'
