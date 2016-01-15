@@ -14,6 +14,7 @@ require 'compass/import-once/activate'
 require 'sass-globbing'
 require 'zen-grids'
 require 'font-awesome-sass'
+require 'typey'
 
 # Location of the theme's resources.
 css_dir         = "css"
