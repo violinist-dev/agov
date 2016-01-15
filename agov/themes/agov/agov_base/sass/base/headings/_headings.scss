@@ -15,12 +15,11 @@
 .heading,
 %heading {
   // Set 1 unit of vertical rhythm on the top and bottom margins.
-  @include leader(1);
-  @include trailer(1);
+  @include margin(1 0);
   font-weight: weight(bold);
 
   &--twitter {
-    @include trailer(.3);
+    @include margin-bottom(.5);
   }
 }
 

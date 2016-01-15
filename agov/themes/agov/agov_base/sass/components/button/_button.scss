@@ -18,6 +18,7 @@
 
 .button,
 %button {
+  @include padding(15px 20px);
   // Prevent "line-height: normal" rule below from breaking the
   // "appearance: button" styling on the input elements in Firefox.
   line-height: inherit;
@@ -30,7 +31,6 @@
   border: 0;
   border-bottom: 2px solid color(form-element-border);
   color: color(button-color);
-  padding: 15px 20px;
   font-weight: weight(bold);
   @if support-legacy-browser(ie, '7') {
     // Remove inner spacing in IE 7 without affecting normal text inputs.
@@ -59,7 +59,7 @@
   }
 
   &--large {
-    padding: 25px;
+    @include padding(25px);
     @include type-layout(32px, 1);
     font-weight: weight(bold);
   }

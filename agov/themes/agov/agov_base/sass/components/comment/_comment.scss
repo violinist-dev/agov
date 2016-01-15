@@ -21,10 +21,10 @@ $padding-left-no-picture: 42px;
 
 .comment,
 %comment {
-  margin-bottom: 42px;
+  @include margin-bottom(42px);
 
   &--inner-wrapper {
-    padding-left: 50px;
+    @include padding-left(50px);
     position: relative;
 
     &:before {
@@ -47,7 +47,7 @@ $padding-left-no-picture: 42px;
 
   &.with-picture {
     .comment--inner-wrapper {
-      padding-left: 64px;
+      @include padding-left(64px);
 
       &:before {
         content: '';
@@ -106,12 +106,12 @@ $padding-left-no-picture: 42px;
 
   // Wrapper for the list of comments and its title.
   &__section {
-    @include output-rhythm(margin, rhythm(1) 0);
+    @include margin(1 0);
 
     &-title {
       @extend %divider;
-      margin-bottom: 45px;
-      padding-top: 25px;
+      @include margin-bottom(45px);
+      @include padding-top(25px);
     }
   }
 
@@ -134,8 +134,8 @@ $padding-left-no-picture: 42px;
   &--nested {
     // Drupal core uses a 25px left margin.
     @include rtl() {
+      @include margin-right(2);
       margin-left: 0;
-      margin-right: $indent-amount;
     }
   }
 }

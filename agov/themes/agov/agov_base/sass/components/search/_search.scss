@@ -21,12 +21,12 @@
   }
 
   &__wrapper {
-    padding: 15px 20px;
+    @include padding(15px 20px);
 
     @include respond-to('header-desktop') {
+      @include padding(14px 5px 5px);
       position: relative;
       bottom: 0;
-      padding: 14px 5px 5px;
     }
   }
 
@@ -108,8 +108,8 @@
 
   &__icon {
     @extend %search__button-position;
-    margin: 0 .75em;
-    padding: 12px 0;
+    @include margin(0 .75);
+    @include padding(.5 0);
     @include font-size(25px);
     color: currentColor;
   }

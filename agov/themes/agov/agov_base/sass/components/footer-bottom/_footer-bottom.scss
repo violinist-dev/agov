@@ -8,10 +8,9 @@
 
 .footer-bottom,
 %footer-bottom {
-  padding-top: 1px;
-  padding-bottom: 1px;
   background-color: color(grey-extra-dark);
   color: color(text-bg);
+  @include padding(1px 0);
 
   &__left {
     @include respond-to(medium) {
@@ -21,7 +20,7 @@
 
   &__right {
     @include respond-to(medium) {
-      margin-left: 25px;
+      @include margin-left(25px);
       float: right;
     }
   }

@@ -118,11 +118,13 @@ button,
   @extend %button;
 }
 
+$form-element-vertical-rhythm: (50px - 2px - $base-line-height)/2;
+
 // The %form-element can be used to style different kinds of form elements at
 // the same time.
 %form-element {
+  @include padding($form-element-vertical-rhythm .75);
   width: 100%;
-  padding: (50px - 3px - $base-line-height)/2 18px;
   border: 1px solid color(form-element-border);
   border-bottom: 2px solid color(form-element-border-bottom);
   // Needed for select elements in webkit.
@@ -177,9 +179,9 @@ input {
   }
 
   &[type="color"] {
+    @include padding(2px);
     height: 42px;
     width: 42px;
-    padding: 2px;
   }
 
   &[type="file"] {
@@ -237,10 +239,10 @@ input[type="radio"] {
 // Style guide: base.forms.fieldset
 
 fieldset {
-  @include output-rhythm(padding, rhythm(.35) rhythm(.625) rhythm(.65));
   border: 1px solid color(border);
   // Define consistent border, margin, and padding.
-  margin: 0 2px;
+  @include padding(.35 0 0);
+  @include margin(1 0);
 }
 
 legend {
@@ -275,8 +277,8 @@ legend {
 
 label {
   // Drupal-style form labels.
+  @include margin(0 0 3px);
   display: block;
-  margin-bottom: 3px;
   font-weight: weight(bold);
 }
 

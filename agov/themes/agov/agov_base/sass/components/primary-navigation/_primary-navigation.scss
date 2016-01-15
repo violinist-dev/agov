@@ -24,9 +24,9 @@
   &__anchor {
     color: color(primary-navigation-item-color);
     @include font-size(17px);
+    @include padding(14px 30px);
     display: block;
     text-decoration: none;
-    padding: 14px 30px;
 
     &--active {
       background: color(primary-navigation-item-active-background);
@@ -84,13 +84,13 @@
     }
 
     &__anchor {
-      padding: 9px 15px;
+      @include padding(9px 15px);
     }
   }
 
   // Styles on desktop only.
   @include respond-to('header-desktop') {
-    margin-bottom: 30px;
+    @include margin-bottom(30px);
 
     &__title {
       display: none;
@@ -117,10 +117,10 @@
 
     &__anchor-level-2 {
       @include font-size(15px);
+      @include padding(4px 13px);
       text-decoration: none;
       display: block;
       color: color(primary-navigation-item-active-color);
-      padding: 4px 13px;
 
       &:hover,
       &:focus {

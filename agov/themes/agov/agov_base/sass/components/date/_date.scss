@@ -18,8 +18,8 @@
 %date {
 
   &--without-label {
-    margin: 1.5625rem 0;
     color: color(date);
+    @include margin(1.5 0);
     @include font-size(xs);
   }
 }

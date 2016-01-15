@@ -18,9 +18,9 @@
 .tabs,
 %tabs {
   @extend %clearfix;
-  @include output-rhythm(margin, rhythm(1) 0);
+  @include margin-bottom(2);
+  margin-top: 1rem;
   background-image: none;
-  margin-bottom: 36px;
   border-left: 3px solid color(tabs-border);
   text-indent: 0;
   @if support-legacy-browser(ie, '9') {
@@ -43,7 +43,7 @@
 
 .tabs__tab,
 %tabs__tab {
-  @include output-rhythm(margin, 0);
+  @include margin(0);
   float: left;
   width: 100%;
 
@@ -73,10 +73,10 @@
 
 .tabs__tab-link,
 %tabs__tab-link {
+  @include padding(.75 1);
   color: color(tab-secondary);
   background-color: none;
   width: 100%;
-  padding: 18px 20px;
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
@@ -84,7 +84,6 @@
 
   @include respond-to('small') {
     width: auto;
-    padding: 20px 25px;
   }
 
   &:focus,
@@ -144,13 +143,13 @@
   %tabs--secondary {
     @include background-image(linear-gradient(bottom, color(tabs-border) 1px, transparent 1px));
     // Collapse bottom margin of .tabs.
-    @include output-rhythm(margin-top, -(rhythm(1)));
+    margin-top: -1rem;
   }
 }
 
 .tabs--secondary__tab,
 %tabs--secondary__tab {
-  @include output-rhythm(margin, rhythm(1)/2 3px);
+  @include margin(.5 3px);
   float: left;
 
   @include rtl() {
@@ -164,9 +163,9 @@
   @include border-radius(.75em);
   @include transition(background-color .3s);
   @include single-text-shadow(color(tab-text-shadow), 1px, 1px, 0);
+  @include padding(0 .5);
   color: color(tab-secondary);
   background-color: lighten(color(tab-bg), 8%);
-  padding: 0 .5em;
 
   &:focus,
   &:hover {

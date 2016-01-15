@@ -13,8 +13,8 @@
   text-indent: 0;
 
   &__item {
+    @include margin-bottom(.5);
     padding: 0;
-    margin-bottom: 9px;
     list-style: none;
   }
 
@@ -22,13 +22,12 @@
     &.is-active,
     &--is-active {
       text-decoration: none;
-      color: color(menu-active);
       font-weight: weight(bold);
     }
   }
 
   &__nested-list {
-    padding-left: 28px;
+    @include padding-left(1);
   }
 
   li {

@@ -42,10 +42,10 @@
   }
 
   &__link {
+    @include margin(0 .25 0 0);
+    @include padding(.25 .5);
     display: inline-block;
-    margin: 0 5px 0 0;
     border: 1px solid color(border);
-    padding: 6px 12px;
     text-decoration: none;
 
     .pager__item:last-child &,
