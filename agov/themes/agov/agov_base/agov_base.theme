@@ -77,7 +77,10 @@ function agov_base_preprocess_breadcrumb(&$vars) {
  */
 function agov_base_preprocess_block__search_form_block(&$vars) {
   // We have the searchbox twice, one light, one dark.
-  $modifier = strpos($vars['elements']['#id'], 'searchform_2') !== FALSE ? '--light' : '';
+  $modifier = strpos($vars['attributes']['id'], 'searchform-2') !== FALSE ? '--light' : '';
+
+  // Wrapper class for the block.
+  $vars['attributes']['class'][] = 'search__wrapper search__wrapper' . $modifier;
 
   // The search form isn't all in one template, this code puts classes in about
   // three different templates.
@@ -91,7 +94,7 @@ function agov_base_preprocess_block__search_form_block(&$vars) {
   $vars['content']['actions']['submit']['#attributes']['class'][] = 'search__button' . $modifier;
   $vars['content']['actions']['submit']['#attributes']['class'][] = 'search__button';
   // Add the search icon.
-  $vars['content']['actions']['submit']['#prefix'] = '<div class="search__button-wrapper' . $modifier . '"><i class="fa fa-search search__icon" aria-hidden="true"></i>';
+  $vars['content']['actions']['submit']['#prefix'] = '<div class="search__button-wrapper search__button-wrapper' . $modifier . '"><i class="fa fa-search search__icon" aria-hidden="true"></i>';
   $vars['content']['actions']['submit']['#suffix'] = '</div>';
 }
 
