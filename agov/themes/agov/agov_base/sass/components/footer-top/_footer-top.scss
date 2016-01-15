@@ -35,7 +35,7 @@
     &--nested {
       padding-left: .3rem;
       padding-top: .3rem;
-      font-size: 15px;
+      @include font-size(s);
     }
   }
 }

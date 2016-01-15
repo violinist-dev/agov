@@ -22,8 +22,8 @@
     &.is-active,
     &--is-active {
       text-decoration: none;
-      font-weight: bold;
       color: color(menu-active);
+      font-weight: weight(bold);
     }
   }
 

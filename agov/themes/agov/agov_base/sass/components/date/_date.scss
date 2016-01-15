@@ -19,7 +19,7 @@
 
   &--without-label {
     margin: 1.5625rem 0;
-    font-size: 14px;
     color: color(date);
+    @include font-size(xs);
   }
 }

@@ -40,7 +40,7 @@
 
   // The descriptive help text (separate from the label).
   &__description {
-    font-size: .85em;
+    @include font-size(xs);
   }
 
   &--inline {

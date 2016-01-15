@@ -9,7 +9,7 @@
 .social,
 %social {
   &__title {
-    font-size: 24px;
+    @include font-size(l);
   }
 
   &__list {

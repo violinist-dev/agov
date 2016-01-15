@@ -31,6 +31,6 @@ th {
 }
 
 th {
-  font-weight: bold;
-  font-size: 20px;
+  @include font-size(l);
+  font-weight: weight(bold);
 }

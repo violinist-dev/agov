@@ -48,8 +48,6 @@
     background: none;
     border: 0;
     font-style: italic;
-    font-weight: bold;
-    font-size: 18px;
     width: 100%;
     padding: 12px;
 
@@ -57,6 +55,8 @@
       @include opacity(1);
       color: color(search-color);
     }
+    @include font-size(18px);
+    font-weight: weight(bold);
 
     &--light {
       @include respond-to('medium') {
@@ -110,7 +110,7 @@
     @extend %search__button-position;
     margin: 0 .75em;
     padding: 12px 0;
-    font-size: 1.5em;
+    @include font-size(25px);
     color: currentColor;
   }
 

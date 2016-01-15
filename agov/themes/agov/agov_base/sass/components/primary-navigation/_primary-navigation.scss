@@ -22,8 +22,8 @@
   }
 
   &__anchor {
-    @include adjust-font-size-to(17px);
     color: color(primary-navigation-item-color);
+    @include font-size(17px);
     display: block;
     text-decoration: none;
     padding: 14px 30px;
@@ -59,7 +59,7 @@
     }
 
     &__title {
-      @include adjust-font-size-to(15px);
+      @include font-size(15px);
       position: absolute;
       top: 40px;
       right: 34px;
@@ -69,7 +69,7 @@
       margin: 0;
 
       &:after {
-        @include adjust-font-size-to(24px);
+        @include font-size(24px);
         content: '\2630';
         vertical-align: -2px;
         font-size: 24px;
@@ -116,7 +116,7 @@
     }
 
     &__anchor-level-2 {
-      @include adjust-font-size-to(15px);
+      @include font-size(15px);
       text-decoration: none;
       display: block;
       color: color(primary-navigation-item-active-color);

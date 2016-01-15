@@ -8,8 +8,7 @@
 
 .lede,
 %lede {
-  font-size: 20px;
-  line-height: 31px;
+  @include type-layout(l, 1);
 
   p {
     margin: .4rem 0;

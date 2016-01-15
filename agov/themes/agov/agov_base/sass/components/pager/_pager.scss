@@ -36,9 +36,9 @@
   &__current-item {
     @extend %pager__item;
     @extend %pager__link;
-    font-weight: bold;
     color: color(link);
     background: color(pager-bg);
+    font-weight: weight(bold);
   }
 
   &__link {

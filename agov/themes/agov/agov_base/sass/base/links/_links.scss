@@ -51,9 +51,9 @@ a:focus {
 
   // Add visible URL after links.
   a[href]:after {
+    @include font-size(m);
     content: ' (' attr(href) ')';
-    font-weight: normal;
-    font-size: $base-font-size;
+    font-weight: weight(normal);
     text-decoration: none;
   }
 
