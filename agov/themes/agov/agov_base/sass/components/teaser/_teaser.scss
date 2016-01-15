@@ -15,10 +15,12 @@
   }
 
   &__title {
-    @include margin(.25 0);
+    @include margin(.5 0);
 
-    h2 {
+    h2,
+    h3 {
       @extend %h3;
+      @extend %teaser__title;
     }
   }
 
