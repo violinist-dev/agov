@@ -136,22 +136,22 @@
 
 // Toggle the two search blocks for now.
 // scss-lint:disable IdSelector
-#block-searchform-2 {
+.header .search-block-form {
   display: none;
   float: right;
 }
 
 // scss-lint:disable IdSelector
-#block-searchform {
+.region-highlighted .search-block-form {
   display: block;
 }
 
 @include respond-to('header-desktop') {
-  #block-searchform-2 {
+  .header .search-block-form {
     display: block;
   }
 
-  #block-searchform {
+  .region-highlighted .search-block-form {
     display: none;
   }
 }
