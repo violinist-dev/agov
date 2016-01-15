@@ -70,6 +70,9 @@ function agov_base_preprocess_breadcrumb(&$vars) {
  * Implements hook_preprocess_block__BLOCK_ID().
  */
 function agov_base_preprocess_block__search_form_block(&$vars) {
+  $modifier = strpos($vars['attributes']['id'], 'searchform-2') ? '--light' : '';
+  $vars['attributes']['class'][] = 'search__wrapper search__wrapper' . $modifier;
+
   // We have the searchbox twice, one light, one dark.
   $modifier = $vars['elements']['#id'] == 'searchform_2' ? '--light' : '';
 
@@ -85,7 +88,7 @@ function agov_base_preprocess_block__search_form_block(&$vars) {
   $vars['content']['actions']['submit']['#attributes']['class'][] = 'search__button' . $modifier;
   $vars['content']['actions']['submit']['#attributes']['class'][] = 'search__button';
   // Add the search icon.
-  $vars['content']['actions']['submit']['#prefix'] = '<div class="search__button-wrapper' . $modifier . '"><i class="fa fa-search search__icon" aria-hidden="true"></i>';
+  $vars['content']['actions']['submit']['#prefix'] = '<div class="search__button-wrapper search__button-wrapper' . $modifier . '"><i class="fa fa-search search__icon" aria-hidden="true"></i>';
   $vars['content']['actions']['submit']['#suffix'] = '</div>';
 }
 
