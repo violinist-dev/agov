@@ -16,26 +16,26 @@
 
 .comment,
 %comment {
-  margin-bottom: 42px;
+  @include margin-bottom(2);
 
   // Wrapper for the list of comments.
   &__outer-wrapper {
-    @include output-rhythm(margin, rhythm(1) 0);
+    @include margin(1 0);
 
     // Improve indented comment alignment.
     .indented {
-      margin-left: 50px;
+      @include margin-left(50px);
     }
   }
 
   &__outer-wrapper-title {
     @extend %divider;
-    margin-bottom: 45px;
-    padding-top: 25px;
+    @include margin-bottom(2);
+    @include padding-bottom(1);
   }
 
   &__inner-wrapper {
-    padding-left: 50px;
+    @include padding-left(50px);
     position: relative;
 
     &:before {
@@ -61,16 +61,16 @@
   }
 
   &__title {
-    margin: 0 0 5px;
+    @include margin(0 0 .25);
   }
 
   p {
-    margin: 3px 0;
+    @include margin(3px 0);
   }
 
   ul.links {
+    @include margin(.5 0);
     display: inline-block;
-    margin: 10px 0;
     padding: 0;
     text-indent: 0;
 

@@ -30,15 +30,14 @@
 
 .box,
 %box {
-  padding: 10px;
+  @include padding(10px);
 
   @include respond-to('small') {
-    padding: 20px;
+    @include padding(20px);
   }
 
   &__title {
-    margin-bottom: 4px;
-    margin-top: 0;
+    @include margin(0 0 4px);
   }
 
   &--with-border {
@@ -52,21 +51,18 @@
     }
   }
 
-
-
   &--icon {
     @extend %box;
-    padding: 20px 0;
+    @include padding(20px 0);
 
     &--reduced-top-spacing {
-      padding-top: 2px;
-
+      @include padding-top(2px);
     }
 
     &__left {
+      @include padding(2px 0);
       float: left;
       text-align: center;
-      padding: 2px 0;
       width: 85px;
 
       i {
@@ -75,7 +71,7 @@
     }
 
     &__right {
-      padding-left: 85px;
+      @include padding-left(85px);
     }
   }
 }

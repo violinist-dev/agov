@@ -15,13 +15,13 @@
 .footer-top,
 %footer-top {
   @include clearfix;
-  margin-top: 60px;
   background-color: color(white-smoke);
-  padding-bottom: 25px;
+  @include margin-top(2);
+  @include padding(1 0 2);
 
   &__menu {
     border-top: 2px solid color('white');
-    margin-top: 25px;
+    @include margin-top(1);
 
     &:first-child {
       border-top: 0;
@@ -33,9 +33,9 @@
     }
 
     &--nested {
-      padding-left: .3rem;
-      padding-top: .3rem;
-      font-size: 15px;
+      @include padding-left(.5);
+      @include padding-top(.5);
+      @include font-size(s);
     }
   }
 }

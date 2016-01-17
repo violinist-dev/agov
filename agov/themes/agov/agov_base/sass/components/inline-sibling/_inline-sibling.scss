@@ -8,12 +8,12 @@
 
 .inline-sibling,
 %inline-sibling {
+  @include margin-right(.75);
   display: inline;
-  margin-right: 10px;
 
   @include rtl() {
+    @include margin-left(.75);
     margin-right: 0;
-    margin-left: 10px;
   }
 
   // All of the children of the element need to be inline as well.

@@ -10,7 +10,7 @@
 }
 
 .wrap-demo {
-  padding: 20px;
+  @include padding(1);
 
   @include respond-to('medium') {
     background-color: color(link);
@@ -18,8 +18,8 @@
 }
 
 .demo-bg {
-  padding-top: 60px;
   background: color(link);
+  @include padding-top(4);
   position: relative;
 
   @include respond-to('medium') {

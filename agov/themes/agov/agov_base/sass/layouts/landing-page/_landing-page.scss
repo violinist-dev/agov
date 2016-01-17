@@ -115,6 +115,7 @@ $zen-gutters: $zen-gutters--small;
 
     &__left-content {
       @include zen-grid-item(2, 1);
+      padding-left: 0;
     }
 
     &__right-content {
@@ -129,6 +130,7 @@ $zen-gutters: $zen-gutters--small;
     &__right-sidebar {
       @include zen-new-row(right);
       @include zen-grid-item(1, 1, right);
+      padding-right: 0;
     }
 
     &__col-1,
