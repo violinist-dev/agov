@@ -27,6 +27,16 @@
       @include padding(14px 5px 5px);
       position: relative;
       bottom: 0;
+      display: none;
+    }
+
+    &--light {
+      display: none;
+      float: right;
+
+      @include respond-to('header-desktop') {
+        display: block;
+      }
     }
   }
 
@@ -131,27 +141,5 @@
         background: none;
       }
     }
-  }
-}
-
-// Toggle the two search blocks for now.
-// scss-lint:disable IdSelector
-#block-searchform-2 {
-  display: none;
-  float: right;
-}
-
-// scss-lint:disable IdSelector
-#block-searchform {
-  display: block;
-}
-
-@include respond-to('header-desktop') {
-  #block-searchform-2 {
-    display: block;
-  }
-
-  #block-searchform {
-    display: none;
   }
 }
