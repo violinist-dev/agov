@@ -55,11 +55,8 @@ projects[token][download][branch] = 8.x-1.x
 projects[token][download][revision] = 5a36ca581d4c02d0afead767b48263e29af83824
 projects[token][subdir] = 'contrib'
 
-projects[twitter_block][type] = module
-projects[twitter_block][download][type] = git
-projects[twitter_block][download][url] = http://git.drupal.org/sandbox/sam/2572433.git
-projects[twitter_block][download][branch] = 8.x-1.x
-projects[twitter_block][subdir] = 'contrib'
+projects[twitter_block][version] = 2.0
+projects[twitter_block][subdir] = contrib
 
 projects[linkicon][subdir] = 'contrib'
 projects[linkicon][version] = '1.1'
