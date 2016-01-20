@@ -58,6 +58,10 @@ projects[token][subdir] = 'contrib'
 projects[twitter_block][version] = 2.0
 projects[twitter_block][subdir] = contrib
 
+projects[linkicon][subdir] = 'contrib'
+projects[linkicon][version] = '1.1'
+
+
 projects[title][type] = module
 projects[title][download][type] = git
 projects[title][download][url] = http://git.drupal.org/project/title.git
