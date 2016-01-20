@@ -59,8 +59,7 @@ projects[twitter_block][version] = 2.0
 projects[twitter_block][subdir] = contrib
 
 projects[linkicon][subdir] = 'contrib'
-projects[linkicon][version] = '1.1'
-projects[linkicon][patch][] = https://www.drupal.org/files/issues/2615954-strict-compare.patch
+projects[linkicon][version] = '1.2'
 
 projects[title][type] = module
 projects[title][download][type] = git
