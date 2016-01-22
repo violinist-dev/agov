@@ -18,7 +18,7 @@
 %date {
 
   &--without-label {
-    font-size: 14px;
+    @include font-size(s);
     color: color(date);
   }
 }

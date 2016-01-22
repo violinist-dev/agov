@@ -45,11 +45,11 @@
 
   &__input {
     @include box-shadow(none);
+    @include font-size(18px);
+    font-weight: weight(bold);
     background: none;
     border: 0;
     font-style: italic;
-    font-weight: bold;
-    font-size: 18px;
     width: 100%;
     padding: 12px;
 
@@ -110,7 +110,6 @@
     @extend %search__button-position;
     margin: 0 .75em;
     padding: 12px 0;
-    font-size: 1.5em;
     color: currentColor;
   }
 

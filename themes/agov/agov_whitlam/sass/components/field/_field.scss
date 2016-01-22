@@ -1,6 +1,6 @@
 .field,
 %field {
-  @include output-rhythm(margin, rhythm(1) 0);
+  @include margin(1 0);
 
   &--no-spacing {
     margin: 0;

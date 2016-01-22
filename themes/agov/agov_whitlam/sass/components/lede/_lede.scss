@@ -8,8 +8,8 @@
 
 .lede,
 %lede {
-  font-size: 20px;
-  line-height: 31px;
+  @include font-size(20px);
+  @include line-height(31px);
 
   p {
     margin: .4rem 0;

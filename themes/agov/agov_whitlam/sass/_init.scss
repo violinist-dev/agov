@@ -47,9 +47,8 @@
 @import 'compass/utilities/sprites';
 // Use one CSS3 mixin instead of multiple vendor prefixes.
 @import 'compass/css3';
-// Helps set up a vertical rhythm.
-@import 'compass/typography/vertical_rhythm';
-// Add the Zen Grids responsive layout mixins.
+// Add typey to manage font sizes and margins.
+@import 'typey';
 @import 'zen-grids';
 // Add fontAwesome library
 @import 'font-awesome-compass';

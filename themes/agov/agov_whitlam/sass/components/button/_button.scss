@@ -31,7 +31,7 @@
   border-bottom: 2px solid color(form-element-border);
   color: color(button-color);
   padding: 15px 20px;
-  font-weight: bold;
+  font-weight: weight(bold);
   @if support-legacy-browser(ie, '7') {
     // Remove inner spacing in IE 7 without affecting normal text inputs.
     *overflow: visible;
@@ -59,9 +59,10 @@
   }
 
   &--large {
+    @include type-layout(32px, 1);
+    font-weight: weight(bold);
     padding: 25px;
-    font-size: 32px;
-    font-weight: bold;
+
   }
 
   &--wide {

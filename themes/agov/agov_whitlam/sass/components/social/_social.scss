@@ -9,7 +9,7 @@
 .social,
 %social {
   &__title {
-    font-size: 24px;
+    @include font-size(24px);
   }
 
   &__list {
@@ -39,9 +39,9 @@
     }
 
     .fa {
+      @include font-size(24px);
+      @include line-height(50px);
       color: color(social-icon);
-      font-size: 24px;
-      line-height: 50px;
     }
   }
 }
