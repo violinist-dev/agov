@@ -37,6 +37,8 @@ GEM
     scss_lint (0.41.0)
       rainbow (~> 2.0)
       sass (~> 3.4.15)
+    typey (1.0.0.beta.8)
+      sass (~> 3.3)
     zen-grids (2.0.0.beta.3)
       sass (~> 3.3)
 
@@ -53,6 +55,7 @@ DEPENDENCIES
   sass (~> 3.4)
   sass-globbing (~> 1.1)
   scss_lint (~> 0.41)
+  typey (>= 1.0.0.beta.8, < 2)
   zen-grids (~> 2.0.0.beta.3)
 
 BUNDLED WITH
