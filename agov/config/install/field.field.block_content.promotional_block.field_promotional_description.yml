@@ -4,6 +4,8 @@ dependencies:
   config:
     - block_content.type.promotional_block
     - field.storage.block_content.field_promotional_description
+_core:
+  default_config_hash: 5Lj6gBcg4uTAD8TYXYemVdLwFgOZqTD6PjQU6aT8uJ4
 id: block_content.promotional_block.field_promotional_description
 field_name: field_promotional_description
 entity_type: block_content

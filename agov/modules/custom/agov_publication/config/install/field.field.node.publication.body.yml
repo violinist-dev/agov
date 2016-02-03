@@ -6,6 +6,8 @@ dependencies:
     - node.type.publication
   module:
     - text
+_core:
+  default_config_hash: wLt4pIfcurmZ3xPlqQBCMBvx48t5pGrSgWUqEODpOjM
 id: node.publication.body
 field_name: body
 entity_type: node

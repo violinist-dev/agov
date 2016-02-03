@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - node.type.standard_page
+_core:
+  default_config_hash: 7XMZkdMToa1NgWvaKxfdaqPsIOZlBE6NSee3gYtfcOU
 id: node.standard_page.promote
 field_name: promote
 entity_type: node

@@ -7,6 +7,8 @@ dependencies:
     - system
   theme:
     - agov_base
+_core:
+  default_config_hash: QbHdA8trepSfQRf-bRnzIJ-MOS4yQtQ3itTGKfJU42E
 id: mainnavigation_3
 theme: agov_base
 region: footer_top

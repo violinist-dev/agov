@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: vmyVfy3wtpcbVXPtUDTb42AygYyhxq977JwQF7GmWbk
 name: teaser_medium
 label: 'Teaser Medium'
 effects:

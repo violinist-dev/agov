@@ -8,6 +8,8 @@ dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: hwRSQuUqXSceNtmFNQWxiN9oZlwKnN23WTUXudrJq-w
 id: publications
 label: Publications
 module: views

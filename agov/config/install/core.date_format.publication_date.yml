@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: kXBBkvckwuECqYdfb5136GKv-eyv9RM48ljglulEcWk
 id: publication_date
 label: 'Publication Date'
 locked: false

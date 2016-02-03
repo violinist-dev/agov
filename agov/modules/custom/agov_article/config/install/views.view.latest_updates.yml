@@ -7,6 +7,8 @@ dependencies:
   module:
     - node
     - user
+_core:
+  default_config_hash: 1Ch4_Ag0WNFWq1iH1KjcrefUF7l38_X32j8hI2vfJDA
 id: latest_updates
 label: 'Latest Updates'
 module: views

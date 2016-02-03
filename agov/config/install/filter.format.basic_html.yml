@@ -3,6 +3,8 @@ status: true
 dependencies:
   module:
     - editor
+_core:
+  default_config_hash: zubUOL69fehLcFMqAKASczmwZ-LgJGkj921iQ84g11s
 name: 'Basic HTML'
 format: basic_html
 weight: 0

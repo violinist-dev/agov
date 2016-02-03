@@ -5,6 +5,8 @@ dependencies:
     - system
   theme:
     - agov_base
+_core:
+  default_config_hash: 8-m-6scvlwMkiLZon9LLycoYnPoEk5w1fRi1sCnM7os
 id: sitebranding
 theme: agov_base
 region: header

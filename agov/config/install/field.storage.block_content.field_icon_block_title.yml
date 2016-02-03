@@ -4,6 +4,8 @@ dependencies:
   module:
     - block_content
     - link
+_core:
+  default_config_hash: ccaodR5YNBBzivIlpPUrOJ3ZGKs4aU1amdK6ZuF6O5A
 id: block_content.field_icon_block_title
 field_name: field_icon_block_title
 entity_type: block_content

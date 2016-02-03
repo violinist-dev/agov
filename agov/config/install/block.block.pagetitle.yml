@@ -3,6 +3,8 @@ status: true
 dependencies:
   theme:
     - agov_base
+_core:
+  default_config_hash: dshobYAhwnST6xb76G9K6S-BAZ9ODZsgzZuaBTtJSEs
 id: pagetitle
 theme: agov_base
 region: content

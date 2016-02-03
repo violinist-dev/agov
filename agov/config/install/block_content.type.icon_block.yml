@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: l-AqWaSLc9R04AGI_f0VLHPDYPX2i79Ba4mqNHngdsY
 id: icon_block
 label: 'Icon Block'
 revision: 0

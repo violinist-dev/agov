@@ -10,6 +10,8 @@ dependencies:
   module:
     - image
     - link
+_core:
+  default_config_hash: jv3IbOmTDumCCFilv6ezbGOtHmd27jdLMI3QOrd0jj0
 id: block_content.promotional_block.default
 targetEntityType: block_content
 bundle: promotional_block

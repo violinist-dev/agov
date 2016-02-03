@@ -8,6 +8,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
+_core:
+  default_config_hash: QNR34_TcPyWViVfBMdZpYaUbvSlY755sQstfizHzbS8
 name: Publication
 type: publication
 description: '<em>Publications</em> are downloadable reports and documents that will be listed in chronological on the Publications landing page.  This content type can be used for reports tabled in Parliament, Annual Reports, and other special reports.'

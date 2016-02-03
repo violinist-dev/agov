@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: IhqC2aCcHdW0VfhcTDAiYnSHcM7Fqsa-xxm5S74B7Qg
 name: 'Restricted HTML'
 format: restricted_html
 weight: 0

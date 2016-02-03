@@ -6,6 +6,8 @@ dependencies:
     - field.storage.block_content.field_link
   module:
     - link
+_core:
+  default_config_hash: OaS5sD4EcC1t-tlVy7WFtwe5IazhoofaY2SPntLzbdU
 id: block_content.promotional_block.field_link
 field_name: field_link
 entity_type: block_content

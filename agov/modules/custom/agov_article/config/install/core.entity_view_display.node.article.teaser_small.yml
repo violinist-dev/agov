@@ -13,6 +13,8 @@ dependencies:
     - text
     - title
     - user
+_core:
+  default_config_hash: kUOetZxSwPEI-FaHQarbyoeNX7UCrh5fClhbfP7OSe4
 id: node.article.teaser_small
 targetEntityType: node
 bundle: article

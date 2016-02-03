@@ -8,6 +8,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
+_core:
+  default_config_hash: sponAh_EP4J5FbmcSCkKFRLwPblOHhgTfi9S7NgcFHs
 name: 'Standard Page'
 type: standard_page
 description: 'Use Standard pages for your static content such as an ''About us'' page or other informational pages that will always be accessible on the site.'

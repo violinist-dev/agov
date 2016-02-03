@@ -6,6 +6,8 @@ dependencies:
     - field.storage.block_content.field_promotional_image
   module:
     - image
+_core:
+  default_config_hash: vF81tIHh2Tnx5nTB_lhIO_NgcD-pQwq6KKK9EQYq9ko
 id: block_content.promotional_block.field_promotional_image
 field_name: field_promotional_image
 entity_type: block_content

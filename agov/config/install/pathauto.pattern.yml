@@ -17,3 +17,5 @@ patterns:
     default: '/[term:vocabulary]/[term:name]'
   user:
     default: '/users/[user:name]'
+_core:
+  default_config_hash: 74oYgdgcP5aIq-1xjcbJKzHRc9BNuL47_NPLAL5Yl7A

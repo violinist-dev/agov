@@ -1,2 +1,4 @@
 admin: seven
 default: agov_base
+_core:
+  default_config_hash: K4k48jn602HRSrV0lNYIlKsM-7CjCwV9dx1kes87Pug
