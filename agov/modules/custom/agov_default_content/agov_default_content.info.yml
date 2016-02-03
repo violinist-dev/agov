@@ -12,6 +12,7 @@ dependencies:
   - block_content
   - agov_article
   - panels
+  - views
 
 config_devel:
   - block.block.stayuptodate
