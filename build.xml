@@ -202,7 +202,7 @@
 
   <target name="config:export:single">
     <exec dir="${app.dir}"
-          command="${drush.cmd} config-devel-export-module ${config_devel_module}"
+          command="${drush.cmd} config-devel-export ${config_devel_module}"
           logoutput="true"
           passthru="true" />
     </target>
