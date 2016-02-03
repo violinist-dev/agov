@@ -27,10 +27,8 @@ projects[page_manager][type] = module
 projects[page_manager][download][type] = git
 projects[page_manager][download][url] = http://git.drupal.org/project/page_manager.git
 projects[page_manager][download][branch] = 8.x-1.x
-projects[page_manager][download][revision] = 91f13f592f60d46177a0eeff56c1ae7c5bbd229e
+projects[page_manager][download][revision] = 8fa43f74d8ddb6d45f19de536ac61c9a8aea4946
 projects[page_manager][subdir] = 'contrib'
-; See https://www.drupal.org/node/2391925#comment-10390651
-projects[page_manager][patch][] = https://www.drupal.org/files/issues/2391925-19.patch
 ; https://www.drupal.org/node/2601004
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/page-manager-contextual-temp.patch
 
