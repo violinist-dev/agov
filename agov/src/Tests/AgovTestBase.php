@@ -31,7 +31,7 @@ abstract class AgovTestBase extends WebTestBase {
     'config_schema_test.no_schema_data_types',
     // Used to test application of schema to filtering of configuration.
     'config_test.dynamic.system',
-
     'page_manager.page_variant.panels',
   );
+
 }
