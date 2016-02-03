@@ -75,7 +75,7 @@ projects[fences][subdir] = 'contrib'
 ; Libraries
 
 ; Development Modules
-projects[config_devel][version] = '1.0-beta16'
+projects[config_devel][version] = '1.0-rc1'
 projects[config_devel][subdir] = 'development'
 
 projects[default_content][type] = module
