@@ -10,8 +10,6 @@ dependencies:
     - image
     - text
     - user
-_core:
-  default_config_hash: ASnpREX4JEIJ9ftRvaxd2r_cI1hdpZi3NrqYyTJ1cDY
 id: node.standard_page.full
 targetEntityType: node
 bundle: standard_page

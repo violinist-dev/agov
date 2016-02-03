@@ -13,8 +13,6 @@ dependencies:
     - file
     - text
     - user
-_core:
-  default_config_hash: DwSUG9GNuGYShUQGzZX2On3eEJuzz7W3FlbJMMe8LX0
 id: node.publication.default
 targetEntityType: node
 bundle: publication

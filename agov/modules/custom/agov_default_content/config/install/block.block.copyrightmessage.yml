@@ -6,8 +6,6 @@ dependencies:
       - 'block_content:editorial_content:a608987c-1b74-442b-b900-a54f40cda661'
   theme:
     - agov_base
-_core:
-  default_config_hash: GP-86M2XiovxsDL4UOWaIkWFEjHpJnWJJ6vWWxlwJrg
 id: copyrightmessage
 theme: agov_base
 region: footer

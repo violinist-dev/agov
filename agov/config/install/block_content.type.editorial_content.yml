@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: _1avDOxz35hKTDR5hCF2-SZJ6kVaWH3k8zjAybp6YTU
 id: editorial_content
 label: 'Editorial Content'
 revision: 0

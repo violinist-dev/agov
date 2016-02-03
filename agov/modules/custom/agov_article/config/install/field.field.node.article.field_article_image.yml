@@ -6,8 +6,6 @@ dependencies:
     - node.type.article
   module:
     - image
-_core:
-  default_config_hash: go1Z46oyz13nRM8F0keVZmgN2oafTtuRWPONF00o6xs
 id: node.article.field_article_image
 field_name: field_article_image
 entity_type: node

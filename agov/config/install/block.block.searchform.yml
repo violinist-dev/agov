@@ -6,8 +6,6 @@ dependencies:
     - system
   theme:
     - agov_base
-_core:
-  default_config_hash: jVlhms4N_ZR04lCmVTuXtQC0kEYqRSA3bq_vRuYIjeg
 id: searchform
 theme: agov_base
 region: highlighted

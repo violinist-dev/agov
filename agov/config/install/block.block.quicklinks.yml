@@ -7,8 +7,6 @@ dependencies:
     - system
   theme:
     - agov_base
-_core:
-  default_config_hash: amx8lzWxbhS0kNy0-88mE_TVhvfEUZplLxthSIKmOcw
 id: quicklinks
 theme: agov_base
 region: '-1'

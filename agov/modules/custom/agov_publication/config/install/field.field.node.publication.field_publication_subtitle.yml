@@ -4,8 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_publication_subtitle
     - node.type.publication
-_core:
-  default_config_hash: kE0imc6d0qfo8UzKe1pGy2ISj0LM6ke4R_d0fTSb0F8
 id: node.publication.field_publication_subtitle
 field_name: field_publication_subtitle
 entity_type: node

@@ -10,8 +10,6 @@ dependencies:
     - fences
     - link
     - text_icon
-_core:
-  default_config_hash: vVcDS_lGaVK07Mg_Fmzg3CS-ShDp6OOUtlpZHn_tfqQ
 id: block_content.icon_block.default
 targetEntityType: block_content
 bundle: icon_block

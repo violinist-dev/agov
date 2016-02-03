@@ -11,8 +11,6 @@ third_party_settings:
     parent: 'main:'
   title:
     display_configurable_title: true
-_core:
-  default_config_hash: 5QIxkKkFlsb0UDmWHjy8NKaEkDa2eBDaegxAZpuC1ws
 name: Article
 type: article
 description: 'Use articles to keep your audience up-to-date with the latest news. Articles flagged "Promoted to front page" will appear in the "Latest Updates" section of the front page.'

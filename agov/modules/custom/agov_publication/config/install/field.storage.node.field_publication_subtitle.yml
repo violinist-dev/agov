@@ -3,8 +3,6 @@ status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: PotOV68xicMkn_fpu7nCipvz1-dspXXJChkwK3UnSEI
 id: node.field_publication_subtitle
 field_name: field_publication_subtitle
 entity_type: node

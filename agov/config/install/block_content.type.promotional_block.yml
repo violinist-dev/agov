@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: tTaFQYcXPCfzqnKiVYG43jCQvqwgg2llrJRde21-jjY
 id: promotional_block
 label: 'Promotional Block'
 revision: 0

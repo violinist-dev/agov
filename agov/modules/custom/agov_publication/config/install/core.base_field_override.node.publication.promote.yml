@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - node.type.publication
-_core:
-  default_config_hash: RZReXxGt6xMN6rIDO654C-FmUbPmLjNOLeddn_iFPTc
 id: node.publication.promote
 field_name: promote
 entity_type: node

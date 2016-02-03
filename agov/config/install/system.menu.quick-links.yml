@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: cjr-5bbr2tZS83bkB9J5Ld7GeAM26WyRTaMMUx5JgMA
 id: quick-links
 label: 'Quick Links'
 description: 'The quick links in the right hand side bar.'

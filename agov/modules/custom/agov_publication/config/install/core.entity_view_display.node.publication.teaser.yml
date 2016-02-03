@@ -13,8 +13,6 @@ dependencies:
     - fences
     - text
     - user
-_core:
-  default_config_hash: 86VdKUViv_paVhhSYHQrCxtONGlrhJeGs6Qu29hh0yM
 id: node.publication.teaser
 targetEntityType: node
 bundle: publication

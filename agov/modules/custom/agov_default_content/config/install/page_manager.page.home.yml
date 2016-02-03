@@ -21,8 +21,6 @@ dependencies:
     - system
     - twitter_block
     - views
-_core:
-  default_config_hash: ZnUs3JMz2iQnu95_h9ydtTMtqJb47iZCkdHKJqEbkp0
 id: home
 label: Home
 use_admin_theme: false

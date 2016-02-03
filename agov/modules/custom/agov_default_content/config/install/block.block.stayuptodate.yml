@@ -8,8 +8,6 @@ dependencies:
     - system
   theme:
     - agov_base
-_core:
-  default_config_hash: 82rKymNdo2tZ0KgaEvRR_upahkfetx7aCmotu8G_xUg
 id: stayuptodate
 theme: agov_base
 region: sidebar_second

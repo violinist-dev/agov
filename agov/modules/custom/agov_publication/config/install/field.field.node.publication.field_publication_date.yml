@@ -6,8 +6,6 @@ dependencies:
     - node.type.publication
   module:
     - datetime
-_core:
-  default_config_hash: Fr0YYSc0yqWwDQrKr5DIS8P8bkvZf7JmtNVuZ30eBVQ
 id: node.publication.field_publication_date
 field_name: field_publication_date
 entity_type: node

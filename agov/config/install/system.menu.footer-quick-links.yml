@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: EolYlduUdj4CFZbvR_D_yNcC5kXYMMaBVq9aO-rOKBM
 id: footer-quick-links
 label: 'Footer Quick Links'
 description: 'The quick links in the footer'

@@ -12,8 +12,6 @@ dependencies:
     - file
     - path
     - text
-_core:
-  default_config_hash: lEwRKDGBaFdvb1gOD3I9lktufQNfVWxXAed9Y62-5ic
 id: node.publication.default
 targetEntityType: node
 bundle: publication

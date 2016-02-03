@@ -6,8 +6,6 @@ dependencies:
     - field.storage.block_content.field_icon_block_title
   module:
     - link
-_core:
-  default_config_hash: dJod_8zPXvoVVgk2vqSE36Vgh5bYvEojTzedF3o5l70
 id: block_content.icon_block.field_icon_block_title
 field_name: field_icon_block_title
 entity_type: block_content

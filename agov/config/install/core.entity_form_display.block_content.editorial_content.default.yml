@@ -6,8 +6,6 @@ dependencies:
     - field.field.block_content.editorial_content.body
   module:
     - text
-_core:
-  default_config_hash: QBGzjsKJcAllvZHxgFcQ1Ggmydr9gDAjMawbQW59fOw
 id: block_content.editorial_content.default
 targetEntityType: block_content
 bundle: editorial_content

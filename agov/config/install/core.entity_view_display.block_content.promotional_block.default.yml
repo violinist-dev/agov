@@ -10,8 +10,6 @@ dependencies:
   module:
     - fences
     - image
-_core:
-  default_config_hash: bL8dXFGPtC9_H-5fflc32GucvNc_WZWNKZi9LD3vtCM
 id: block_content.promotional_block.default
 targetEntityType: block_content
 bundle: promotional_block

@@ -3,8 +3,6 @@ status: true
 dependencies:
   module:
     - block_content
-_core:
-  default_config_hash: K0lbu-dhEdTmp8ikNT2GLx3YqfmG-nHa-5szAfuZsj0
 id: block_content.field_icon_block_description
 field_name: field_icon_block_description
 entity_type: block_content

@@ -4,8 +4,6 @@ dependencies:
   module:
     - file
     - node
-_core:
-  default_config_hash: 8nEoaC6VC8xthE3sfer8oOG7YXu-Zkn1IJB-uYsyFiA
 id: node.field_publication_documents
 field_name: field_publication_documents
 entity_type: node

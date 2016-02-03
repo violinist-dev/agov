@@ -5,8 +5,6 @@ dependencies:
     - block_content
     - file
     - image
-_core:
-  default_config_hash: txEQ_4kz4utoYIfxzyx4K4APokUYPoMbCm7W0II0EUU
 id: block_content.field_promotional_image
 field_name: field_promotional_image
 entity_type: block_content
