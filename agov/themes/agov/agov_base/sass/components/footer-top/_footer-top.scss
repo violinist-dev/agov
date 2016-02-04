@@ -15,12 +15,8 @@
 .footer-top,
 %footer-top {
   @include clearfix;
-  background-color: color(white-smoke);
-  @include margin-top(2);
-  @include padding(1 0 2);
 
   &__menu {
-    border-top: 2px solid color('white');
     @include margin-top(1);
 
     &:first-child {

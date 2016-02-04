@@ -27,11 +27,11 @@
   text-decoration: none;
   // Improve usability and consistency of cursor style between image-type `input` and others.
   cursor: pointer;
-  background: color(button-bg);
   border: 0;
-  border-bottom: 2px solid color(form-element-border);
-  color: color(button-color);
+  background: color(text-bg-rev);
+  color: color(text-rev);
   font-weight: weight(bold);
+
   @if support-legacy-browser(ie, '7') {
     // Remove inner spacing in IE 7 without affecting normal text inputs.
     *overflow: visible;
@@ -39,29 +39,23 @@
 
   &:hover,
   &:focus {
-    background-color: color(button-bg-hover);
-    border-color: color(form-element-border-hover);
-    color: color(button-color-hover);
     text-decoration: none;
+    // Add your styles.
   }
 
   // Re-set default cursor for disabled elements.
   &[disabled] {
-    @include opacity(.65);
-    color: color(text);
+    @include opacity(.25);
 
     &:hover,
     &:focus {
-      background-color: color(button-bg);
-      border-color: color(form-element-border);
-      color: color(text);
+      // Add your styles.
     }
   }
 
   &--large {
     @include padding(25px);
     @include type-layout(32px, 1);
-    font-weight: weight(bold);
   }
 
   &--wide {

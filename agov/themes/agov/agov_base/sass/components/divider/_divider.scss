@@ -10,7 +10,7 @@
 %divider {
   @include margin(2 0);
   border: 0;
-  border-top: 10px solid color(border);
+  border-top: 1px solid color(border);
 
   &--less-top {
     @include margin-top(1);

@@ -8,10 +8,10 @@
 
 .primary-navigation,
 %primary-navigation {
-  background: color(primary-navigation-background);
 
   // Level 1 list, list item and anchor.
   &__list {
+    padding: 0;
     margin-top: 0;
     margin-bottom: 0;
     text-indent: 0;
@@ -24,23 +24,18 @@
   }
 
   &__anchor {
-    color: color(primary-navigation-item-color);
     @include font-size(17px);
     @include padding(14px 30px);
     display: block;
     text-decoration: none;
 
     &--active {
-      background: color(primary-navigation-item-active-background);
-      color: color(primary-navigation-item-active-color);
+      background-color: color(white-smoke);
     }
 
     // Provide alternative focus styles for keyboard navigation.
     &:focus {
-      color: color(primary-navigation-item-hover-color-secondary);
-      background: color(primary-navigation-item-hover-background);
       text-decoration: underline;
-      outline: none;
     }
   }
 
@@ -65,7 +60,6 @@
       position: absolute;
       top: 40px;
       right: 34px;
-      color: color(primary-navigation-title-color);
       text-transform: uppercase;
       cursor: pointer;
       margin: 0;
@@ -95,7 +89,7 @@
     @include margin-bottom(30px);
 
     &__title {
-      display: none;
+      @include visually-hidden;
     }
 
     &__list-item {
@@ -111,25 +105,21 @@
       position: absolute;
       list-style-type: none;
       z-index: 10;
-      background: color(primary-navigation-item-hover-background);
       margin: 0;
       padding: 0;
       min-width: 250px;
+      background-color: color(text-bg);
     }
 
     &__anchor-level-2 {
       @include font-size(15px);
-      @include padding(4px 13px);
+      @include padding(6px 12px);
       text-decoration: none;
       display: block;
-      color: color(primary-navigation-item-active-color);
 
       &:hover,
       &:focus {
-        background: color(primary-navigation-item-active-background);
-        color: color(primary-navigation-item-hover-color-secondary);
-        text-decoration: underline;
-        outline: none;
+        background-color: color(white-smoke);
       }
     }
   }
@@ -143,8 +133,7 @@
   &__list-item > a:focus,
     // Keep visual indicate when tabbing through children.
   &__list-item.opened > a {
-    background: color(primary-navigation-item-hover-background);
-    color: color(primary-navigation-item-hover-color);
+    @extend %primary-navigation__anchor--active;
   }
 
   // Standard dropdown hover.
@@ -154,7 +143,6 @@
     // Maintain the opened state when tabbing through the items.
   &__list-item.opened > ul {
     height: auto;
-    border: 2px solid color(primary-navigation-item-hover-background);
   }
 }
 

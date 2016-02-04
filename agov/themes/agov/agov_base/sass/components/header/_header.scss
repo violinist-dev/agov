@@ -8,7 +8,6 @@
 
 .header,
 %header {
-  background: color(header-background);
   position: relative;
 
   @include respond-to('medium') {

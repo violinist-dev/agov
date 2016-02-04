@@ -37,14 +37,9 @@
 
   &__image-wide {
     @include respond-to('medium') {
+      @include padding-right(2);
       float: left;
       width: 30%;
-    }
-
-    .field__item {
-      @include respond-to('medium') {
-        @include padding-right(2);
-      }
     }
   }
 

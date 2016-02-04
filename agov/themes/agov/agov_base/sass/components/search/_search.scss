@@ -9,14 +9,10 @@
 
 .search,
 %search {
-  color: color(search-color);
-  background: color(search-bg);
   position: relative;
 
   &--light {
     @include respond-to('header-desktop') {
-      color: color(search-color-light);
-      background: transparent;
     }
   }
 
@@ -44,7 +40,6 @@
     position: relative;
     display: inline-block;
     width: 100%;
-    border-bottom: 1px solid color(search-border);
   }
 
   &__input-wrapper {
@@ -54,33 +49,11 @@
   }
 
   &__input {
-    @include box-shadow(none);
-    background: none;
-    border: 0;
-    font-style: italic;
-    width: 100%;
-    padding: 12px;
-
-    @include input-placeholder() {
-      @include opacity(1);
-      color: color(search-color);
-    }
-    @include font-size(18px);
-    font-weight: weight(bold);
+    // Your styles.
 
     &--light {
       @include respond-to('medium') {
-        border-bottom: 2px solid color(search-border);
         min-width: 363px;
-
-        @include input-placeholder() {
-          color: color(search-color-light);
-        }
-
-        &:hover,
-        &:focus {
-          border-color: color('white');
-        }
       }
     }
   }
@@ -97,20 +70,16 @@
     width: 3.5em;
     height: 3em;
     display: block;
-    color: color('search-button');
 
     &:focus,
     &:hover {
-      color: color('search-color');
       background: none;
     }
 
     &--light {
-      color: color('search-button-light');
 
       &:focus,
       &:hover {
-        color: color('white');
         background: none;
       }
     }

@@ -8,9 +8,7 @@
 
 .footer-bottom,
 %footer-bottom {
-  background-color: color(grey-extra-dark);
-  color: color(text-bg);
-  @include padding(1px 0);
+  @extend %clearfix;
 
   &__left {
     @include respond-to(medium) {
@@ -22,17 +20,6 @@
     @include respond-to(medium) {
       @include margin-left(25px);
       float: right;
-    }
-  }
-
-  :link,
-  :visited,
-  &__link {
-    color: color(text-bg);
-
-    &:hover,
-    &:focus {
-      color: color(grey-light);
     }
   }
 }
