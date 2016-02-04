@@ -20,21 +20,21 @@
 
 :link,
 %link {
-  color: color(link);
+  word-wrap: break-word;
 }
 
 :visited {
-  color: color(link-visited);
+  // Add your styles.
 }
 
 a:hover,
 a:active,
 a:focus {
-  color: color(link-hover);
+  // Add your styles.
 }
 
 a:focus {
-  outline: 2px solid color(link-border-focus);
+  outline: 2px solid;
 
   @if support-legacy-browser(ie, '10') {
     // Remove the gray background color from active links in IE 10.
