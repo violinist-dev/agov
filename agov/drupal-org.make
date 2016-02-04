@@ -21,7 +21,19 @@ projects[twitter_block][subdir] = contrib
 projects[linkicon][subdir] = 'contrib'
 projects[linkicon][version] = '1.2'
 
+projects[pathauto][subdir] = 'contrib'
+projects[pathauto][version] = '1.0-alpha1'
+
+projects[token][subdir] = 'contrib'
+projects[token][version] = '1.0-alpha2'
+
 ; Development versions
+
+projects[file_entity][type] = module
+projects[file_entity][download][type] = git
+projects[file_entity][download][url] = https://git.drupal.org/project/file_entity.git
+projects[file_entity][download][branch] = 8.x-2.x
+projects[file_entity][download][revision] = af4131334c88a7e7bd045874070c79b9af7d842d
 
 projects[page_manager][type] = module
 projects[page_manager][download][type] = git
@@ -31,13 +43,6 @@ projects[page_manager][download][revision] = 8fa43f74d8ddb6d45f19de536ac61c9a8ae
 projects[page_manager][subdir] = 'contrib'
 ; https://www.drupal.org/node/2601004
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/page-manager-contextual-temp.patch
-
-projects[token][type] = module
-projects[token][download][type] = git
-projects[token][download][url] = http://git.drupal.org/project/token.git
-projects[token][download][branch] = 8.x-1.x
-projects[token][download][revision] = 5a36ca581d4c02d0afead767b48263e29af83824
-projects[token][subdir] = 'contrib'
 
 projects[title][type] = module
 projects[title][download][type] = git
@@ -52,21 +57,6 @@ projects[fences][download][url] = http://git.drupal.org/project/fences.git
 projects[fences][download][branch] = 8.x-2.x
 projects[fences][download][revision] = 17e56ed95b358544e0a93a37b819793234f7876e
 projects[fences][subdir] = 'contrib'
-
-; Committed to aGov
-
-;projects[file_entity][type] = module
-;projects[file_entity][download][type] = git
-;projects[file_entity][download][url] = https://github.com/md-systems/file_entity.git
-;projects[file_entity][download][branch] = 8.x-2.x
-
-;projects[pathauto][type] = module
-;projects[pathauto][download][type] = git
-;projects[pathauto][download][url] = https://github.com/md-systems/pathauto.git
-;projects[pathauto][download][branch] = 8.x-1.x
-;projects[pathauto][download][revision] = e850af1d33adecd68c9e36274a7b6391a89125eb
-;projects[pathauto][subdir] = 'contrib'
-
 
 ; aGov
 

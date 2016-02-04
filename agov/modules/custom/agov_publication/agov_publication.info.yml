@@ -27,3 +27,4 @@ config_devel:
   - field.storage.node.field_publication_subtitle
   - node.type.publication
   - views.view.publications
+  - pathauto.pattern.publications

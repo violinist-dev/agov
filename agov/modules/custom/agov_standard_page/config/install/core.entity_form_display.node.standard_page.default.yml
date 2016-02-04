@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.field.node.standard_page.body
     - field.field.node.standard_page.field_standard_page_image
+    - image.style.thumbnail
     - node.type.standard_page
   module:
     - image
