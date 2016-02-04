@@ -30,6 +30,9 @@ projects[token][version] = '1.0-alpha2'
 projects[password_policy][subdir] = 'contrib'
 projects[password_policy][version] = '3.0-alpha2'
 
+projects[workbench_moderation][subdir] = 'contrib'
+projects[workbench_moderation][version] = '1.0-alpha2'
+
 ; Development versions
 
 projects[file_entity][type] = module
