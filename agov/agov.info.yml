@@ -73,7 +73,7 @@ config_devel:
   - editor.editor.basic_html
   - block.block.sitebranding
   - pathauto.settings
-  - pathauto.pattern
+  - pathauto.pattern.content
 
   # Permissions.
   - user.role.anonymous
