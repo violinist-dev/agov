@@ -21,6 +21,9 @@ projects[twitter_block][subdir] = contrib
 projects[linkicon][subdir] = 'contrib'
 projects[linkicon][version] = '1.2'
 
+projects[pathauto][subdir] = 'contrib'
+projects[pathauto][version] = '1.0-alpha1'
+
 ; Development versions
 
 projects[file_entity][type] = module
@@ -58,16 +61,6 @@ projects[fences][download][url] = http://git.drupal.org/project/fences.git
 projects[fences][download][branch] = 8.x-2.x
 projects[fences][download][revision] = 17e56ed95b358544e0a93a37b819793234f7876e
 projects[fences][subdir] = 'contrib'
-
-; Committed to aGov
-
-;projects[pathauto][type] = module
-;projects[pathauto][download][type] = git
-;projects[pathauto][download][url] = https://github.com/md-systems/pathauto.git
-;projects[pathauto][download][branch] = 8.x-1.x
-;projects[pathauto][download][revision] = e850af1d33adecd68c9e36274a7b6391a89125eb
-;projects[pathauto][subdir] = 'contrib'
-
 
 ; aGov
 
