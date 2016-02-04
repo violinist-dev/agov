@@ -32,7 +32,7 @@ abstract class AgovTestBase extends WebTestBase {
     // Used to test application of schema to filtering of configuration.
     'config_test.dynamic.system',
     'page_manager.page_variant.panels',
-    'pathauto.pattern',
+    'password_policy.password_policy.australian_government_ism_policy_strong',
   );
 
 }
