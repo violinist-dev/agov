@@ -23,6 +23,12 @@ projects[linkicon][version] = '1.2'
 
 ; Development versions
 
+projects[file_entity][type] = module
+projects[file_entity][download][type] = git
+projects[file_entity][download][url] = https://git.drupal.org/project/file_entity.git
+projects[file_entity][download][branch] = 8.x-2.x
+projects[file_entity][download][revision] = 5f1015080374ca0a5c3f4593ea94088d6e6ed1bc
+
 projects[page_manager][type] = module
 projects[page_manager][download][type] = git
 projects[page_manager][download][url] = http://git.drupal.org/project/page_manager.git
@@ -54,11 +60,6 @@ projects[fences][download][revision] = 17e56ed95b358544e0a93a37b819793234f7876e
 projects[fences][subdir] = 'contrib'
 
 ; Committed to aGov
-
-;projects[file_entity][type] = module
-;projects[file_entity][download][type] = git
-;projects[file_entity][download][url] = https://github.com/md-systems/file_entity.git
-;projects[file_entity][download][branch] = 8.x-2.x
 
 ;projects[pathauto][type] = module
 ;projects[pathauto][download][type] = git
