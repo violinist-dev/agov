@@ -3,25 +3,25 @@
 // As the user starts to type a value, a selection list appears below the form
 // item allowing them to choose an option.
 //
-// @TODO: The current icon is broken. We will need to replace the old
-// throbber.gif with an icon from the icon library.
+// .is-throbbing - Waiting for search result.
 //
 // Markup: autocomplete.hbs
 //
-// .is-throbbing - Waiting for search result.
-//
 // Style guide: components.forms.autocomplete
+
+$throbber-default-position: $form-element-vertical-rhythm + 20px;
+$throbber-active-position: $form-element-vertical-rhythm;
 
 
 // Animated throbber
 .autocomplete,
 %autocomplete {
   background-image: image-url('components/autocomplete/throbber.gif');
-  background-position: 100% 2px;
+  background-position: 100% $throbber-default-position;
   background-repeat: no-repeat;
 
   @include rtl() {
-    background-position: 0% 2px;
+    background-position: 0% $throbber-default-position;
   }
 
   &.is-throbbing,
@@ -35,7 +35,7 @@
 
   // Suggestion list.
   &__list-wrapper {
-    border: 1px solid;
+    border: 1px solid color(border);
     overflow: hidden;
     position: absolute;
     z-index: 100;
@@ -63,3 +63,35 @@
     color: color(autocomplete-select);
   }
 }
+
+//
+// Drupal selectors.
+//
+
+html.js input {
+  &.form-autocomplete {
+    @extend %autocomplete;
+  }
+
+  &.throbbing {
+    @extend %autocomplete-is-throbbing;
+  }
+}
+
+// scss-lint:disable IdSelector
+#autocomplete {
+  @extend %autocomplete__list-wrapper;
+
+  ul {
+    @extend %autocomplete__list;
+  }
+
+  li {
+    @extend %autocomplete__list-item;
+  }
+
+  .selected {
+    @extend %autocomplete__list-item-is-selected;
+  }
+}
+// scss-lint:enable IdSelector

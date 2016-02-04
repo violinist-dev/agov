@@ -8,7 +8,7 @@
 
 .lede,
 %lede {
-  @include type-layout(l, 1);
+  @include type-layout(l, 1.5);
 
   p {
     @include margin(.5 0);

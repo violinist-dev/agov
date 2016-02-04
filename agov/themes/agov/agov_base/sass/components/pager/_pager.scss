@@ -36,8 +36,6 @@
   &__current-item {
     @extend %pager__item;
     @extend %pager__link;
-    color: color(link);
-    background: color(pager-bg);
     font-weight: weight(bold);
   }
 
@@ -45,7 +43,6 @@
     @include margin(0 .25 0 0);
     @include padding(.25 .5);
     display: inline-block;
-    border: 1px solid color(border);
     text-decoration: none;
 
     .pager__item:last-child &,
@@ -55,7 +52,7 @@
 
     &:hover,
     &:focus {
-      background: color(pager-bg);
+      // Add your styles.
     }
   }
 }
