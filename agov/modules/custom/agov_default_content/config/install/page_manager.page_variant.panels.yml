@@ -17,7 +17,6 @@ dependencies:
       - 'block_content:promotional_block:c5ac2614-aaa8-43e8-9315-21e2beece358'
       - 'block_content:social_block:69e9555f-f0f3-4dd6-b905-5b1efffa120f'
   module:
-    - block_content
     - panels
     - system
     - twitter_block
