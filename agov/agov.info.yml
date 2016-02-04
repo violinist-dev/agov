@@ -58,6 +58,10 @@ configurable_dependencies:
     label: aGov Default Content
     description: Provides default content so you can see the aGov features in action.
     enabled: true
+  agov_password_policy:
+    label: aGov Password Policy
+    description: Provides Australian standard password policies
+    enabled: true
 
 themes:
   - agov_base

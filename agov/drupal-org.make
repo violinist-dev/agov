@@ -27,6 +27,9 @@ projects[pathauto][version] = '1.0-alpha1'
 projects[token][subdir] = 'contrib'
 projects[token][version] = '1.0-alpha2'
 
+projects[password_policy][subdir] = 'contrib'
+projects[password_policy][version] = '3.0-alpha2'
+
 ; Development versions
 
 projects[file_entity][type] = module
