@@ -6,14 +6,6 @@
 //
 // Style guide: components.comment
 
-// Comments picture
-//
-// The comments of page.
-//
-// Markup: comment-picture.hbs
-//
-// Style guide: components.comment-picture
-
 .comment,
 %comment {
   @include margin-bottom(2);
@@ -30,34 +22,20 @@
 
   &__outer-wrapper-title {
     @extend %divider;
-    @include margin-bottom(2);
-    @include padding-bottom(1);
+    @include padding-top(1);
+    @include margin-bottom(1);
   }
 
   &__inner-wrapper {
-    @include padding-left(50px);
-    position: relative;
-
-    &:before {
-      @extend .fa;
-      @extend .fa-comment-o;
-      position: absolute;
-      top: 3px;
-      left: 0;
-      font-size: 30px;
-      color: color(comment-icon);
-    }
+    // Your styles.
   }
 
   &__meta {
-    color: color(comment-meta);
-    text-transform: uppercase;
-    font-size: 80%;
+    @include font-size(s);
   }
 
   &__permalink {
     display: inline-block;
-    float: right;
   }
 
   &__title {
@@ -69,18 +47,17 @@
   }
 
   ul.links {
+    @extend %inline-links;
     @include margin(.5 0);
-    display: inline-block;
-    padding: 0;
     text-indent: 0;
 
     li {
-      padding-left: 0;
+      @extend %inline-links__item;
+      @include padding-left(5px);
     }
 
     a {
-      text-transform: uppercase;
-      font-size: 80%;
+      @include font-size(s);
     }
   }
 }
