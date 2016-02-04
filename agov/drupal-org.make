@@ -5,48 +5,32 @@ api = 2
 defaults[projects][subdir] = "contrib"
 
 ; Contrib modules
-projects[layout_plugin][type] = module
-projects[layout_plugin][download][type] = git
-projects[layout_plugin][download][url] = http://git.drupal.org/project/layout_plugin.git
-projects[layout_plugin][download][branch] = 8.x-1.x
-projects[layout_plugin][download][revision] = ecea017eaf546e942ef608f3e98b0067e350d5db
-projects[layout_plugin][subdir] = 'contrib'
+
+projects[layout_plugin][version] = 1.0-alpha22
+projects[layout_plugin][subdir] = contrib
+
+projects[panels][version] = 3.0-beta2
+projects[panels][subdir] = contrib
+
+projects[ctools][version] = 3.0-alpha22
+projects[ctools][subdir] = contrib
+
+projects[twitter_block][version] = 2.0
+projects[twitter_block][subdir] = contrib
+
+projects[linkicon][subdir] = 'contrib'
+projects[linkicon][version] = '1.2'
+
+; Development versions
 
 projects[page_manager][type] = module
 projects[page_manager][download][type] = git
 projects[page_manager][download][url] = http://git.drupal.org/project/page_manager.git
 projects[page_manager][download][branch] = 8.x-1.x
-projects[page_manager][download][revision] = 91f13f592f60d46177a0eeff56c1ae7c5bbd229e
+projects[page_manager][download][revision] = 8fa43f74d8ddb6d45f19de536ac61c9a8aea4946
 projects[page_manager][subdir] = 'contrib'
-; See https://www.drupal.org/node/2391925#comment-10390651
-projects[page_manager][patch][] = https://www.drupal.org/files/issues/2391925-19.patch
 ; https://www.drupal.org/node/2601004
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/page-manager-contextual-temp.patch
-
-projects[ctools][type] = module
-projects[ctools][download][type] = git
-projects[ctools][download][url] = http://git.drupal.org/project/ctools.git
-projects[ctools][download][branch] = 8.x-3.x
-projects[ctools][download][revision] = 45fbd1389384e57b8e68fc1fd944dd95a8a105a1
-projects[ctools][subdir] = 'contrib'
-
-;projects[file_entity][type] = module
-;projects[file_entity][download][type] = git
-;projects[file_entity][download][url] = https://github.com/md-systems/file_entity.git
-;projects[file_entity][download][branch] = 8.x-2.x
-
-; Use our own version for now.
-;projects[file_entity][download][url] = https://github.com/benjy/file_entity.git
-;projects[file_entity][download][branch] = fix-entity-field-mismatch
-;projects[file_entity][download][revision] = 6f0b40faed6e72bea218a25aed1034c7bfff483f
-;projects[file_entity][subdir] = 'contrib'
-
-;projects[pathauto][type] = module
-;projects[pathauto][download][type] = git
-;projects[pathauto][download][url] = https://github.com/md-systems/pathauto.git
-;projects[pathauto][download][branch] = 8.x-1.x
-;projects[pathauto][download][revision] = e850af1d33adecd68c9e36274a7b6391a89125eb
-;projects[pathauto][subdir] = 'contrib'
 
 projects[token][type] = module
 projects[token][download][type] = git
@@ -54,16 +38,6 @@ projects[token][download][url] = http://git.drupal.org/project/token.git
 projects[token][download][branch] = 8.x-1.x
 projects[token][download][revision] = 5a36ca581d4c02d0afead767b48263e29af83824
 projects[token][subdir] = 'contrib'
-
-projects[twitter_block][type] = module
-projects[twitter_block][download][type] = git
-projects[twitter_block][download][url] = http://git.drupal.org/sandbox/sam/2572433.git
-projects[twitter_block][download][branch] = 8.x-1.x
-projects[twitter_block][subdir] = 'contrib'
-
-projects[linkicon][subdir] = 'contrib'
-projects[linkicon][version] = '1.1'
-projects[linkicon][patch][] = https://www.drupal.org/files/issues/2615954-strict-compare.patch
 
 projects[title][type] = module
 projects[title][download][type] = git
@@ -79,6 +53,21 @@ projects[fences][download][branch] = 8.x-2.x
 projects[fences][download][revision] = 17e56ed95b358544e0a93a37b819793234f7876e
 projects[fences][subdir] = 'contrib'
 
+; Committed to aGov
+
+;projects[file_entity][type] = module
+;projects[file_entity][download][type] = git
+;projects[file_entity][download][url] = https://github.com/md-systems/file_entity.git
+;projects[file_entity][download][branch] = 8.x-2.x
+
+;projects[pathauto][type] = module
+;projects[pathauto][download][type] = git
+;projects[pathauto][download][url] = https://github.com/md-systems/pathauto.git
+;projects[pathauto][download][branch] = 8.x-1.x
+;projects[pathauto][download][revision] = e850af1d33adecd68c9e36274a7b6391a89125eb
+;projects[pathauto][subdir] = 'contrib'
+
+
 ; aGov
 
 ; Themes
@@ -86,7 +75,7 @@ projects[fences][subdir] = 'contrib'
 ; Libraries
 
 ; Development Modules
-projects[config_devel][version] = '1.0-beta16'
+projects[config_devel][version] = '1.0-rc1'
 projects[config_devel][subdir] = 'development'
 
 projects[default_content][type] = module

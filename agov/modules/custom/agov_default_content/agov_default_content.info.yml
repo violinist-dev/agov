@@ -7,16 +7,18 @@ core: '8.x'
 dependencies:
   - default_content
   - layout_plugin
-  - block_page_layout
   - ctools
   - page_manager
   - block_content
   - agov_article
+  - panels
+  - views
 
 config_devel:
   - block.block.stayuptodate
   - block.block.copyrightmessage
   - page_manager.page.home
+  - page_manager.page_variant.panels
 
 default_content:
   node:

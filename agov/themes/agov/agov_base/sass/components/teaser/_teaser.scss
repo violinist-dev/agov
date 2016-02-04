@@ -9,17 +9,18 @@
 .teaser,
 %teaser {
   &--wide {
+    @include margin-bottom(30px);
     display: inline-block;
     width: 100%;
-    margin-bottom: 30px;
   }
 
   &__title {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    @include margin(.5 0);
 
-    h2 {
+    h2,
+    h3 {
       @extend %h3;
+      @extend %teaser__title;
     }
   }
 
@@ -29,8 +30,8 @@
 
   &__image {
     img {
+      @include margin-bottom(.25);
       display: block;
-      margin-bottom: 5px;
     }
   }
 
@@ -42,7 +43,7 @@
 
     .field__item {
       @include respond-to('medium') {
-        padding-right: 30px;
+        @include padding-right(2);
       }
     }
   }

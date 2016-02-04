@@ -11,14 +11,14 @@
   padding: 0;
 
   &__item {
+    @include padding(0 1 0 0);
     display: inline;
     list-style-type: none;
-    padding: 0 1em 0 0;
 
     @include rtl() {
+      @include padding(0 0 0 1);
       // Bug in Safari causes display: inline to fail.
       display: inline-block;
-      padding: 0 0 0 1em;
     }
   }
 }

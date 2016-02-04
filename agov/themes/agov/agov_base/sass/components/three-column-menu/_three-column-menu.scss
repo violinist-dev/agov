@@ -14,8 +14,8 @@
   }
 
   &__link {
+    @include padding-right(1);
     display: block;
-    padding-right: 20px;
   }
 
   // scss-lint:disable DeclarationOrder

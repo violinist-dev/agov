@@ -15,7 +15,7 @@
   }
 
   &__item {
-    padding-left: 3rem;
+    @include padding-left(2);
 
     @include respond-to('medium') {
       display: inline-block;

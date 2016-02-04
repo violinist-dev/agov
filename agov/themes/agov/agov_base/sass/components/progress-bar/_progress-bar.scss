@@ -10,8 +10,8 @@
 %progress-bar {
   @include box-shadow(0 1px 2px rgba(0, 0, 0, .1) inset);
   @include border-radius(4px);
+  @include margin-bottom(1);
   background-color: color(progress-bar-bg);
-  margin-bottom: 20px;
   overflow: hidden;
   position: relative;
 
@@ -38,9 +38,9 @@
 
   &__percentage,
   &__message {
+    @include margin-left(.5);
     color: color(progress-bar-text);
     float: left;
-    margin-left: 10px;
     position: relative;
     z-index: 2;
   }

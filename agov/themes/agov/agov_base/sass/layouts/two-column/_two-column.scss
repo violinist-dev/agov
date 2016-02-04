@@ -4,21 +4,21 @@
 //
 // Style guide: layouts.two-column
 .two-column {
-
   @include clearfix;
-  @include box-sizing(border-box);
 
-  @include respond-to('two-column') {
-    &__left {
+  &__left {
+    @include respond-to('two-column') {
+      @include padding(0 .5);
       float: left;
       width: 67%;
-      padding: 0 12px;
     }
+  }
 
-    &__right {
+  &__right {
+    @include respond-to('two-column') {
+      @include padding(0 .5);
       float: left;
       width: 33%;
-      padding: 0 12px;
     }
   }
 }

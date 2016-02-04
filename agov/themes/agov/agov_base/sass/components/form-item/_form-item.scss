@@ -28,7 +28,7 @@
 
 .form-item,
 %form-item {
-  margin-bottom: 36px;
+  @include margin-bottom(2);
 
   // The part of the label that indicates a required field.
   &__required {
@@ -40,7 +40,7 @@
 
   // The descriptive help text (separate from the label).
   &__description {
-    font-size: .85em;
+    @include font-size(xs);
   }
 
   &--inline {
@@ -71,7 +71,7 @@
 
   &--radio__description,
   &--radio &__description {
-    margin-left: 1.4em;
+    @include margin-left(1.5);
   }
 
   &.is-error &__widget,

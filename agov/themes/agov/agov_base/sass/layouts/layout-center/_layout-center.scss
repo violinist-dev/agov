@@ -27,8 +27,9 @@
 %layout-center {
   @include zen-apply-gutter-padding($zen-gutters--small);
   // The max content width is 1140px (the container width minus the gutters.)
-  max-width: 1140px + $zen-gutters--medium;
-  margin: 0 auto;
+  max-width: $container + $zen-gutters--medium;
+  margin-left: auto;
+  margin-right: auto;
 
   @include respond-to(medium) {
     @include zen-apply-gutter-padding($zen-gutters--medium);
