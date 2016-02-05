@@ -2,11 +2,10 @@
 
 /**
  * @file
- * aGov Workbench Moderation install file.
+ * The aGov Workbench Moderation install file.
  */
 
 use Drupal\node\Entity\NodeType;
-use Drupal\views\Entity\View;
 
 /**
  * Implements hook_install().
