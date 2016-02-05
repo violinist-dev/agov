@@ -8,6 +8,9 @@ $container: 1140px;
 // The height of the navigation container.
 $nav-height: 2 * $base-line-height;
 
+// Form vertical rhythm.
+$form-element-vertical-rhythm: (50px - 2px - $base-line-height)/2;
+
 // Drupal RTL support: Rather than include a separate *-rtl.css file, Zen 6 uses
 // Drupal 8's standard [dir='rtl'] selector for RTL language support. You can
 // turn off all RTL CSS by setting the following variable to false.
