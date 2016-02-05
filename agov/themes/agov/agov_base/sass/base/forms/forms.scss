@@ -1,6 +1,5 @@
 // Dependencies.
 @import 'init';
-@import '../normalize';
 @import 'components/button/button';
 
 // Forms
@@ -118,8 +117,6 @@ button,
 [type="submit"] {
   @extend %button;
 }
-
-$form-element-vertical-rhythm: (50px - 2px - $base-line-height)/2;
 
 // The %form-element can be used to style different kinds of form elements at
 // the same time.
