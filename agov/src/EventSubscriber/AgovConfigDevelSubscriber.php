@@ -7,7 +7,6 @@
 
 namespace Drupal\agov\EventSubscriber;
 
-use Drupal\config_devel\Event\ConfigDevelEvents;
 use Drupal\config_devel\Event\ConfigDevelSaveEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -48,7 +47,7 @@ class AgovConfigDevelSubscriber implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
-    $events[ConfigDevelEvents::SAVE][] = ['doSave'];
+    $events['config_devel.save'][] = ['doSave'];
     return $events;
   }
 
