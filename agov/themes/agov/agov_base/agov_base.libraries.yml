@@ -1,8 +1,17 @@
 component-library:
   version: 1.x
   css:
-    theme:
-      css/styles.css: {}
+    base:
+      css/base/normalize.css: {}
+      css/base/fonts.css: {}
+      css/base/text/text.css: {}
+      css/base/grouping/grouping.css: {}
+      css/base/embedded/embedded.css: {}
+      css/base/headings/headings.css: {}
+      css/base/links/links.css: {}
+      css/base/tables/tables.css: {}
+      css/base/forms/forms.css: {}
+
   js:
     sass/components/primary-navigation/primary-navigation.js: {}
   dependencies:

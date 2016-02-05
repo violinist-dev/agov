@@ -1,4 +1,5 @@
 // Dependencies.
+@import 'init';
 @import '../normalize';
 @import 'components/divider/divider';
 
@@ -104,6 +105,24 @@ pre {
   @extend %monospace;
   // Contain overflow in all browsers.
   overflow: auto;
+}
+
+// Code
+//
+// The <code>code</code> element represents a fragment of computer code. The
+// <code>var</code> element represents a variable. The <code>samp</code> element
+// represents (sample) output from a program or computing system. The
+// <code>kbd</code> element represents user input (typically keyboard input.)
+//
+// Markup: text-code.hbs
+//
+// Style guide: base.grouping.code
+
+code,
+kbd,
+samp,
+var {
+  @extend %monospace;
 }
 
 // Lists
