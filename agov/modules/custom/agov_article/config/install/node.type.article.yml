@@ -4,7 +4,6 @@ dependencies:
   module:
     - menu_ui
     - title
-    - workbench_moderation
 third_party_settings:
   menu_ui:
     available_menus:
@@ -12,13 +11,6 @@ third_party_settings:
     parent: 'main:'
   title:
     display_configurable_title: true
-  workbench_moderation:
-    enabled: true
-    allowed_moderation_states:
-      - draft
-      - needs_review
-      - published
-    default_moderation_state: draft
 name: Article
 type: article
 description: 'Use articles to keep your audience up-to-date with the latest news. Articles flagged "Promoted to front page" will appear in the "Latest Updates" section of the front page.'
