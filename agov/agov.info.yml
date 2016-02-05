@@ -46,6 +46,7 @@ dependencies:
   - fences
   - token
   - text_icon
+  - workbench_moderation
 
   # Custom modules
   - agov_article
@@ -57,6 +58,10 @@ configurable_dependencies:
   agov_default_content:
     label: aGov Default Content
     description: Provides default content so you can see the aGov features in action.
+    enabled: true
+  agov_password_policy:
+    label: aGov Password Policy
+    description: Provides Australian standard password policies
     enabled: true
 
 themes:
@@ -149,3 +154,17 @@ config_devel:
   - core.entity_view_mode.node.search_result
   - search.page.node_search
   - search.page.user_search
+
+  # Workbench
+  - workbench_moderation.moderation_state.archived
+  - workbench_moderation.moderation_state.draft
+  - workbench_moderation.moderation_state.needs_review
+  - workbench_moderation.moderation_state.published
+  - workbench_moderation.moderation_state_transition.draft_draft
+  - workbench_moderation.moderation_state_transition.draft_needs_review
+  - workbench_moderation.moderation_state_transition.draft_published
+  - workbench_moderation.moderation_state_transition.needs_review_needs_review
+  - workbench_moderation.moderation_state_transition.needs_review_published
+  - workbench_moderation.moderation_state_transition.published_archived
+  - workbench_moderation.moderation_state_transition.published_draft
+  - workbench_moderation.moderation_state_transition.published_published
