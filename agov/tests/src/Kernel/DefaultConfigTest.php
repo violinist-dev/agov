@@ -68,6 +68,7 @@ class DefaultConfigTest extends KernelTestBase {
     'file_entity',
     'twitter_block',
     'layout_plugin',
+    'ctools',
     'page_manager',
     'pathauto',
     'token',
@@ -97,8 +98,12 @@ class DefaultConfigTest extends KernelTestBase {
     'agov_default_content',
     // @TODO, move to contrib.
     'text_icon',
-    'pathauto',
-    'file_entity',
+
+    // Optional modules with config are not currently supported.
+    'agov_workbench',
+
+    // Current schema issues.
+    'agov_password_policy',
   ];
 
   /**
