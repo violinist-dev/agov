@@ -39,4 +39,5 @@ features:
   logo: true
 
 stylesheets-remove:
+  - core/assets/vendor/normalize-css/normalize.css
   - @classy/css/components/menu.css

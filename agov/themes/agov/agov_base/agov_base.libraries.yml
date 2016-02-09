@@ -35,7 +35,7 @@ component-library:
     agov_components:
       css/components/box/box.css: {}
       css/components/button/button.css: {}
-      css/components/comment/commentx.css: {}
+      css/components/comment/comment.css: {}
       css/components/date/date.css: {}
       css/components/divider/divider.css: {}
       css/components/footer-bottom/footer-bottom.css: {}
@@ -51,8 +51,14 @@ component-library:
       css/components/teaser/teaser.css: {}
       css/components/three-column-menu/three-column-menu.css: {}
 
+    layouts:
+      css/layouts/landing-page/landing-page.css: {}
+      css/layouts/layout-center/layout-center.css: {}
+      css/layouts/two-column/two-column.css: {}
+
   js:
     sass/components/primary-navigation/primary-navigation.js: {}
+
   dependencies:
     - core/drupal
     - core/jquery
