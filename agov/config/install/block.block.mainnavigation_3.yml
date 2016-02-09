@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - agov_base
+    - agov_whitlam
 id: mainnavigation_3
-theme: agov_base
+theme: agov_whitlam
 region: footer_top
 weight: -4
 provider: null
