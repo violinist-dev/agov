@@ -79,3 +79,12 @@ stylesheets-remove:
 # - '@agov_base/css/layouts/landing-page/landing-page.css'
 # - '@agov_base/css/layouts/layout-center/layout-center.css'
 # - '@agov_base/css/layouts/two-column/two-column.css'
+
+# Alternatively, remove entire agov_base libraries.
+# Un-comment each library to exclude it's CSS, JS and Dependencies from being loaded.
+
+libraries-override:
+#  agov_base/base: false
+#  agov_base/base_components: false
+#  agov_base/agov_components: false
+#  agov_base/layouts: false
