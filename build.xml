@@ -166,20 +166,7 @@
   </target>
 
   <target name="styleguide:link" description="Link the style guide to make it publicly available.">
-    <!-- Create -->
-    <exec command="mkdir -p ${app.dir}/${app.profile.dir}/styleguide"
-          logoutput="true"
-          passthru="true"
-          checkreturn="true" />
-
-    <!-- Permissions -->
-    <exec command="chmod -R 775 ${app.dir}/${app.profile.dir}/styleguide"
-          logoutput="true"
-          passthru="true"
-          checkreturn="true" />
-
-    <!-- Symlink the app styleguide folder into the profiles styleguide folder. -->
-    <symlink link="${app.dir}/styleguide" target="${app.dir}/${app.profile.dir}/styleguide" />
+    <symlink link="${app.dir}/${app.profile.dir}/styleguide" target="${project.basedir}/styleguide" />
   </target>
 
   <target name="login" description="Generate a one-time login link">

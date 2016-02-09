@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_date
     - field.field.node.article.field_article_image
+    - image.style.teaser_medium
     - node.type.article
   module:
     - fences

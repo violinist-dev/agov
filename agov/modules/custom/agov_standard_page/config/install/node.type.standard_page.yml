@@ -3,19 +3,11 @@ status: true
 dependencies:
   module:
     - menu_ui
-    - workbench_moderation
 third_party_settings:
   menu_ui:
     available_menus:
       - main
     parent: 'main:'
-  workbench_moderation:
-    enabled: true
-    allowed_moderation_states:
-      - draft
-      - needs_review
-      - published
-    default_moderation_state: draft
 name: 'Standard Page'
 type: standard_page
 description: 'Use Standard pages for your static content such as an ''About us'' page or other informational pages that will always be accessible on the site.'
