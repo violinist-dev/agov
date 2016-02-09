@@ -38,6 +38,10 @@ features:
   comment_user_verification: true
   logo: true
 
+# Remove all Classy base components because they're not needed here.
+libraries-override:
+  classy/base: false
+
+# Remove core normalize css because we have our own.
 stylesheets-remove:
-  - core/assets/vendor/normalize-css/normalize.css
-  - @classy/css/components/menu.css
+ - core/assets/vendor/normalize-css/normalize.css
