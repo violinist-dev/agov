@@ -8,16 +8,11 @@
 // - First we set any shared Sass variables.
 // - Next we import Sass modules (sometimes called Compass plug-ins).
 // - Last we define our custom mixins for this theme.
-//
-// Weight: -1
-//
-// Style guide: sass.init
 
 // Variables
 //
 // Set variables for this site before a library sets its !default value.
-//
-// Style guide: sass.variables
+
 @import 'init/*';
 
 
@@ -33,8 +28,6 @@
 // - [Zen Grids](http://next.zengrids.com/help/)
 //
 // Additional pre-built libraries can be found on the [Sache website](http://www.sache.in/).
-//
-// Style guide: sass.modules
 
 // Add Breakpoint to manage media queries.
 @import 'breakpoint';

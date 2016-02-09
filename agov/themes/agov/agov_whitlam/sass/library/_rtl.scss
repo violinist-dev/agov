@@ -4,8 +4,7 @@ $include-rtl: true !default;
 //
 // Includes Right-To-Left langauge support. Can be turned off globally by
 // setting `$include-rtl: false;`.
-//
-// Style guide: sass.mixins.rtl
+
 @mixin rtl() {
   [dir="rtl"] & {
     @content;

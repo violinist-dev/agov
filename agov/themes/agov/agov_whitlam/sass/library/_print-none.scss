@@ -4,8 +4,6 @@
 //
 // By importing this CSS file as media "all", we allow this print file to be
 // aggregated with other stylesheets, for improved front-end performance.
-//
-// Style guide: sass.mixins.print-none
 
 @mixin print-none {
   @media print {

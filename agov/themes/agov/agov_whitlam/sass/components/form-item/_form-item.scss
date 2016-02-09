@@ -1,27 +1,6 @@
 // Form item
 //
 // Wrapper for a form element (or group of form elements) and its label.
-//
-// .form-item--inline - Inline form items.
-// .form-item--tight  - Packs groups of form items closer together.
-// .is-error          - Highlight the form elements that caused a form
-//                      submission error.
-//
-// Markup: form-item.hbs
-//
-// Style guide: components.forms.form-item
-
-// Form item (radio)
-//
-// Checkboxes and radios require slightly different markup; their label is after
-// their widget instead of before. Uses the `.form-item--radio` class variant of
-// the normal form item and is placed on each of the nested form items.
-//
-// .is-error - Highlight the form elements that caused a form submission error.
-//
-// Markup: form-item--radio.hbs
-//
-// Style guide: components.forms.form-item--radio
 
 .form-item,
 %form-item {
@@ -43,6 +22,12 @@
   &--tight {
     // Inherit from agov_base.
   }
+
+// Form item (radio)
+//
+// Checkboxes and radios require slightly different markup; their label is after
+// their widget instead of before. Uses the `.form-item--radio` class variant of
+// the normal form item and is placed on each of the nested form items.
 
   &--radio {
     // Inherit from agov_base.

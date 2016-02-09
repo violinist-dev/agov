@@ -1,12 +1,6 @@
 // Box
 //
 // A simple box styling.
-//
-// Markup: box.hbs
-//
-// :hover  - Hover styling.
-//
-// Style guide: components.box
 
 .box,
 %box {
@@ -16,20 +10,12 @@
   }
 
 // Icon box - with border
-//
-// Markup: box--icon-with-border.hbs
-//
-// Style guide: components.box.box--icon-with-border.hbs
 
   &--with-border {
     border: 2px solid color(border);
   }
 
 // Icon box - with hover
-//
-// Markup: box--icon-with-hover.hbs
-//
-// Style guide: components.box.box--icon-with-hover.hbs
 
   &--with-hover {
     &:hover,
@@ -39,10 +25,6 @@
   }
 
 // Icon box
-//
-// Markup: box--icon.hbs
-//
-// Style guide: components.box.box--icon
 
   &--icon {
     // Inherit from agov_base.

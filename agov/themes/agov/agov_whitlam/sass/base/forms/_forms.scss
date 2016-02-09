@@ -34,12 +34,6 @@
 // The `<input>` element is mostly used for text-based inputs that include the
 // HTML5 types: `text`, `search`, `tel`, `url`, `email`, `password`, `date`,
 // `time`, `number`, `range`, `color`, and `file`.
-//
-// Markup: forms-input.hbs
-//
-// :hover - Hover styling.
-//
-// Style guide: base.forms.input
 
 input {
   &[type="text"],
@@ -55,14 +49,26 @@ input {
   }
 }
 
+// Buttons
+//
+// Buttons built with the `<button>` element are the most flexible for styling
+// purposes. But `<input>` elements with `type` set to `submit`, `image`,
+// `reset`, or `button` are also supported.
+//
+// Below is the default button styling. To see variations on the button styling
+// see the [button component](section-components.html#kssref-components-button).
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  @extend %button;
+}
+
 // Fieldsets
 //
 // The `<fieldset>` element groups a set of form fields, optionally under a
 // common name given by the `<legend>` element.
-//
-// Markup: forms-fieldset.hbs
-//
-// Style guide: base.forms.fieldset
 
 fieldset {
   // Define consistent border, margin, and padding.

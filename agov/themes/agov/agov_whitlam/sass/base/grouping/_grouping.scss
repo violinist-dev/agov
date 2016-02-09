@@ -1,12 +1,6 @@
 // Dependencies.
 @import 'components/divider/divider';
 
-// Grouping content
-//
-// Weight: 1
-//
-// Style guide: base.grouping
-
 // Blockquotes
 //
 // For quoting blocks of content from another source within your document. Wrap
@@ -16,10 +10,6 @@
 //
 // Optionally, add a <code>&lt;footer&gt;</code> to identify the source of the
 // quote. Wrap the name of the source work in <code>&lt;cite&gt;</code>.
-//
-// Markup: grouping-blockquote.hbs
-//
-// Style guide: base.grouping.blockquote
 
 blockquote {
   // Set 1 unit of vertical rhythm on the top and bottom margin.
@@ -33,10 +23,6 @@ blockquote {
 // The hr element represents a paragraph-level thematic break, e.g. a scene
 // change in a story, or a transition to another topic within a section of a
 // reference book.
-//
-// Markup: grouping-hr.hbs
-//
-// Style guide: base.grouping.hr
 
 hr {
   @extend %divider;

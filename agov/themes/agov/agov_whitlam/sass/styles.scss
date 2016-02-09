@@ -1,18 +1,13 @@
 // Colors and Sass
 //
 // Documentation for colors and Sass mixins and variables.
-//
-// Weight: -1
-//
-// Style guide: sass
+
 @import 'init';
 
 
 // Base
 //
 // These are the base styles applied to HTML elements.
-//
-// Style guide: base
 
 // Ensure fonts get loaded first to minimize front-end performance impact.
 @import 'base/fonts';
@@ -23,8 +18,5 @@
 //
 // Design components are reusable designs that can be applied using just the CSS
 // class names specified in the component.
-//
-// Weight: 1
-//
-// Style guide: components
+
 @import 'components/**/*';

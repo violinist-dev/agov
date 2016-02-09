@@ -3,8 +3,6 @@
 // Lists
 //
 // Mixin to create a list of links that are unstyled or inline with each other, with rtl support
-//
-// Style guide: sass.mixins.lists
 
 @mixin unstyled-list {
   padding-left: 0;
