@@ -10,12 +10,13 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
 use Drupal\block\Entity\Block;
+use Drupal\block_content\BlockContentInterface;
 
 /**
  * Implements hook_theme_suggestions_block_alter().
  */
 function agov_base_theme_suggestions_block_alter(&$hooks, &$vars) {
-  if ($vars['elements']['#configuration']['provider'] === 'block_content') {
+  if ($vars['elements']['#configuration']['provider'] === 'block_content' && isset($vars['elements']['content']['#block_content']) && $vars['elements']['content']['#block_content'] instanceof BlockContentInterface) {
     $hooks[] = 'block__block_content__' . $vars['elements']['content']['#block_content']->bundle();
   }
   if (isset($vars['elements']['#id'])) {
