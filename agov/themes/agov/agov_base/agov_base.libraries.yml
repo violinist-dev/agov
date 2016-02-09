@@ -1,4 +1,4 @@
-component-library:
+base:
   version: 1.x
   css:
     base:
@@ -12,7 +12,10 @@ component-library:
       css/base/tables/tables.css: {}
       css/base/forms/forms.css: {}
 
-    base_components:
+base_components:
+  version: 1.x
+  css:
+    component:
       css/components/autocomplete/autocomplete.css: {}
       css/components/breadcrumb/breadcrumb.css: {}
       css/components/clearfix/clearfix.css: {}
@@ -32,7 +35,10 @@ component-library:
       css/components/visually-hidden/visually-hidden.css: {}
       css/components/watermark/watermark.css: {}
 
-    agov_components:
+agov_components:
+  version: 1.x
+  css:
+    component:
       css/components/box/box.css: {}
       css/components/button/button.css: {}
       css/components/comment/comment.css: {}
@@ -50,16 +56,17 @@ component-library:
       css/components/tags/tags.css: {}
       css/components/teaser/teaser.css: {}
       css/components/three-column-menu/three-column-menu.css: {}
-
-    layouts:
-      css/layouts/landing-page/landing-page.css: {}
-      css/layouts/layout-center/layout-center.css: {}
-      css/layouts/two-column/two-column.css: {}
-
   js:
     sass/components/primary-navigation/primary-navigation.js: {}
-
   dependencies:
     - core/drupal
     - core/jquery
     - core/jquery.once
+
+layouts:
+  version: 1.x
+  css:
+    layout:
+      css/layouts/landing-page/landing-page.css: {}
+      css/layouts/layout-center/layout-center.css: {}
+      css/layouts/two-column/two-column.css: {}

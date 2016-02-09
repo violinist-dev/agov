@@ -9,7 +9,10 @@ core: 8.x
 base theme: classy
 
 libraries:
-  - agov_base/component-library
+  - agov_base/base
+  - agov_base/base_components
+  - agov_base/agov_components
+  - agov_base/layouts
 
 regions:
   secondary_menu: 'Secondary menu'
