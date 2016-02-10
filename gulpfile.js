@@ -23,7 +23,7 @@ options.rootPath = {
   project     : __dirname + '/',
   web         : __dirname + '/app/',
   baseTheme   : __dirname + '/app/profiles/agov/themes/agov/agov_base/',
-  styleGuide  : __dirname + '/app/profiles/agov/styleguide/',
+  styleGuide  : __dirname + '/app/styleguide/',
   subTheme    : __dirname + compiledTheme
 };
 

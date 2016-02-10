@@ -179,7 +179,7 @@
           checkreturn="true" />
 
       <!-- Symlink the app styleguide folder into the profiles styleguide folder. -->
-      <symlink link="${app.dir}/${app.profile.dir}/styleguide" target="${project.basedir}/styleguide" />
+      <symlink link="${app.dir}/styleguide" target="${project.basedir}/styleguide" />
   </target>
 
   <target name="login" description="Generate a one-time login link">
