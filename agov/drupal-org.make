@@ -33,6 +33,9 @@ projects[password_policy][version] = '3.0-alpha2'
 projects[workbench_moderation][subdir] = 'contrib'
 projects[workbench_moderation][version] = '1.0-alpha2'
 
+projects[agls][subdir] = 'contrib'
+projects[agls][version] = '1.x-dev'
+
 ; Development versions
 
 projects[file_entity][type] = module
