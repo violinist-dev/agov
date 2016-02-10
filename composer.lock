@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "01d1d6307924af3d1c1bee91928e2169",
+    "hash": "14148da22dcf8fba711efd80fd950861",
     "packages": [
         {
             "name": "composer/installers",
@@ -571,7 +571,7 @@
             "version": "8.2.3",
             "source": {
                 "type": "git",
-                "url": "http://git.drupal.org/project/coder.git",
+                "url": "https://github.com/klausi/coder.git",
                 "reference": "fcda9b7e7cc8dc741ce01dfbeb44fd6c4cf3cde8"
             },
             "require": {
@@ -1226,12 +1226,12 @@
             "version": "1.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobLoach/Console_Table.git",
+                "url": "https://github.com/pear/Console_Table.git",
                 "reference": "10d89fbbe533351dcfe5dc1e84de25d9a8395950"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobLoach/Console_Table/zipball/10d89fbbe533351dcfe5dc1e84de25d9a8395950",
+                "url": "https://api.github.com/repos/pear/Console_Table/zipball/a129a91d8bf19317d81e68d1d3a2e18932f684e4",
                 "reference": "10d89fbbe533351dcfe5dc1e84de25d9a8395950",
                 "shasum": ""
             },
