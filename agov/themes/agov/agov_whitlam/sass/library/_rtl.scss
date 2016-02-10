@@ -1,0 +1,12 @@
+$include-rtl: true !default;
+
+// rtl()
+//
+// Includes Right-To-Left langauge support. Can be turned off globally by
+// setting `$include-rtl: false;`.
+
+@mixin rtl() {
+  [dir="rtl"] & {
+    @content;
+  }
+}

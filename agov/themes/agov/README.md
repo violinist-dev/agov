@@ -15,45 +15,39 @@ Starterkits are pre-built sub-theme templates that allow you to replace the uppe
 
 ## Themes that come with agov
 
-**zen**
-The [Zen](http://drupal.org/project/zen) base theme is Drupal's most popular contributed theme. This theme is rarely (if ever) enabled as it is just a collection of template and css files that improve Drupal's default markup and styling. *DO NOT ENABLE THIS THEME.*
-
-**agov_zen**
-A sub-theme of the Zen base-theme that includes markup and styling changes to customize aGov's presentation layer, add accessibility improvements, and provided functionality through javascript. Low-level theme changes like colors and css3 enhancements are meant to be provided by the following sub-theme layer.
-
 **agov_base**
-A ready-made example of a theme that has been lightly customized. It inherits from *ENABLE this theme to see a standard representation of aGov*
+A base theme that contains the structural components of aGov. agov_base inherits from Classy and provides very minimally styled components.
 
-**AGOV_STARTERKIT**
-An example sub-theme that contains all the designs in agov_base and that you can use as a starting point to creating a sub-theme for your website.
+**agov_whitlam**
+A sub-theme of agov_base that has been lightly customized to show the aGov colour palette and font. *ENABLE this theme to see a standard representation of aGov*
 
-**STARTERKIT**
-Zen's starter kit. agov_zen and agov_base were built using this theme. You should use Zen's STARTERKIT directly if the design components of your custom theme deviate strongly from those in aGov.
+**agov_base/STARTERKIT**
+An example sub-theme that contains all the structure of agov_base so that you can use as a starting point to creating a sub-theme for your website.
 
 ## Theme Hierarchy diagram:
 
 <pre>
-+-----------------+  +--------------+
-|                 |  |              |
-| AGOV_STARTERKIT |  | agov_whitlam |
-|                 |  |              |
-+---+-------------+  +--+-----------+
++----------------------+  +--------------+
+|                      |  |              |
+| agov_base/STARTERKIT |  | agov_whitlam |
+|                      |  |              |
++---+------------------+  +--+-----------+
     |                   |
     | +-----------------+
     | |
     v v
-+----------+         +--------------+
-|          |         |              |
-| agov_zen |         |  STARTERKIT  |
-|          |         |              |
-+---+------+         +--------------+
-    |                   |
-    | +-----------------+
-    | |
-    v v
-+----------+
-|          |
-|   zen    |
-|          |
-+----------+
++-----------+
+|           |
+| agov_base |
+|           |
++---+-------+
+    |
+    |
+    |
+    v
++-------------+
+|             |
+|   classy    |
+|             |
++-------------+
 </pre>

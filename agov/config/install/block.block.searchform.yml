@@ -5,9 +5,9 @@ dependencies:
     - search
     - system
   theme:
-    - agov_base
+    - agov_whitlam
 id: searchform
-theme: agov_base
+theme: agov_whitlam
 region: highlighted
 weight: -4
 provider: null

@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - agov_base
+    - agov_whitlam
 id: pagetitle
-theme: agov_base
+theme: agov_whitlam
 region: content
 weight: -5
 provider: null

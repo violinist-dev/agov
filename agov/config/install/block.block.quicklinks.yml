@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - agov_base
+    - agov_whitlam
 id: quicklinks
-theme: agov_base
+theme: agov_whitlam
 region: '-1'
 weight: -1
 provider: null

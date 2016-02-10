@@ -10,16 +10,12 @@
 }
 
 .wrap-demo {
-  @include padding(1);
-
-  @include respond-to('medium') {
-    background-color: color(link);
-  }
+  display: block;
 }
 
 .demo-bg {
-  background: color(link);
   @include padding-top(4);
+  background: color('black');
   position: relative;
 
   @include respond-to('medium') {

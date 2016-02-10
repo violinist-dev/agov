@@ -49,7 +49,7 @@
   <!-- ============ -->
 
   <target name="build"
-          depends="clean, prepare, make, install"
+          depends="clean, prepare, make, styleguide:link, gulp:build, install"
           description="Build (or rebuild) the project.">
   </target>
 
@@ -166,7 +166,20 @@
   </target>
 
   <target name="styleguide:link" description="Link the style guide to make it publicly available.">
-    <symlink link="${app.dir}/${app.profile.dir}/styleguide" target="${project.basedir}/styleguide" />
+      <!-- Create -->
+      <exec command="mkdir -p ${project.basedir}/styleguide"
+          logoutput="true"
+          passthru="true"
+          checkreturn="true" />
+
+      <!-- Permissions -->
+      <exec command="chmod -R 775 ${project.basedir}/styleguide"
+          logoutput="true"
+          passthru="true"
+          checkreturn="true" />
+
+      <!-- Symlink the app styleguide folder into the profiles styleguide folder. -->
+      <symlink link="${app.dir}/styleguide" target="${project.basedir}/styleguide" />
   </target>
 
   <target name="login" description="Generate a one-time login link">
@@ -177,7 +190,13 @@
   </target>
 
   <target name="gulp:build" description="Generate all compiled Sass and style guide resources.">
-    <exec dir="${app.dir}"
+      <exec dir="${app.dir}"
+            command="${gulp.cmd} styles:base-theme"
+            logoutput="true"
+            passthru="true"
+            checkreturn="true" />
+
+      <exec dir="${app.dir}"
           command="${gulp.cmd} build"
           logoutput="true"
           passthru="true"

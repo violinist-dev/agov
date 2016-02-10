@@ -1,0 +1,16 @@
+// Date
+//
+// Styling of date for pages.
+
+.date,
+%date {
+
+// Date without label
+//
+// This is how a date is displayed without label.
+
+  &--without-label {
+    @include font-size(xs);
+    color: color(date);
+  }
+}
