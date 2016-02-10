@@ -10,6 +10,10 @@ var options = {},
 // Edit these paths and options.
 // #############################
 
+// The subTheme that gulp compiles Sass from.
+// Change this to your custom sub-subTheme.
+var compiledTheme = '/app/profiles/agov/themes/agov/agov_whitlam/';
+
 // The root paths are used to construct all the other paths in this
 // configuration. The "project" root path is where this gulpfile.js is located.
 // While Zen distributes this in the theme root folder, you can also put this
@@ -18,45 +22,55 @@ var options = {},
 options.rootPath = {
   project     : __dirname + '/',
   web         : __dirname + '/app/',
-  styleGuide  : __dirname + '/agov/styleguide/agov_base/',
-  theme       : __dirname + '/agov/themes/agov/agov_base/'
+  baseTheme   : __dirname + '/app/profiles/agov/themes/agov/agov_base/',
+  styleGuide  : __dirname + '/app/profiles/agov/styleguide/',
+  subTheme    : __dirname + compiledTheme
 };
 
-// Define the paths in the Drupal theme by getting theme sub-directories from
+// Define the paths in the Drupal subTheme by getting subTheme sub-directories from
 // Compass' config.rb.
 // @TODO Remove our dependency on Compass once libSass is more feature rich.
-compass = compassOptions.dirs({'config': options.rootPath.theme + 'config.rb'});
+compass = compassOptions.dirs({'config': options.rootPath.subTheme + 'config.rb'});
 
-options.theme = {
-  root  : options.rootPath.theme,
-  css   : options.rootPath.theme + compass.css + '/',
-  sass  : options.rootPath.theme + compass.sass + '/',
-  js    : options.rootPath.theme + compass.js + '/'
+options.baseTheme = {
+  root  : options.rootPath.baseTheme,
+  css   : options.rootPath.baseTheme + compass.css + '/',
+  sass  : options.rootPath.baseTheme + compass.sass + '/',
+  js    : options.rootPath.baseTheme + compass.js + '/'
+};
+
+options.subTheme = {
+  root  : options.rootPath.subTheme,
+  css   : options.rootPath.subTheme + compass.css + '/',
+  sass  : options.rootPath.subTheme + compass.sass + '/',
+  js    : options.rootPath.subTheme + compass.js + '/'
 };
 
 // Define the style guide paths and options.
 options.styleGuide = {
   source: [
-    options.theme.sass,
-    options.theme.css + 'style-guide/'
+    options.baseTheme.sass,
+    options.baseTheme.css + 'style-guide/',
+    options.subTheme.sass
   ],
   destination: options.rootPath.styleGuide,
 
   // The css and js paths are URLs, like '/misc/jquery.js'.
   // The following paths are relative to the generated style guide.
   css: [
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'styles.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/chroma-kss-styles.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css')
+    path.relative(options.rootPath.styleGuide, options.baseTheme.css + 'styles.css'),
+    path.relative(options.rootPath.styleGuide, options.subTheme.css + 'styles.css'),
+    path.relative(options.rootPath.styleGuide, options.baseTheme.css + 'style-guide/chroma-kss-styles.css'),
+    path.relative(options.rootPath.styleGuide, options.baseTheme.css + 'style-guide/kss-only.css')
   ],
   js: [
     '/core/assets/vendor/jquery/jquery.min.js',
-    path.relative(options.rootPath.styleGuide, options.theme.js + 'superfish.min.js'),
-    path.relative(options.rootPath.styleGuide, options.theme.js + 'script-styleguide.js')
+    path.relative(options.rootPath.styleGuide, options.baseTheme.sass + 'components/primary-navigation/primary-navigation.js'),
+    path.relative(options.rootPath.styleGuide, options.subTheme.js + 'script.js')
   ],
 
   homepage: 'homepage.md',
-  title: 'aGov Base Style Guide'
+  title: 'aGov Style Guide'
 };
 
 // Define the path to the project's .scss-lint.yml.
@@ -67,10 +81,10 @@ options.scssLint = {
 // Define the paths to the JS files to lint.
 options.eslint = {
   files  : [
-    options.theme.js + '**/*.js',
+    options.subTheme.js + '**/*.js',
     'app/sites/all/modules/custom/**/*.js',
     'app/sites/all/modules/features/**/*.js',
-    '!' + options.theme.js + '**/*.min.js',
+    '!' + options.subTheme.js + '**/*.min.js',
     '!app/sites/all/modules/custom/**/*.min.js',
     '!app/sites/all/modules/features/**/*.min.js'
   ]
@@ -112,12 +126,17 @@ gulp.task('build', ['styles:production', 'styleguide'], function (cb) {
 // ##########
 gulp.task('styles', ['clean:css'], $.shell.task(
   ['bundle exec compass compile --time --sourcemap --output-style expanded'],
-  {cwd: options.theme.root}
+  {cwd: options.subTheme.root}
 ));
 
 gulp.task('styles:production', ['clean:css'], $.shell.task(
   ['bundle exec compass compile --time --no-sourcemap --output-style compressed'],
-  {cwd: options.theme.root}
+  {cwd: options.subTheme.root}
+));
+
+gulp.task('styles:base-theme', ['clean:base-theme-css'], $.shell.task(
+  ['bundle exec compass compile --time --no-sourcemap --output-style compressed'],
+  {cwd: options.baseTheme.root}
 ));
 
 // ##################
@@ -144,12 +163,12 @@ gulp.task('styleguide', ['clean:styleguide', 'styleguide:chroma-kss-markup'], $.
 gulp.task('styleguide:chroma-kss-markup', $.shell.task(
   [
     // @TODO: mkdir and head are UNIX utils. Replace this after Chroma is refactored.
-    'mkdir -p css/style-guide',
-    'bundle exec sass --no-cache --compass --scss --sourcemap=none --style expanded sass/style-guide/chroma-kss-markup.scss css/style-guide/chroma-kss-markup.hbs.tmp',
-    'head -n 2  css/style-guide/chroma-kss-markup.hbs.tmp | tail -n 1 > css/style-guide/chroma-kss-markup.hbs',
-    'rm css/style-guide/chroma-kss-markup.hbs.tmp'
+    'mkdir -p ' + options.baseTheme.css + 'style-guide/',
+    'bundle exec sass --no-cache --compass --scss --sourcemap=none --style expanded ' + options.baseTheme.sass + 'style-guide/chroma-kss-markup.scss ' + options.baseTheme.css + 'style-guide/chroma-kss-markup.hbs.tmp',
+    'head -n 2  ' + options.baseTheme.css + 'style-guide/chroma-kss-markup.hbs.tmp | tail -n 1 > ' + options.baseTheme.css + 'style-guide/chroma-kss-markup.hbs',
+    'rm ' + options.baseTheme.css + 'style-guide/chroma-kss-markup.hbs.tmp'
   ],
-  {cwd: options.theme.root}
+  {cwd: options.subTheme.root}
 ));
 
 // Debug the generation of the style guide with the --verbose flag.
@@ -182,13 +201,13 @@ gulp.task('lint:js-with-fail', function () {
 
 // Lint Sass.
 gulp.task('lint:sass', function() {
-  return gulp.src(options.theme.sass + '**/*.scss')
+  return gulp.src(options.subTheme.sass + '**/*.scss')
     .pipe($.scssLint({'bundleExec': true, 'config': options.scssLint.yml}));
 });
 
 // Lint Sass and throw an error for a CI to catch.
 gulp.task('lint:sass-with-fail', function() {
-  return gulp.src(options.theme.sass + '**/*.scss')
+  return gulp.src(options.subTheme.sass + '**/*.scss')
     .pipe($.scssLint({'bundleExec': true, 'config': options.scssLint.yml}))
     .pipe($.scssLint.failReporter());
 });
@@ -205,13 +224,13 @@ gulp.task('watch:css', ['clean:css'], $.shell.task(
   // The "watch:css" task CANNOT be used in a dependency, because this task will
   // never end as "compass watch" never completes and returns.
   ['bundle exec compass watch --time --sourcemap --output-style expanded' + options.compassPollFlag],
-  {cwd: options.theme.root}
+  {cwd: options.subTheme.root}
 ));
 
 gulp.task('watch:lint-and-styleguide', ['styleguide', 'lint:sass'], function() {
   return gulp.watch([
-      options.theme.sass + '**/*.scss',
-      options.theme.sass + '**/*.hbs'
+      options.subTheme.sass + '**/*.scss',
+      options.subTheme.sass + '**/*.hbs'
     ], options.gulpWatchOptions, ['styleguide', 'lint:sass']);
 });
 
@@ -230,16 +249,25 @@ gulp.task('clean:styleguide', function() {
   return del([
       options.styleGuide.destination + '*.html',
       options.styleGuide.destination + 'public',
-      options.theme.css + '**/*.hbs'
+      options.subTheme.css + '**/*.hbs'
     ], {force: true});
+});
+
+// Clean Base Theme CSS files.
+gulp.task('clean:base-theme-css', function() {
+  return del([
+    options.baseTheme.root + '**/.sass-cache',
+    options.baseTheme.css + '**/*.css',
+    options.baseTheme.css + '**/*.map'
+  ], {force: true});
 });
 
 // Clean CSS files.
 gulp.task('clean:css', function() {
   return del([
-      options.theme.root + '**/.sass-cache',
-      options.theme.css + '**/*.css',
-      options.theme.css + '**/*.map'
+      options.subTheme.root + '**/.sass-cache',
+      options.subTheme.css + '**/*.css',
+      options.subTheme.css + '**/*.map'
     ], {force: true});
 });
 
