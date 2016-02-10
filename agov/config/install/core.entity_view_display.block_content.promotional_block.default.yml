@@ -7,6 +7,7 @@ dependencies:
     - field.field.block_content.promotional_block.field_promotional_description
     - field.field.block_content.promotional_block.field_promotional_image
     - field.field.block_content.promotional_block.field_promotional_title
+    - image.style.teaser_medium
   module:
     - fences
     - image
