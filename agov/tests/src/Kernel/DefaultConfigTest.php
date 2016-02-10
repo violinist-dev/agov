@@ -138,7 +138,7 @@ class DefaultConfigTest extends KernelTestBase {
     $this->installEntitySchema('block_content');
     $this->installEntitySchema('block_content_type');
     $this->installEntitySchema('file');
-    $this->installConfig(['node', 'block_content', 'system']);
+    $this->installConfig(['node', 'block_content', 'system', 'image']);
 
     // Install the default config for our installation profile.
     $this->container->get('config.installer')->installDefaultConfig('profile', $this->profile);

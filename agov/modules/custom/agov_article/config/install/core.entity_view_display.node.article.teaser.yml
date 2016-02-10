@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_date
     - field.field.node.article.field_article_image
-    - image.style.teaser_medium
+    - image.style.article_teaser_medium
     - node.type.article
   module:
     - fences
@@ -38,7 +38,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: teaser_medium
+      image_style: article_teaser_medium
       image_link: content
     third_party_settings:
       fences:
