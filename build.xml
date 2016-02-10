@@ -49,7 +49,7 @@
   <!-- ============ -->
 
   <target name="build"
-          depends="clean, prepare, make, install"
+          depends="clean, prepare, make, styleguide:link, gulp:build, install"
           description="Build (or rebuild) the project.">
   </target>
 
@@ -190,7 +190,13 @@
   </target>
 
   <target name="gulp:build" description="Generate all compiled Sass and style guide resources.">
-    <exec dir="${app.dir}"
+      <exec dir="${app.dir}"
+            command="${gulp.cmd} styles:base-theme"
+            logoutput="true"
+            passthru="true"
+            checkreturn="true" />
+
+      <exec dir="${app.dir}"
           command="${gulp.cmd} build"
           logoutput="true"
           passthru="true"
