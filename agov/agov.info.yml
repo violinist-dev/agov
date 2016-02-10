@@ -66,6 +66,10 @@ configurable_dependencies:
     label: aGov Workbench
     description: Integration with Workbench Moderation
     enabled: true
+  agls:
+    label: ALGS Metatags
+    description: Adds support for AGLS metatags.
+    enabled: true
 
 themes:
   - agov_base
