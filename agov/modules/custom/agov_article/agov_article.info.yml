@@ -23,4 +23,4 @@ config_devel:
   - field.storage.node.field_article_date
   - views.view.latest_updates
   - views.view.news
-  - image.style.teaser_medium
+  - image.style.article_teaser_medium
