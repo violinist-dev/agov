@@ -40,7 +40,7 @@ settings:
     stylescombo:
       styles: "a.button|Button\r\na.button--large|Button Large\r\na.button--wide|Button Wide\r\n\r\n"
 image_upload:
-  status: false
+  status: true
   scheme: public
   directory: inline-images
   max_size: ''
