@@ -52,6 +52,7 @@ class ScheduledPublicationTest extends AgovTestBase {
    */
   public function testScheduledPublication() {
     $this->drupalLogin($this->adminUser);
+    // Create an unpublished node with a future publication date.
     $this->drupalGet('node/add/publication');
     $this->assertText('scheduled publication');
     $this->drupalPostForm(NULL, [], 'Add new scheduled publish date');
@@ -59,6 +60,9 @@ class ScheduledPublicationTest extends AgovTestBase {
       'created[0][value][date]' => '2016-02-11',
       'created[0][value][time]' => '20:57:29',
     ], 'Create scheduled publish date');
+    // @todo, rewrind the publication date to be in the past.
+    // @todo, run scheduled updates.
+    // @todo, assert the node is published.
   }
 
 }
