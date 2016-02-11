@@ -70,6 +70,10 @@ configurable_dependencies:
     label: ALGS Metatags
     description: Adds support for AGLS metatags.
     enabled: true
+  agov_scheduled_updates:
+    label: Scheduled Updates
+    description: Add support for scheduled content publishing.
+    enabled: true
 
 themes:
   - agov_base
