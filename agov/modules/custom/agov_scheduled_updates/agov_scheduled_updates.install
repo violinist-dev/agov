@@ -16,7 +16,7 @@ function agov_scheduled_updates_install() {
       'type' => 'inline_entity_form_complex',
       'weight' => 100,
       'settings' => [
-        'override_labels' => FALSE,
+        'override_labels' => TRUE,
         'label_singular' => 'scheduled publish date',
         'label_plural' => 'scheduled publish dates',
         'allow_new' => TRUE,
