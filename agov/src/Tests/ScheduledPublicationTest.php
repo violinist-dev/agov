@@ -15,6 +15,13 @@ namespace Drupal\agov\Tests;
 class ScheduledPublicationTest extends AgovTestBase {
 
   /**
+   * An array of modules to be installed.
+   *
+   * @var array
+   */
+  public static $modules = ['agov_scheduled_updates'];
+
+  /**
    * The admin user.
    *
    * @var \Drupal\user\Entity\User
@@ -26,7 +33,18 @@ class ScheduledPublicationTest extends AgovTestBase {
    */
   public function setUp() {
     parent::setUp();
-    $this->adminUser = $this->drupalCreateUser([]);
+    $this->adminUser = $this->drupalCreateUser([
+      'administer nodes',
+      'administer scheduled update types',
+      'view scheduled update entities',
+      'create scheduled_publications scheduled updates',
+      'delete any scheduled_publications scheduled updates',
+      'edit any scheduled_publications scheduled updates',
+      'create publication content',
+      'access content overview',
+      'bypass node access',
+      'administer content types',
+    ]);
   }
 
   /**
@@ -34,6 +52,7 @@ class ScheduledPublicationTest extends AgovTestBase {
    */
   public function testScheduledPublication() {
     $this->drupalLogin($this->adminUser);
+    $this->drupalGet('node/add/publication');
   }
 
 }

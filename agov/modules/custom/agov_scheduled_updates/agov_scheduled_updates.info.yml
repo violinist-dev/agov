@@ -9,4 +9,9 @@ dependencies:
   - scheduled_updates
 
 config_devel:
-  - scheduled_updates.scheduled_update_type.scheduled_publications
+  - core.entity_form_display.scheduled_update.scheduled_publication.default
+  - field.field.node.publication.scheduled_publication
+  - field.field.scheduled_update.scheduled_publication.field_status
+  - field.storage.node.scheduled_publication
+  - field.storage.scheduled_update.field_status
+  - scheduled_updates.scheduled_update_type.scheduled_publication
