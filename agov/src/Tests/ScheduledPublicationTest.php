@@ -53,6 +53,12 @@ class ScheduledPublicationTest extends AgovTestBase {
   public function testScheduledPublication() {
     $this->drupalLogin($this->adminUser);
     $this->drupalGet('node/add/publication');
+    $this->assertText('scheduled publication');
+    $this->drupalPostForm(NULL, [], 'Add new scheduled publish date');
+    $this->drupalPostAjaxForm(NULL, [
+      'created[0][value][date]' => '2016-02-11',
+      'created[0][value][time]' => '20:57:29',
+    ], 'Create scheduled publish date');
   }
 
 }

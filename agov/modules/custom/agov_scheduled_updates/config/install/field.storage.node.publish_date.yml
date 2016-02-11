@@ -4,8 +4,8 @@ dependencies:
   module:
     - node
     - scheduled_updates
-id: node.scheduled_publication
-field_name: scheduled_publication
+id: node.publish_date
+field_name: publish_date
 entity_type: node
 type: entity_reference
 settings:
