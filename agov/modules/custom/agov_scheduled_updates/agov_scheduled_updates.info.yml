@@ -1,0 +1,12 @@
+name: aGov Scheduled Updates
+type: module
+description: Integrate the scheduled updates module with selected aGov bundles.
+package: aGov
+core: '8.x'
+
+dependencies:
+  - agov_publication
+  - scheduled_updates
+
+config_devel:
+  - scheduled_updates.scheduled_update_type.scheduled_publications
