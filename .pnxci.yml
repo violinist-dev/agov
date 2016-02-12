@@ -8,8 +8,6 @@ test: &test
     - bundle install --path vendor/bundle
     - npm install
     - bin/phing build:dev -Dapp.password=$PASSWORD
-    - bin/phing styleguide:link
-    - bin/phing gulp:build
     - bin/phing test
     - node_modules/.bin/gulp lint:js-with-fail
     # Temporarily disable sass lint failing, until Issue #2650652 is complete.
@@ -57,8 +55,6 @@ deploy_8_1:
     - bundle install --path vendor/bundle
     - npm install
     - bin/phing build:dev -Dapp.password=$PASSWORD
-    - bin/phing styleguide:link
-    - bin/phing gulp:build
     - bin/phing test
     - node_modules/.bin/gulp lint:js-with-fail
     # Temporarily disable sass lint failing, until Issue #2650652 is complete.
