@@ -83,7 +83,7 @@ class ScheduledPublicationTest extends AgovTestBase {
 
     // Ensure the node is unpublished.
     $this->drupalLogout();
-    $this->drupalGet('/node/' . $node->id());
+    $this->drupalGet($node->toUrl());
     $this->assertText('Page not found');
 
     // Rewind the update time, so it's in the past.
@@ -92,7 +92,7 @@ class ScheduledPublicationTest extends AgovTestBase {
 
     // Run all updates and revisit the node.
     \Drupal::service('scheduled_updates.update_runner')->runAllUpdates();
-    $this->drupalGet('/node/' . $node->id());
+    $this->drupalGet($node->toUrl());
     $this->assertText($node->label());
   }
 
