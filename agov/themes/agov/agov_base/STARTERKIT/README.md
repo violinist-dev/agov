@@ -20,7 +20,7 @@ A starting point to creating a sub-theme for your website based on agov_base.
   * visit /admin/appearance
   * Click “Install and set default” on the appropriate subtheme you’ve created.
   * Visit your aGov site. Without any custom CSS this theme will be a black and white version of the default theme (agov_whitlam)
-* Customise your theme. Check [the docs](https://github.com/previousnext/agov/blob/master/docs/theming.md) for help.
+* Customise your theme. Check [the docs](https://github.com/previousnext/agov/blob/8.x-1.x/agov/docs/theming.md) for help.
 
 ## A note in inheritance
 

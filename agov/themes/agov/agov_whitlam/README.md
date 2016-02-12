@@ -21,7 +21,7 @@ and is intended as a guide for how to customise aGov.
   * visit /admin/appearance
   * Click “Install and set default” on the appropriate subtheme you’ve created.
   * Visit your aGov site. Without any customisation this theme will look no different from the one installed by default.
-* Customise the theme. Check [the docs](https://github.com/previousnext/agov/blob/master/docs/theming.md) for help.
+* Customise the theme. Check [the docs](https://github.com/previousnext/agov/blob/8.x-1.x/agov/docs/theming.md) for help.
 
 ## A note in inheritance
 
