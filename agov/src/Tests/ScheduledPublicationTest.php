@@ -101,6 +101,7 @@ class ScheduledPublicationTest extends AgovTestBase {
    *
    * @param string $type
    *   The type of entity to load.
+   *
    * @return \Drupal\Core\Entity\EntityInterface
    *   A loaded entity.
    */
