@@ -130,6 +130,21 @@ As well as the following the [BEM](http://bem.info/) naming pattern.
 
 Combined with DRY (don’t repeat yourself) approach to your Sass in general, will all ensure your theme meets current coding standards.
 
+### Maintaining accessibility
+
+The agov_base theme already has a lot of accessibility improves baked into it.
+It is highly recommended to use the STARTERKIT sub-theme as the basis for your custom theme to leverage this accessibility.
+
+Though even if you do there are still a few things to keep in mind:
+
+- Colour contrast
+- Heading heirarchy and page structure
+- Providing alternative text for images and link text on icons
+- Ensuring [hidden content is accessible and doesn't create keyboard traps](https://www.previousnext.com.au/blog/so-many-ways-hide)
+
+To make sure you aren't introducing any accessibility errors 
+it is recommended that you regularly run your theme through a checker like the [HTML_CodeSniffer](https://squizlabs.github.io/HTML_CodeSniffer/)
+
 ### Twig
 
 TBC.
