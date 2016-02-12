@@ -1,3 +1,11 @@
+# Getting Started
+
+See [the aGov readme](https://github.com/previousnext/agov/blob/8.x-1.x/agov/README.md)
+
+### Troubleshooting and docs
+
+See [the docs](https://github.com/previousnext/agov/blob/8.x-1.x/agov/docs/index.md)
+
 # Running Tests
 
 ### Run all tests
