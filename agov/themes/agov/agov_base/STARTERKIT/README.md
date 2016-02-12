@@ -22,7 +22,7 @@ A starting point to creating a sub-theme for your website based on agov_base.
   * Visit your aGov site. Without any custom CSS this theme will be a black and white version of the default theme (agov_whitlam)
 * Customise your theme. Check [the docs](https://github.com/previousnext/agov/blob/8.x-1.x/agov/docs/theming.md) for help.
 
-## A note in inheritance
+## A note on inheritance
 
 Because this is a sub-theme of agov_base it will inherit everything that is in agov_base.
 It is designed to sit on-top of agov_base allowing you to easily style your aGov site.

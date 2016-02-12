@@ -23,7 +23,7 @@ and is intended as a guide for how to customise aGov.
   * Visit your aGov site. Without any customisation this theme will look no different from the one installed by default.
 * Customise the theme. Check [the docs](https://github.com/previousnext/agov/blob/8.x-1.x/agov/docs/theming.md) for help.
 
-## A note in inheritance
+## A note on inheritance
 
 Because this is a sub-theme of agov_base it will inherit everything that is in agov_base.
 It is designed to sit on-top of agov_base allowing you to easily style your aGov site.
