@@ -18,9 +18,11 @@ It is recommended to commit Gemfile.lock and npm-shrinkwrap.json to the projects
 
 Many of the front-end development tasks are run with gulp. This include compiling Sass and generating a styleguide.
 
-- **gulpfile.js** - Contains the Gulp task definitions.
-- **package.json** - Specifies the Node.js modules needed for the Gulp tasks and the KSS style guide. New modules can be added with `npm install <name> --save-dev`.
-- **npm-shrinkwrap.json** - This file locks specific versions of Node.js modules so that all developers on the project are using the exact same versions. It is generated with `npm shrinkwrap --dev` and should be checked into the Git repository.
+- **[Gemfile](https://github.com/previousnext/agov/blob/8.x-1.x/Gemfile)** - Specifies the Ruby Gems needed for the Sass compilation and linting.
+- **[Gemfile.lock](https://github.com/previousnext/agov/blob/8.x-1.x/Gemfile.lock)** - This file locks specific versions of the Ruby Gems so that all developers on the project are using the exact same versions. It is generated with `bundle install` and should be checked into the Git repository.
+- **[package.json](https://github.com/previousnext/agov/blob/8.x-1.x/package.json)** - Specifies the Node.js modules needed for the Gulp tasks and the KSS style guide. New modules can be added with `npm install <name> --save-dev`.
+- **[npm-shrinkwrap.json](https://github.com/previousnext/agov/blob/8.x-1.x/npm-shrinkwrap.json)** - This file locks specific versions of Node.js modules so that all developers on the project are using the exact same versions. It is generated with `npm shrinkwrap --dev` and should be checked into the Git repository.
+- **[gulpfile.js](https://github.com/previousnext/agov/blob/8.x-1.x/gulpfile.js)** - Contains the Gulp task definitions.
 
 To run the default gulp command, type:
 
@@ -113,8 +115,8 @@ By default Linting is required for all custom Sass and JS files.
 
 Configuration of the linting tools is provided by Scaffold but can be configured;
 
-- Sass linting config: .scss-lint.yml
-- JS linting config: .eslintrc
+- **[.scss-lint.yml](https://github.com/previousnext/agov/blob/8.x-1.x/.scss-lint.yml)** - Sass linting configuration file
+- **[.eslintrc](https://github.com/previousnext/agov/blob/8.x-1.x/.eslintrc)** - JS linting configuration file
 
 To exclude 3rd party JS files from being linted:
 
