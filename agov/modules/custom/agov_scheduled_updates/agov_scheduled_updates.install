@@ -27,11 +27,4 @@ function agov_scheduled_updates_install() {
       'third_party_settings' => [],
     ])->save();
   }
-
-  // Try to manually set the default value of the moderation state field.
-//  $field = FieldConfig::load('scheduled_update.scheduled_publications.field_moderation_state');
-//  $field->setDefaultValue([
-//    ['target_id' => 'published'],
-//  ]);
-//  $field->save();
 }
