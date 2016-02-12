@@ -71,7 +71,7 @@ class ScheduledPublicationTest extends AgovTestBase {
     $this->assertText('Scheduled publishing');
     $this->drupalPostForm(NULL, [], 'Add new scheduled publish date');
     $this->drupalPostForm(NULL, [
-      'publish_date[form][inline_entity_form][update_timestamp][0][value][date]' => '2020-01-01',
+      'publish_date[form][inline_entity_form][update_timestamp][0][value][date]' => '2050-01-01',
       'publish_date[form][inline_entity_form][update_timestamp][0][value][time]' => '00:00:00',
     ], 'Create scheduled publish date');
     $this->drupalPostForm(NULL, [
@@ -103,10 +103,12 @@ class ScheduledPublicationTest extends AgovTestBase {
    *   A loaded entity.
    */
   protected function lastCreatedEntity($type) {
-    $id_key = \Drupal::entityTypeManager()->getDefinition($type)->getKey('id');
-    $results = \Drupal::entityQuery($type)->sort($id_key, 'DESC')->range(0, 1)->execute();
+    $type_manager = \Drupal::entityTypeManager();
+    $query_manager = \Drupal::entityTypeManager();
+    $id_key = $type_manager->getDefinition($type)->getKey('id');
+    $results = $query_manager->sort($id_key, 'DESC')->range(0, 1)->execute();
     $id = array_shift($results);
-    return \Drupal::entityTypeManager()->getStorage($type)->load($id);
+    return $type_manager->getStorage($type)->load($id);
   }
 
 }
