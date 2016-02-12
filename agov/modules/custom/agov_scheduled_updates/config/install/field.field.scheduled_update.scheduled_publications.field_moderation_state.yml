@@ -15,8 +15,7 @@ required: false
 translatable: false
 default_value:
   -
-    -
-      target_id: published
+    target_id: published
 default_value_callback: ''
 settings:
   handler: 'default:moderation_state'
