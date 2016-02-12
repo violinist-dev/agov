@@ -71,7 +71,7 @@ class ScheduledPublicationTest extends AgovTestBase {
     $this->assertText('Scheduled publishing');
     $this->drupalPostForm(NULL, [], 'Add new scheduled publish date');
     $this->drupalPostForm(NULL, [
-      'publish_date[form][inline_entity_form][update_timestamp][0][value][date]' => '2050-01-01',
+      'publish_date[form][inline_entity_form][update_timestamp][0][value][date]' => '2030-01-01',
       'publish_date[form][inline_entity_form][update_timestamp][0][value][time]' => '00:00:00',
     ], 'Create scheduled publish date');
     $this->drupalPostForm(NULL, [
