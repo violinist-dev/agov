@@ -76,7 +76,7 @@ class ScheduledPublicationTest extends AgovTestBase {
     ], 'Create scheduled publish date');
     $this->drupalPostForm(NULL, [
       'title[0][value]' => $this->randomMachineName(),
-    ], 'Save and Create New Draft');
+    ], 'Save and Request Review');
 
     $node = $this->lastCreatedEntity('node');
     $update = $this->lastCreatedEntity('scheduled_update');
@@ -84,6 +84,7 @@ class ScheduledPublicationTest extends AgovTestBase {
     // Ensure the node is unpublished.
     $this->drupalLogout();
     $this->drupalGet('/node/' . $node->id());
+    $this->assertText('Page not found');
 
     // Rewind the update time, so it's in the past.
     $update->update_timestamp = REQUEST_TIME - 1500;
@@ -92,6 +93,7 @@ class ScheduledPublicationTest extends AgovTestBase {
     // Run all updates and revisit the node.
     \Drupal::service('scheduled_updates.update_runner')->runAllUpdates();
     $this->drupalGet('/node/' . $node->id());
+    $this->assertText($node->label());
   }
 
   /**
