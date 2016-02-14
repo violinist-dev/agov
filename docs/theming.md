@@ -2,14 +2,14 @@
 
 ### Table of Contents
 
-1. (Initial Setup)[theming.md#initial-setup]
-2. (Gulp)[theming.md#task-automation-with-gulp]
-3. (Styleguide)[theming.md#styleguide-generation-with-kss-node]
-4. (CSS Compilation)[theming.md#css-compilation-with-sass--3rd-party-libraries]
-5. (Coding Standards)[theming.md#maintaining-coding-standards]
-6. (Sass structre)[theming.md#sub-theme-sass-structure]
-7. (Accessibility)[theming.md#maintaining-accessibility]
-8. (Twig)[theming.md#twig] (coming soon)
+1. [Initial Setup](theming.md#initial-setup)
+2. [Gulp](theming.md#task-automation-with-gulp)
+3. [Styleguide](theming.md#styleguide-generation-with-kss-node)
+4. [CSS Compilation](theming.md#css-compilation-with-sass--3rd-party-libraries)
+5. [Coding Standards](theming.md#maintaining-coding-standards)
+6. [Sass structre](theming.md#sub-theme-sass-structure)
+7. [Accessibility](theming.md#maintaining-accessibility)
+8. [Twig](theming.md#twig) (coming soon)
 
 ### Initial setup
 
@@ -166,11 +166,12 @@ modifier = variant
 
 ### Sub-theme Sass structure
 
-Sass files are all compiled into the one file in the following order:
+Sass files are all compiled into the one styles.css file in the following order:
 
 ```
 # Outputs as styles.css with everything else included in it.
 /sass/styles.scss
+
 # Imports all 3rd party Sass libraries and custom variables.
 /sass/_init.scss
 
@@ -188,7 +189,7 @@ Sass files are all compiled into the one file in the following order:
 # Layouts and grid systems.
 /sass/layouts/*
 
-# Components (aka SMACSS modules); independently styled components that can live anywhere in a layout.
+# Components; independently styled components that can live anywhere in a layout.
 /sass/components/*
 ```
 
