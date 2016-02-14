@@ -7,7 +7,7 @@
 3. [Styleguide](theming.md#styleguide-generation-with-kss-node)
 4. [CSS Compilation](theming.md#css-compilation-with-sass--3rd-party-libraries)
 5. [Coding Standards](theming.md#maintaining-coding-standards)
-6. [Sass structre](theming.md#sub-theme-sass-structure)
+6. [Sass structure](theming.md#sub-theme-sass-structure)
 7. [Accessibility](theming.md#maintaining-accessibility)
 8. [Twig](theming.md#twig) (coming soon)
 
