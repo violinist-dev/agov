@@ -1,5 +1,16 @@
 ## Theming
 
+### Table of Contents
+
+1. (Initial Setup)[theming.md#initial-setup]
+2. (Gulp)[theming.md#task-automation-with-gulp]
+3. (Styleguide)[theming.md#styleguide-generation-with-kss-node]
+4. (CSS Compilation)[theming.md#css-compilation-with-sass--3rd-party-libraries]
+5. (Coding Standards)[theming.md#maintaining-coding-standards]
+6. (Sass structre)[theming.md#sub-theme-sass-structure]
+7. (Accessibility)[theming.md#maintaining-accessibility]
+8. (Twig)[theming.md#twig] (coming soon)
+
 ### Initial setup
 
 Ensure the following files are included in your root folder:
@@ -134,9 +145,56 @@ To exclude 3rd party JS files from being linted:
 Be sure to follow the [SMACSS](http://smacss.com/) approach to categorisation, 
 breaking your Sass down into modular components.
 
-As well as the following the [BEM](http://bem.info/) naming pattern.
+As well as the following the basic [BEM](http://bem.info/) naming pattern.
 
-Combined with DRY (don’t repeat yourself) approach to your Sass in general, will all ensure your theme meets current coding standards.
+Combined with DRY (don’t repeat yourself) approach to your Sass in general, 
+will all ensure your theme meets current coding standards.
+
+Because Drupal uses some of these names (ie. blocks and modules) 
+we are using alternative names. They map to the original as follows:
+
+```
+# From SMACSS
+module = component
+submodule = variant
+theme = variant
+
+# From BEM
+block = component
+modifier = variant
+```
+
+### Sub-theme Sass structure
+
+Sass files are all compiled into the one file in the following order:
+
+```
+# Outputs as styles.css with everything else included in it.
+/sass/styles.scss
+# Imports all 3rd party Sass libraries and custom variables.
+/sass/_init.scss
+
+# Custom variables; edit these first to change presentation.
+/sass/init/_colors.scss
+/sass/init/_typography.scss
+/sass/init/_breakpoints.scss
+
+# Custom mixins.
+/sass/library/*
+
+# Base styles; resets, element defaults, fonts, etc.
+/sass/base/*
+
+# Layouts and grid systems.
+/sass/layouts/*
+
+# Components (aka SMACSS modules); independently styled components that can live anywhere in a layout.
+/sass/components/*
+```
+
+For basic re-theming of the existing agov_whitlam theme, editing the variables inside the `/sass/init` directory should be all you need to do.
+
+The STARTERKIT contains this folder structure and some example Sass files.
 
 ### Maintaining accessibility
 
