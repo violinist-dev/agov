@@ -4,18 +4,18 @@ A starting point to creating a sub-theme for your website based on agov_base.
 
 ## Creating your aGov Sub Theme
 
-* Copy this STARTERKIT folder (/profiles/agov/themes/agov/agov_base/STARTERKIT)
+* Copy this agov_STARTERKIT folder (/profiles/agov/themes/agov/agov_STARTERKIT)
   * Paste it into /themes/custom
 * Rename the copied folder to MY_THEME (this can be any machine name you like, but we'll use MY_THEME as the example.)
 * Within this copy, rename the following files
-  * Rename the STARTERKIT.info.yml file to MY_THEME.info.yml
-  * Rename the STARTERKIT.libraries.yml to MY_THEME.libraries.yml
+  * Rename the agov_STARTERKIT.info.yml file to MY_THEME.info.yml
+  * Rename the agov_STARTERKIT.libraries.yml to MY_THEME.libraries.yml
 * Edit the newly renamed MY_THEME.info.yml
   * Change the following lines to suit your needs
     * `name = My Custom Theme`
     * `description = My custom aGov subtheme`
     * libraries 
-      * Rename `STARTERKIT/base` to `MY_THEME/base`
+      * Rename `agov_STARTERKIT/base` to `MY_THEME/base`
 * Enable your subtheme
   * visit /admin/appearance
   * Click “Install and set default” on the appropriate subtheme you’ve created.
