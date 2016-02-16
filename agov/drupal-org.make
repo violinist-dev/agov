@@ -29,7 +29,7 @@ projects[token][version] = '1.0-alpha2'
 
 projects[password_policy][subdir] = 'contrib'
 projects[password_policy][version] = '3.0-alpha2'
-projects[password_policy][patch][] = https://www.drupal.org/files/issues/2667486-character-types-constraint-4.patch
+projects[password_policy][patch][] = https://www.drupal.org/files/issues/2667486-character-types-constraint-11.patch
 
 projects[workbench_moderation][subdir] = 'contrib'
 projects[workbench_moderation][version] = '1.0-alpha2'
