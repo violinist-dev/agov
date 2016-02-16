@@ -17,7 +17,7 @@ Ensure the following files are included in your root folder:
 
 - **[Gemfile](https://github.com/previousnext/agov/blob/8.x-1.x/Gemfile)** - Specifies the Ruby Gems needed for the Sass compilation and linting.
 - **[Gemfile.lock](https://github.com/previousnext/agov/blob/8.x-1.x/Gemfile.lock)** - This file locks specific versions of the Ruby Gems so that all developers on the project are using the exact same versions. It is generated with `bundle install` and should be checked into the Git repository.
-- **[package.json](https://github.com/previousnext/agov/blob/8.x-1.x/package.json)** - Specifies the Node.js modules needed for the Gulp tasks and the KSS style guide. New modules can be added with `npm install <name> --save-dev`.
+- **[package.json](https://github.com/previousnext/agov/blob/8.x-1.x/package.json)** - Specifies the Node.js modules needed for the Gulp tasks and the KSS styleguide. New modules can be added with `npm install <name> --save-dev`.
 - **[npm-shrinkwrap.json](https://github.com/previousnext/agov/blob/8.x-1.x/npm-shrinkwrap.json)** - This file locks specific versions of Node.js modules so that all developers on the project are using the exact same versions. It is generated with `npm shrinkwrap --dev` and should be checked into the Git repository.
 - **[gulpfile.js](https://github.com/previousnext/agov/blob/8.x-1.x/gulpfile.js)** - Contains the Gulp task definitions.
 - **[.scss-lint.yml](https://github.com/previousnext/agov/blob/8.x-1.x/.scss-lint.yml)** - Sass linting configuration file
@@ -71,6 +71,9 @@ aGov includes the agov_base Sass in any sub-themes styleguide, so it compiles fr
 1. The `options.rootPath.baseTheme` which is set to agov_base.
 2. The `options.rootPath.subTheme` or `compiledTheme` which defaults to agov_whitlam but can be any sub-theme.
 
+To avoid duplication in the styleguide the current Sass files are only documented in one place (agov_base). 
+Any new components that you add to a sub-theme will need to be documented in the sub-theme to be included in the styleguide.
+
 The styleguide is generated on the default gulp command, but can also be created/updated using:
 
 ```
@@ -83,7 +86,7 @@ Once generate you can view the styleguide at:
 http://agov.dev/styleguide
 ```
 
-Please refer to the [KSS Node Documentation](https://github.com/kss-node/kss/blob/spec/SPEC.md) for details about how to format your Sass comments.
+Please refer to the [KSS Node Documentation](https://github.com/kss-node/kss/blob/spec/SPEC.md) for details about how to format your Sass documentation.
 
 To include additional Stylesheets or Javascript files in the styleguide;
 
