@@ -39,6 +39,12 @@ projects[metatag][version] = '1.x-dev'
 projects[agls][subdir] = 'contrib'
 projects[agls][version] = '1.x-dev'
 
+projects[scheduled_updates][subdir] = 'contrib'
+projects[scheduled_updates][version] = '1.0-alpha5'
+
+projects[inline_entity_form][subdir] = 'contrib'
+projects[inline_entity_form][version] = '1.0-alpha3'
+
 ; Development versions
 
 projects[file_entity][type] = module
