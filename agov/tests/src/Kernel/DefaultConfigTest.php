@@ -101,6 +101,7 @@ class DefaultConfigTest extends KernelTestBase {
 
     // Optional modules with config are not currently supported.
     'agov_workbench',
+    'agov_scheduled_updates',
 
     // Current schema issues.
     'agov_password_policy',
