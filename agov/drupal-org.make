@@ -45,6 +45,8 @@ projects[scheduled_updates][version] = '1.0-alpha5'
 projects[inline_entity_form][subdir] = 'contrib'
 projects[inline_entity_form][version] = '1.0-alpha3'
 
+projects[simple_sitemap][version] = '2.1'
+
 ; Development versions
 
 projects[file_entity][type] = module
