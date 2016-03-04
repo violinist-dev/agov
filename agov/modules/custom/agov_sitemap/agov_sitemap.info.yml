@@ -6,8 +6,3 @@ core: '8.x'
 
 dependencies:
   - simple_sitemap
-  - agov_standard_page
-  - agov_article
-
-config_devel:
-  - simple_sitemap.settings
