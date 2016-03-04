@@ -23,8 +23,8 @@ function agov_sitemap_install() {
       continue;
     }
     $sitemap_config['node'][$bundle_name] = [
-      'index' => TRUE,
-      'priority' => 0.5,
+      'index' => 1,
+      'priority' => '0.5',
     ];
   }
   \Drupal::service('config.factory')
