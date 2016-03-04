@@ -5,18 +5,23 @@
  * Install file for agov_sitemap.
  */
 
+use Drupal\node\Entity\NodeType;
 
 /**
  * Implements hook_install().
  */
 function agov_sitemap_install() {
-  $enable_bundles = [
+  $enabled_bundles = [
     'publication',
     'article',
     'standard_page',
   ];
   $sitemap_config = [];
-  foreach ($enable_bundles as $bundle_name) {
+  foreach ($enabled_bundles as $bundle_name) {
+    // Enable the sitemap only for bundles the user has chosen to install.
+    if (NodeType::load($bundle_name) === NULL) {
+      continue;
+    }
     $sitemap_config['node'][$bundle_name] = [
       'index' => TRUE,
       'priority' => 0.5,
