@@ -46,7 +46,6 @@ dependencies:
   - fences
   - token
   - text_icon
-  - simple_sitemap
 
   # Custom modules
   - agov_article
