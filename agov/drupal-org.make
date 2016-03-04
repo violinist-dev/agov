@@ -46,6 +46,8 @@ projects[inline_entity_form][subdir] = 'contrib'
 projects[inline_entity_form][version] = '1.0-alpha3'
 
 projects[simple_sitemap][version] = '2.1'
+projects[simple_sitemap][patch][] = https://www.drupal.org/files/issues/2680953-simple-sitemap-schema.patch
+
 
 ; Development versions
 
