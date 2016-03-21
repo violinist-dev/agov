@@ -73,7 +73,7 @@ projects[fences][type] = module
 projects[fences][download][type] = git
 projects[fences][download][url] = http://git.drupal.org/project/fences.git
 projects[fences][download][branch] = 8.x-2.x
-projects[fences][download][revision] = 17e56ed95b358544e0a93a37b819793234f7876e
+projects[fences][download][revision] = e034397383724236453342cbc0a498193b607c00
 projects[fences][subdir] = 'contrib'
 
 ; aGov
