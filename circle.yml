@@ -27,6 +27,8 @@ dependencies:
     - phing clean
     - phing prepare
     - phing make
+    - mkdir sites/simpletest
+    - chmod 777 sites/simpletest
     - mkdir -p app/sites/default/files/tmp
     - mkdir -p app/sites/default/private
 
