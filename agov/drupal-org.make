@@ -28,9 +28,7 @@ projects[token][subdir] = 'contrib'
 projects[token][version] = '1.0-alpha2'
 
 projects[password_policy][subdir] = 'contrib'
-projects[password_policy][version] = '3.0-alpha2'
-projects[password_policy][patch][] = https://www.drupal.org/files/issues/2667486-character-types-constraint-25.patch
-projects[password_policy][patch][] = https://www.drupal.org/files/issues/password_policy-character_types-2667486-27.patch
+projects[password_policy][version] = '3.x-dev'
 
 projects[workbench_moderation][subdir] = 'contrib'
 projects[workbench_moderation][version] = '1.0-alpha2'
