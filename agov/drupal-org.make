@@ -83,6 +83,7 @@ projects[password_policy][download][url] = http://git.drupal.org/project/passwor
 projects[password_policy][download][branch] = 8.x-3.x
 projects[password_policy][download][revision] = 40f8e14bb6759ac201bffec0c5ffd0b4361c3e5b
 projects[password_policy][subdir] = 'contrib'
+projects[password_policy][patch][] = https://www.drupal.org/files/issues/2692709-undefined-indexes.patch
 
 ; aGov
 
