@@ -27,9 +27,6 @@ projects[pathauto][version] = '1.0-alpha1'
 projects[token][subdir] = 'contrib'
 projects[token][version] = '1.0-alpha2'
 
-projects[password_policy][subdir] = 'contrib'
-projects[password_policy][version] = '3.x-dev'
-
 projects[workbench_moderation][subdir] = 'contrib'
 projects[workbench_moderation][version] = '1.0-alpha2'
 
@@ -79,6 +76,13 @@ projects[fences][download][url] = http://git.drupal.org/project/fences.git
 projects[fences][download][branch] = 8.x-2.x
 projects[fences][download][revision] = e034397383724236453342cbc0a498193b607c00
 projects[fences][subdir] = 'contrib'
+
+projects[password_policy][type] = module
+projects[password_policy][download][type] = git
+projects[password_policy][download][url] = http://git.drupal.org/project/password_policy.git
+projects[password_policy][download][branch] = 8.x-3.x
+projects[password_policy][download][revision] = 40f8e14bb6759ac201bffec0c5ffd0b4361c3e5b
+projects[password_policy][subdir] = 'contrib'
 
 ; aGov
 
