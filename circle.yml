@@ -22,12 +22,11 @@ dependencies:
 
   post:
     - composer install --prefer-dist --dev
-    - bundle install --path vendor/bundle
     - npm install
     - phing ci:vhost
-    - bin/phing build:dev -Dapp.password=$PASSWORD
-    # Temporarily disable sass lint failing, until Issue #2650652 is complete.
-    # node_modules/.bin/gulp lint:sass-with-fail
+    - phing clean
+    - phing prepare
+    - phing make
     - mkdir -p app/sites/default/files/tmp
     - mkdir -p app/sites/default/private
 
@@ -35,11 +34,14 @@ test:
   override:
     - bin/phing test
     - node_modules/.bin/gulp lint:js-with-fail
+    # Temporarily disable sass lint failing, until Issue #2650652 is complete.
+    # - node_modules/.bin/gulp lint:sass-with-fail
 
 deployment:
   prod:
     branch: 8.x-1.x
     commands:
+      - bundle install --path vendor/bundle
       - git config --global user.email "admin@previousnext.com.au"
       - git config --global user.name "PreviousNext"
       # Compiled CSS.
@@ -67,13 +69,3 @@ deployment:
       - git remote -v
       # Push the new commits and build commit to the remote.
       - git push dorg 8.x-1.x
-      - composer install --prefer-dist --dev
-      - bundle install --path vendor/bundle
-      - npm install
-      - bin/phing build:dev -Dapp.password=$PASSWORD
-      - bin/phing test
-      - node_modules/.bin/gulp lint:js-with-fail
-      # Temporarily disable sass lint failing, until Issue #2650652 is complete.
-      # node_modules/.bin/gulp lint:sass-with-fail
-      - mkdir -p app/sites/default/files/tmp
-      - mkdir -p app/sites/default/private

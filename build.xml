@@ -38,7 +38,7 @@
   <property name="gulp.cmd" value="${project.basedir}/node_modules/.bin/gulp" override="true" />
 
   <!-- Database -->
-  <property name="db.querystring" value="mysql://ubuntu:@127.0.0.1/circle_test" override="true" />
+  <property name="db.querystring" value="mysql://drupal:drupal@localhost/local" override="true" />
 
   <!-- These allow developers to override configuration on
        a per environment basis -->
