@@ -91,7 +91,7 @@
           depends="simpletest:init">
 
     <exec dir="${app.dir}"
-          command="${php.bin.php} ./core/scripts/run-tests.sh --concurrency 4 --php ${php.bin.php} --module ${app.profile.name} --url ${app.uri}/"
+          command="sudo -u www-data ${php.bin.php} ./core/scripts/run-tests.sh --concurrency 8 --sqlite /tmp/test-db.sqlite --dburl sqlite://localhost//tmp/test-db.sqlite  --php ${php.bin.php} --url ${app.uri}/ --module ${app.profile.name}"
           passthru="true"
           checkreturn="true" />
   </target>
