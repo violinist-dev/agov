@@ -1,4 +1,4 @@
-name: STARTERKIT
+name: agov_STARTERKIT
 description: 'A sub-theme of the agov_base theme.'
 
 type: theme
@@ -8,7 +8,7 @@ core: 8.x
 base theme: agov_base
 
 libraries:
-  - STARTERKIT/base
+  - agov_STARTERKIT/base
 
 regions:
   secondary_menu: 'Secondary menu'

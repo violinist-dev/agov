@@ -21,17 +21,17 @@ A base theme that contains the structural components of aGov. agov_base inherits
 **agov_whitlam**
 A sub-theme of agov_base that has been lightly customized to show the aGov colour palette and font. *ENABLE this theme to see a standard representation of aGov*
 
-**agov_base/STARTERKIT**
+**agov_STARTERKIT**
 An example sub-theme that contains all the structure of agov_base so that you can use as a starting point to creating a sub-theme for your website.
 
 ## Theme Hierarchy diagram:
 
 <pre>
-+----------------------+  +--------------+
-|                      |  |              |
-| agov_base/STARTERKIT |  | agov_whitlam |
-|                      |  |              |
-+---+------------------+  +--+-----------+
++-----------------+  +--------------+
+|                 |  |              |
+| agov_STARTERKIT |  | agov_whitlam |
+|                 |  |              |
++---+-------------+  +--+-----------+
     |                   |
     | +-----------------+
     | |

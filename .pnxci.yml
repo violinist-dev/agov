@@ -8,8 +8,6 @@ test: &test
     - bundle install --path vendor/bundle
     - npm install
     - bin/phing build:dev -Dapp.password=$PASSWORD
-    - bin/phing styleguide:link
-    - bin/phing gulp:build
     - bin/phing test
     - node_modules/.bin/gulp lint:js-with-fail
     # Temporarily disable sass lint failing, until Issue #2650652 is complete.
@@ -30,8 +28,9 @@ deploy_8_1:
     - git config --global user.email "admin@previousnext.com.au"
     - git config --global user.name "PreviousNext"
     # Compiled CSS.
-    - node_modules/.bin/gulp
+    - bin/phing gulp:build
     - git add -f agov/themes/agov/agov_base/css
+    - git add -f agov/themes/agov/agov_whitlam/css
     - git add .
     - git commit -m 'Compiled CSS.'
     # Filter out the commits only in the 'agov' folder.
@@ -57,8 +56,6 @@ deploy_8_1:
     - bundle install --path vendor/bundle
     - npm install
     - bin/phing build:dev -Dapp.password=$PASSWORD
-    - bin/phing styleguide:link
-    - bin/phing gulp:build
     - bin/phing test
     - node_modules/.bin/gulp lint:js-with-fail
     # Temporarily disable sass lint failing, until Issue #2650652 is complete.

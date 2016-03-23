@@ -40,6 +40,16 @@ projects[metatag][version] = '1.x-dev'
 projects[agls][subdir] = 'contrib'
 projects[agls][version] = '1.x-dev'
 
+projects[scheduled_updates][subdir] = 'contrib'
+projects[scheduled_updates][version] = '1.0-alpha5'
+
+projects[inline_entity_form][subdir] = 'contrib'
+projects[inline_entity_form][version] = '1.0-alpha3'
+
+projects[simple_sitemap][version] = '2.1'
+projects[simple_sitemap][patch][] = https://www.drupal.org/files/issues/2680953-simple-sitemap-schema.patch
+
+
 ; Development versions
 
 projects[file_entity][type] = module
@@ -68,7 +78,7 @@ projects[fences][type] = module
 projects[fences][download][type] = git
 projects[fences][download][url] = http://git.drupal.org/project/fences.git
 projects[fences][download][branch] = 8.x-2.x
-projects[fences][download][revision] = 17e56ed95b358544e0a93a37b819793234f7876e
+projects[fences][download][revision] = e034397383724236453342cbc0a498193b607c00
 projects[fences][subdir] = 'contrib'
 
 ; aGov
