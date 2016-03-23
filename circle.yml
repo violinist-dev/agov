@@ -24,6 +24,7 @@ dependencies:
     - composer install --prefer-dist --dev
     - bundle install --path vendor/bundle
     - npm install
+    - phing ci:vhost
     - bin/phing build:dev -Dapp.password=$PASSWORD
     # Temporarily disable sass lint failing, until Issue #2650652 is complete.
     # node_modules/.bin/gulp lint:sass-with-fail
