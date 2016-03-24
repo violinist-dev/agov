@@ -34,10 +34,11 @@ dependencies:
 
 test:
   override:
-    - bin/phing test
+    - phing phpcs
     - node_modules/.bin/gulp lint:js-with-fail
     # Temporarily disable sass lint failing, until Issue #2650652 is complete.
     # - node_modules/.bin/gulp lint:sass-with-fail
+    - phing simpletest
 
 deployment:
   prod:
