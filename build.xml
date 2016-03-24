@@ -81,7 +81,7 @@
   </target>
 
   <target name="simpletest">
-
+    <echo msg="sudo -u www-data ${php.bin.php} ./core/scripts/run-tests.sh --concurrency 8 --sqlite /tmp/test-db.sqlite --dburl sqlite://localhost//tmp/test-db.sqlite  --php ${php.bin.php} --url ${app.uri}/ --module ${app.profile.name}"/>
     <exec dir="${app.dir}"
           command="sudo -u www-data ${php.bin.php} ./core/scripts/run-tests.sh --concurrency 8 --sqlite /tmp/test-db.sqlite --dburl sqlite://localhost//tmp/test-db.sqlite  --php ${php.bin.php} --url ${app.uri}/ --module ${app.profile.name}"
           passthru="true"
