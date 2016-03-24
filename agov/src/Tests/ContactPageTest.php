@@ -35,7 +35,6 @@ class ContactPageTest extends AgovTestBase {
    * Test the contact page is available and working.
    */
   public function testContactPage() {
-    $this->assertTrue(FALSE);
     // Anonymous users can view the contact page and get the name fields.
     $this->assertContactPage();
     $mails = $this->drupalGetMails();
