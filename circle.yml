@@ -59,6 +59,8 @@ deployment:
       - git checkout 8.x-1.x
       - git add .
       - git reset --hard
+      # Circle does a shallow clone so we must do this.
+      - git fetch --unshallow
       # Add drupal.org as a remote.
       - git remote add dorg pnx-bot@git.drupal.org:project/agov.git
       - git fetch dorg
