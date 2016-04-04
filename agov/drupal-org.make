@@ -11,6 +11,7 @@ projects[layout_plugin][subdir] = contrib
 
 projects[panels][version] = 3.0-beta2
 projects[panels][subdir] = contrib
+projects[panels][patch][] = https://www.drupal.org/files/issues/2699529-quote-colons-beta4-3.patch
 
 projects[ctools][version] = 3.0-alpha22
 projects[ctools][subdir] = contrib
