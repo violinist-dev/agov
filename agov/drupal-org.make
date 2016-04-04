@@ -9,8 +9,9 @@ defaults[projects][subdir] = "contrib"
 projects[layout_plugin][version] = 1.0-alpha22
 projects[layout_plugin][subdir] = contrib
 
-projects[panels][version] = 3.0-beta2
+projects[panels][version] = 3.0-beta4
 projects[panels][subdir] = contrib
+projects[panels][patch][] = https://www.drupal.org/files/issues/2699529-quote-colons-1.patch
 
 projects[ctools][version] = 3.0-alpha22
 projects[ctools][subdir] = contrib
