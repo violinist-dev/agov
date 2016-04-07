@@ -21,14 +21,14 @@ base_components:
       css/components/clearfix/clearfix.css: {}
       css/components/highlight-mark/highlight-mark.css: {}
       css/components/inline-links/inline-links.css: {}
-      css/components/inline-siblings/inline-siblings.css: {}
+      css/components/inline-sibling/inline-sibling.css: {}
       css/components/messages/messages.css: {}
       css/components/nav-menu/nav-menu.css: {}
       css/components/pager/pager.css: {}
       css/components/print-none/print-none.css: {}
       css/components/progress-bar/progress-bar.css: {}
       css/components/resizable-textarea/resizable-textarea.css: {}
-      css/components/reponsive-video/reponsive-video.css: {}
+      css/components/responsive-video/responsive-video.css: {}
       css/components/skip-link/skip-link.css: {}
       css/components/tabs/tabs.css: {}
       css/components/unstyled-list/unstyled-list.css: {}
