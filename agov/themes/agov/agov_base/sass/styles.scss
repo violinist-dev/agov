@@ -1,3 +1,5 @@
+// NOTE: This file is and it's corresponding styles.css are not used in Drupal.
+
 // Colors and Sass
 //
 // Documentation for colors and Sass mixins and variables.
@@ -12,6 +14,11 @@
 // These are the base styles applied to HTML elements.
 //
 // Style guide: base
+
+// Add fontAwesome library
+@import 'font-awesome-compass';
+@import 'font-awesome/variables';
+@import 'font-awesome/mixins';
 
 // Ensure fonts get loaded first to minimize front-end performance impact.
 @import 'base/fonts';

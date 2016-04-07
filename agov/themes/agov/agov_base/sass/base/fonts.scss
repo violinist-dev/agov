@@ -32,5 +32,10 @@
 //   font-style: normal;
 // }
 
-// Import the font-awesome font library.
+// Add fontAwesome library.
+@import 'font-awesome-compass';
+@import 'font-awesome/variables';
+@import 'font-awesome/mixins';
+
+// Import the fontAwesome css.
 @import 'font-awesome';
