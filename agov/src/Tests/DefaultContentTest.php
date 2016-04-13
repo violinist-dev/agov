@@ -22,6 +22,14 @@ class DefaultContentTest extends AgovTestBase {
   public static $modules = ['agov_default_content'];
 
   /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    parent::setUp();
+    $this->adminUser = $this->createUser([], NULL, TRUE);
+  }
+
+  /**
    * Test various default content placements.
    */
   public function testDefaultContent() {
@@ -75,6 +83,12 @@ class DefaultContentTest extends AgovTestBase {
     $this->assertRaw('block-mainnavigation-2');
     $this->drupalGet('/about-us');
     $this->assertNoRaw('block-mainnavigation-2');
+
+    $this->drupalLogin($this->adminUser);
+    $this->drupalGet('admin/content/media');
+    $this->assertLink('Leopard in the snow in Gulmarg, Kashmir');
+    $this->assertRaw('video_thumbnails/155212414.jpg');
+    $this->assertLink('Solar panels');
   }
 
 }

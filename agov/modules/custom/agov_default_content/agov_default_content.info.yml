@@ -11,6 +11,7 @@ dependencies:
   - page_manager
   - block_content
   - agov_article
+  - agov_media
   - panels
   - views
 
@@ -57,7 +58,21 @@ default_content:
     - 42d0e2cb-2345-44e5-9100-f60a68468038
     - 2bc29f1e-dd8c-4003-a502-2ce407dc0df6
     - 97695ee7-7468-4c8e-a351-81ed6e291968
-    - c178a125-979c-471f-a306-6e47829bef86
+  media:
+    - ee63912a-6276-4081-93af-63ca66285594
+    - bcb3c719-e266-45c1-8b90-8f630f86dcc7
+    - 846510f7-36b8-4f54-87ec-69c9f23b9c5a
+    - 0d96b36b-104f-4d21-9e5b-cd9576566f73
+    - bd181046-911f-4a0d-b8fc-2f32fe2afc59
+    - e832d6e9-d4ec-4055-9909-5ae70ec91dcf
+    - bfecd863-1c86-4606-828c-7977518b3a47
+    - 7db5521d-baa2-4a66-8a31-64497e42ff73
+    - 523f073b-23f0-46ae-8ea6-11adc2717bce
+    - c58925bc-2530-4738-be9d-367224fac311
+    - b26c3fe9-3084-4b9e-95ea-4c066a7fdc35
+    - d128e11c-25f5-4cc6-a844-7eb06bc35c92
+    - 411b5514-6603-4fa0-b031-763505a98864
+    - d1efbb12-0e69-439c-bba6-a296e332bbe1
   menu_link_content:
     - 9fbb684c-156d-49d6-b24b-755501b434e6
     - 19f38567-4051-4682-bf00-a4f19de48a01

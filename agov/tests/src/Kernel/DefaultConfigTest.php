@@ -65,7 +65,6 @@ class DefaultConfigTest extends KernelTestBase {
 
     'linkicon',
     'fences',
-    'file_entity',
     'twitter_block',
     'layout_plugin',
     'ctools',

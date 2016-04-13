@@ -1,0 +1,141 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/media\/12?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/video"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/thumbnail": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/video_thumbnails\/48056421.jpg"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "uuid": [
+        {
+            "value": "411b5514-6603-4fa0-b031-763505a98864"
+        }
+    ],
+    "bundle": [
+        {
+            "target_id": "video"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "DrupalCon Sydney Promo",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/video_thumbnails\/48056421.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e482a06d-2d9c-465b-9a3f-5cbefb5d9263"
+                    }
+                ],
+                "alt": "Thumbnail",
+                "title": "DrupalCon Sydney Promo",
+                "width": "640",
+                "height": "360"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "12d53af3-34d3-4858-ab70-9c4d94b91942"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "12d53af3-34d3-4858-ab70-9c4d94b91942"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "1460526605",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1460526621",
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "1460526621"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "field_media_video_embed_field": [
+        {
+            "value": "https:\/\/vimeo.com\/48056421",
+            "lang": "en"
+        }
+    ]
+}

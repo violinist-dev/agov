@@ -1,0 +1,141 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/media\/14?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/video"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/thumbnail": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/video_thumbnails\/155212414.jpg"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "uuid": [
+        {
+            "value": "b26c3fe9-3084-4b9e-95ea-4c066a7fdc35"
+        }
+    ],
+    "bundle": [
+        {
+            "target_id": "video"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "Leopard in the snow in Gulmarg, Kashmir",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/video_thumbnails\/155212414.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "eb3cc083-b621-4000-9ffe-f4f18e48478f"
+                    }
+                ],
+                "alt": "Thumbnail",
+                "title": "Leopard in the snow in Gulmarg, Kashmir",
+                "width": "640",
+                "height": "480"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "12d53af3-34d3-4858-ab70-9c4d94b91942"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/video\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "12d53af3-34d3-4858-ab70-9c4d94b91942"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "1460527187",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1460527199",
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "1460527199"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "field_media_video_embed_field": [
+        {
+            "value": "https:\/\/vimeo.com\/155212414",
+            "lang": "en"
+        }
+    ]
+}
