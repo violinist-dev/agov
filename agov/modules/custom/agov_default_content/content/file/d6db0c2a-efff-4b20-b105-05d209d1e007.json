@@ -1,10 +1,10 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/file\/17?_format=hal_json"
+            "href": "http:\/\/default\/sites\/default\/files\/article\/bigstock-Man-installing-solar-panels-25315085_7_5_0_0_0_0.jpg"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
         }
     },
     "uuid": [
@@ -24,7 +24,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/article\/bigstock-Man-installing-solar-panels-25315085_7_5_0_0_0.jpg"
+            "value": "public:\/\/article\/bigstock-Man-installing-solar-panels-25315085_7_5_0_0_0_0.jpg"
         }
     ],
     "filemime": [
@@ -50,11 +50,6 @@
     "changed": [
         {
             "value": "1443509433"
-        }
-    ],
-    "type": [
-        {
-            "target_id": "image"
         }
     ],
     "data": [
