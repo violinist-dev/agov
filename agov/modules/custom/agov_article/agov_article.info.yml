@@ -24,3 +24,4 @@ config_devel:
   - views.view.latest_updates
   - views.view.news
   - image.style.article_teaser_medium
+  - pathauto.pattern.article
