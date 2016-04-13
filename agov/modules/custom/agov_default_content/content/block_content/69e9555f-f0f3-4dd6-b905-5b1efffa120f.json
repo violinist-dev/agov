@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/block\/7?_format=hal_json"
+            "href": "http:\/\/default\/block\/1?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/social_block"
@@ -51,30 +51,22 @@
         {
             "uri": "http:\/\/www.facebook.com\/pages\/PreviousNext\/170975076260877",
             "title": "Facebook",
-            "options": [
-
-            ]
+            "options": []
         },
         {
             "uri": "http:\/\/www.twitter.com\/PreviousNext",
             "title": "Twitter",
-            "options": [
-
-            ]
+            "options": []
         },
         {
             "uri": "https:\/\/3.agov.com.au\/rss.xml",
             "title": "RSS",
-            "options": [
-
-            ]
+            "options": []
         },
         {
             "uri": "https:\/\/3.agov.com.au\/contact",
             "title": "Envelope",
-            "options": [
-
-            ]
+            "options": []
         }
     ]
 }

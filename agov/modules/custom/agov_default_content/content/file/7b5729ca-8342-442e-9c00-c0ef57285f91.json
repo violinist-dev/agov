@@ -1,10 +1,10 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/file\/15?_format=hal_json"
+            "href": "http:\/\/default\/sites\/default\/files\/bigstock-Farmer-hand-holding-a-fresh-yo-14504939_0_0.jpg"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
         }
     },
     "uuid": [
@@ -24,7 +24,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/bigstock-Farmer-hand-holding-a-fresh-yo-14504939_0.jpg"
+            "value": "public:\/\/bigstock-Farmer-hand-holding-a-fresh-yo-14504939_0_0.jpg"
         }
     ],
     "filemime": [
@@ -50,11 +50,6 @@
     "changed": [
         {
             "value": "1444988445"
-        }
-    ],
-    "type": [
-        {
-            "target_id": "image"
         }
     ],
     "data": [

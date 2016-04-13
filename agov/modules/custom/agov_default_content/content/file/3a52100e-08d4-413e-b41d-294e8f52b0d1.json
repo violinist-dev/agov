@@ -1,10 +1,10 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/file\/16?_format=hal_json"
+            "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0.png"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
         }
     },
     "uuid": [
@@ -24,7 +24,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/leaf_5_0_0_0.png"
+            "value": "public:\/\/leaf_5_0_0_0_0.png"
         }
     ],
     "filemime": [
@@ -50,11 +50,6 @@
     "changed": [
         {
             "value": "1443758720"
-        }
-    ],
-    "type": [
-        {
-            "target_id": "image"
         }
     ],
     "data": [

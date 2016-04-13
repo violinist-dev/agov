@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/block\/6?_format=hal_json"
+            "href": "http:\/\/default\/block\/3?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/icon_block"
@@ -61,9 +61,7 @@
         {
             "uri": "internal:\/",
             "title": "Nunc pulvinar venenatis",
-            "options": [
-
-            ]
+            "options": []
         }
     ]
 }

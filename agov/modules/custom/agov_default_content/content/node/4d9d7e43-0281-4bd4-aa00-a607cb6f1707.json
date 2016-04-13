@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/news\/getting-started?_format=hal_json"
+            "href": "http:\/\/default\/getting-started?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_article_image": [
             {
-                "href": "http:\/\/default\/file\/6?_format=hal_json"
+                "href": "http:\/\/default\/sites\/default\/files\/article\/bigstock-Surf-Rescue-Boats-Gold-Coast-A-8109594_7_5_0_0_0_0.jpg"
             }
         ]
     },
@@ -58,7 +58,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "f1131890-f8e5-4f1a-824f-79e7c9979b19"
+                        "value": "55d65650-5b0f-48dd-ad07-7b317a5a089d"
                     }
                 ],
                 "lang": "en"
@@ -76,7 +76,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "f1131890-f8e5-4f1a-824f-79e7c9979b19"
+                        "value": "55d65650-5b0f-48dd-ad07-7b317a5a089d"
                     }
                 ]
             }
@@ -85,10 +85,10 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/file\/6?_format=hal_json"
+                        "href": "http:\/\/default\/sites\/default\/files\/article\/bigstock-Surf-Rescue-Boats-Gold-Coast-A-8109594_7_5_0_0_0_0.jpg"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
                     }
                 },
                 "uuid": [
