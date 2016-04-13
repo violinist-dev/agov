@@ -49,11 +49,11 @@ projects[simple_sitemap][patch][] = https://www.drupal.org/files/issues/2680953-
 
 ; Development versions
 
-projects[file_entity][type] = module
-projects[file_entity][download][type] = git
-projects[file_entity][download][url] = https://git.drupal.org/project/file_entity.git
-projects[file_entity][download][branch] = 8.x-2.x
-projects[file_entity][download][revision] = af4131334c88a7e7bd045874070c79b9af7d842d
+projects[better_normalizers][type] = module
+projects[better_normalizers][download][type] = git
+projects[better_normalizers][download][url] = https://git.drupal.org/sandbox/sam/2705067.git
+projects[better_normalizers][download][branch] = 8.x-1.x
+projects[better_normalizers][download][revision] = 1cd9b4b50e91f5e595eb86813611dc368227c4b6
 
 projects[page_manager][type] = module
 projects[page_manager][download][type] = git
