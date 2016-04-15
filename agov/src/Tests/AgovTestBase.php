@@ -33,6 +33,8 @@ abstract class AgovTestBase extends WebTestBase {
     'config_test.dynamic.system',
     'page_manager.page_variant.panels',
     'password_policy.password_policy.australian_government_ism_policy_strong',
+    'entity_browser.browser.media_browser',
+    'views.view.media_browser',
   );
 
 }

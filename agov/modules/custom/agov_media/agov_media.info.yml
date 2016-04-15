@@ -8,6 +8,9 @@ dependencies:
   - media_entity
   - media_entity_image
   - video_embed_media
+  - entity_embed
+  - entity_browser
+  - entity_browser_entity_form
 
 config_devel:
   - core.entity_form_display.media.image.default
@@ -20,3 +23,8 @@ config_devel:
   - field.storage.media.field_media_video_embed_field
   - media_entity.bundle.image
   - media_entity.bundle.video
+  - embed.button.embed
+  - filter.format.text_and_media
+  - editor.editor.text_and_media
+  - views.view.media_browser
+  - entity_browser.browser.media_browser
