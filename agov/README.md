@@ -134,4 +134,4 @@ gulp -T
 
 ### Troubleshooting and docs
 
-See [the docs](https://github.com/previousnext/agov/blob/8.x-1.x/agov/docs/index.md)
+See [the docs](https://github.com/previousnext/agov/blob/8.x-1.x/docs/index.md)
