@@ -8,15 +8,14 @@
 
 .watermark,
 %watermark {
+  @include type-layout(75px, 1);
   display: block;
   height: 0;
   overflow: visible;
+  font-weight: weight(bold);
   // Remove background highlighting from <mark> in normalize.
   background-color: transparent;
   color: color(watermark);
-  font-size: 75px;
-  line-height: 1;
-  font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   text-shadow: 0 0 1px rgba(0, 0, 0, .1);

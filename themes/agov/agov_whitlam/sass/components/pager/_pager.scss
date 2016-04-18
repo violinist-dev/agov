@@ -24,7 +24,7 @@
   }
 
   &__item-icon {
-    font-size: 17px;
+    @include font-size(17px);
     padding: 0 2px;
   }
 
@@ -36,7 +36,7 @@
   &__current-item {
     @extend %pager__item;
     @extend %pager__link;
-    font-weight: bold;
+    font-weight: weight(bold);
     color: color(link);
     background: color(pager-bg);
   }

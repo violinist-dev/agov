@@ -25,7 +25,7 @@
 blockquote {
   // Set 1 unit of vertical rhythm on the top and bottom margin.
   // Also indent the quote on both sides.
-  @include output-rhythm(margin, rhythm(1) 0);
+  @include margin(1 0);
   font-style: italic;
   padding-left: 30px;
   border-left: 10px solid color(border);
@@ -45,7 +45,7 @@ blockquote {
 
 figure {
   // Address margin not present in IE 8/9 and Safari.
-  @include output-rhythm(margin, rhythm(1) 0);
+  @include margin(1 0);
 }
 
 figcaption {
@@ -80,7 +80,7 @@ hr {
 p,
 pre {
   // Set 1 unit of vertical rhythm on the top and bottom margin.
-  @include output-rhythm(margin, rhythm(1) 0);
+  @include margin(1 0);
 }
 
 // Preformatted text
@@ -95,11 +95,11 @@ pre {
 %monospace {
   // Address odd `em`-unit font size rendering in all browsers.
   // The value of $font-monospace ends with ", serif".
+  @include font-size(m);
   font-family: $font-monospace;
   @if support-legacy-browser(ie, '6') {
     _font-family: 'courier new', monospace;
   }
-  font-size: 1em;
 }
 
 pre {
@@ -154,7 +154,7 @@ menu,
 ol,
 ul {
   // Address margins set differently in IE 6/7.
-  @include output-rhythm(margin, rhythm(1) 0);
+  @include margin(1 0);
 }
 
 // Turn off margins on nested lists.
@@ -162,8 +162,11 @@ ol,
 ul {
   ol,
   ul {
-    @include output-rhythm(margin, rhythm(.32) 0);
-    @include output-rhythm(padding-left, rhythm(1.6));
+    //@include output-rhythm(margin, rhythm(.32) 0);
+    //@include output-rhythm(padding-left, rhythm(1.6));
+
+    @include margin(.32 0);
+    @include padding-left(1.6);
   }
 }
 
@@ -179,7 +182,7 @@ dd {
   }
 }
 
-// Address paddings set differently in IE 6/7.
+// Address paddings set differently in IE 6/7
 menu,
 ol,
 ul {

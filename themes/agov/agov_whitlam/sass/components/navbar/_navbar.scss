@@ -36,7 +36,7 @@
   }
 
   span {
-    font-size: 24px;
+    @include font-size(24px);
     margin-left: 10px;
     position: relative;
     bottom: -2px;
@@ -141,12 +141,12 @@
   }
 
   > a {
+    @include font-size(17px);
     color: color(navbar);
     font-family: $font-body;
     padding: 11px 22px;
     text-decoration: none;
     text-transform: capitalize;
-    font-size: 17px;
     position: relative;
     display: inline-block;
     width: 100%;

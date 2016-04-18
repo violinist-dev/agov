@@ -237,7 +237,8 @@ input[type="radio"] {
 // Style guide: base.forms.fieldset
 
 fieldset {
-  @include output-rhythm(padding, rhythm(.35) rhythm(.625) rhythm(.65));
+  //@include output-rhythm(padding, rhythm(.35) rhythm(.625) rhythm(.65));
+  @include padding(.35 .625 .65);
   border: 1px solid color(border);
   // Define consistent border, margin, and padding.
   margin: 0 2px;
@@ -276,7 +277,7 @@ legend {
 label {
   // Drupal-style form labels.
   display: block;
-  font-weight: bold;
+  font-weight: weight(bold);
   margin-bottom: 3px;
 }
 
@@ -299,7 +300,7 @@ select {
 optgroup {
   // Don't inherit the `font-weight` (applied by a rule above).
   // NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
-  font-weight: bold;
+  font-weight: weight(bold);
 }
 
 // Text areas
