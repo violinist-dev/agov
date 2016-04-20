@@ -21,7 +21,7 @@ widget_selector_configuration: {  }
 widgets:
   3bc4ec79-86e9-4e60-a2ff-47526c6550f9:
     settings:
-      view: media_browser
+      view: media_entity_browser
       view_display: entity_browser_1
     uuid: 3bc4ec79-86e9-4e60-a2ff-47526c6550f9
     weight: 1

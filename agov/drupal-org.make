@@ -88,6 +88,12 @@ projects[entity_browser][download][url] = https://git.drupal.org/project/entity_
 projects[entity_browser][download][branch] = 8.x-1.x
 projects[entity_browser][download][revision] = 5b72762aa220d8dcdd1e3414d29f1b6634af4c35
 
+projects[media_entity_browser][type] = module
+projects[media_entity_browser][download][type] = git
+projects[media_entity_browser][download][url] = https://git.drupal.org/project/media_entity_browser.git
+projects[media_entity_browser][download][branch] = 8.x-1.x
+projects[media_entity_browser][download][revision] = 38937864c1fb86770569da1604f5054657ef006f
+
 ; Development Modules
 projects[config_devel][version] = '1.0-rc1'
 projects[config_devel][subdir] = 'development'
