@@ -3,11 +3,10 @@ status: true
 dependencies:
   config:
     - field.field.node.standard_page.body
-    - field.field.node.standard_page.field_standard_page_image
-    - image.style.thumbnail
+    - field.field.node.standard_page.field_standard_page_media
     - node.type.standard_page
   module:
-    - image
+    - entity_browser
     - path
     - text
 id: node.standard_page.default
@@ -17,7 +16,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 6
     settings:
       rows: 9
       summary_rows: 3
@@ -25,43 +24,48 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     settings: {  }
     third_party_settings: {  }
-  field_standard_page_image:
-    weight: 32
+  field_standard_page_media:
+    weight: 7
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_display_settings:
+        view_mode: preview
+      open: false
     third_party_settings: {  }
-    type: image_image
+    type: entity_browser_entity_reference
   path:
     type: path
-    weight: 30
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 3
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 4
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

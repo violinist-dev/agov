@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/publication2_0_7_5_0_0_0_0.txt"
+            "href": "http:\/\/default\/sites\/default\/files\/publication2_0_7_5_0_0_0_0_7.txt"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -24,7 +24,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/publication2_0_7_5_0_0_0_0.txt"
+            "value": "public:\/\/publication2_0_7_5_0_0_0_0_7.txt"
         }
     ],
     "filemime": [

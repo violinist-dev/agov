@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/article\/bigstock-Surf-Rescue-Boats-Gold-Coast-A-8109594_7_5_0_0_0_0.jpg"
+            "href": "http:\/\/default\/sites\/default\/files\/article\/bigstock-Surf-Rescue-Boats-Gold-Coast-A-8109594_7_5_0_0_0_0_7_0.jpg"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -24,7 +24,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/article\/bigstock-Surf-Rescue-Boats-Gold-Coast-A-8109594_7_5_0_0_0_0.jpg"
+            "value": "public:\/\/article\/bigstock-Surf-Rescue-Boats-Gold-Coast-A-8109594_7_5_0_0_0_0_7_0.jpg"
         }
     ],
     "filemime": [

@@ -9,6 +9,7 @@ dependencies:
   - block
   - title
   - fences
+  - agov_media
 
 config_devel:
   - node.type.article
@@ -17,11 +18,10 @@ config_devel:
   - core.entity_view_display.node.article.teaser
   - core.entity_view_display.node.article.teaser_small
   - field.field.node.article.body
-  - field.field.node.article.field_article_image
-  - field.storage.node.field_article_image
+  - field.field.node.article.field_article_media
+  - field.storage.node.field_article_media
   - field.field.node.article.field_article_date
   - field.storage.node.field_article_date
   - views.view.latest_updates
   - views.view.news
-  - image.style.article_teaser_medium
   - pathauto.pattern.article

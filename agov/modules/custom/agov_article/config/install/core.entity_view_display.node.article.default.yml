@@ -4,12 +4,11 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_date
-    - field.field.node.article.field_article_image
+    - field.field.node.article.field_article_media
     - node.type.article
   module:
     - datetime
     - fences
-    - image
     - text
     - user
 id: node.article.default
@@ -20,11 +19,11 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   field_article_date:
-    weight: 1
+    weight: 2
     label: visually_hidden
     settings:
       timezone_override: ''
@@ -38,12 +37,12 @@ content:
         fences_label_tag: div
         fences_label_classes: ''
     type: datetime_default
-  field_article_image:
-    weight: 0
-    label: visually_hidden
+  field_article_media:
+    weight: 1
+    label: hidden
     settings:
-      image_style: full_page_wide
-      image_link: ''
+      view_mode: full_page
+      link: false
     third_party_settings:
       fences:
         fences_field_tag: div
@@ -52,9 +51,9 @@ content:
         fences_field_item_classes: ''
         fences_label_tag: div
         fences_label_classes: ''
-    type: image
+    type: entity_reference_entity_view
   links:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
 hidden:

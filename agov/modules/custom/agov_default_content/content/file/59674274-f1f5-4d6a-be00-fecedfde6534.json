@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/apostles_5_0_0_0_0.png"
+            "href": "http:\/\/default\/sites\/default\/files\/apostles_5_0_0_0_0_7.png"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -24,7 +24,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/apostles_5_0_0_0_0.png"
+            "value": "public:\/\/apostles_5_0_0_0_0_7.png"
         }
     ],
     "filemime": [

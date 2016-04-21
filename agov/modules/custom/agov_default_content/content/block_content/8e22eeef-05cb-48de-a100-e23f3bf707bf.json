@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/block_content\/promotional_block\/field_promotional_image": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0.png"
+                "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0_7.png"
             }
         ]
     },
@@ -69,7 +69,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0.png"
+                        "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0_7.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"

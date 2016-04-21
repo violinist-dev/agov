@@ -3,10 +3,9 @@ status: true
 dependencies:
   config:
     - field.field.node.standard_page.body
-    - field.field.node.standard_page.field_standard_page_image
+    - field.field.node.standard_page.field_standard_page_media
     - node.type.standard_page
   module:
-    - image
     - text
     - user
 id: node.standard_page.default
@@ -17,25 +16,25 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 3
     settings: {  }
     third_party_settings: {  }
-  field_standard_page_image:
-    weight: 102
+  field_standard_page_media:
+    weight: 2
     label: above
     settings:
-      image_style: ''
-      image_link: ''
+      link: true
+      view_mode: default
     third_party_settings: {  }
-    type: image
+    type: entity_reference_entity_view
   links:
-    weight: 100
+    weight: 1
     settings: {  }
     third_party_settings: {  }
   title:
     label: hidden
     type: string
-    weight: -5
+    weight: 107
     settings:
       link_to_entity: false
     third_party_settings: {  }

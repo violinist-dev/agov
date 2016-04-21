@@ -25,7 +25,7 @@ widgets:
       view_display: entity_browser_1
     uuid: 3bc4ec79-86e9-4e60-a2ff-47526c6550f9
     weight: 1
-    label: Add Existing
+    label: 'Add Existing'
     id: view
   e5f8a853-3269-4f63-a7a9-fc9c4b7e7f5e:
     settings:

@@ -87,6 +87,7 @@ projects[entity_browser][download][type] = git
 projects[entity_browser][download][url] = https://git.drupal.org/project/entity_browser.git
 projects[entity_browser][download][branch] = 8.x-1.x
 projects[entity_browser][download][revision] = 5b72762aa220d8dcdd1e3414d29f1b6634af4c35
+projects[entity_browser][patch][] = https://www.drupal.org/files/issues/2710579-widget-config-schema.patch
 
 ; Development Modules
 projects[config_devel][version] = '1.0-rc1'
