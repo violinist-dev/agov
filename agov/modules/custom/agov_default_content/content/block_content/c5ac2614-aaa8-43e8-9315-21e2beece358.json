@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/block_content\/promotional_block\/field_promotional_image": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/bigstock-Koala-3496163_5_0_0_0_0.jpg"
+                "href": "http:\/\/default\/sites\/default\/files\/bigstock-Koala-3496163_5_0_0_0_0_7.jpg"
             }
         ]
     },
@@ -69,7 +69,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/bigstock-Koala-3496163_5_0_0_0_0.jpg"
+                        "href": "http:\/\/default\/sites\/default\/files\/bigstock-Koala-3496163_5_0_0_0_0_7.jpg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"

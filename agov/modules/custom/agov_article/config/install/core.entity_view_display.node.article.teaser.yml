@@ -5,12 +5,10 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.field_article_date
-    - field.field.node.article.field_article_image
-    - image.style.article_teaser_medium
+    - field.field.node.article.field_article_media
     - node.type.article
   module:
     - fences
-    - image
     - text
     - title
     - user
@@ -33,17 +31,17 @@ content:
         fences_field_item_classes: ''
         fences_label_tag: div
         fences_label_classes: ''
-  field_article_image:
-    type: image
+  field_article_media:
+    type: entity_reference_entity_view
     weight: 0
     label: hidden
     settings:
-      image_style: article_teaser_medium
-      image_link: content
+      view_mode: teaser
+      link: false
     third_party_settings:
       fences:
         fences_field_tag: div
-        fences_field_classes: 'teaser__image teaser__image-wide'
+        fences_field_classes: teaser__image-wide
         fences_field_item_tag: div
         fences_field_item_classes: ''
         fences_label_tag: div

@@ -1,30 +1,30 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/128?_format=hal_json"
+            "href": "http:\/\/default\/media\/13?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0.png"
+                "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0_7.png"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "href": "http:\/\/default\/user\/0?_format=hal_json",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
+                "href": "http:\/\/default\/user\/0?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0.png"
+                "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0_7.png"
             }
         ]
     },
@@ -55,7 +55,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0.png"
+                        "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0_7.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -76,7 +76,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/user\/0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -84,7 +84,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "e9e4ca8f-c35b-41c8-9e20-5ccc6adf6290"
+                        "value": "45c914e0-66c7-4b95-8426-c5730c07c294"
                     }
                 ],
                 "lang": "en"
@@ -94,7 +94,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/user\/0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -102,7 +102,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "e9e4ca8f-c35b-41c8-9e20-5ccc6adf6290"
+                        "value": "45c914e0-66c7-4b95-8426-c5730c07c294"
                     }
                 ]
             }
@@ -111,7 +111,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0.png"
+                        "href": "http:\/\/default\/sites\/default\/files\/leaf_5_0_0_0_0_7.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"

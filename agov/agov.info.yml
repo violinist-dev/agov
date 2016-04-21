@@ -52,6 +52,7 @@ dependencies:
   - agov_standard_page
   - agov_social_icons
   - agov_publication
+  - agov_media
 
 configurable_dependencies:
   agov_default_content:
@@ -77,10 +78,6 @@ configurable_dependencies:
   agov_sitemap:
     label: aGov Sitemap
     description: Installs the simple sitemap_sitemap module and configures for use with the aGov content types.
-    enabled: true
-  agov_media:
-    label: aGov Media
-    description: Include the media suite of modules for media handling.
     enabled: true
 
 themes:

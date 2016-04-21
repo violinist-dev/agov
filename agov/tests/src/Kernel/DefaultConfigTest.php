@@ -23,6 +23,11 @@ class DefaultConfigTest extends KernelTestBase {
 
   use AssertConfigTrait;
 
+  /**
+   * Schema issues are caught in the aGov web tests.
+   */
+  protected $strictConfigSchema = FALSE;
+
   public static $modules = [
     'system',
     'user',
@@ -102,7 +107,6 @@ class DefaultConfigTest extends KernelTestBase {
     'agov_workbench',
     'agov_scheduled_updates',
     'agov_sitemap',
-    'agov_media',
 
     // Current schema issues.
     'agov_password_policy',
