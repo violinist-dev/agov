@@ -27,7 +27,6 @@ config_devel:
   - embed.button.embed
   - filter.format.text_and_media
   - editor.editor.text_and_media
-  - views.view.media_browser
   - entity_browser.browser.media_browser
   - image.style.media_preview
   - image.style.full_page_wide
