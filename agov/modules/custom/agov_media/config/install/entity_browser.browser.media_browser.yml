@@ -8,8 +8,8 @@ name: media_browser
 label: 'Media Browser'
 display: iframe
 display_configuration:
-  width: '1140'
-  height: '768'
+  width: '1070'
+  height: '840'
   link_text: 'Select items'
   auto_open: true
 selection_display: no_display
