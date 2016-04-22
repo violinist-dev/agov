@@ -30,7 +30,7 @@ settings:
           name: Media
           items:
             - Blockquote
-            - embed
+            - media_embed
         -
           name: Tools
           items:

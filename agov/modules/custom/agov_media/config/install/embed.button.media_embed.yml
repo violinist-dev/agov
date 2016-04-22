@@ -1,11 +1,11 @@
-langcode: en
+langcode: und
 status: true
 dependencies:
   module:
     - entity_embed
     - media_entity
-label: Embed
-id: embed
+label: Media Embed
+id: media_embed
 type_id: entity
 type_settings:
   entity_type: media
