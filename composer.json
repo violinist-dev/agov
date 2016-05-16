@@ -11,45 +11,14 @@
       "role": "Developer"
     }
   ],
-  "support": {
-    "email": "info@previousnext.com.au",
-    "issues": "https://www.drupal.org/project/issues/agov",
-    "source": "https://github.com/previousnext/agov"
-  },
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-        "name": "drupal/coder",
-        "version": "master",
-        "source": {
-          "url": "git://drupalcode.org/project/coder.git",
-          "type": "git",
-          "reference": "7.x-2.2"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "nickschuch/phpcs-security-audit",
-        "version": "master",
-        "source": {
-          "url": "https://github.com/nickschuch/phpcs-security-audit.git",
-          "type": "git",
-          "reference": "master"
-        }
-      }
-    }
-  ],
   "require": {
     "composer/installers": "~1.0"
   },
   "require-dev": {
-    "drush/drush": "6.5.0",
-    "phing/phing": "~2.11@dev",
+    "drush/drush": "~7.0",
+    "phing/phing": "~2.11",
     "previousnext/phing-phpqatools": "dev-master",
-    "previousnext/phing-behat": "0.0.4"
+    "previousnext/phing-behat": "^0.0.4"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
