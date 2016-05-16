@@ -139,7 +139,6 @@ function agov_social_links_block_configure($delta = '') {
   return $form;
 }
 
-
 /**
  * Implements hook_block_save().
  */

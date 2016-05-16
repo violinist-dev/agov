@@ -5,7 +5,9 @@
  * Common permissions.
  *
  * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
+ *
  * @author Chris Skene chris at previousnext dot com dot au
+ *
  * @copyright Copyright(c) 2014 Previous Next Pty Ltd
  */
 
@@ -13,6 +15,7 @@
  * Return base agov permissions.
  *
  * PHPMD thinks this function is too long...
+ *
  * @SuppressWarnings(PHPMD)
  *
  * @return array

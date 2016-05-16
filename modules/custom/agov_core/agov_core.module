@@ -4,7 +4,9 @@
  * Common functionality used across aGov.
  *
  * @copyright Copyright(c) 2014 PreviousNext
+ *
  * @license GPL v2 http://www.fsf.org/licensing/licenses/gpl.html
+ *
  * @author Chris Skene chris at previousnext dot com dot au
  */
 
@@ -16,9 +18,9 @@ function agov_core_help($path, $arg) {
     case 'admin/help#agov_core':
       $output = "<p>" . t("!agov is a free open source Drupal 7 distribution developed specifically for Australian government organisations.", array('!agov' => l(t('aGov'), 'http://agov.com.au'))) . "</p>";
       $output .= "<p>" . t("aGov is designed and developed by !pnx and is free to !download.", array(
-          '!pnx' => l(t('PreviousNext'), 'http://previousnext.com.au'),
-          '!download' => l(t("download"), "https://drupal.org/project/agov"),
-        )) . "</p>";
+        '!pnx' => l(t('PreviousNext'), 'http://previousnext.com.au'),
+        '!download' => l(t("download"), "https://drupal.org/project/agov"),
+      )) . "</p>";
       return $output;
   }
 }
@@ -27,13 +29,13 @@ function agov_core_help($path, $arg) {
  * Helper to manufacture a new Bean of a given type.
  *
  * @param string $bean_type
- *   The type of bean to create
+ *   The type of bean to create.
  * @param string $label
- *   Admin label for the bean
+ *   Admin label for the bean.
  * @param string $description
- *   (optional) Admin description for the bean
+ *   (optional) Admin description for the bean.
  * @param string $title
- *   (optional) Block title for the bean
+ *   (optional) Block title for the bean.
  * @param array $fields
  *   (optional) An array of fields to assign. This should resemble the ACTUAL
  *   field array, as it is literally transposed onto the bean, with the
@@ -56,13 +58,13 @@ function agov_core_save_bean($bean_type, $label, $description = '', $title = '',
  * you need to manipulate the bean before saving.
  *
  * @param string $bean_type
- *   The type of bean to create
+ *   The type of bean to create.
  * @param string $label
- *   Admin label for the bean
+ *   Admin label for the bean.
  * @param string $description
- *   (optional) Admin description for the bean
+ *   (optional) Admin description for the bean.
  * @param string $title
- *   (optional) Block title for the bean
+ *   (optional) Block title for the bean.
  * @param array $fields
  *   (optional) An array of fields to assign. This should resemble the ACTUAL
  *   field array, as it is literally transposed onto the bean, with the
@@ -96,11 +98,11 @@ function agov_core_create_bean($bean_type, $label, $description = '', $title = '
  * @todo There is better logic in block_add_block_form_submit()
  *
  * @param string $module
- *   The module providing the block
+ *   The module providing the block.
  * @param string $delta
- *   The block delta
+ *   The block delta.
  * @param string $theme
- *   (optional) The theme to insert into. Defaults to the current theme
+ *   (optional) The theme to insert into. Defaults to the current theme.
  * @param int|string $region
  *   (optional) The region to insert the block into. Defaults to
  *   BLOCK_REGION_NONE, so a block can be created but not assigned by leaving
@@ -115,6 +117,7 @@ function agov_core_create_bean($bean_type, $label, $description = '', $title = '
  *   (optional) The title. Defaults to empty. Specify '<none>' to hide.
  *
  * @throws Exception
+ *
  * @return bool
  *   TRUE if the block is inserted, or FALSE on an error.
  */
@@ -187,11 +190,11 @@ function agov_core_insert_block($module, $delta, $theme, $region = BLOCK_REGION_
  * Update block placement for an existing block.
  *
  * @param string $module
- *   The module providing the block
+ *   The module providing the block.
  * @param string $delta
- *   The block delta
+ *   The block delta.
  * @param string $theme
- *   (optional) The theme to insert into. Defaults to the current theme
+ *   (optional) The theme to insert into. Defaults to the current theme.
  * @param int|string $region
  *   (optional) The region to insert the block into. Defaults to
  *   BLOCK_REGION_NONE, so a block can be created but not assigned by leaving
@@ -199,7 +202,7 @@ function agov_core_insert_block($module, $delta, $theme, $region = BLOCK_REGION_
  * @param int $weight
  *   (optional) The weight of the block. Defaults to 0
  *
- * This is based on block_admin_display_form_submit()
+ *   This is based on block_admin_display_form_submit().
  *
  * @throws Exception
  */

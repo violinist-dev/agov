@@ -4,27 +4,9 @@
  * Contains the theme's functions to manipulate Drupal's default markup.
  *
  * Complete documentation for this file is available online.
+ *
  * @see https://drupal.org/node/1728096
  */
-
-
-/**
- * Override or insert variables into the maintenance page template.
- *
- * @param array $variables
- *   Variables to pass to the theme template.
- * @param string $hook
- *   The name of the template being rendered ("maintenance_page" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function agov_whitlam_preprocess_maintenance_page(&$variables, $hook) {
-  // When a variable is manipulated or added in preprocess_html or
-  // preprocess_page, that same work is probably needed for the maintenance page
-  // as well, so we can just re-use those functions to do that work here.
-  agov_whitlam_preprocess_html($variables, $hook);
-  agov_whitlam_preprocess_page($variables, $hook);
-}
-// */
 
 /**
  * Implements hook_preprocess_html().
@@ -44,7 +26,7 @@ function agov_whitlam_preprocess_html(&$variables, $hook) {
  * @param array $variables
  *   Variables to pass to the theme template.
  * @param string $hook
- *   The name of the template being rendered ("page" in this case.)
+ *   The name of the template being rendered ("page" in this case).
  */
 function agov_whitlam_preprocess_page(&$variables, $hook) {
   // Search page title should tell you if there are results.
@@ -59,7 +41,7 @@ function agov_whitlam_preprocess_page(&$variables, $hook) {
  * @param array $variables
  *   Variables to pass to the theme template.
  * @param string $hook
- *   The name of the template being rendered ("node" in this case.)
+ *   The name of the template being rendered ("node" in this case).
  */
 function agov_whitlam_preprocess_node(&$variables, $hook) {
   $node = $variables['node'];
@@ -112,7 +94,7 @@ function agov_whitlam_process_node(&$variables) {
  * @param array $variables
  *   Variables to pass to the theme template.
  * @param string $hook
- *   The name of the template being rendered ("comment" in this case.)
+ *   The name of the template being rendered ("comment" in this case).
  */
 function agov_whitlam_preprocess_comment(&$variables, $hook) {
   $comment = $variables['comment'];
@@ -138,33 +120,13 @@ function agov_whitlam_preprocess_comment_wrapper(&$variables, $hook) {
   }
 }
 
-
-/**
- * Override or insert variables into the region templates.
- *
- * @param array $variables
- *   Variables to pass to the theme template.
- * @param string $hook
- *   The name of the template being rendered ("region" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function agov_whitlam_preprocess_region(&$variables, $hook) {
-  // Don't use Zen's region--sidebar.tpl.php template for sidebars.
-  if (strpos($variables['region'], 'sidebar_') === 0) {
-    $variables['theme_hook_suggestions'] = array_diff(
-      $variables['theme_hook_suggestions'], array('region__sidebar')
-    );
-  }
-}
-// */
-
 /**
  * Override or insert variables into the block templates.
  *
  * @param array $variables
  *   Variables to pass to the theme template.
  * @param string $hook
- *   The name of the template being rendered ("block" in this case.)
+ *   The name of the template being rendered ("block" in this case).
  */
 function agov_whitlam_preprocess_block(&$variables, $hook) {
   $block = $variables['elements']['#block'];

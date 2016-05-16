@@ -4,9 +4,9 @@
  * Contains the theme's functions to manipulate Drupal's default markup.
  *
  * Complete documentation for this file is available online.
+ *
  * @see https://drupal.org/node/1728096
  */
-
 
 /**
  * Override or insert variables into the maintenance page template.
@@ -14,15 +14,14 @@
  * @param array $variables
  *   Variables to pass to the theme template.
  * @param string $hook
- *   The name of the template being rendered ("maintenance_page" in this case.)
+ *   The name of the template being rendered ("maintenance_page" in this case).
  */
 function agov_zen_preprocess_maintenance_page(&$variables, $hook) {
   // When a variable is manipulated or added in preprocess_html or
   // preprocess_page, that same work is probably needed for the maintenance page
   // as well, so we can just re-use those functions to do that work here.
   agov_zen_preprocess_html($variables, $hook);
-  // agov_zen_preprocess_page($variables, $hook);
-
+  // agov_zen_preprocess_page($variables, $hook);.
   $t_function = get_t();
 
   $variables['footer'] = '<div id="footer">' . t('!aGov is developed by !PreviousNext', array(
@@ -51,7 +50,7 @@ function agov_zen_preprocess_maintenance_page(&$variables, $hook) {
  * @param array $variables
  *   Variables to pass to the theme template.
  * @param string $hook
- *   The name of the template being rendered ("html" in this case.)
+ *   The name of the template being rendered ("html" in this case).
  */
 function agov_zen_preprocess_html(&$variables, $hook) {
   // Adds HTML5 placeholder shim.
@@ -64,7 +63,7 @@ function agov_zen_preprocess_html(&$variables, $hook) {
  * @param array $variables
  *   Variables to pass to the theme template.
  * @param string $hook
- *   The name of the template being rendered ("node" in this case.)
+ *   The name of the template being rendered ("node" in this case).
  */
 function agov_zen_preprocess_node(&$variables, $hook) {
   // Slides get a special read more link.
@@ -141,7 +140,7 @@ function _agov_zen_process_node_compact_teaser(&$variables) {
         if (!empty($children)) {
           $limited = $variables['content'][$field_name][0];
           foreach ($children as $child_index) {
-            unset ($variables['content'][$field_name][$child_index]);
+            unset($variables['content'][$field_name][$child_index]);
           }
           $variables['content'][$field_name][0] = $limited;
         }
@@ -158,7 +157,6 @@ function agov_zen_form_alter(&$form, &$form_state, $form_id) {
     $form['funnelback_search_field']['#attributes']['placeholder'] = 'Enter keywords…';
   }
 }
-
 
 /**
  * Implements template_preprocess_field().

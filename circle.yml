@@ -37,7 +37,7 @@ dependencies:
 
 test:
   override:
-#    - phing phpcs # TODO fix codestyle in a followup issue 2726019
+    - phing phpcs
     - node_modules/.bin/gulp lint:js-with-fail
     # Temporarily disable sass lint failing, until Issue #2650652 is complete.
     # - node_modules/.bin/gulp lint:sass-with-fail

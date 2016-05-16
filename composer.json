@@ -36,8 +36,9 @@
   "require-dev": {
     "drush/drush": "~7.5",
     "phing/phing": "~2.11",
-    "previousnext/phing-phpqatools": "dev-master",
-    "previousnext/phing-behat": "^0.0.4"
+    "previousnext/phing-behat": "^0.0.4",
+    "squizlabs/php_codesniffer": "~2.3",
+    "drupal/coder": "~8.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

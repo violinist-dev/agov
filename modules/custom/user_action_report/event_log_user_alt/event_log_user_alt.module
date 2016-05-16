@@ -5,6 +5,7 @@
  * Logs user CRUD commands in the event_log module.
  *
  * @author Bas van Meurs
+ *
  * @copyright Cipix Internet
  */
 
