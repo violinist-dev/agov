@@ -1,0 +1,44 @@
+machine:
+  timezone:
+    Australia/Perth
+  php:
+    version: 5.5.11
+  hosts:
+    agov.dev: 127.0.0.1
+
+dependencies:
+  cache_directories:
+    - vendor
+    - bin
+  pre:
+    - echo "date.timezone = Australia/Perth" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/timezone.ini
+    # Tell composer to ignore any changes.
+    - composer config --global discard-changes true
+    - echo "memory_limit = 256M" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/memory.ini
+
+    # Symlink some binaries so they're accessible globally.
+    - ln -s `pwd`/bin/drush /home/ubuntu/bin/drush
+    - ln -s `pwd`/bin/phing /home/ubuntu/bin/phing
+    - cp build.circle.properties build.properties
+
+  post:
+    - composer install --prefer-dist --dev
+    - npm install
+    - bundle install --path vendor/bundle
+    - phing ci:vhost
+    - phing clean
+    - phing prepare
+    - phing make
+    - phing install -verbose
+    - mkdir app/sites/simpletest
+    - chmod 777 app/sites/simpletest
+    - mkdir -p app/sites/default/files/tmp
+    - mkdir -p app/sites/default/private
+
+test:
+  override:
+#    - phing phpcs # TODO fix codestyle in a followup issue 2726019
+    - node_modules/.bin/gulp lint:js-with-fail
+    # Temporarily disable sass lint failing, until Issue #2650652 is complete.
+    # - node_modules/.bin/gulp lint:sass-with-fail
+    - phing behat
