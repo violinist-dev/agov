@@ -65,7 +65,7 @@ deployment:
       - git remote add dorg pnx-bot@git.drupal.org:project/agov.git
       - git fetch dorg
       # Add the existing build commits into the current branch.
-      - rm -rf vendor
+      - rm -rf vendor styleguide
       - git merge -X ours --no-edit dorg/7.x-3.x
       - git status
       - ls -lah
