@@ -55,8 +55,6 @@ deployment:
       - git add -f themes/agov/agov_whitlam/css
       - git add .
       - git commit -m 'Compiled CSS.'
-      # Filter out the commits only in the 'agov' folder.
-      - git filter-branch --prune-empty --subdirectory-filter agov 7.x-3.x
       # Clean up the state of the folder.
       - git checkout 7.x-3.x
       - git add .
