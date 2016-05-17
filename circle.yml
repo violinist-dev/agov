@@ -42,3 +42,37 @@ test:
     # Temporarily disable sass lint failing, until Issue #2650652 is complete.
     # - node_modules/.bin/gulp lint:sass-with-fail
     - phing behat
+
+deployment:
+  prod:
+    branch: 7.x-3.x
+    commands:
+      - bundle install --path vendor/bundle
+      - git config --global user.email "admin@previousnext.com.au"
+      - git config --global user.name "PreviousNext"
+      # Compiled CSS.
+      - bin/phing gulp:build
+      - git add -f themes/agov/agov_whitlam/css
+      - git add .
+      - git commit -m 'Compiled CSS.'
+      # Filter out the commits only in the 'agov' folder.
+      - git filter-branch --prune-empty --subdirectory-filter agov 7.x-3.x
+      # Clean up the state of the folder.
+      - git checkout 7.x-3.x
+      - git add .
+      - git reset --hard
+      # Circle does a shallow clone so we must do this.
+      - git fetch --unshallow
+      # Add drupal.org as a remote.
+      - git remote add dorg pnx-bot@git.drupal.org:project/agov.git
+      - git fetch dorg
+      # Add the existing build commits into the current branch.
+      - rm -rf vendor
+      - git merge -X ours --no-edit dorg/7.x-3.x
+      - git status
+      - ls -lah
+      - git log | head -n20
+      - git branch
+      - git remote -v
+      # Push the new commits and build commit to the remote.
+      - git push dorg 7.x-3.x
