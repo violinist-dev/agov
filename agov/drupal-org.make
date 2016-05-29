@@ -4,6 +4,7 @@ api = 2
 defaults[projects][subdir] = "contrib"
 
 ; Contrib modules
+projects[admin_toolbar][version] = 1.15
 projects[layout_plugin][version] = 1.0-alpha22
 projects[ctools][version] = 3.0-alpha22
 projects[twitter_block][version] = 2.1

@@ -38,6 +38,7 @@ dependencies:
   - dynamic_page_cache
 
   # Contrib modules
+  - admin_toolbar
   - better_normalizers
   - pathauto
   - twitter_block
