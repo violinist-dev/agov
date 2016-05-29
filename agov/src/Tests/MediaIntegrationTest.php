@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\agov\Tests\MediaIntegrationTest.
- */
-
 namespace Drupal\agov\Tests;
 
 /**

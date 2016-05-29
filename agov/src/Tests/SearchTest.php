@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\agov\Tests\SearchTest.
- */
-
 namespace Drupal\agov\Tests;
 
 /**

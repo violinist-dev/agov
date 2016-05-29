@@ -1,14 +1,8 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\text_icon\Plugin\Field\FieldFormatter\TextIconFormatter.
- */
-
 namespace Drupal\text_icon\Plugin\Field\FieldFormatter;
 
 use Drupal\Component\Render\FormattableMarkup;
-use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter\StringFormatter;
 

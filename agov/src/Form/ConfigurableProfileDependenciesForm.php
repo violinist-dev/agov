@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\agov\Form\ConfigurableProfileDependenciesForm.
- */
-
 namespace Drupal\agov\Form;
 
 use Drupal\Core\Extension\ModuleInstallerInterface;

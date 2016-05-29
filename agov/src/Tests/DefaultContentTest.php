@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\agov\Tests\DefaultContentTest.
- */
-
 namespace Drupal\agov\Tests;
 
 /**

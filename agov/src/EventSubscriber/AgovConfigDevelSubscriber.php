@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\agov\EventSubscriber\AgovConfigDevelSubscriber.
- */
-
 namespace Drupal\agov\EventSubscriber;
 
 use Drupal\config_devel\Event\ConfigDevelSaveEvent;

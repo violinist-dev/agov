@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\agov\Tests\AccessDisclosureTest.
- */
-
 namespace Drupal\agov\Tests;
 
 /**

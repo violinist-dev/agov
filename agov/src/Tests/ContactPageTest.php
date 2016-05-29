@@ -1,13 +1,6 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\agov\Tests\ContactPageTest.
- */
-
 namespace Drupal\agov\Tests;
-
-use Symfony\Component\BrowserKit\Request;
 
 /**
  * Test the contact page.
@@ -63,7 +56,7 @@ class ContactPageTest extends AgovTestBase {
     if (!$this->loggedInUser) {
       $edit += [
         'name' => $this->randomString(),
-        'mail' => $this->randomMachineName() . '@example.com'
+        'mail' => $this->randomMachineName() . '@example.com',
       ];
     }
     $this->drupalPostForm($this->getUrl(), $edit, 'Send message');

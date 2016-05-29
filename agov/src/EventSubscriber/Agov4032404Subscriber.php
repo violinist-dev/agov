@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\agov\EventSubscriber\Agov4032404Subscriber.
- */
-
 namespace Drupal\agov\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

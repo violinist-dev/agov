@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Drupal\agov_default_content\EventSubscriber\DefaultContentImportedSubscriber.
- */
-
 namespace Drupal\agov_default_content\EventSubscriber;
 
 use Drupal\default_content\Event\DefaultContentEvents;
@@ -45,7 +40,7 @@ class DefaultContentImportedSubscriber implements EventSubscriberInterface {
           'c9a89616-7057-4971-8337-555e425ed782' => ['label' => 'Curabitur pretium'],
           '27500c7a-92b9-4781-a32d-451da0c24df9' => ['label' => 'Cras at faucibus'],
         ],
-      ]
+      ],
     ];
 
     $links_from_map = function($map, $parent = NULL) use (&$links_from_map, $entities) {

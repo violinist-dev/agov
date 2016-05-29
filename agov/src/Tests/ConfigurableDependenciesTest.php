@@ -1,14 +1,8 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\agov\Tests\ConfigurableDependenciesTest.
- */
-
 namespace Drupal\agov\Tests;
 
 use Drupal\simpletest\InstallerTestBase;
-use Symfony\Component\BrowserKit\Request;
 
 /**
  * Test the configurable dependencies installer.

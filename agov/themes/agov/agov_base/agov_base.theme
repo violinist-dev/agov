@@ -5,7 +5,6 @@
  * Base code file.
  */
 
-use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
@@ -50,27 +49,6 @@ function agov_base_preprocess_block__block_content__promotional_block(&$vars) {
   $url = $url = Url::fromUri($entity->field_link->uri);
   $vars['content']['field_promotional_title'][0]['#url'] = $url;
   $vars['content']['field_promotional_image'][0]['#url'] = $url;
-}
-
-/**
- * Implements hook_preprocess_breadcrumb().
- */
-function agov_base_preprocess_breadcrumb(&$vars) {
-  $route = \Drupal::routeMatch()->getRouteObject();
-  $title = \Drupal::service('title_resolver')
-    ->getTitle(\Drupal::request(), $route);
-
-  if ($title) {
-    $vars['breadcrumb'][] = [
-      'text' => $title,
-    ];
-
-    // Adding a dependency on the route actually disables caching for this block
-    // but that's what we want, to prevent caching issues.
-    CacheableMetadata::createFromRenderArray($vars)
-      ->addCacheableDependency($route)
-      ->applyTo($vars);
-  }
 }
 
 /**
@@ -179,9 +157,12 @@ function agov_base_preprocess_block__system__sidebar_second(&$vars) {
  * Implements hook_preprocess_block__PROVIDER__REGION().
  */
 function agov_base_preprocess_block__system__footer_top(&$vars) {
+  if (empty($vars['attributes']['class'])) {
+    $vars['attributes']['class'] = [];
+  }
   $vars['attributes']['class'] += [
     'three-column-menu',
-    'footer-top__menu'
+    'footer-top__menu',
   ];
   $vars['content']['#attributes']['region'] = $vars['elements']['#region'];
 }
