@@ -22,7 +22,7 @@ function agov_sitemap_install() {
     if (NodeType::load($bundle_name) === NULL) {
       continue;
     }
-    $sitemap_config['node_type'][$bundle_name] = [
+    $sitemap_config['node'][$bundle_name] = [
       'index' => 1,
       'priority' => '0.5',
     ];
