@@ -28,7 +28,7 @@ projects[panels][patch][] = https://www.drupal.org/files/issues/2699529-quote-co
 ; Development versions
 projects[better_normalizers][type] = module
 projects[better_normalizers][download][type] = git
-projects[better_normalizers][download][url] = https://git.drupal.org/sandbox/sam/2705067.git
+projects[better_normalizers][download][url] = https://git.drupal.org/project/better_normalizers.git
 projects[better_normalizers][download][branch] = 8.x-1.x
 projects[better_normalizers][download][revision] = 1cd9b4b50e91f5e595eb86813611dc368227c4b6
 
