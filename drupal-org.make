@@ -133,7 +133,7 @@ projects[wysiwyg][download][url] = "http://git.drupal.org/project/wysiwyg.git"
 projects[wysiwyg][type] = "module"
 projects[wysiwyg][patch][] = "https://www.drupal.org/files/issues/wysiwyg-html5-required-1338956-16.patch"
 projects[wysiwyg_filter][version] = "1.6-rc3"
-projects[xmlsitemap][version] = "2.2"
+projects[xmlsitemap][version] = "2.3"
 
 ; aGov
 projects[agov_password_policy][version] = "1.0-beta1"
