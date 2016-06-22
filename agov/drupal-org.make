@@ -21,6 +21,7 @@ projects[embed][version] = '1.0-rc2'
 projects[media_entity][version] = '1.0'
 projects[media_entity_image][version] = '1.0'
 projects[entity][version] = '1.0-alpha3'
+projects[entity_embed][version] = '1.0-alpha1'
 
 projects[panels][version] = 3.0-beta2
 projects[panels][patch][] = https://www.drupal.org/files/issues/2699529-quote-colons-beta4-3.patch
@@ -59,12 +60,6 @@ projects[password_policy][download][branch] = 8.x-3.x
 projects[password_policy][download][revision] = 40f8e14bb6759ac201bffec0c5ffd0b4361c3e5b
 projects[password_policy][patch][] = https://www.drupal.org/files/issues/2692709-undefined-indexes.patch
 projects[password_policy][patch][] = https://www.drupal.org/files/issues/2697777-php7-1.patch
-
-projects[entity_embed][type] = module
-projects[entity_embed][download][type] = git
-projects[entity_embed][download][url] = https://git.drupal.org/project/entity_embed.git
-projects[entity_embed][download][branch] = 8.x-1.x
-projects[entity_embed][download][revision] = 509fc57267e80371581ba8a65b3a4b68fe9add3e
 
 projects[inline_entity_form][type] = module
 projects[inline_entity_form][download][type] = git
