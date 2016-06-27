@@ -10,7 +10,6 @@ projects[ctools][version] = 3.0-alpha22
 projects[twitter_block][version] = 2.1
 projects[linkicon][version] = '1.2'
 projects[pathauto][version] = '1.0-alpha1'
-projects[token][version] = '1.0-alpha2'
 projects[workbench_moderation][version] = '1.0'
 projects[metatag][version] = '1.x-dev'
 projects[agls][version] = '1.x-dev'
@@ -27,6 +26,13 @@ projects[panels][version] = 3.0-beta2
 projects[panels][patch][] = https://www.drupal.org/files/issues/2699529-quote-colons-beta4-3.patch
 
 ; Development versions
+
+projects[token][type] = module
+projects[token][download][type] = git
+projects[token][download][url] = https://git.drupal.org/project/token.git
+projects[token][download][branch] = 8.x-1.x
+projects[token][download][revision] = 850e7fbdb2b44d36bff4e4225557bcb172bcb178
+
 projects[better_normalizers][type] = module
 projects[better_normalizers][download][type] = git
 projects[better_normalizers][download][url] = https://git.drupal.org/project/better_normalizers.git
