@@ -43,7 +43,7 @@ class DefaultContentImportedSubscriber implements EventSubscriberInterface {
       ],
     ];
 
-    $links_from_map = function($map, $parent = NULL) use (&$links_from_map, $entities) {
+    $links_from_map = function ($map, $parent = NULL) use (&$links_from_map, $entities) {
       $weight = 0;
       foreach ($map as $uuid => $link) {
         if (isset($entities[$uuid])) {

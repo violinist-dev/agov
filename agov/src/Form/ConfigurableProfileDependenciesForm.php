@@ -88,7 +88,7 @@ class ConfigurableProfileDependenciesForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $modules_to_install = array_filter($form_state->getValue('configurable_modules'), function($enabled) {
+    $modules_to_install = array_filter($form_state->getValue('configurable_modules'), function ($enabled) {
       return (bool) $enabled;
     });
     $this->moduleInstaller->install(array_keys($modules_to_install));

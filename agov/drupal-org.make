@@ -7,6 +7,7 @@ defaults[projects][subdir] = "contrib"
 projects[admin_toolbar][version] = 1.16
 projects[layout_plugin][version] = 1.0-alpha22
 projects[ctools][version] = 3.0-alpha26
+projects[default_content][version] = '1.0-alpha3'
 projects[twitter_block][version] = 2.1
 projects[linkicon][version] = '1.3'
 projects[pathauto][version] = '1.0-alpha3'
@@ -65,10 +66,3 @@ projects[media_entity_browser][download][revision] = 4abc37fcc374db7e5bd261e6c90
 ; Development Modules
 projects[config_devel][version] = '1.0-rc1'
 projects[config_devel][subdir] = 'development'
-
-projects[default_content][type] = module
-projects[default_content][download][type] = git
-projects[default_content][download][url] = http://git.drupal.org/project/default_content.git
-projects[default_content][download][branch] = 8.x-1.x
-projects[default_content][download][revision] = 471bf110e40e22b8a5ed10973825959aa33b2f21
-projects[default_content][subdir] = 'development'
