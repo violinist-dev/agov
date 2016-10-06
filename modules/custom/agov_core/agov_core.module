@@ -110,7 +110,8 @@ function agov_core_create_bean($bean_type, $label, $description = '', $title = '
  * @param int $weight
  *   (optional) The weight of the block. Defaults to 0.
  * @param int $visibility
- *   (optional) The visibility of the block. Defaults to 0.
+ *   (optional) The visibility of the block. Defaults to
+ *   BLOCK_VISIBILITY_NOTLISTED to show on all.
  * @param string $pages
  *   (optional) The pages to show the block on. Defaults to all.
  * @param string $title
@@ -121,7 +122,7 @@ function agov_core_create_bean($bean_type, $label, $description = '', $title = '
  * @return bool
  *   TRUE if the block is inserted, or FALSE on an error.
  */
-function agov_core_insert_block($module, $delta, $theme, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = 0, $pages = '', $title = '') {
+function agov_core_insert_block($module, $delta, $theme, $region = BLOCK_REGION_NONE, $weight = 0, $visibility = BLOCK_VISIBILITY_NOTLISTED, $pages = '', $title = '') {
   if (!isset($theme)) {
     $theme = variable_get('theme_default', NULL);
     if (!isset($theme) || is_null($theme)) {
@@ -199,6 +200,11 @@ function agov_core_insert_block($module, $delta, $theme, $region = BLOCK_REGION_
  *   (optional) The region to insert the block into. Defaults to
  *   BLOCK_REGION_NONE, so a block can be created but not assigned by leaving
  *   this blank.
+ * @param int $visibility
+ *   (optional) The visibility of the block. Defaults to
+ *   BLOCK_VISIBILITY_NOTLISTED, to show on all.
+ * @param string $pages
+ *   (optional) The pages to show the block on. Defaults to all.
  * @param int $weight
  *   (optional) The weight of the block. Defaults to 0
  *
@@ -206,7 +212,7 @@ function agov_core_insert_block($module, $delta, $theme, $region = BLOCK_REGION_
  *
  * @throws Exception
  */
-function agov_core_update_block($module, $delta, $theme = '', $region = BLOCK_REGION_NONE, $weight = 0) {
+function agov_core_update_block($module, $delta, $theme = '', $region = BLOCK_REGION_NONE, $visibility = BLOCK_VISIBILITY_NOTLISTED, $pages = '', $weight = 0) {
   $transaction = db_transaction();
   try {
     $status = (int) ($region != BLOCK_REGION_NONE);
@@ -216,6 +222,8 @@ function agov_core_update_block($module, $delta, $theme = '', $region = BLOCK_RE
         'status' => $status,
         'weight' => $weight,
         'region' => $region,
+        'visibility' => $visibility,
+        'pages' => $pages,
       ))
       ->condition('module', $module)
       ->condition('delta', $delta)
