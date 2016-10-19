@@ -22,3 +22,6 @@ To run:
 
     ./vendor/bin/phpunit -c core profiles/agov/tests/src/Kernel/DefaultConfigTest.php
 
+# Automated Tests
+
+Automated tests are run on PHP 7.0 on CircleCI.
