@@ -23,6 +23,7 @@ widgets:
     settings:
       view: media_entity_browser
       view_display: entity_browser_1
+      submit_text: 'Select entities'
     uuid: 3bc4ec79-86e9-4e60-a2ff-47526c6550f9
     weight: 1
     label: 'Add Existing'
@@ -31,6 +32,8 @@ widgets:
     settings:
       entity_type: media
       bundle: image
+      form_mode: default
+      submit_text: 'Save entity'
     uuid: e5f8a853-3269-4f63-a7a9-fc9c4b7e7f5e
     weight: 2
     label: 'Upload Image'
@@ -39,6 +42,8 @@ widgets:
     settings:
       entity_type: media
       bundle: video
+      form_mode: default
+      submit_text: 'Save entity'
     uuid: 74acb511-c511-4e12-a1c8-9c917efe3be2
     weight: 3
     label: 'Add Video'
