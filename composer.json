@@ -1,7 +1,7 @@
 {
   "name": "previousnext/agov",
   "type": "drupal-profile",
-  "description" : "aGov is a free open source Drupal 7 distribution developed specifically for Australian government organisations",
+  "description": "aGov is a free open source Drupal 7 distribution developed specifically for Australian government organisations",
   "license": "GPL-2.0+",
   "authors": [
     {
@@ -16,55 +16,16 @@
     "issues": "https://www.drupal.org/project/issues/agov",
     "source": "https://github.com/previousnext/agov"
   },
-  "repositories": [
-    {
-      "type": "package",
-      "package": {
-        "name": "drupal/coder",
-        "version": "master",
-        "source": {
-          "url": "git://drupalcode.org/project/coder.git",
-          "type": "git",
-          "reference": "7.x-2.3"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "nickschuch/phpcs-security-audit",
-        "version": "master",
-        "source": {
-          "url": "https://github.com/nickschuch/phpcs-security-audit.git",
-          "type": "git",
-          "reference": "master"
-        }
-      }
-    }
-  ],
   "require": {
-    "composer/installers": "~1.0"
   },
   "require-dev": {
-    "phing/phing": "~2.11",
-    "previousnext/phing-phpqatools": "dev-master",
     "drush/drush": "~8.1",
-    "symfony/dependency-injection": "~2"
+    "drupal/coder": "~8.2",
+    "drupal/console": "~0.10"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
     "bin-dir": "bin/"
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-8.x-1.x": "8.1.x-dev",
-      "dev-7.x-3.x": "7.3.x-dev",
-      "dev-7.x-2.x": "7.2.x-dev",
-      "dev-7.x-1.x": "7.1.x-dev"
-    },
-    "installer-paths": {
-      "vendor/drupal/{$name}": ["drupal/coder"]
-    }
   }
 }

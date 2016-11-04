@@ -10,7 +10,7 @@ See [the docs](https://github.com/previousnext/agov/blob/8.x-1.x/agov/docs/index
 
 ### Run all tests
 
-    phing tests
+    make test
 
 ### Debug Kernel tests
 
