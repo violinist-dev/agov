@@ -9,7 +9,12 @@ APP_PASSWORD=password
 
 DRUSH_CMD=drush -r ${APP_DIR}
 DB_URL=mysql://drupal:drupal@localhost/local
-INSTALL_OPTIONS=agov_install_additional_options.install=1
+INSTALL_OPTIONS=configurable_profile_dependencies.configurable_modules[agov_default_content]=0 \
+	configurable_profile_dependencies.configurable_modules[agov_password_policy]=0 \
+	configurable_profile_dependencies.configurable_modules[agov_workbench]=0 \
+	configurable_profile_dependencies.configurable_modules[agls]=0 \
+	configurable_profile_dependencies.configurable_modules[agov_scheduled_updates]=0 \
+	configurable_profile_dependencies.configurable_modules[agov_sitemap]=0
 
 PHPCS_STANDARD="vendor/drupal/coder/coder_sniffer/Drupal"
 PHPCS_EXTENSIONS="php,module,inc,install,test,profile,theme"
@@ -56,6 +61,9 @@ make:
 	cd ${APP_DIR} && ../bin/drush make -y profiles/agov/drupal-org-core.make --no-cache --prepare-install
 
 install:
+	cd ${APP_DIR} && ../bin/drush site-install agov -y --site-name=aGov --account-pass='${APP_PASSWORD}' --db-url=${DB_URL}
+
+install-no-optionals:
 	cd ${APP_DIR} && ../bin/drush site-install agov -y --site-name=aGov --account-pass='${APP_PASSWORD}' --db-url=${DB_URL} ${INSTALL_OPTIONS}
 
 lint-php:
