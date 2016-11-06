@@ -30,8 +30,7 @@ projects[fences][version] = '2.0-alpha1'
 projects[page_manager][version] = '1.0-alpha23'
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/page-manager-contextual-temp.patch
 
-projects[panels][version] = 3.0-beta4
-projects[panels][patch][] = https://www.drupal.org/files/issues/2699529-quote-colons-beta4-3.patch
+projects[panels][version] = 3.0-beta5
 
 ; Development versions, no tagged releases or require bleeding edge features.
 
