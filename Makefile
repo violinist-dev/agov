@@ -41,7 +41,7 @@ ci-build: init mkdirs ci-vhost styleguide make
 
 clean:
 	chmod u+w ${APP_DIR}/sites/default || true
-	rm -rf ${APP_DIR} agov/modules/contrib agov/themes/contrib
+	sudo rm -rf ${APP_DIR} agov/modules/contrib agov/themes/contrib
 
 init:
 	@echo ${cc_green}">>> Installing dependencies..."${cc_end}
