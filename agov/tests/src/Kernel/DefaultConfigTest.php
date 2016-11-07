@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\KernelTests\Config\DefaultConfigTest.
- */
-
 namespace Drupal\Tests\agov\Kernel;
 
 use Drupal\Core\Config\FileStorage;
@@ -25,6 +20,8 @@ class DefaultConfigTest extends KernelTestBase {
 
   /**
    * Schema issues are caught in the aGov web tests.
+   *
+   * {@inheritdoc}
    */
   protected $strictConfigSchema = FALSE;
 
@@ -198,7 +195,7 @@ class DefaultConfigTest extends KernelTestBase {
    */
   public function providerTestModuleConfig() {
     $module_dirs = array_keys(iterator_to_array(new \FilesystemIterator(__DIR__ . '/../../../modules/custom/')));
-    $module_names = array_map(function($path) {
+    $module_names = array_map(function ($path) {
       return str_replace(__DIR__ . '/../../../modules/custom/', '', $path);
     }, $module_dirs);
 

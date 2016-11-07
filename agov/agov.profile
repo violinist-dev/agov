@@ -2,7 +2,7 @@
 
 /**
  * @file
- * aGov profile global changes.
+ * AGov profile global changes.
  */
 
 use Drupal\Core\Form\FormStateInterface;

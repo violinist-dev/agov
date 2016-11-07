@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install, update and uninstall functions for the aGov profile.
+ */
+
+/**
  * Implements hook_install().
  */
 function agov_install() {

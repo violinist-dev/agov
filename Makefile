@@ -20,7 +20,7 @@ PHPCS_STANDARD="vendor/drupal/coder/coder_sniffer/Drupal"
 PHPCS_EXTENSIONS="php,module,inc,install,test,profile,theme"
 PHPCS_EXCLUSIONS=""
 PHPCS_REPORT_FILE="build/logs/checkstyle.xml"
-PHPCS_DIRS="agov/modules/custom"
+PHPCS_DIRS=agov/modules/custom agov/agov.install agov/agov.profile agov/src agov/tests
 
 CIRCLE_PHP=/home/ubuntu/.phpenv/shims/php
 CIRCLE_PHP_VERSION?=5.5.11
@@ -70,6 +70,9 @@ lint-php:
 	@echo ${cc_green}">>> Linting PHP..."${cc_end}
 	bin/phpcs --standard=${PHPCS_STANDARD} --extensions=${PHPCS_EXTENSIONS} --ignore=${PHPCS_EXCLUSIONS} ${PHPCS_DIRS}
 
+fix-php:
+	@echo ${cc_green}">>> Fixing PHP..."${cc_end}
+	bin/phpcbf --standard=${PHPCS_STANDARD} --extensions=${PHPCS_EXTENSIONS} --ignore=${PHPCS_EXCLUSIONS} ${PHPCS_DIRS}
 
 ci-lint: ci-lint-php ci-lint-js ci-lint-sass
 

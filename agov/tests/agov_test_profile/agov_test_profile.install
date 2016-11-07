@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install, update and uninstall functions for the aGov test module.
+ */
+
+/**
  * Implements hook_install_tasks().
  */
 function agov_test_profile_install_tasks(&$install_state) {
