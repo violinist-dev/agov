@@ -59,6 +59,7 @@ mkdirs:
 make:
 	cd ${APP_DIR} && ../bin/drush make -y profiles/agov/drupal-org.make --no-core --contrib-destination=profiles/agov
 	cd ${APP_DIR} && ../bin/drush make -y profiles/agov/drupal-org-core.make --no-cache --prepare-install
+	cd ${APP_DIR} && composer install --dev
 
 install:
 	cd ${APP_DIR} && ../bin/drush site-install agov -y --site-name=aGov --account-pass='${APP_PASSWORD}' --db-url=${DB_URL}
