@@ -74,6 +74,7 @@ class DefaultConfigTest extends KernelTestBase {
     'entity_browser_entity_form',
     'entity_browser',
 
+    'ds',
     'linkicon',
     'fences',
     'twitter_block',
@@ -82,7 +83,6 @@ class DefaultConfigTest extends KernelTestBase {
     'page_manager',
     'pathauto',
     'token',
-    'title',
     'text_icon',
   ];
 

@@ -8,10 +8,43 @@ dependencies:
     - field.field.node.article.field_article_media
     - node.type.article
   module:
+    - ds
     - fences
     - text
-    - title
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      path: profiles/agov/modules/contrib/ds
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - workbench_moderation_control
+        - field_article_media
+        - node_title
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: teaser__title
 id: node.article.teaser
 targetEntityType: node
 bundle: article
@@ -20,7 +53,7 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 2
+    weight: 3
     settings:
       trim_length: 185
     third_party_settings:
@@ -33,7 +66,7 @@ content:
         fences_label_classes: ''
   field_article_media:
     type: entity_reference_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: teaser
@@ -42,22 +75,6 @@ content:
       fences:
         fences_field_tag: div
         fences_field_classes: teaser__image-wide
-        fences_field_item_tag: div
-        fences_field_item_classes: ''
-        fences_label_tag: div
-        fences_label_classes: ''
-  title:
-    type: linked_and_wrapped
-    settings:
-      tag: h2
-      linked: true
-      classes: ''
-    weight: 1
-    label: hidden
-    third_party_settings:
-      fences:
-        fences_field_tag: div
-        fences_field_classes: teaser__title
         fences_field_item_tag: div
         fences_field_item_classes: ''
         fences_label_tag: div

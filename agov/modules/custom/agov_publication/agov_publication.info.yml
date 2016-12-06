@@ -9,7 +9,6 @@ dependencies:
   - fences
   - file
   - text
-  - title
   - user
   - views
 

@@ -31,11 +31,4 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
-  title:
-    label: hidden
-    type: string
-    weight: 107
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden: {  }

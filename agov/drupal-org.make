@@ -28,19 +28,12 @@ projects[token][version] = '1.0-beta2'
 projects[fences][version] = '2.0-alpha1'
 projects[media_entity_browser][version] = '1.0-beta2'
 projects[better_normalizers][version] = '1.0-beta1'
+projects[ds][version] = '2.6'
+projects[panels][version] = 3.0-beta5
 
 projects[page_manager][version] = '1.0-alpha24'
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/page_manager-block_content_contextual-2601004-14.patch
 
-projects[panels][version] = 3.0-beta5
-
-; Development versions, no tagged releases or require bleeding edge features.
-
-projects[title][type] = module
-projects[title][download][type] = git
-projects[title][download][url] = http://git.drupal.org/project/title.git
-projects[title][download][branch] = 8.x-2.x
-projects[title][download][revision] = b163e2d50b3add3842ac67ea11cced5eb5d7ceaf
 
 ; Require dev release for the "password_policy_character_types" policy type.
 projects[password_policy][type] = module

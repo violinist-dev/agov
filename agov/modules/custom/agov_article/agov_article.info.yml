@@ -7,9 +7,9 @@ core: '8.x'
 dependencies:
   - views
   - block
-  - title
   - fences
   - agov_media
+  - ds
 
 config_devel:
   - node.type.article

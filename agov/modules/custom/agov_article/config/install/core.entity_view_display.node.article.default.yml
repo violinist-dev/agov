@@ -56,5 +56,4 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-hidden:
-  title: true
+hidden: {}

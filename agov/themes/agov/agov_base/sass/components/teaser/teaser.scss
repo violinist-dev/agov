@@ -21,6 +21,7 @@
 
   &__title {
     @include margin(.5 0);
+    @extend %h3;
 
     h2,
     h3 {
