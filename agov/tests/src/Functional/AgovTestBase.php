@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\agov\Tests;
+namespace Drupal\Tests\agov\Functional;
 
-use Drupal\simpletest\WebTestBase;
+use Drupal\Tests\BrowserTestBase;
 
 /**
  * Base class for testing aGov.
  */
-abstract class AgovTestBase extends WebTestBase {
+abstract class AgovTestBase extends BrowserTestBase {
 
   /**
    * Override the installation profile to our testing profile.
@@ -30,6 +30,8 @@ abstract class AgovTestBase extends WebTestBase {
     'entity_browser.browser.media_browser',
     'entity_browser.browser.media_entity_browser',
     'views.view.media_entity_browser',
+    'simple_sitemap.custom',
+    'simple_sitemap.settings',
   );
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\agov\Tests;
+namespace Drupal\Tests\agov\Functional;
 
 /**
  * Test access disclosure for admin pages.
@@ -14,7 +14,7 @@ class AccessDisclosureTest extends AgovTestBase {
    */
   public function testAdminPage404() {
     $this->drupalGet('/admin');
-    $this->assertResponse(404);
+    $this->assertSession()->statusCodeEquals(404);
   }
 
 }

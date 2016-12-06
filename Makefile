@@ -51,9 +51,10 @@ init:
 
 mkdirs:
 	@echo ${cc_green}">>> Creating dirs..."${cc_end}
-	mkdir -p ${APP_DIR}/profiles ${APP_DIR}/sites/default/files/tmp ${APP_DIR}/sites/default/private ${APP_DIR}/sites/simpletest build/logs/simpletest
+	mkdir -p ${APP_DIR}/profiles ${APP_DIR}/sites/default/files/tmp ${APP_DIR}/sites/default/private ${APP_DIR}/sites/simpletest build/logs/simpletest ${APP_DIR}/browser_output
 	chmod -R 2775 ${APP_DIR}/sites/default/files ${APP_DIR}/sites/default/private ${APP_DIR}/sites/simpletest
 	chmod -R 777 ${APP_DIR}/sites/simpletest
+	chmod -R 777 ${APP_DIR}/browser_output
 	ln -sv ${PWD}/agov ${APP_DIR}/profiles/agov
 
 make:
@@ -117,11 +118,6 @@ test:
 	--module agov
 
 ci-test:
-	cd ${APP_DIR} && sudo -u www-data ${CIRCLE_PHP} ./core/scripts/run-tests.sh \
-	--concurrency 8 \
-	--verbose \
-	--sqlite /tmp/test-db.sqlite \
-	--dburl sqlite://localhost//tmp/test-db.sqlite  \
-	--php ${CIRCLE_PHP} \
-	--url ${APP_URI} \
-	--module agov
+	sudo -u www-data ${CIRCLE_PHP} ./app/vendor/bin/phpunit ./app/profiles/agov/tests
+	# One remaining legacy Simpletest that is dependent on InstallerTestBase.
+	sudo -u www-data ${CIRCLE_PHP} ./app/core/scripts/run-tests.sh --url ${APP_URI} --sqlite /tmp/test-db.sqlite --dburl sqlite://127.0.0.1//tmp/test-db.sqlite --class 'Drupal\agov\Tests\ConfigurableDependenciesTest'

@@ -65,6 +65,15 @@ class DefaultConfigTest extends KernelTestBase {
     'tour',
     'link',
 
+    'media_entity',
+    'media_entity_browser',
+    'media_entity_image',
+    'video_embed_media',
+    'entity_embed',
+    'entity_browser',
+    'entity_browser_entity_form',
+    'entity_browser',
+
     'linkicon',
     'fences',
     'twitter_block',

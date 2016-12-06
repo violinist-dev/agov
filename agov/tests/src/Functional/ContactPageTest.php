@@ -1,6 +1,8 @@
 <?php
 
-namespace Drupal\agov\Tests;
+namespace Drupal\Tests\agov\Functional;
+
+use Drupal\Core\Test\AssertMailTrait;
 
 /**
  * Test the contact page.
@@ -8,6 +10,8 @@ namespace Drupal\agov\Tests;
  * @group agov
  */
 class ContactPageTest extends AgovTestBase {
+
+  use AssertMailTrait;
 
   /**
    * The admin user.
@@ -30,13 +34,13 @@ class ContactPageTest extends AgovTestBase {
   public function testContactPage() {
     // Anonymous users can view the contact page and get the name fields.
     $this->assertContactPage();
-    $mails = $this->drupalGetMails();
+    $mails = $this->getMails();
     $this->assertEqual(1, count($mails));
 
     // Authenticated users get the form as well.
     $this->drupalLogin($this->adminUser);
     $this->assertContactPage();
-    $mails = $this->drupalGetMails();
+    $mails = $this->getMails();
     $this->assertEqual(2, count($mails));
   }
 

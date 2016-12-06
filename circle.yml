@@ -6,6 +6,10 @@ machine:
   hosts:
     agov.dev: 127.0.0.1
 
+general:
+  artifacts:
+    - './app/sites/simpletest/browser_output/'
+
 dependencies:
   cache_directories:
     - vendor

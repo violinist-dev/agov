@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\agov\Tests;
+namespace Drupal\Tests\agov\Functional;
 
 /**
  * Test the scheduled publications.

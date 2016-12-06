@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\agov\Tests;
+namespace Drupal\Tests\agov\Functional;
 
 /**
  * Test the search box.
@@ -30,7 +30,7 @@ class SearchTest extends AgovTestBase {
   public function testSearchBox() {
     // Test the search box appears on the homepage and the search page appears.
     $this->drupalGet('<front>');
-    $this->assertFieldById('edit-keys', '', 'Search box exists');
+    $this->assertFieldById('edit-keys', '');
     $this->drupalGet('/search/node', ['query' => ['keys' => 'about']]);
     $this->assertText('Search for about');
 
@@ -41,16 +41,24 @@ class SearchTest extends AgovTestBase {
 
     // Assert the two nodes can be found.
     $this->drupalGet('/search/node', ['query' => ['keys' => $node1->label()]]);
-    $this->assertEqual($node1->label(), (string) $this->cssSelect('.search-result__title a')[0]);
+    $this->assertSession()->elementContains('css', '.search-result__title a', $node1->label());
     $this->drupalGet('/search/node', ['query' => ['keys' => $node2->label()]]);
-    $this->assertEqual($node2->label(), (string) $this->cssSelect('.search-result__title a')[0]);
+    $this->assertSession()->elementContains('css', '.search-result__title a', $node2->label());
 
     // Login and make sure the search still works.
     $this->drupalLogin($this->authenticatedUser);
     $this->drupalGet('/search/node', ['query' => ['keys' => $node1->label()]]);
-    $this->assertEqual($node1->label(), (string) $this->cssSelect('.search-result__title a')[0]);
+    $this->assertSession()->elementContains('css', '.search-result__title a', $node1->label());
+
     $this->drupalGet('/search/node', ['query' => ['keys' => $node2->label()]]);
-    $this->assertEqual($node2->label(), (string) $this->cssSelect('.search-result__title a')[0]);
+    $this->assertSession()->elementContains('css', '.search-result__title a', $node2->label());
+  }
+
+  /**
+   * Runs cron in the Drupal installed by Simpletest.
+   */
+  protected function cronRun() {
+    $this->drupalGet('cron/' . \Drupal::state()->get('system.cron_key'));
   }
 
 }
