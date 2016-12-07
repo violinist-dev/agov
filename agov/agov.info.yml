@@ -68,9 +68,9 @@ configurable_dependencies:
     label: aGov Workbench
     description: Integration with Workbench Moderation
     enabled: true
-  agls:
-    label: ALGS Metatags
-    description: Adds support for AGLS metatags.
+  metatag_dc:
+    label: Dublin Core Metatags
+    description: Adds support for Dublin Core metatags.
     enabled: true
   agov_scheduled_updates:
     label: Scheduled Updates
