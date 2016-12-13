@@ -9,7 +9,7 @@ field_name: field_icon_block_icon
 entity_type: block_content
 bundle: icon_block
 label: Icon
-description: 'The icon field can be any class that is used in the Font Awesome icon library'
+description: 'Enter the icon id from the themes icon sprite.'
 required: true
 translatable: false
 default_value: {  }

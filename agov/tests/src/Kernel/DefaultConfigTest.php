@@ -75,7 +75,7 @@ class DefaultConfigTest extends KernelTestBase {
     'entity_browser',
 
     'ds',
-    'linkicon',
+    'link_attributes',
     'fences',
     'twitter_block',
     'layout_plugin',

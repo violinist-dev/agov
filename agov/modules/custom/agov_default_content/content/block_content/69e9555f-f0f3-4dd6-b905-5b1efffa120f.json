@@ -50,23 +50,47 @@
     "field_social_icon": [
         {
             "uri": "http:\/\/www.facebook.com\/pages\/PreviousNext\/170975076260877",
-            "title": "Facebook",
-            "options": []
+            "title": "Like us on Facebook",
+            "options": {
+                "attributes": {
+                    "target": "",
+                    "rel": "",
+                    "class": "social--facebook"
+                }
+            }
         },
         {
             "uri": "http:\/\/www.twitter.com\/PreviousNext",
-            "title": "Twitter",
-            "options": []
+            "title": "Follow us on Twitter",
+            "options": {
+                "attributes": {
+                    "target": "",
+                    "rel": "",
+                    "class": "social--twitter"
+                }
+            }
         },
         {
             "uri": "https:\/\/3.agov.com.au\/rss.xml",
-            "title": "RSS",
-            "options": []
+            "title": "Subscribe to RSS",
+            "options": {
+                "attributes": {
+                    "target": "",
+                    "rel": "",
+                    "class": "social--rss"
+                }
+            }
         },
         {
             "uri": "https:\/\/3.agov.com.au\/contact",
-            "title": "Envelope",
-            "options": []
+            "title": "Contact us",
+            "options": {
+                "attributes": {
+                    "target": "",
+                    "rel": "",
+                    "class": "social--contact"
+                }
+            }
         }
     ]
 }

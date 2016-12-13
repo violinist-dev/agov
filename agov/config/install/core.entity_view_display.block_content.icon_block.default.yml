@@ -32,7 +32,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      link_to_entity: false
+      icon_sprite: /profiles/agov/themes/contrib/agov_base/sass/base/icons/sprite--content.svg
     third_party_settings:
       fences:
         fences_field_tag: div

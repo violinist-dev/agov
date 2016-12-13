@@ -25,7 +25,7 @@ PHPCS_DIRS=agov/modules/custom agov/agov.install agov/agov.profile agov/src agov
 CIRCLE_PHP=/home/ubuntu/.phpenv/shims/php
 CIRCLE_PHP_VERSION?=5.5.11
 
-EXPORT_MODULES=agov agov_standard_page agov_article agov_publication agov_default_content agov_password_policy agov_scheduled_updates agov_media
+EXPORT_MODULES=agov agov_standard_page agov_article agov_publication agov_default_content agov_password_policy agov_scheduled_updates agov_media agov_social_icons
 
 .PHONY: list build make install styleguide test
 
@@ -95,6 +95,9 @@ styleguide:
 
 config-export:
 	${DRUSH_CMD} config-devel-export ${EXPORT_MODULES}
+
+content-export:
+	${DRUSH_CMD} dcem agov_default_content
 
 ci-vhost:
 	@echo ${cc_green}"PHP version: "${CIRCLE_PHP_VERSION}${cc_end}

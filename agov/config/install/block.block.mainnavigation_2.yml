@@ -15,11 +15,12 @@ provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Main navigation'
+  label: 'In this section'
   provider: system
-  label_display: '0'
+  label_display: visible
   level: 2
-  depth: 1
+  depth: 0
+  expand_all_items: false
 visibility:
   request_path:
     id: request_path

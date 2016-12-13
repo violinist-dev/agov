@@ -3,8 +3,9 @@
 namespace Drupal\text_icon\Plugin\Field\FieldFormatter;
 
 use Drupal\Component\Render\FormattableMarkup;
-use Drupal\Core\Field\FieldItemInterface;
-use Drupal\Core\Field\Plugin\Field\FieldFormatter\StringFormatter;
+use Drupal\Core\Field\FormatterBase;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Plugin implementation of the 'text_icon' formatter.
@@ -20,15 +21,63 @@ use Drupal\Core\Field\Plugin\Field\FieldFormatter\StringFormatter;
  *   }
  * )
  */
-class TextIconFormatter extends StringFormatter {
+class TextIconFormatter extends FormatterBase {
 
   /**
    * {@inheritdoc}
    */
-  protected function viewValue(FieldItemInterface $item) {
-    return [
-      '#markup' => new FormattableMarkup('<i class="@icon"></i>', ['@icon' => $item->value]),
-    ];
+  public static function defaultSettings() {
+    return array(
+      'icon_sprite' => '',
+    ) + parent::defaultSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsForm(array $form, FormStateInterface $form_state) {
+    $elements = parent::settingsForm($form, $form_state);
+
+    $elements['icon_sprite'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Icon sprite location'),
+      '#default_value' => $this->getSetting('icon_sprite'),
+      '#description' => $this->t('Enter the location to your icon sprite.'),
+    );
+
+    return $elements;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsSummary() {
+    $summary = array();
+    $settings = $this->getSettings();
+
+    if (!empty($settings['icon_sprite'])) {
+      $summary[] = $this->t('Sprite location: @icon_sprite', array('@icon_sprite' => $settings['icon_sprite']));
+    }
+    return $summary;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function viewElements(FieldItemListInterface $items, $langcode) {
+    $element = array();
+
+    foreach ($items as $delta => $item) {
+      $element[$delta] = array(
+        '#type' => 'markup',
+        '#markup' => new FormattableMarkup('<svg role="presentation"><use xlink:href=":path#:icon" /></svg>', array(
+          ':path' => $this->getSetting('icon_sprite'),
+          ':icon' => $item->value,
+        )),
+      );
+    }
+
+    return $element;
   }
 
 }

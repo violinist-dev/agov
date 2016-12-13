@@ -5,7 +5,8 @@ dependencies:
     - block_content.type.social_block
     - field.field.block_content.social_block.field_social_icon
   module:
-    - linkicon
+    - fences
+    - link
 id: block_content.social_block.default
 targetEntityType: block_content
 bundle: social_block
@@ -19,21 +20,14 @@ content:
       url_plain: false
       rel: ''
       target: ''
-      linkicon_prefix: fa
-      linkicon_wrapper_class: linkicon--social
-      linkicon_link: false
-      linkicon_load: false
-      linkicon_vertical: false
-      linkicon_style: ''
-      linkicon_color: ''
-      linkicon_tooltip: false
-      linkicon_no_text: false
-      linkicon_maxlength: 60
-      linkicon_global_title: ''
-      linkicon_position: ''
-      linkicon_size: ''
-      linkicon_bundle: ''
       trim_length: 80
-    third_party_settings: {  }
-    type: linkicon
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: social__wrapper
+        fences_field_item_tag: div
+        fences_field_item_classes: social__item
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: link
 hidden: {  }
