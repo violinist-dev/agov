@@ -23,10 +23,13 @@ dependencies:
     # Symlink some binaries so they're accessible globally.
     - ln -s `pwd`/bin/drush /home/ubuntu/bin/drush
 
+    - source ../nvm/nvm.sh && nvm install && nvm use 5.11 && nvm alias default 5.11
+
   post:
     - make ci-build:
         environment:
           CIRCLE_PHP_VERSION: $(phpenv global)
+    - npm rebuild node-sass
 
 test:
   override:
@@ -37,15 +40,8 @@ deployment:
   prod:
     branch: 8.x-1.x
     commands:
-      - bundle install --path vendor/bundle
       - git config --global user.email "admin@previousnext.com.au"
       - git config --global user.name "PreviousNext"
-      # Compiled CSS.
-      - make styleguide
-      - git add -f agov/themes/agov/agov_base/css
-      - git add -f agov/themes/agov/agov_whitlam/css
-      - git add .
-      - git commit -m 'Compiled CSS.'
       # Filter out the commits only in the 'agov' folder.
       - git filter-branch --prune-empty --subdirectory-filter agov 8.x-1.x
       # Clean up the state of the folder.

@@ -27,17 +27,17 @@ CIRCLE_PHP_VERSION?=5.5.11
 
 EXPORT_MODULES=agov agov_standard_page agov_article agov_publication agov_default_content agov_password_policy agov_scheduled_updates agov_media agov_social_icons
 
-.PHONY: list build make install styleguide test
+.PHONY: list build make install test
 
 # Display a list of the commands
 list:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1n}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
 # Build steps for local dev
-build: init mkdirs lint-php styleguide make
+build: init mkdirs lint-php make
 
 # Builds steps for CI
-ci-build: init mkdirs ci-vhost styleguide make
+ci-build: mkdirs ci-vhost make
 
 clean:
 	chmod u+w ${APP_DIR}/sites/default || true
@@ -46,7 +46,7 @@ clean:
 init:
 	@echo ${cc_green}">>> Installing dependencies..."${cc_end}
 	composer install --prefer-dist --no-progress
-	bundle install --path vendor/bundle
+	nvm install
 	npm install
 
 mkdirs:

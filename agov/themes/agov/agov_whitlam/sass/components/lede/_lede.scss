@@ -1,8 +1,0 @@
-// Lede
-//
-// The lede is introductory text that is given special prominent styling.
-
-.lede,
-%lede {
-  @include type-layout(l, 1);
-}
