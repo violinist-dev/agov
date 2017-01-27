@@ -46,7 +46,6 @@ clean:
 init:
 	@echo ${cc_green}">>> Installing dependencies..."${cc_end}
 	composer install --prefer-dist --no-progress
-	nvm install
 	npm install
 
 mkdirs:
