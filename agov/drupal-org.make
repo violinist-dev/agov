@@ -46,5 +46,5 @@ projects[config_devel][version] = '1.0-rc1'
 projects[config_devel][subdir] = 'development'
 
 ; Themes
-projects[agov_base][version] = '1.0'
-projects[agov_whitlam][version] = '1.0'
+projects[agov_base][version] = '1.x-dev'
+projects[agov_whitlam][version] = '1.2'
