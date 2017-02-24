@@ -5,9 +5,9 @@ defaults[projects][subdir] = "contrib"
 
 ; Contrib modules
 projects[admin_toolbar][version] = 1.18
-projects[better_normalizers][version] = '1.0-beta1'
+projects[better_normalizers][version] = '1.0-beta2'
 projects[ctools][version] = 3.0-alpha27
-projects[default_content][version] = '1.0-alpha3'
+projects[default_content][version] = '1.0-alpha4'
 projects[ds][version] = '2.6'
 projects[embed][version] = '1.0-rc3'
 projects[entity][version] = '1.0-alpha3'
@@ -16,7 +16,7 @@ projects[entity_embed][version] = '1.0-beta2'
 projects[fences][version] = '2.0-alpha1'
 projects[inline_entity_form][version] = '1.0-beta1'
 projects[layout_plugin][version] = 1.0-alpha23
-projects[link_attributes][version] = '1.0-alpha3'
+projects[link_attributes][version] = '1.0'
 projects[media_entity][version] = '1.6'
 projects[media_entity_browser][version] = '1.0-beta2'
 projects[media_entity_image][version] = '1.2'
@@ -30,16 +30,16 @@ projects[password_policy][download][revision] = 896639711c174e45e62667613b163a57
 projects[password_policy][download][type] = git
 projects[password_policy][download][url] = http://git.drupal.org/project/password_policy.git
 projects[password_policy][type] = module
-projects[pathauto][version] = '1.0-beta1'
+projects[pathauto][version] = '1.0-rc1'
 projects[scheduled_updates][version] = '1.0-alpha5'
-projects[simple_sitemap][version] = '2.7'
-projects[token][version] = '1.0-beta2'
+projects[simple_sitemap][version] = '2.8'
+projects[token][version] = '1.0-rc1'
 projects[twitter_block][version] = 2.1
-projects[video_embed_field][version] = '1.3'
-projects[workbench_moderation][version] = '1.1'
+projects[video_embed_field][version] = '1.4'
+projects[workbench_moderation][version] = '1.2'
 
 ; Development Modules
-projects[config_devel][version] = '1.0-rc1'
+projects[config_devel][version] = '1.0'
 projects[config_devel][subdir] = 'development'
 
 ; Themes

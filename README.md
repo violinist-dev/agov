@@ -11,7 +11,7 @@ See [the aGov readme](https://github.com/previousnext/agov/blob/8.x-1.x/agov/REA
 
 See [the docs](https://github.com/previousnext/agov/blob/8.x-1.x/agov/docs/index.md)
 
-# Running Tests
+## Testing
 
 ### Run all tests
 
@@ -26,3 +26,13 @@ Ensure you have:
 To run:
 
     ./vendor/bin/phpunit -c core profiles/agov/tests/src/Kernel/DefaultConfigTest.php
+
+## Updating Contrib Modules
+
+Many contrib modules don't provide an upgrade path for config schema changes. In order
+to avoid any issues, follow these steps:
+
+1. Install from the UI, and do **NOT** select any of the optional modules.
+2. Update your module in the drush make file, then run `make make-contrib`.
+3. Run `drush updb` to run any db and schema updates.
+4. Re-export config using `make config-export`.

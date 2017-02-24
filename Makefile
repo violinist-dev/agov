@@ -27,7 +27,7 @@ CIRCLE_PHP_VERSION?=5.5.11
 
 EXPORT_MODULES=agov agov_standard_page agov_article agov_publication agov_default_content agov_password_policy agov_scheduled_updates agov_media agov_social_icons
 
-.PHONY: list build make install test
+.PHONY: list build make make-contrib make-core install test
 
 # Display a list of the commands
 list:
@@ -56,9 +56,13 @@ mkdirs:
 	chmod -R 777 ${APP_DIR}/browser_output
 	ln -sv ${PWD}/agov ${APP_DIR}/profiles/agov
 
-make:
+make-contrib:
 	cd ${APP_DIR} && ../bin/drush make -y profiles/agov/drupal-org.make --no-core --contrib-destination=profiles/agov
+
+make-core:
 	cd ${APP_DIR} && ../bin/drush make -y profiles/agov/drupal-org-core.make --no-cache --prepare-install
+
+make: make-contrib make-core
 	cd ${APP_DIR} && composer install --prefer-dist --no-progress
 
 install:
