@@ -24,12 +24,7 @@ projects[metatag][version] = '1.0'
 projects[page_manager][patch][] = https://www.drupal.org/files/issues/page_manager-block_content_contextual-2601004-14.patch
 projects[page_manager][version] = '1.0-alpha24'
 projects[panels][version] = 3.0-beta5
-; Require dev release for the "password_policy_character_types" policy type.
-projects[password_policy][download][branch] = 8.x-3.x
-projects[password_policy][download][revision] = 896639711c174e45e62667613b163a571e64d926
-projects[password_policy][download][type] = git
-projects[password_policy][download][url] = http://git.drupal.org/project/password_policy.git
-projects[password_policy][type] = module
+projects[password_policy][version] = '3.0-alpha3'
 projects[pathauto][version] = '1.0-rc1'
 projects[scheduled_updates][version] = '1.0-alpha5'
 projects[simple_sitemap][version] = '2.8'
