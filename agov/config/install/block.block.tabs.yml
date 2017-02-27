@@ -3,15 +3,15 @@ status: true
 dependencies:
   theme:
     - agov_whitlam
-id: pagetitle
+id: tabs
 theme: agov_whitlam
 region: content
-weight: -6
+weight: -5
 provider: null
-plugin: page_title_block
+plugin: local_tasks_block
 settings:
-  id: page_title_block
-  label: 'Page title'
+  id: local_tasks_block
+  label: 'Tabs'
   provider: core
   label_display: '0'
 visibility: {  }
