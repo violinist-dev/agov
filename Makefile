@@ -120,6 +120,6 @@ endif
 	$(TEST_FILTER)
 
 ci-test:
-	sudo -u www-data ${CIRCLE_PHP} ./app/vendor/bin/phpunit --configuration ${PWD}/phpunit-circle.xml --log-junit ${CIRCLE_TEST_REPORTS}/phpunit/junit.xml ./app/profiles/agov/tests
+	sudo -u www-data ${CIRCLE_PHP} ./app/vendor/bin/phpunit --configuration ${PWD}/phpunit-circle.xml --log-junit ./app/junit.xml ./app/profiles/agov/tests
 	# One remaining legacy Simpletest that is dependent on InstallerTestBase.
 	sudo -u www-data ${CIRCLE_PHP} ./app/core/scripts/run-tests.sh --url ${APP_URI} --sqlite /tmp/test-db.sqlite --dburl sqlite://127.0.0.1//tmp/test-db.sqlite --class 'Drupal\agov\Tests\ConfigurableDependenciesTest'
