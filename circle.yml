@@ -23,13 +23,10 @@ dependencies:
     # Symlink some binaries so they're accessible globally.
     - ln -s `pwd`/bin/drush /home/ubuntu/bin/drush
 
-    - source ../nvm/nvm.sh && nvm install && nvm use 5.11 && nvm alias default 5.11
-
   post:
     - make ci-build:
         environment:
           CIRCLE_PHP_VERSION: $(phpenv global)
-    - npm rebuild node-sass
 
 test:
   override:

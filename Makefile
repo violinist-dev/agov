@@ -46,7 +46,6 @@ clean:
 init:
 	@echo ${cc_green}">>> Installing dependencies..."${cc_end}
 	composer install --prefer-dist --no-progress
-	npm install
 
 mkdirs:
 	@echo ${cc_green}">>> Creating dirs..."${cc_end}
@@ -79,22 +78,11 @@ fix-php:
 	@echo ${cc_green}">>> Fixing PHP..."${cc_end}
 	bin/phpcbf --standard=${PHPCS_STANDARD} --extensions=${PHPCS_EXTENSIONS} --ignore=${PHPCS_EXCLUSIONS} ${PHPCS_DIRS}
 
-ci-lint: ci-lint-php ci-lint-js ci-lint-sass
+ci-lint: ci-lint-php
 
 ci-lint-php:
 	@echo ${cc_green}">>> Linting PHP..."${cc_end}
 	bin/phpcs --report=checkstyle --report-file=${PHPCS_REPORT_FILE} --standard=${PHPCS_STANDARD} --extensions=${PHPCS_EXTENSIONS} --ignore=${PHPCS_EXCLUSIONS} ${PHPCS_DIRS}
-
-ci-lint-js:
-	node_modules/.bin/gulp lint:js-with-fail
-
-ci-lint-sass:
-	# Temporarily disable sass lint failing, until Issue #2650652 is complete.
-	# - node_modules/.bin/gulp lint:sass-with-fail
-
-styleguide:
-	@echo ${cc_green}">>> Generate the styles..."${cc_end}
-	node_modules/.bin/gulp
 
 config-export:
 	${DRUSH_CMD} config-devel-export ${EXPORT_MODULES}
