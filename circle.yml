@@ -32,8 +32,6 @@ test:
   override:
     - make ci-lint
     - make ci-test
-    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
-    - cp ./app/junit.xml $CIRCLE_TEST_REPORTS/phpunit/
 
 deployment:
   prod:
