@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - views.view.media_entity_browser
   module:
     - entity_browser_entity_form
     - views
@@ -24,6 +26,8 @@ widgets:
       view: media_entity_browser
       view_display: entity_browser_1
       submit_text: 'Select entities'
+      auto_select: false
+      arguments: {  }
     uuid: 3bc4ec79-86e9-4e60-a2ff-47526c6550f9
     weight: 1
     label: 'Add Existing'
