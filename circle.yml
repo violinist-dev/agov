@@ -32,6 +32,7 @@ test:
   override:
     - make ci-lint
     - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+    - chown -R www-data $CIRCLE_TEST_REPORTS/phpunit
     - make ci-test
 
 deployment:
