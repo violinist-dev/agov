@@ -31,7 +31,7 @@ dependencies:
 test:
   override:
     - make ci-lint
-    - mkdir -p $CIRCLE_ARTIFACTS/phpunit
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
     - make ci-test
 
 deployment:

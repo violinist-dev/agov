@@ -27,6 +27,8 @@ CIRCLE_PHP_VERSION?=5.5.11
 
 EXPORT_MODULES=agov agov_standard_page agov_article agov_publication agov_default_content agov_password_policy agov_scheduled_updates agov_media agov_social_icons
 
+TEST_FILTER=--module agov
+
 .PHONY: list build make make-contrib make-core install test
 
 # Display a list of the commands
@@ -104,12 +106,18 @@ devify:
 	${DRUSH_CMD} en -y simpletest config_devel
 
 test:
+ifdef TEST_FILE
+	$(eval TEST_FILTER=--file $(TEST_FILE))
+endif
+ifdef TEST_CLASS
+	$(eval TEST_FILTER=--class $(TEST_CLASS))
+endif
 	cd ${APP_DIR} && sudo -u www-data php ./core/scripts/run-tests.sh \
 	--concurrency 8 \
 	--verbose \
 	--dburl ${DB_URL}  \
 	--url ${APP_URI}/ \
-	--module agov
+	$(TEST_FILTER)
 
 ci-test:
 	sudo -u www-data ${CIRCLE_PHP} ./app/vendor/bin/phpunit --configuration ${PWD}/phpunit-circle.xml --log-junit ${CIRCLE_TEST_REPORTS}/phpunit/junit.xml ./app/profiles/agov/tests
