@@ -1,15 +1,7 @@
 .vagrant
-.sass-cache
-.ruby-version
-.bundle
-/behat.local.yml
-/bin/*
-/vendor/*
-/build/*
-/build.properties
-node_modules
-npm-shrinkwrap.json
-Gemfile.lock
+/bin
+/vendor
+/build
 
 # Exclude build files created by gulp and kss-node.
 /agov/themes/agov/*/css/
