@@ -31,7 +31,17 @@ dependencies:
 test:
   override:
     - make ci-lint
-    - make ci-test
+    - make ci-test TEST_FILE=:
+      parallel: true
+      files:
+        - profiles/agov/tests/src/Functional/AccessDisclosureTest.php
+        - profiles/agov/tests/src/Functional/ContactPageTest.php
+        - profiles/agov/tests/src/Functional/DefaultContentTest.php
+        - profiles/agov/tests/src/Functional/MediaIntegrationTest.php
+        - profiles/agov/tests/src/Functional/ScheduledPublicationTest.php
+        - profiles/agov/tests/src/Functional/SearchTest.php
+        - profiles/agov/tests/src/Kernel/DefaultConfigTest.php
+
 
 deployment:
   prod:
