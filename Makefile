@@ -119,7 +119,12 @@ endif
 	--url ${APP_URI}/ \
 	$(TEST_FILTER)
 
-ci-test:
-	sudo -u www-data ${CIRCLE_PHP} ./app/vendor/bin/phpunit --configuration ${PWD}/phpunit-circle.xml ./app/profiles/agov/tests
+ci-test-phpunit:
+ifdef TEST_SUITE
+	$(eval TEST_OPTIONS=--testsuite $(TEST_SUITE))
+endif
+	sudo -u www-data ${CIRCLE_PHP} ./app/vendor/bin/phpunit --configuration ${PWD}/phpunit-circle.xml $(TEST_OPTIONS) ./app/profiles/agov/tests
+
+ci-test: ci-test-phpunit
 	# One remaining legacy Simpletest that is dependent on InstallerTestBase.
 	sudo -u www-data ${CIRCLE_PHP} ./app/core/scripts/run-tests.sh --url ${APP_URI} --sqlite /tmp/test-db.sqlite --dburl sqlite://127.0.0.1//tmp/test-db.sqlite --class 'Drupal\agov\Tests\ConfigurableDependenciesTest'

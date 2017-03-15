@@ -31,17 +31,8 @@ dependencies:
 test:
   override:
     - make ci-lint
-    - make ci-test TEST_FILE=profiles/:
+    - case $CIRCLE_NODE_INDEX in 0) make ci-test TEST_SUITE=unit kernel;; 1) make ci-test TEST_SUITE=functional functional-javascript ;; esac:
         parallel: true
-        files:
-          - agov/tests/src/Functional/AccessDisclosureTest.php
-          - agov/tests/src/Functional/ContactPageTest.php
-          - agov/tests/src/Functional/DefaultContentTest.php
-          - agov/tests/src/Functional/MediaIntegrationTest.php
-          - agov/tests/src/Functional/ScheduledPublicationTest.php
-          - agov/tests/src/Functional/SearchTest.php
-          - agov/tests/src/Kernel/DefaultConfigTest.php
-
 
 deployment:
   prod:
