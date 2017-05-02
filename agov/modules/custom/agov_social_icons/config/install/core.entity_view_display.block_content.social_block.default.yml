@@ -30,4 +30,5 @@ content:
         fences_label_tag: div
         fences_label_classes: ''
     type: link
+    region: content
 hidden: {  }

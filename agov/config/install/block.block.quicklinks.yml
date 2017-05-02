@@ -9,7 +9,7 @@ dependencies:
     - agov_whitlam
 id: quicklinks
 theme: agov_whitlam
-region: '-1'
+region: secondary_menu
 weight: -1
 provider: null
 plugin: 'system_menu_block:quick-links'

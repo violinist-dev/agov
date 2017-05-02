@@ -6,7 +6,7 @@ core: '8.x'
 
 dependencies:
   - default_content
-  - layout_plugin
+  - layout_discovery
   - ctools
   - page_manager
   - block_content

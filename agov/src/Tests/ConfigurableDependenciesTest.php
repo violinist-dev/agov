@@ -38,10 +38,6 @@ class ConfigurableDependenciesTest extends InstallerTestBase {
     \Drupal::entityManager()->clearCachedDefinitions();
     $this->drupalPostForm($this->getUrl(), ['configurable_modules[forum]' => 1], 'Save and continue');
 
-    // Make sure the modules we requested are installed.
-    $this->drupalGet('/admin/modules');
-    $this->assertFieldChecked('edit-modules-core-forum-enable');
-    $this->assertNoFieldChecked('edit-modules-core-contact-enable');
   }
 
 }

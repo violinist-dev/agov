@@ -30,6 +30,7 @@ content:
         fences_field_item_classes: ''
         fences_label_tag: div
         fences_label_classes: ''
+    region: content
 hidden:
   created: true
   name: true

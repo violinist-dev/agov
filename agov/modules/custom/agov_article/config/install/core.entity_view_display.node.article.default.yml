@@ -22,6 +22,7 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_article_date:
     weight: 2
     label: visually_hidden
@@ -37,6 +38,7 @@ content:
         fences_label_tag: div
         fences_label_classes: ''
     type: datetime_default
+    region: content
   field_article_media:
     weight: 1
     label: hidden
@@ -52,8 +54,10 @@ content:
         fences_label_tag: div
         fences_label_classes: ''
     type: entity_reference_entity_view
+    region: content
   links:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-hidden: {}
+    region: content
+hidden: {  }

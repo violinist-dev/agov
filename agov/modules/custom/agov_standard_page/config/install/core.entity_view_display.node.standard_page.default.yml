@@ -19,6 +19,7 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_standard_page_media:
     weight: 2
     label: above
@@ -27,8 +28,10 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   links:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

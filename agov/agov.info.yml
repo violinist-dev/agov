@@ -20,6 +20,7 @@ dependencies:
   - entity_reference
   - help
   - image
+  - layout_discovery
   - menu_ui
   - options
   - path
@@ -42,7 +43,6 @@ dependencies:
   - better_normalizers
   - pathauto
   - twitter_block
-  - layout_plugin
   - page_manager
   - fences
   - token

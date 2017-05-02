@@ -64,6 +64,7 @@ class DefaultConfigTest extends KernelTestBase {
     'views_ui',
     'tour',
     'link',
+    'layout_discovery',
 
     'media_entity',
     'media_entity_browser',
@@ -78,7 +79,6 @@ class DefaultConfigTest extends KernelTestBase {
     'link_attributes',
     'fences',
     'twitter_block',
-    'layout_plugin',
     'ctools',
     'page_manager',
     'pathauto',
@@ -96,6 +96,28 @@ class DefaultConfigTest extends KernelTestBase {
     // and why that doesn't work in KTB?
     'node.settings' => TRUE,
     'system.theme' => TRUE,
+
+    // Block status is not set without a theme enabled.
+    'block.block.breadcrumbs' => TRUE,
+    'block.block.footerquicklinks' => TRUE,
+    'block.block.mainnavigation' => TRUE,
+    'block.block.mainnavigation_2' => TRUE,
+    'block.block.mainnavigation_3' => TRUE,
+    'block.block.pagetitle' => TRUE,
+    'block.block.quicklinks' => TRUE,
+    'block.block.quicklinks_2' => TRUE,
+    'block.block.searchform' => TRUE,
+    'block.block.searchform_2' => TRUE,
+    'block.block.seven_breadcrumbs' => TRUE,
+    'block.block.seven_content' => TRUE,
+    'block.block.seven_help' => TRUE,
+    'block.block.seven_local_actions' => TRUE,
+    'block.block.seven_login' => TRUE,
+    'block.block.seven_messages' => TRUE,
+    'block.block.seven_primary_local_tasks' => TRUE,
+    'block.block.seven_secondary_local_tasks' => TRUE,
+    'block.block.sitebranding' => TRUE,
+    'block.block.tabs' => TRUE,
   ];
 
   /**

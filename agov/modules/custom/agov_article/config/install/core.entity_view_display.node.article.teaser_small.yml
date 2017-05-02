@@ -16,7 +16,6 @@ third_party_settings:
   ds:
     layout:
       id: ds_1col
-      path: profiles/agov/modules/contrib/ds
       library: ''
       disable_css: false
       entity_classes: all_classes
@@ -64,6 +63,7 @@ content:
         fences_field_item_classes: ''
         fences_label_tag: div
         fences_label_classes: ''
+    region: content
   field_article_media:
     type: entity_reference_entity_view
     weight: 1
@@ -79,6 +79,7 @@ content:
         fences_field_item_classes: ''
         fences_label_tag: div
         fences_label_classes: ''
+    region: content
 hidden:
   field_article_date: true
   links: true

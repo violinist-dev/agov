@@ -32,6 +32,7 @@ content:
         fences_field_item_classes: ''
         fences_label_tag: div
         fences_label_classes: ''
+    region: content
   field_publication_date:
     type: datetime_default
     weight: 0
@@ -47,6 +48,7 @@ content:
         fences_field_item_classes: ''
         fences_label_tag: div
         fences_label_classes: ''
+    region: content
 hidden:
   field_publication_documents: true
   field_publication_subtitle: true

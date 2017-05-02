@@ -28,6 +28,7 @@ content:
         fences_label_tag: div
         fences_label_classes: ''
     type: basic_string
+    region: content
   field_icon_block_icon:
     weight: 0
     label: hidden
@@ -42,6 +43,7 @@ content:
         fences_label_tag: div
         fences_label_classes: ''
     type: text_icon
+    region: content
   field_icon_block_title:
     weight: 1
     label: hidden
@@ -60,4 +62,5 @@ content:
         fences_label_tag: div
         fences_label_classes: ''
     type: link
+    region: content
 hidden: {  }
