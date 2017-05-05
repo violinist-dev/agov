@@ -1,5 +1,5 @@
 {
-    "name": "drupal/agov",
+    "name": "previousnext/agov",
     "type": "drupal-profile",
     "description": "aGov is a free open source Drupal distribution developed specifically for Australian government organisations",
     "license": "GPL-2.0+",
