@@ -5,11 +5,10 @@ defaults[projects][subdir] = "contrib"
 
 ; Contrib modules
 projects[admin_toolbar][version] = 1.19
-projects[better_normalizers][version] = '1.0-beta2'
-projects[better_normalizers][patch][2849133] = 'https://www.drupal.org/files/issues/add_rest_dependency-2849133-8.patch'
+projects[better_normalizers][version] = '1.0-beta3'
 projects[ctools][version] = 3.0
 projects[default_content][version] = '1.0-alpha6'
-projects[ds][version] = '3.0-beta3'
+projects[ds][version] = '3.0'
 projects[embed][version] = '1.0'
 projects[entity][version] = '1.0-alpha4'
 projects[entity_browser][version] = '1.0'
